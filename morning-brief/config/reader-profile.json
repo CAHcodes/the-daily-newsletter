@@ -3,7 +3,7 @@
   "product_intent": "A premium, ADHD-friendly morning intelligence brief that creates a clear edge over peers.",
   "launch_preferences": {
     "repo_name": "The Daily Newsletter",
-    "visibility": "private",
+    "visibility": "public",
     "domain_mode": "default",
     "design_lead": "codex",
     "go_live_mode": "activate_now"

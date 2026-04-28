@@ -95,7 +95,7 @@ The next implementation phase should follow:
 ## Current launch profile
 
 - Repo name: `The Daily Newsletter`
-- Repo visibility: `private`
+- Repo visibility: `public`
 - Domain mode: `default`
 - Design lead: `Codex chooses`
 - Go-live behavior: `activate now`

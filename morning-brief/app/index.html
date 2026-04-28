@@ -55,10 +55,7 @@
 
     <nav class="quick-nav" aria-label="Section navigation">
       <a class="quick-nav-link" href="#pulse-panel">Pulse</a>
-      <a class="quick-nav-link" href="#scan-panel">Scan</a>
-      <a class="quick-nav-link" href="#brief-panel">Brief</a>
-      <a class="quick-nav-link" href="#edge-panel">Edge</a>
-      <a class="quick-nav-link" href="#route-panel">Route</a>
+      <a class="quick-nav-link" href="#stories-panel">Stories</a>
       <a class="quick-nav-link" href="#source-panel">Sources</a>
     </nav>
 
@@ -100,96 +97,31 @@
             <h3 id="source-mode-headline"></h3>
             <p id="source-mode-summary"></p>
           </article>
-        </div>
-      </section>
-
-      <section class="panel panel-scan" id="scan-panel">
-        <div class="panel-header">
-          <div>
-            <p class="section-kicker">Layer 1</p>
-            <h2>60-Second Scan</h2>
-          </div>
-          <p id="scan-intro"></p>
-        </div>
-
-        <div id="signal-board" class="signal-board"></div>
-
-        <div class="scan-bottom">
-          <article class="focus-card focus-card-alert">
-            <p class="focus-label">Ignore The Noise</p>
-            <h3 id="ignore-noise-title"></h3>
-            <p id="ignore-noise-summary"></p>
-          </article>
-
-          <article class="focus-card focus-card-sources">
-            <p class="focus-label">Source Stack</p>
+          <article class="focus-card focus-card-alert focus-card-signals">
+            <p class="focus-label">What Matters Most</p>
+            <p class="visual-intro" id="scan-intro"></p>
+            <div id="signal-board" class="signal-board signal-board-inline"></div>
+            <div class="inline-noise-card">
+              <p class="story-snapshot-label">Ignore this bad read</p>
+              <h3 id="ignore-noise-title"></h3>
+              <p id="ignore-noise-summary"></p>
+            </div>
             <div id="source-focus" class="source-row"></div>
           </article>
         </div>
       </section>
 
-      <section class="panel" id="brief-panel">
+      <section class="panel" id="stories-panel">
         <div class="panel-header">
           <div>
-            <p class="section-kicker">Layer 2</p>
-            <h2>5-Minute Essential Brief</h2>
+            <p class="section-kicker">Today's Edition</p>
+            <h2>The 15-20 Minute Brief</h2>
           </div>
           <p id="essential-intro"></p>
         </div>
+        <p class="section-note">Tap any visual or source button to open the full article.</p>
 
         <div id="essential-cards" class="essential-grid"></div>
-      </section>
-
-      <section class="panel" id="edge-panel">
-        <div class="panel-header">
-          <div>
-            <p class="section-kicker">Layer 3</p>
-            <h2>15-Minute Edge Layer</h2>
-          </div>
-          <p>Optional depth for when you want the extra advantage.</p>
-        </div>
-
-        <div class="edge-grid">
-          <article class="edge-card edge-card-lime">
-            <p class="edge-label">What Your Peers Will Miss</p>
-            <h3 id="peer-miss-title"></h3>
-            <p id="peer-miss-body"></p>
-          </article>
-
-          <article class="edge-card edge-card-amber">
-            <p class="edge-label">Say This In A Meeting</p>
-            <h3 id="meeting-line-title"></h3>
-            <p id="meeting-line-body"></p>
-          </article>
-
-          <article class="edge-card edge-card-sky">
-            <p class="edge-label">Chart Of The Day</p>
-            <h3 id="chart-title"></h3>
-            <p id="chart-body"></p>
-            <div id="chart-graphic" class="chart-graphic"></div>
-            <p class="chart-takeaway" id="chart-takeaway"></p>
-          </article>
-
-          <article class="edge-card edge-card-rose">
-            <p class="edge-label">Optional Deep Dive</p>
-            <h3 id="deep-dive-title"></h3>
-            <p id="deep-dive-body"></p>
-            <p class="chart-takeaway" id="deep-dive-why"></p>
-            <a id="deep-dive-link" class="edge-link" href="#" target="_blank" rel="noreferrer noopener">Open source</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="panel" id="route-panel">
-        <div class="panel-header">
-          <div>
-            <p class="section-kicker">Operations</p>
-            <h2>Commute Route</h2>
-          </div>
-          <p>A predictable reading order for a short morning ride.</p>
-        </div>
-
-        <div id="commute-route" class="route-grid"></div>
       </section>
 
       <section class="panel" id="source-panel">

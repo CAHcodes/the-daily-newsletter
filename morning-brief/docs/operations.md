@@ -26,12 +26,13 @@ Current state:
 - Lead with market and finance stories.
 - Overweight public stocks, private companies, macro, AI, crypto, rates, and treasuries unless the reader profile changes.
 - Cover world news second.
-- Keep the total reading time around 15 to 20 minutes.
+- Keep the total reading time around 15 to 20 minutes as one tight edition, not multiple stacked reading layers.
 - Prefer recognized outlets.
 - Stay concise and useful for a distracted reader.
 - Meet the final version quality standard in `config/quality-standard.md`.
 - Use Morning Brew-family inputs as synthesis inputs, not as the final product itself.
 - Capture `topTopics`, `usefulSignals`, and `newsletterTone` when real editorial Brew issues arrive.
+- Make every story card interactive, with a direct path to the primary article and a clear visual treatment.
 
 ## File safety
 

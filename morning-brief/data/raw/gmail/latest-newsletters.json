@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-28T14:10:00Z",
+  "generatedAt": "2026-04-28T20:18:00Z",
   "account": "chris.aiza17@gmail.com",
-  "notes": "These are the latest accessible Morning Brew-family emails currently in Gmail. Most are onboarding or welcome emails, not regular editorial issues yet.",
+  "notes": "These are the latest accessible Morning Brew-family emails currently in Gmail. As of Tuesday, April 28, 2026, CFO Brew has delivered a real editorial issue, while Morning Brew, Tech Brew, Brew Markets, and The Playbook are still onboarding or welcome emails.",
   "filtersApplied": {
     "config": "config/newsletter-filters.json",
     "editorialIssuesOnly": false
@@ -11,8 +11,8 @@
       "label": "Morning Brief/Inputs/Morning Brew",
       "sender": "crew@morningbrew.com",
       "messageId": "19dd439a5f160749",
-      "subject": "☕️ Caution: Morning Brew coming in hot",
-      "emailTs": "2026-04-28T13:14:00",
+      "subject": "Caution: Morning Brew coming in hot",
+      "emailTs": "2026-04-28T13:14:00-04:00",
       "isOnboardingIssue": true,
       "issueType": "onboarding",
       "issueDateLabel": "welcome",
@@ -36,7 +36,7 @@
       "sender": "brewmarkets@morningbrew.com",
       "messageId": "19dd43c63f7b2cf7",
       "subject": "From bullish to brilliant: investing insights straight to your inbox",
-      "emailTs": "2026-04-28T13:17:00",
+      "emailTs": "2026-04-28T13:17:00-04:00",
       "isOnboardingIssue": true,
       "issueType": "onboarding",
       "issueDateLabel": "welcome",
@@ -59,8 +59,8 @@
       "label": "Morning Brief/Inputs/Tech Brew",
       "sender": "techbrew@morningbrew.com",
       "messageId": "19dd43d4dae18ad1",
-      "subject": "👋 Welcome to Tech Brew",
-      "emailTs": "2026-04-28T13:18:00",
+      "subject": "Welcome to Tech Brew",
+      "emailTs": "2026-04-28T13:18:00-04:00",
       "isOnboardingIssue": true,
       "issueType": "onboarding",
       "issueDateLabel": "welcome",
@@ -82,31 +82,34 @@
     {
       "label": "Morning Brief/Inputs/CFO Brew",
       "sender": "cfobrew@morningbrew.com",
-      "messageId": "19dd43b78ee2d799",
-      "subject": "👋 Welcome to CFO Brew",
-      "emailTs": "2026-04-28T13:16:00",
-      "isOnboardingIssue": true,
-      "issueType": "onboarding",
-      "issueDateLabel": "welcome",
-      "summary": "Welcome email for CFO Brew; useful as a possible executive-finance specialty input later.",
+      "messageId": "19dd4cdb64ddaf14",
+      "subject": "Shocking",
+      "emailTs": "2026-04-28T11:55:19-04:00",
+      "isOnboardingIssue": false,
+      "issueType": "editorial",
+      "issueDateLabel": "2026-04-28",
+      "summary": "CFO Brew's first live issue focused on geopolitical volatility, budgeting strain, investment visibility, tariffs, the Fed chair question, and what operator-level finance teams should watch.",
       "usefulSignals": [
-        "Corporate finance angle",
-        "Executive operating context"
+        "Operator-level budgeting stress from geopolitics and tariffs",
+        "Corporate finance lens on volatility, cash control, and investment pacing",
+        "Finance-chief framing around rates, policy uncertainty, and cost visibility"
       ],
       "topTopics": [
         "corporate finance",
-        "executive context"
+        "budgeting and investment control",
+        "policy and rates",
+        "geopolitical volatility"
       ],
-      "newsletterTone": "Operator-focused finance framing for senior management readers.",
-      "editorialConfidence": 0,
-      "displayUrl": "https://mail.google.com/mail/#all/19dd43b78ee2d799"
+      "newsletterTone": "Operator-focused finance framing for senior management readers, with a practical risk-management bias.",
+      "editorialConfidence": 0.92,
+      "displayUrl": "https://mail.google.com/mail/#all/19dd4cdb64ddaf14"
     },
     {
       "label": "Morning Brief/Inputs/The Playbook",
       "sender": "theplaybook@morningbrew.com",
       "messageId": "19dd43e3b23ed546",
       "subject": "Level up your portfolio: real estate investing insights straight to your inbox",
-      "emailTs": "2026-04-28T13:19:00",
+      "emailTs": "2026-04-28T13:19:00-04:00",
       "isOnboardingIssue": true,
       "issueType": "onboarding",
       "issueDateLabel": "welcome",

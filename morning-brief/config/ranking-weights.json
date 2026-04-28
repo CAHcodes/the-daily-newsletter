@@ -1,10 +1,17 @@
 {
-  "desiredCards": 7,
+  "desiredCards": 6,
   "signalCount": 5,
   "sourceFocusCount": 6,
+  "minimumByTopic": {
+    "markets": 1,
+    "economy-rates": 1,
+    "ai-tech": 1,
+    "business": 1,
+    "politics-world": 1
+  },
   "minimumByBucket": {
-    "market": 4,
-    "world": 2
+    "market": 3,
+    "world": 1
   },
   "weights": {
     "marketRelevance": 1.35,

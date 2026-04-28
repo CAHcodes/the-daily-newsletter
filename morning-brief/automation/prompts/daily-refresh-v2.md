@@ -8,9 +8,9 @@ Do not produce a generic digest.
 
 Produce a layered morning brief that:
 
-- scans in under 60 seconds
-- explains the day in under 5 minutes
-- offers optional depth for a 15 to 20 minute commute
+- delivers one strong 15 to 20 minute edition
+- starts with a fast market pulse
+- then walks through the most important stories in ranked order
 
 ## Inputs
 
@@ -59,24 +59,31 @@ Use same-day reporting from:
 ## Editorial method
 
 1. Gather the strongest story candidates from Gmail newsletter inputs and Tier 1 reporting.
-2. Update the raw source files in `data/raw/`.
-3. Run `C:\Users\caizahojel1\Documents\Codex\2026-04-28-i-am-an-extreamlly-busy-person\morning-brief\scripts\build-story-candidates-v2.js`.
-4. Let the story-candidate engine cluster overlapping stories into story groups, collapse duplicates, and generate the edition framing.
-5. Run `C:\Users\caizahojel1\Documents\Codex\2026-04-28-i-am-an-extreamlly-busy-person\morning-brief\scripts\build-briefing-v2.js`.
-6. Run `C:\Users\caizahojel1\Documents\Codex\2026-04-28-i-am-an-extreamlly-busy-person\morning-brief\scripts\render-outputs.js`.
-7. Write synthesis, not article summaries.
+2. Specifically check for the most important developments in:
+   - markets
+   - economy and rates
+   - AI and tech
+   - business and major companies
+   - politics and world risk
+3. Prefer the real top stories of the day over a prettier mix of secondary stories.
+4. Update the raw source files in `data/raw/`.
+5. Run `C:\Users\caizahojel1\Documents\Codex\2026-04-28-i-am-an-extreamlly-busy-person\morning-brief\scripts\build-story-candidates-v2.js`.
+6. Let the story-candidate engine cluster overlapping stories into story groups, collapse duplicates, and generate the edition framing.
+7. Run `C:\Users\caizahojel1\Documents\Codex\2026-04-28-i-am-an-extreamlly-busy-person\morning-brief\scripts\build-briefing-v2.js`.
+8. Run `C:\Users\caizahojel1\Documents\Codex\2026-04-28-i-am-an-extreamlly-busy-person\morning-brief\scripts\render-outputs.js`.
+9. Write synthesis, not article summaries.
 
 ## Required output shape
 
-### Layer 1: 60-second scan
+### Market pulse
 
 - one-sentence thesis
 - top 5 signals
 - one `ignore the noise` line
 
-### Layer 2: Essential cards
+### Main edition
 
-Write 5 to 7 story cards.
+Write 6 ranked story cards.
 
 Each card should include:
 
@@ -85,14 +92,8 @@ Each card should include:
 - `market impact`
 - `what smart people disagree on`
 - `what to watch today`
-
-### Layer 3: Edge layer
-
-Include:
-
-- `what your peers will miss`
-- one chart or figure idea
-- one `say this in a meeting` line
+- direct article link
+- a visual block, image cue, chart cue, or data graphic treatment in the final product
 
 ## Style
 
@@ -103,6 +104,8 @@ Include:
 - mobile-readable
 - visually structured
 - market-first when the reader profile says to lead with markets
+- interactive, with obvious tap targets to open source articles
+- visual, with charts or graphics supporting every story card
 
 ## Quality standard
 
@@ -146,6 +149,7 @@ Populate these top-level sections in `app/data/briefing-data.js`:
 Each item in `essential.cards` should include:
 
 - `focusArea`
+- `coverageTopic`
 - `urgency`
 - `readTime`
 - `headline`
@@ -158,6 +162,7 @@ Each item in `essential.cards` should include:
 - `tags`
 - `sourceTrail`
 - `links`
+- `visual`
 
 ### Rendering rule
 

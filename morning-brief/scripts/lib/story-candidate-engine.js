@@ -929,13 +929,209 @@ function buildGenericScores(cluster) {
   };
 }
 
-function buildCandidatesFromClusters(clusters, newsletters) {
+function normalizeTopicKey(value) {
+  return normalizeText(value).replace(/\s+/g, "-");
+}
+
+function classifyCoverageTopic(candidate, cluster) {
+  const presetTopics = {
+    "oil-macro-bridge": "economy-rates",
+    "boj-split": "economy-rates",
+    "policy-earnings-collision": "business",
+    "breadth-fragility": "markets",
+    "anthropic-capex-signal": "ai-tech",
+    "lebanon-risk-premium": "politics-world",
+    "mexico-policy-spillover": "politics-world",
+  };
+
+  if (presetTopics[candidate.id]) {
+    return presetTopics[candidate.id];
+  }
+
+  const haystack = normalizeText(
+    [
+      candidate.focusArea,
+      candidate.headline,
+      candidate.takeaway,
+      candidate.whatChanged,
+      candidate.tags?.join(" "),
+      cluster.primary?.headline,
+      cluster.primary?.summary,
+    ].filter(Boolean).join(" "),
+  );
+
+  if (/(ai|tech|software|chip|cloud|code|anthropic|openai|google|amazon)/.test(haystack)) {
+    return "ai-tech";
+  }
+
+  if (/(rate|yield|inflation|economy|economic|gdp|fed|boj|treasury|bond|macro)/.test(haystack)) {
+    return "economy-rates";
+  }
+
+  if (/(politic|policy|border|military|security|war|lebanon|iran|mexico|world)/.test(haystack)) {
+    return "politics-world";
+  }
+
+  if (/(earnings|business|company|consumer|margin|guidance|deal|valuation|profit|bank)/.test(haystack)) {
+    return "business";
+  }
+
+  return "markets";
+}
+
+function pickTile(snapshot, id, fallbackLabel) {
+  const tile = (snapshot?.tiles || []).find((item) => item.id === id);
+  if (!tile) {
+    return null;
+  }
+
+  return {
+    label: fallbackLabel || tile.label,
+    value: tile.change || tile.value,
+    tone: tile.direction === "down" ? "cool" : "warm",
+  };
+}
+
+function buildVisualPointsFromMetrics(metrics, limit = 3) {
+  return (metrics || []).slice(0, limit).map((metric, index) => ({
+    label: metric.label,
+    value: metric.value,
+    tone: index === 0 ? "warm" : "cool",
+  }));
+}
+
+function formatCoverageTopic(topic) {
+  return String(topic || "markets")
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" & ");
+}
+
+function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
+  const pulse = webRaw.marketSnapshot || {};
+  const privateRadar = webRaw.privateMarketRadar || {};
+  const defaultVisual = {
+    palette: cluster.bucket === "world" ? "mint" : "sky",
+    eyebrow: formatCoverageTopic(coverageTopic),
+    title: candidate.takeaway,
+    summary: "Tap through to open the source article.",
+    points: (candidate.tags || []).slice(0, 3).map((tag, index) => ({
+      label: `Signal ${index + 1}`,
+      value: tag,
+      tone: index === 0 ? "warm" : "cool",
+    })),
+  };
+
+  if (candidate.id === "oil-macro-bridge") {
+    return {
+      palette: "amber",
+      eyebrow: "Economy & Rates",
+      title: "Energy is driving the inflation conversation again.",
+      summary: "Oil, shipping risk, and yields are moving together underneath the tape.",
+      points: [
+        pickTile(pulse, "brent", "Brent"),
+        pickTile(pulse, "wti", "WTI"),
+        pickTile(pulse, "us10y", "US 10Y"),
+      ].filter(Boolean),
+    };
+  }
+
+  if (candidate.id === "policy-earnings-collision") {
+    return {
+      palette: "sky",
+      eyebrow: "Business",
+      title: "Macro week and megacap week are now the same story.",
+      summary: "The market has to process policy, earnings, and valuation pressure at once.",
+      points: [
+        { label: "Setup", value: "Fed + earnings", tone: "warm" },
+        { label: "Pressure", value: "Narrative compression", tone: "cool" },
+        { label: "Risk", value: "Leadership wobble", tone: "cool" },
+      ],
+    };
+  }
+
+  if (candidate.id === "anthropic-capex-signal") {
+    return {
+      palette: "rose",
+      eyebrow: "AI & Tech",
+      title: "Private AI capital is becoming public capex signal.",
+      summary: "This is a cloud, compute, and business-model story now.",
+      points: buildVisualPointsFromMetrics(privateRadar.metrics, 3),
+    };
+  }
+
+  if (candidate.id === "boj-split") {
+    return {
+      palette: "mint",
+      eyebrow: "Economy & Rates",
+      title: "The hold mattered less than the split behind it.",
+      summary: "The more useful read is that policy tension is still alive in rates.",
+      points: [
+        { label: "BOJ vote", value: "6-3 split", tone: "cool" },
+        pickTile(pulse, "us10y", "US 10Y"),
+        { label: "Readthrough", value: "Hawkish subtext", tone: "warm" },
+      ].filter(Boolean),
+    };
+  }
+
+  if (candidate.id === "breadth-fragility") {
+    return {
+      palette: "sky",
+      eyebrow: "Markets",
+      title: "Index highs still do not equal broad participation.",
+      summary: "The tape looks cleaner from far away than it does underneath.",
+      points: [
+        pickTile(pulse, "sp500", "S&P 500"),
+        pickTile(pulse, "nasdaq", "Nasdaq"),
+        { label: "Breadth", value: "Still narrow", tone: "cool" },
+      ].filter(Boolean),
+    };
+  }
+
+  if (candidate.id === "lebanon-risk-premium") {
+    return {
+      palette: "mint",
+      eyebrow: "Politics & World",
+      title: "Regional tension is still leaking into the market story.",
+      summary: "This is geopolitics with direct oil, shipping, and risk-premium consequences.",
+      points: [
+        { label: "Ceasefire", value: "Still brittle", tone: "cool" },
+        pickTile(pulse, "brent", "Brent"),
+        { label: "Risk", value: "Premium alive", tone: "warm" },
+      ].filter(Boolean),
+    };
+  }
+
+  if (candidate.id === "mexico-policy-spillover") {
+    return {
+      palette: "mint",
+      eyebrow: "Politics & World",
+      title: "Security headlines can turn policy-relevant very quickly.",
+      summary: "This matters when the political narrative starts outrunning the original event.",
+      points: [
+        { label: "Signal", value: "Border rhetoric", tone: "cool" },
+        { label: "Spillover", value: "Policy risk", tone: "warm" },
+        { label: "Watch", value: "Who amplifies it", tone: "cool" },
+      ],
+    };
+  }
+
+  return defaultVisual;
+}
+
+function buildCandidatesFromClusters(clusters, newsletters, webRaw) {
   return clusters.map((cluster) => {
     const context = { newsletters };
     const candidate = cluster.playbook
       ? cluster.playbook.build(cluster, context)
       : buildGenericCandidate(cluster, context);
-    return applyNewsletterSignal(candidate, cluster, newsletters);
+    const withSignal = applyNewsletterSignal(candidate, cluster, newsletters);
+    const coverageTopic = classifyCoverageTopic(withSignal, cluster);
+    return {
+      ...withSignal,
+      coverageTopic,
+      visual: buildStoryVisual(withSignal, cluster, webRaw, coverageTopic),
+    };
   });
 }
 
@@ -1334,10 +1530,11 @@ function buildBriefingContext(selected, sourceCatalog, newsletters, webRaw) {
       sourceMode: buildSourceMode(newsletters),
     },
     scan: {
-      intro: "Start here if you only have one minute before the train moves.",
+      intro: "Start with the pulse, then read the six strongest stories in order.",
       ignoreNoise: buildIgnoreNoise(selected),
     },
-    essentialIntro: "These cards are built around story clusters, not one-article summaries.",
+    essentialIntro:
+      "This is one tight daily edition. Read the pulse first, then work the story cards top to bottom for a full 15 to 20 minute briefing.",
     edge: {
       peerMiss: buildPeerMiss(selected),
       sayInMeeting: buildMeetingLine(selected),
@@ -1356,7 +1553,7 @@ function buildEdition(now, candidates) {
     productLabel: "Morning Intelligence Brief",
     editionLabel: formatEditionLabel(date),
     generatedAt: date.toISOString(),
-    estimatedReadMinutes: Math.max(14, Math.min(20, 10 + candidates.length)),
+    estimatedReadMinutes: Math.max(15, Math.min(20, 8 + (candidates.length * 1.5))),
     commuteMode: "20-minute subway ride",
     tone: "Signal first, depth on demand, built for a distracted morning brain.",
   };
@@ -1366,12 +1563,12 @@ function buildStagingFromRaw({ newsletterConfig, gmailRaw, webRaw, rankingConfig
   const newsletters = parseNewsletterState(newsletterConfig, gmailRaw);
   const sourceCatalog = buildSourceCatalog(newsletterConfig, newsletters);
   const clusters = clusterArticles(webRaw);
-  const candidates = buildCandidatesFromClusters(clusters, newsletters);
+  const candidates = buildCandidatesFromClusters(clusters, newsletters, webRaw);
   const ranked = rankCandidates(candidates, rankingConfig);
   const selected = selectCandidates(ranked, rankingConfig);
 
   return {
-    edition: buildEdition(now, candidates),
+    edition: buildEdition(now, selected),
     briefingContext: buildBriefingContext(selected, sourceCatalog, newsletters, webRaw),
     candidates,
     rawStatus: {

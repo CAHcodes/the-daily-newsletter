@@ -9,6 +9,13 @@ function slugifyValue(value) {
     .replace(/^-|-$/g, "");
 }
 
+function formatCoverageTopic(value) {
+  return String(value || "markets")
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" / ");
+}
+
 function formatGeneratedAt(value) {
   if (!value) {
     return "Fresh edition";
@@ -177,6 +184,9 @@ function renderSourceMode(data) {
 
 function renderChartGraphic(items) {
   const root = byId("chart-graphic");
+  if (!root) {
+    return;
+  }
   root.replaceChildren();
   const series = (items || []).slice(0, 5);
   const maxValue = Math.max(...series.map((item) => Math.abs(item.value || 0)), 1);
@@ -205,7 +215,6 @@ function renderPulse(pulse) {
   renderRiskRadar(pulse.riskRadar || []);
   renderPrivateRadar(pulse.privateRadar || {});
   renderSourceMode(pulse.sourceMode || {});
-  renderChartGraphic(pulse.heatmap || []);
 }
 
 function renderSignals(items) {
@@ -232,6 +241,51 @@ function renderSourceFocus(items) {
   });
 }
 
+function createAnchor(className, text, href) {
+  const node = document.createElement("a");
+  node.className = className;
+  node.textContent = text;
+  node.href = href;
+  node.target = "_blank";
+  node.rel = "noreferrer noopener";
+  return node;
+}
+
+function renderVisualPoints(points) {
+  const wrap = createElement("div", "story-visual-points");
+
+  (points || []).slice(0, 3).forEach((point) => {
+    const card = createElement("div", `story-visual-point story-visual-point-${point.tone || "cool"}`);
+    card.append(
+      createElement("p", "story-visual-point-label", point.label),
+      createElement("p", "story-visual-point-value", point.value),
+    );
+    wrap.append(card);
+  });
+
+  return wrap;
+}
+
+function renderStoryVisual(card) {
+  const visual = card.visual || {};
+  const primaryLink = card.primaryLink;
+  const node = primaryLink
+    ? createAnchor(`story-visual story-visual-${visual.palette || "sky"}`, "", primaryLink.url)
+    : createElement("div", `story-visual story-visual-${visual.palette || "sky"}`);
+
+  const top = createElement("div", "story-visual-top");
+  top.append(
+    createElement("span", "story-visual-eyebrow", visual.eyebrow || card.coverageTopic || card.focusArea),
+    createElement("span", "story-visual-cta", primaryLink ? "Open article" : "Story visual"),
+  );
+
+  const title = createElement("h3", "story-visual-title", visual.title || card.headline);
+  const summary = createElement("p", "story-visual-summary", visual.summary || card.takeaway);
+
+  node.append(top, title, summary, renderVisualPoints(visual.points || []));
+  return node;
+}
+
 function renderEssentialCards(items) {
   const root = byId("essential-cards");
   root.replaceChildren();
@@ -246,26 +300,28 @@ function renderEssentialCards(items) {
       createElement("span", "story-readtime", card.readTime),
     );
 
+    const visual = renderStoryVisual(card);
+
     const heading = createElement("div", "story-heading");
     const rank = createElement("div", "story-rank", String(index + 1).padStart(2, "0"));
     const titleGroup = createElement("div", "story-title-group");
+    const topic = createElement("p", "story-topic", formatCoverageTopic(card.coverageTopic || card.focusArea));
     const headline = createElement("h3", "story-headline", card.headline);
     const takeaway = createElement("p", "story-takeaway", card.takeaway);
-    titleGroup.append(headline, takeaway);
+    titleGroup.append(topic, headline, takeaway);
     heading.append(rank, titleGroup);
 
     const snapshot = createElement("div", "story-snapshot");
     snapshot.append(
-      createElement("p", "story-snapshot-label", "Why this card matters"),
+      createElement("p", "story-snapshot-label", "Why this matters now"),
       createElement("p", "story-snapshot-copy", card.whatChanged),
     );
 
     const factGrid = createElement("div", "fact-grid");
     [
-      ["Why it matters", card.whyItMatters],
-      ["Market impact", card.marketImpact],
-      ["Disagreement", card.disagreement],
-      ["Watch today", card.watchToday],
+      ["Why now", card.whyItMatters],
+      ["Market path", card.marketImpact],
+      ["Watch next", card.watchToday],
     ].forEach(([label, value]) => {
       const block = createElement("div", "fact-block");
       block.append(
@@ -280,8 +336,23 @@ function renderEssentialCards(items) {
       tagRow.append(createElement("span", "tag", tag));
     });
 
+    const tension = createElement("p", "story-tension");
+    tension.append(
+      createElement("strong", "", "Tension: "),
+      document.createTextNode(card.disagreement || ""),
+    );
+
+    const actions = createElement("div", "story-actions");
+    if (card.primaryLink?.url) {
+      actions.append(createAnchor("story-action story-action-primary", "Open primary article", card.primaryLink.url));
+    }
+
+    (card.links || []).slice(1, 3).forEach((linkData) => {
+      actions.append(createAnchor("story-action story-action-secondary", linkData.label, linkData.url));
+    });
+
     const details = createElement("details", "story-details");
-    const summary = createElement("summary", "story-details-summary", "Sources and links");
+    const summary = createElement("summary", "story-details-summary", "More sources and framing");
     const detailsBody = createElement("div", "story-details-body");
     const hasPrimary = (card.sourceTrail?.primary || []).length > 0;
     const hasFraming = (card.sourceTrail?.framing || []).length > 0;
@@ -321,7 +392,7 @@ function renderEssentialCards(items) {
       details.append(summary, detailsBody);
     }
 
-    article.append(meta, heading, snapshot, factGrid, tagRow);
+    article.append(meta, visual, heading, snapshot, factGrid, tagRow, tension, actions);
     if (detailsBody.childElementCount > 0) {
       article.append(details);
     }
@@ -463,8 +534,6 @@ function renderBriefing(data) {
   renderSignals(data.scan.signals || []);
   renderSourceFocus(data.meta.sourceFocus || []);
   renderEssentialCards(data.essential.cards || []);
-  renderEdge(data.edge);
-  renderCommuteRoute(data.commuteRoute || []);
   renderSourceStack(data.sourceStack || []);
   renderClosing(data.footerPerspective);
   setActiveQuickNav();

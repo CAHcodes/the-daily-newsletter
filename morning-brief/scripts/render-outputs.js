@@ -43,6 +43,13 @@ function joinOrFallback(items, fallback = "None listed") {
   return items && items.length > 0 ? items.join(", ") : fallback;
 }
 
+function formatCoverageTopic(value) {
+  return String(value || "markets")
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" & ");
+}
+
 function storyAccentColor(focusArea) {
   if (focusArea === "Macro") {
     return "#ffc56b";
@@ -103,11 +110,9 @@ function buildMarkdown(data) {
     "",
     `**Private market radar:** ${data.pulse?.privateRadar?.summary || ""}`,
     "",
-    "## 60-Second Scan",
-    "",
     `**Market mood:** ${data.thesis.marketMood.label}. ${data.thesis.marketMood.note}`,
     "",
-    "### Top signals",
+    "### What Matters Most",
     "",
   );
 
@@ -119,7 +124,7 @@ function buildMarkdown(data) {
     "",
     `**Ignore the noise:** ${data.scan.ignoreNoise.title} ${data.scan.ignoreNoise.summary}`,
     "",
-    "## 5-Minute Essential Brief",
+    "## The 15-20 Minute Brief",
     "",
     data.essential.intro,
     "",
@@ -129,13 +134,13 @@ function buildMarkdown(data) {
     lines.push(
       `### ${index + 1}. ${card.headline}`,
       "",
-      `- **Focus:** ${card.focusArea} | ${card.urgency} | ${card.readTime}`,
+      `- **Topic:** ${formatCoverageTopic(card.coverageTopic)} | ${card.focusArea} | ${card.urgency} | ${card.readTime}`,
       `- **Takeaway:** ${card.takeaway}`,
       `- **What changed:** ${card.whatChanged}`,
-      `- **Why it matters now:** ${card.whyItMatters}`,
-      `- **Market impact:** ${card.marketImpact}`,
-      `- **What smart people disagree on:** ${card.disagreement}`,
-      `- **What to watch today:** ${card.watchToday}`,
+      `- **Why now:** ${card.whyItMatters}`,
+      `- **Market path:** ${card.marketImpact}`,
+      `- **Watch next:** ${card.watchToday}`,
+      `- **Tension:** ${card.disagreement}`,
     );
 
     if (card.sourceTrail?.primary?.length) {
@@ -152,20 +157,13 @@ function buildMarkdown(data) {
     }
 
     if (card.links && card.links.length > 0) {
-      lines.push(`- **Source anchor:** ${card.links[0].url}`);
+      lines.push(`- **Open primary article:** ${card.links[0].url}`);
     }
 
     lines.push("");
   });
 
   lines.push(
-    "## 15-Minute Edge Layer",
-    "",
-    `- **${data.edge.peerMiss.title}** ${data.edge.peerMiss.body}`,
-    `- **${data.edge.sayInMeeting.title}** ${data.edge.sayInMeeting.body}`,
-    `- **${data.edge.chartOfDay.title}** ${data.edge.chartOfDay.body} ${data.edge.chartOfDay.takeaway}`,
-    `- **${data.edge.deepDive.title}** ${data.edge.deepDive.body} ${data.edge.deepDive.whyNow}`,
-    "",
     "## Source note",
     "",
     `Primary reporting anchors: ${joinOrFallback((data.sourceStack || []).filter((item) => item.tier === "Tier 1").map((item) => item.name))}.`,
@@ -199,31 +197,31 @@ function buildEmailMarkdown(data) {
     "",
     `Private market radar: ${data.pulse?.privateRadar?.summary || ""}`,
     "",
-    "60-second scan",
+    `Market mood: ${data.thesis.marketMood.label}`,
     "",
-    `- Market mood: ${data.thesis.marketMood.label}`,
+    "What matters most",
   );
 
   (data.scan.signals || []).slice(0, 5).forEach((signal) => {
     lines.push(`- ${signal.label}: ${signal.value} - ${signal.note}`);
   });
 
-  lines.push("", `Ignore the noise: ${data.scan.ignoreNoise.summary}`, "", "5-minute essential brief", "");
+  lines.push("", `Ignore the noise: ${data.scan.ignoreNoise.summary}`, "", "The 15-20 minute brief", "");
 
   (data.essential.cards || []).forEach((card, index) => {
     lines.push(
       `${index + 1}. ${card.headline}`,
-      `Focus: ${card.focusArea} | ${card.urgency} | ${card.readTime}`,
+      `Topic: ${formatCoverageTopic(card.coverageTopic)} | ${card.focusArea} | ${card.urgency} | ${card.readTime}`,
       `Takeaway: ${card.takeaway}`,
       `What changed: ${card.whatChanged}`,
-      `Why it matters now: ${card.whyItMatters}`,
-      `Market impact: ${card.marketImpact}`,
-      `What smart people disagree on: ${card.disagreement}`,
-      `Watch today: ${card.watchToday}`,
+      `Why now: ${card.whyItMatters}`,
+      `Market path: ${card.marketImpact}`,
+      `Watch next: ${card.watchToday}`,
+      `Tension: ${card.disagreement}`,
     );
 
     if (card.links && card.links.length > 0) {
-      lines.push(`Source anchor: ${card.links[0].url}`);
+      lines.push(`Open primary article: ${card.links[0].url}`);
     }
 
     if (card.newsletterSignalMatch?.source) {
@@ -234,14 +232,7 @@ function buildEmailMarkdown(data) {
     lines.push("");
   });
 
-  lines.push(
-    "15-minute edge layer",
-    "",
-    `What your peers will miss: ${data.edge.peerMiss.body}`,
-    `Say this in a meeting: ${data.edge.sayInMeeting.body}`,
-    `Chart of the day: ${data.edge.chartOfDay.body} ${data.edge.chartOfDay.takeaway}`,
-    `Durable frame: ${data.footerPerspective.summary}`,
-  );
+  lines.push(`Durable frame: ${data.footerPerspective.summary}`);
 
   if (publishingSettings.public_dashboard_url) {
     lines.push("", "Dashboard:", publishingSettings.public_dashboard_url);
@@ -397,13 +388,27 @@ function buildStoryHtml(cards) {
   return (cards || [])
     .map((card, index) => {
       const accent = storyAccentColor(card.focusArea);
+      const visual = card.visual || {};
+      const visualBackground = visual.palette === "amber"
+        ? "linear-gradient(180deg,rgba(37,21,8,0.95),rgba(15,27,46,0.92))"
+        : visual.palette === "rose"
+          ? "linear-gradient(180deg,rgba(34,15,33,0.95),rgba(15,27,46,0.92))"
+          : visual.palette === "mint"
+            ? "linear-gradient(180deg,rgba(12,28,25,0.95),rgba(15,27,46,0.92))"
+            : "linear-gradient(180deg,rgba(8,22,41,0.95),rgba(15,27,46,0.92))";
+      const visualPoints = (visual.points || [])
+        .slice(0, 3)
+        .map(
+          (point) => `
+            <div style="border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:10px;background:${point.tone === "warm" ? "linear-gradient(180deg,rgba(255,197,107,0.13),rgba(255,255,255,0.035))" : "linear-gradient(180deg,rgba(124,199,255,0.11),rgba(255,255,255,0.035))"};">
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#b6c5dd;font-weight:700;margin-bottom:6px;">${escapeHtml(point.label)}</div>
+              <div style="font-size:15px;font-weight:700;color:#f8fbff;line-height:1.3;">${escapeHtml(point.value)}</div>
+            </div>`,
+        )
+        .join("");
       const framingBlock =
         card.sourceTrail?.framing?.length > 0
           ? `<div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;">${buildSourceChipHtml(card.sourceTrail.framing, "")}</div>`
-          : "";
-      const sourceLink =
-        card.links && card.links.length > 0
-          ? `<a href="${escapeHtml(card.links[0].url)}" style="color:#d8ff57;text-decoration:none;font-weight:700;">Source anchor</a>`
           : "";
       const newsletterAngle =
         card.newsletterSignalMatch?.source
@@ -416,17 +421,26 @@ function buildStoryHtml(cards) {
 
       return `
         <article style="background:#12213b;border:1px solid rgba(255,255,255,0.08);border-left:4px solid ${accent};border-radius:22px;padding:18px;margin-bottom:14px;">
+          <a href="${escapeHtml(card.primaryLink?.url || card.links?.[0]?.url || "#")}" style="display:block;text-decoration:none;color:#f8fbff;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:14px;background:${visualBackground};">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px;">
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#dbe6f6;font-weight:700;">${escapeHtml(visual.eyebrow || formatCoverageTopic(card.coverageTopic))}</div>
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#d8ff57;font-weight:700;">Open article</div>
+            </div>
+            <div style="font-size:22px;line-height:1.18;font-weight:700;margin-bottom:8px;">${escapeHtml(visual.title || card.takeaway)}</div>
+            <div style="font-size:14px;line-height:1.58;color:#dbe6f6;">${escapeHtml(visual.summary || "Tap through to go deeper on this story.")}</div>
+            <div style="margin-top:12px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;">${visualPoints}</div>
+          </a>
           <div style="display:flex;align-items:flex-start;gap:14px;">
             <div style="width:46px;height:46px;border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,0.11),rgba(255,255,255,0.03));border:1px solid rgba(255,255,255,0.08);display:grid;place-items:center;font-size:17px;font-weight:700;color:#f8fbff;flex:none;">${index + 1}</div>
             <div style="min-width:0;flex:1;">
-              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#b6c5dd;margin-bottom:10px;">${escapeHtml(card.focusArea)} | ${escapeHtml(card.urgency)} | ${escapeHtml(card.readTime)}</div>
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#b6c5dd;margin-bottom:10px;">${escapeHtml(formatCoverageTopic(card.coverageTopic))} | ${escapeHtml(card.focusArea)} | ${escapeHtml(card.urgency)} | ${escapeHtml(card.readTime)}</div>
               <h3 style="margin:0 0 10px;font-size:24px;line-height:1.12;color:#f8fbff;">${escapeHtml(card.headline)}</h3>
               <p style="margin:0;font-size:16px;line-height:1.65;color:#f8fbff;"><strong>Takeaway:</strong> ${escapeHtml(card.takeaway)}</p>
             </div>
           </div>
 
           <div style="margin-top:14px;border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:14px;background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));">
-            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#d8ff57;font-weight:700;margin-bottom:8px;">Why this card matters</div>
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#d8ff57;font-weight:700;margin-bottom:8px;">Why this matters now</div>
             <div style="font-size:15px;line-height:1.6;color:#f8fbff;">${escapeHtml(card.whatChanged)}</div>
           </div>
 
@@ -436,24 +450,27 @@ function buildStoryHtml(cards) {
               <div style="font-size:15px;line-height:1.58;color:#f8fbff;">${escapeHtml(card.whyItMatters)}</div>
             </div>
             <div style="border-left:3px solid #ffc56b;border-radius:14px;padding:12px 12px 12px 14px;background:rgba(255,255,255,0.025);">
-              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#ffc56b;font-weight:700;margin-bottom:6px;">Market impact</div>
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#ffc56b;font-weight:700;margin-bottom:6px;">Market path</div>
               <div style="font-size:15px;line-height:1.58;color:#f8fbff;">${escapeHtml(card.marketImpact)}</div>
             </div>
             <div style="border-left:3px solid #73efc4;border-radius:14px;padding:12px 12px 12px 14px;background:rgba(255,255,255,0.025);">
-              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#73efc4;font-weight:700;margin-bottom:6px;">Watch today</div>
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#73efc4;font-weight:700;margin-bottom:6px;">Watch next</div>
               <div style="font-size:15px;line-height:1.58;color:#f8fbff;">${escapeHtml(card.watchToday)}</div>
             </div>
           </div>
 
-          <div style="margin-top:12px;font-size:14px;line-height:1.6;color:#dbe6f6;"><strong>What smart people disagree on:</strong> ${escapeHtml(card.disagreement)}</div>
+          <div style="margin-top:12px;font-size:14px;line-height:1.6;color:#dbe6f6;"><strong>Tension:</strong> ${escapeHtml(card.disagreement)}</div>
           <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;">${buildSourceChipHtml(card.sourceTrail?.primary || [], "Tier 1 reporting only")}</div>
           ${framingBlock}
           ${newsletterAngle}
-          ${
-            sourceLink
-              ? `<p style="margin:14px 0 0;font-size:14px;line-height:1.5;color:#b6c5dd;">${sourceLink}</p>`
-              : ""
-          }
+          <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;">
+            ${
+              card.primaryLink?.url
+                ? `<a href="${escapeHtml(card.primaryLink.url)}" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:999px;background:linear-gradient(135deg,rgba(216,255,87,0.98),rgba(124,199,255,0.9));color:#08101b;text-decoration:none;font-size:13px;font-weight:700;">Open primary article</a>`
+                : ""
+            }
+            ${(card.links || []).slice(1, 3).map((link) => `<a href="${escapeHtml(link.url)}" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:#f8fbff;text-decoration:none;font-size:13px;font-weight:700;">${escapeHtml(link.label)}</a>`).join("")}
+          </div>
         </article>`;
     })
     .join("");
@@ -463,7 +480,6 @@ function buildEmailHtml(data) {
   const dateLabel = formatDate(data.meta.generatedAt);
   const signalHtml = buildSignalHtml(data.scan.signals);
   const storyHtml = buildStoryHtml(data.essential.cards);
-  const routeHtml = buildRouteHtml(data.commuteRoute);
   const pulseTileHtml = buildPulseTileHtml(data.pulse?.marketTiles || []);
   const heatmapHtml = buildHeatmapHtml(data.pulse?.heatmap || []);
   const riskRadarHtml = buildRiskRadarHtml(data.pulse?.riskRadar || []);
@@ -512,6 +528,27 @@ function buildEmailHtml(data) {
             ${riskRadarHtml}
           </div>
         </div>
+        <div style="margin-top:14px;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:14px;background:linear-gradient(180deg,rgba(36,16,16,0.9),rgba(17,27,44,0.9));">
+          <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#ffc56b;font-weight:700;margin-bottom:8px;">What matters most</div>
+          <p style="margin:0 0 12px;font-size:14px;line-height:1.58;color:#dbe6f6;">${escapeHtml(data.scan?.intro || "")}</p>
+          <div style="display:grid;gap:10px;">${signalHtml}</div>
+          <div style="margin-top:12px;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:12px;background:rgba(255,255,255,0.03);">
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#d8ff57;font-weight:700;margin-bottom:8px;">Ignore this bad read</div>
+            <div style="font-size:16px;font-weight:700;color:#f8fbff;margin-bottom:6px;">${escapeHtml(data.scan?.ignoreNoise?.title || "")}</div>
+            <div style="font-size:14px;line-height:1.55;color:#dbe6f6;">${escapeHtml(data.scan?.ignoreNoise?.summary || "")}</div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background:#101a2d;border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:18px;margin-bottom:18px;">
+        <div style="display:flex;justify-content:space-between;gap:12px;align-items:end;flex-wrap:wrap;">
+          <div>
+            <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#7cc7ff;font-weight:700;margin-bottom:10px;">Today's edition</div>
+            <div style="font-size:24px;font-weight:700;line-height:1.15;color:#f8fbff;">The ${escapeHtml(String(data.meta.estimatedReadMinutes))}-minute brief</div>
+          </div>
+          <div style="font-size:14px;line-height:1.55;color:#dbe6f6;max-width:340px;">${escapeHtml(data.essential?.intro || "")}</div>
+        </div>
+        <div style="margin-top:14px;">${storyHtml}</div>
       </section>
 
       <section style="background:#101a2d;border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:18px;margin-bottom:18px;">
@@ -519,52 +556,13 @@ function buildEmailHtml(data) {
         ${privateRadarHtml}
       </section>
 
-      <section style="background:#101a2d;border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:18px;margin-bottom:18px;">
-        <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#ffc56b;font-weight:700;margin-bottom:10px;">60-second scan</div>
-        <p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#f8fbff;"><strong>Market mood:</strong> ${escapeHtml(data.thesis.marketMood.label)}</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">${signalHtml}</div>
-        <div style="margin-top:14px;display:grid;gap:12px;">
-          <div style="border:1px solid rgba(255,125,116,0.18);border-radius:18px;padding:14px;background:linear-gradient(180deg,rgba(36,16,16,0.9),rgba(17,27,44,0.9));">
-            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#ffb3ad;font-weight:700;margin-bottom:8px;">Ignore the noise</div>
-            <div style="font-size:15px;line-height:1.6;color:#dbe6f6;">${escapeHtml(data.scan.ignoreNoise.summary)}</div>
-          </div>
-          <div style="border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:14px;background:rgba(255,255,255,0.03);">
-            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7cc7ff;font-weight:700;margin-bottom:8px;">Source mode today</div>
-            <div style="font-size:14px;line-height:1.6;color:#f8fbff;margin-bottom:6px;"><strong>${escapeHtml(data.pulse?.sourceMode?.headline || "")}</strong></div>
-            <div style="font-size:14px;line-height:1.6;color:#dbe6f6;margin-bottom:6px;">${escapeHtml(data.pulse?.sourceMode?.summary || "")}</div>
-            <div style="font-size:14px;line-height:1.6;color:#dbe6f6;"><strong>Primary anchors:</strong> ${escapeHtml(joinOrFallback(primarySources))}</div>
-            <div style="font-size:14px;line-height:1.6;color:#dbe6f6;margin-top:6px;"><strong>Active framing inputs:</strong> ${escapeHtml(joinOrFallback(activeFraming, "No editorial newsletter issue available yet"))}</div>
-          </div>
-        </div>
-      </section>
-
-      <section style="background:#101a2d;border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:18px;margin-bottom:18px;">
-        <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#7cc7ff;font-weight:700;margin-bottom:10px;">Commute route</div>
-        <div style="display:grid;gap:10px;">${routeHtml}</div>
-      </section>
-
-      ${storyHtml}
-
       <section style="background:#101a2d;border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:18px;">
-        <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#ffa3d8;font-weight:700;margin-bottom:10px;">15-minute edge layer</div>
-        <div style="display:grid;gap:10px;">
-          <div style="border:1px solid rgba(216,255,87,0.16);border-radius:18px;padding:14px;background:linear-gradient(180deg,rgba(17,30,8,0.92),rgba(17,27,42,0.94));">
-            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#d8ff57;font-weight:700;margin-bottom:8px;">What your peers will miss</div>
-            <div style="font-size:15px;line-height:1.6;color:#dbe6f6;"><strong>${escapeHtml(data.edge.peerMiss.title)}</strong> ${escapeHtml(data.edge.peerMiss.body)}</div>
-          </div>
-          <div style="border:1px solid rgba(255,197,107,0.16);border-radius:18px;padding:14px;background:linear-gradient(180deg,rgba(40,28,11,0.92),rgba(18,28,44,0.94));">
-            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#ffc56b;font-weight:700;margin-bottom:8px;">Say this in a meeting</div>
-            <div style="font-size:16px;line-height:1.6;color:#f8fbff;">${escapeHtml(data.edge.sayInMeeting.body)}</div>
-          </div>
-          <div style="border:1px solid rgba(124,199,255,0.16);border-radius:18px;padding:14px;background:linear-gradient(180deg,rgba(10,25,40,0.92),rgba(18,28,44,0.94));">
-            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7cc7ff;font-weight:700;margin-bottom:8px;">Chart of the day</div>
-            <div style="font-size:15px;line-height:1.6;color:#dbe6f6;"><strong>${escapeHtml(data.edge.chartOfDay.title)}</strong> ${escapeHtml(data.edge.chartOfDay.body)} ${escapeHtml(data.edge.chartOfDay.takeaway)}</div>
-          </div>
-          <div style="border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:14px;background:rgba(255,255,255,0.03);">
-            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#b6c5dd;font-weight:700;margin-bottom:8px;">Durable frame</div>
-            <div style="font-size:15px;line-height:1.6;color:#f8fbff;">${escapeHtml(data.footerPerspective.summary)}</div>
-          </div>
-        </div>
+        <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#d8ff57;font-weight:700;margin-bottom:10px;">Source mode today</div>
+        <div style="font-size:16px;font-weight:700;color:#f8fbff;margin-bottom:8px;">${escapeHtml(data.pulse?.sourceMode?.headline || "")}</div>
+        <div style="font-size:14px;line-height:1.6;color:#dbe6f6;margin-bottom:8px;">${escapeHtml(data.pulse?.sourceMode?.summary || "")}</div>
+        <div style="font-size:14px;line-height:1.6;color:#dbe6f6;"><strong>Primary anchors:</strong> ${escapeHtml(joinOrFallback(primarySources))}</div>
+        <div style="font-size:14px;line-height:1.6;color:#dbe6f6;margin-top:6px;"><strong>Active framing inputs:</strong> ${escapeHtml(joinOrFallback(activeFraming, "No editorial newsletter issue available yet"))}</div>
+        <p style="margin:18px 0 0;font-size:14px;line-height:1.6;color:#dbe6f6;"><strong>Durable frame:</strong> ${escapeHtml(data.footerPerspective.summary)}</p>
         ${dashboardHtml}
       </section>
     </div>

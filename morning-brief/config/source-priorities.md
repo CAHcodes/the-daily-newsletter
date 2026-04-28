@@ -25,6 +25,7 @@
 - At least 4 finance, macro, rates, AI, or market stories
 - At least 2 world or geopolitics stories
 - Keep the last remaining slot flexible for the strongest additional signal
+- Explicitly check whether the biggest story of the day lives in markets, economy, AI, tech, business, or politics before filling the mix with secondary stories
 - Prefer direct publisher links
 - Avoid duplicate coverage unless a second source adds real context
 - Use Tier 2 newsletters for framing and prioritization, not as the sole factual basis

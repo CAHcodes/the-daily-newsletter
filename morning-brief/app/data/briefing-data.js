@@ -2,7 +2,7 @@ const MORNING_BRIEFING = {
   "meta": {
     "productLabel": "Morning Intelligence Brief",
     "editionLabel": "Tuesday, April 28",
-    "generatedAt": "2026-04-28T15:14:02.648Z",
+    "generatedAt": "2026-04-28T16:55:30.885Z",
     "estimatedReadMinutes": 17,
     "commuteMode": "20-minute subway ride",
     "tone": "Signal first, depth on demand, built for a distracted morning brain.",
@@ -10,7 +10,8 @@ const MORNING_BRIEFING = {
       "Reuters",
       "The Wall Street Journal",
       "Associated Press",
-      "Bloomberg"
+      "Bloomberg",
+      "CFO Brew"
     ]
   },
   "thesis": {
@@ -193,12 +194,12 @@ const MORNING_BRIEFING = {
       ]
     },
     "sourceMode": {
-      "headline": "Tier 1 reporting is carrying today's edition.",
-      "summary": "The Brew-family emails currently in Gmail are still welcome or onboarding notes, so they are helping with voice and structure but not driving today's story selection."
+      "headline": "Tier 1 reporting plus active newsletter framing.",
+      "summary": "Active editorial issues today: CFO Brew: Shocking."
     }
   },
   "scan": {
-    "intro": "Start here if you only have one minute before the train moves.",
+    "intro": "Start with the pulse, then read the six strongest stories in order.",
     "signals": [
       {
         "label": "Oil Variable",
@@ -213,15 +214,15 @@ const MORNING_BRIEFING = {
         "status": "hot"
       },
       {
-        "label": "World Risk",
-        "value": "Lebanon ceasefire still brittle",
-        "note": "The regional risk premium never really left the system.",
-        "status": "steady"
-      },
-      {
         "label": "Private Radar",
         "value": "Anthropic is becoming infrastructure",
         "note": "The private-company story is now leaking directly into public capex narratives.",
+        "status": "steady"
+      },
+      {
+        "label": "World Risk",
+        "value": "Lebanon ceasefire still brittle",
+        "note": "The regional risk premium never really left the system.",
         "status": "steady"
       },
       {
@@ -237,9 +238,10 @@ const MORNING_BRIEFING = {
     }
   },
   "essential": {
-    "intro": "These cards are built around story clusters, not one-article summaries.",
+    "intro": "This is one tight daily edition. Read the pulse first, then work the story cards top to bottom for a full 15 to 20 minute briefing.",
     "cards": [
       {
+        "coverageTopic": "economy-rates",
         "focusArea": "Macro",
         "urgency": "Must know",
         "readTime": "70 sec",
@@ -263,7 +265,11 @@ const MORNING_BRIEFING = {
           ],
           "framing": []
         },
-        "newsletterSignalMatch": null,
+        "newsletterSignalMatch": {
+          "source": "CFO Brew",
+          "subject": "Shocking",
+          "matchedHints": []
+        },
         "links": [
           {
             "label": "Reuters on oil and the macro setup",
@@ -278,9 +284,37 @@ const MORNING_BRIEFING = {
             "url": "https://apnews.com/article/374d81d1aac6d8f19c21e1d1e10ab103"
           }
         ],
-        "engineScore": 75
+        "primaryLink": {
+          "label": "Reuters on oil and the macro setup",
+          "url": "https://www.moneycontrol.com/news/business/markets/oil-advances-with-middle-east-in-focus-equities-rise-slightly-13901256.html"
+        },
+        "visual": {
+          "palette": "amber",
+          "eyebrow": "Economy & Rates",
+          "title": "Energy is driving the inflation conversation again.",
+          "summary": "Oil, shipping risk, and yields are moving together underneath the tape.",
+          "points": [
+            {
+              "label": "Brent",
+              "value": "+2.75%",
+              "tone": "warm"
+            },
+            {
+              "label": "WTI",
+              "value": "+2.09%",
+              "tone": "warm"
+            },
+            {
+              "label": "US 10Y",
+              "value": "+2.5 bp",
+              "tone": "warm"
+            }
+          ]
+        },
+        "engineScore": 78.1
       },
       {
+        "coverageTopic": "business",
         "focusArea": "Markets",
         "urgency": "Must know",
         "readTime": "75 sec",
@@ -303,7 +337,11 @@ const MORNING_BRIEFING = {
           ],
           "framing": []
         },
-        "newsletterSignalMatch": null,
+        "newsletterSignalMatch": {
+          "source": "CFO Brew",
+          "subject": "Shocking",
+          "matchedHints": []
+        },
         "links": [
           {
             "label": "Bloomberg on the policy-plus-earnings collision",
@@ -314,9 +352,107 @@ const MORNING_BRIEFING = {
             "url": "https://www.wsj.com/economy/central-banking/japans-central-bank-holds-rates-but-raises-inflation-views-f917b799"
           }
         ],
-        "engineScore": 70
+        "primaryLink": {
+          "label": "Bloomberg on the policy-plus-earnings collision",
+          "url": "https://www.bloomberg.com/news/newsletters/2026-04-27/earnings-central-banks-headline-blockbuster-week-for-markets"
+        },
+        "visual": {
+          "palette": "sky",
+          "eyebrow": "Business",
+          "title": "Macro week and megacap week are now the same story.",
+          "summary": "The market has to process policy, earnings, and valuation pressure at once.",
+          "points": [
+            {
+              "label": "Setup",
+              "value": "Fed + earnings",
+              "tone": "warm"
+            },
+            {
+              "label": "Pressure",
+              "value": "Narrative compression",
+              "tone": "cool"
+            },
+            {
+              "label": "Risk",
+              "value": "Leadership wobble",
+              "tone": "cool"
+            }
+          ]
+        },
+        "engineScore": 73.1
       },
       {
+        "coverageTopic": "ai-tech",
+        "focusArea": "Private Markets",
+        "urgency": "High signal",
+        "readTime": "70 sec",
+        "headline": "Anthropic's funding round matters because private capital is now steering public capex expectations.",
+        "takeaway": "This is no longer just a startup valuation headline. It is a read-through into cloud demand, compute scarcity, and how aggressively big platforms are willing to subsidize the AI race.",
+        "whatChanged": "Reuters and Bloomberg both framed Google's latest Anthropic commitment as strategically important, landing just after Amazon's own fresh backing and turning one private-company financing story into a broader infrastructure signal.",
+        "whyItMatters": "When private AI funding reaches this scale, it stops being niche venture gossip and starts shaping how investors think about data centers, cloud spend, chip demand, and competitive endurance.",
+        "marketImpact": "This supports the public-market capex complex around cloud, networking, and compute, but it also keeps pressure on margins and raises the bar for every other AI contender.",
+        "disagreement": "Bulls see this as confirmation that enterprise AI demand is real enough to justify massive balance-sheet support. Skeptics see it as another sign that the leaders may be buying growth at a price the rest of the market cannot sustain.",
+        "watchToday": "Any read-through for cloud and semiconductor names, plus whether investors treat the deal as demand confirmation or as another warning that the AI race is becoming capital-intensive fast.",
+        "tags": [
+          "Private markets",
+          "AI capex",
+          "Cloud demand"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "Reuters",
+            "Bloomberg"
+          ],
+          "framing": [
+            "CFO Brew"
+          ]
+        },
+        "newsletterSignalMatch": {
+          "source": "CFO Brew",
+          "subject": "Shocking",
+          "matchedHints": []
+        },
+        "links": [
+          {
+            "label": "Reuters on Anthropic's capital signal",
+            "url": "https://www.investing.com/news/stock-market-news/google-plans-to-invest-up-to-40-billion-in-anthropic-bloomberg-news-reports-4636417"
+          },
+          {
+            "label": "Bloomberg on Anthropic's capital signal",
+            "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic"
+          }
+        ],
+        "primaryLink": {
+          "label": "Reuters on Anthropic's capital signal",
+          "url": "https://www.investing.com/news/stock-market-news/google-plans-to-invest-up-to-40-billion-in-anthropic-bloomberg-news-reports-4636417"
+        },
+        "visual": {
+          "palette": "rose",
+          "eyebrow": "AI & Tech",
+          "title": "Private AI capital is becoming public capex signal.",
+          "summary": "This is a cloud, compute, and business-model story now.",
+          "points": [
+            {
+              "label": "Post-money value",
+              "value": "$380B",
+              "tone": "warm"
+            },
+            {
+              "label": "Run-rate revenue",
+              "value": "$30B",
+              "tone": "cool"
+            },
+            {
+              "label": "Google capital",
+              "value": "$10B now",
+              "tone": "cool"
+            }
+          ]
+        },
+        "engineScore": 72.75
+      },
+      {
+        "coverageTopic": "politics-world",
         "focusArea": "World",
         "urgency": "High signal",
         "readTime": "60 sec",
@@ -345,45 +481,37 @@ const MORNING_BRIEFING = {
             "url": "https://www.tbsnews.net/worldbiz/middle-east/israel-issues-evacuation-warning-seven-lebanese-towns-beyond-buffer-zone"
           }
         ],
-        "engineScore": 66.5
-      },
-      {
-        "focusArea": "Private Markets",
-        "urgency": "High signal",
-        "readTime": "70 sec",
-        "headline": "Anthropic's funding round matters because private capital is now steering public capex expectations.",
-        "takeaway": "This is no longer just a startup valuation headline. It is a read-through into cloud demand, compute scarcity, and how aggressively big platforms are willing to subsidize the AI race.",
-        "whatChanged": "Reuters and Bloomberg both framed Google's latest Anthropic commitment as strategically important, landing just after Amazon's own fresh backing and turning one private-company financing story into a broader infrastructure signal.",
-        "whyItMatters": "When private AI funding reaches this scale, it stops being niche venture gossip and starts shaping how investors think about data centers, cloud spend, chip demand, and competitive endurance.",
-        "marketImpact": "This supports the public-market capex complex around cloud, networking, and compute, but it also keeps pressure on margins and raises the bar for every other AI contender.",
-        "disagreement": "Bulls see this as confirmation that enterprise AI demand is real enough to justify massive balance-sheet support. Skeptics see it as another sign that the leaders may be buying growth at a price the rest of the market cannot sustain.",
-        "watchToday": "Any read-through for cloud and semiconductor names, plus whether investors treat the deal as demand confirmation or as another warning that the AI race is becoming capital-intensive fast.",
-        "tags": [
-          "Private markets",
-          "AI capex",
-          "Cloud demand"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Reuters",
-            "Bloomberg"
-          ],
-          "framing": []
+        "primaryLink": {
+          "label": "Reuters on southern Lebanon risk",
+          "url": "https://www.tbsnews.net/worldbiz/middle-east/israel-issues-evacuation-warning-seven-lebanese-towns-beyond-buffer-zone"
         },
-        "newsletterSignalMatch": null,
-        "links": [
-          {
-            "label": "Reuters on Anthropic's capital signal",
-            "url": "https://www.investing.com/news/stock-market-news/google-plans-to-invest-up-to-40-billion-in-anthropic-bloomberg-news-reports-4636417"
-          },
-          {
-            "label": "Bloomberg on Anthropic's capital signal",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic"
-          }
-        ],
-        "engineScore": 65
+        "visual": {
+          "palette": "mint",
+          "eyebrow": "Politics & World",
+          "title": "Regional tension is still leaking into the market story.",
+          "summary": "This is geopolitics with direct oil, shipping, and risk-premium consequences.",
+          "points": [
+            {
+              "label": "Ceasefire",
+              "value": "Still brittle",
+              "tone": "cool"
+            },
+            {
+              "label": "Brent",
+              "value": "+2.75%",
+              "tone": "warm"
+            },
+            {
+              "label": "Risk",
+              "value": "Premium alive",
+              "tone": "warm"
+            }
+          ]
+        },
+        "engineScore": 67.7
       },
       {
+        "coverageTopic": "economy-rates",
         "focusArea": "Markets",
         "urgency": "High signal",
         "readTime": "65 sec",
@@ -412,9 +540,37 @@ const MORNING_BRIEFING = {
             "url": "https://ca.investing.com/news/economy-news/investors-react-to-bojs-decision-to-hold-rates-4590367"
           }
         ],
-        "engineScore": 64.7
+        "primaryLink": {
+          "label": "Reuters on the BOJ split",
+          "url": "https://ca.investing.com/news/economy-news/investors-react-to-bojs-decision-to-hold-rates-4590367"
+        },
+        "visual": {
+          "palette": "mint",
+          "eyebrow": "Economy & Rates",
+          "title": "The hold mattered less than the split behind it.",
+          "summary": "The more useful read is that policy tension is still alive in rates.",
+          "points": [
+            {
+              "label": "BOJ vote",
+              "value": "6-3 split",
+              "tone": "cool"
+            },
+            {
+              "label": "US 10Y",
+              "value": "+2.5 bp",
+              "tone": "warm"
+            },
+            {
+              "label": "Readthrough",
+              "value": "Hawkish subtext",
+              "tone": "warm"
+            }
+          ]
+        },
+        "engineScore": 66.05
       },
       {
+        "coverageTopic": "markets",
         "focusArea": "Markets",
         "urgency": "Useful edge",
         "readTime": "60 sec",
@@ -436,45 +592,45 @@ const MORNING_BRIEFING = {
           ],
           "framing": []
         },
-        "newsletterSignalMatch": null,
+        "newsletterSignalMatch": {
+          "source": "CFO Brew",
+          "subject": "Shocking",
+          "matchedHints": []
+        },
         "links": [
           {
             "label": "The Wall Street Journal on market breadth",
             "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-27-2026"
           }
         ],
-        "engineScore": 59.5
-      },
-      {
-        "focusArea": "World",
-        "urgency": "Useful edge",
-        "readTime": "55 sec",
-        "headline": "Cross-border security stories can become macro-political stories faster than people expect.",
-        "takeaway": "Many investors ignore stories like this at first. The edge is recognizing when a security headline is likely to feed directly into policy rhetoric and business climate.",
-        "whatChanged": "Associated Press reported the capture of a top Jalisco cartel figure in Mexico, a story that can quickly migrate from crime coverage into border, fentanyl, and bilateral-policy narratives.",
-        "whyItMatters": "Security stories that harden policy rhetoric can shape trade mood, border politics, and the operating backdrop leaders have to navigate even without an immediate market jolt.",
-        "marketImpact": "The direct market effect is usually muted, but the policy spillover can matter if it sharpens political positioning or reframes the cross-border conversation.",
-        "disagreement": "Most market participants will ignore it unless political actors amplify it. Policy watchers tend to treat it as an early signal for sharper rhetoric later.",
-        "watchToday": "Whether US political figures or security officials elevate the story beyond crime coverage.",
-        "tags": [
-          "Mexico",
-          "Policy spillover",
-          "Security"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Associated Press"
-          ],
-          "framing": []
+        "primaryLink": {
+          "label": "The Wall Street Journal on market breadth",
+          "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-27-2026"
         },
-        "newsletterSignalMatch": null,
-        "links": [
-          {
-            "label": "Associated Press on the Jalisco cartel arrest",
-            "url": "https://apnews.com/article/6050d1eb184dc8842f34a180ac77df91"
-          }
-        ],
-        "engineScore": 57.1
+        "visual": {
+          "palette": "sky",
+          "eyebrow": "Markets",
+          "title": "Index highs still do not equal broad participation.",
+          "summary": "The tape looks cleaner from far away than it does underneath.",
+          "points": [
+            {
+              "label": "S&P 500",
+              "value": "+0.12%",
+              "tone": "warm"
+            },
+            {
+              "label": "Nasdaq",
+              "value": "+0.20%",
+              "tone": "warm"
+            },
+            {
+              "label": "Breadth",
+              "value": "Still narrow",
+              "tone": "cool"
+            }
+          ]
+        },
+        "engineScore": 62.45
       }
     ]
   },
@@ -523,6 +679,12 @@ const MORNING_BRIEFING = {
       "tier": "Tier 1",
       "role": "Primary reporting",
       "note": "Policy-relevant world and security coverage with clean factual grounding."
+    },
+    {
+      "name": "CFO Brew",
+      "tier": "Tier 3",
+      "role": "Specialty framing input",
+      "note": "Corporate-finance and operator-level context when capital or margins matter."
     }
   ],
   "commuteRoute": [

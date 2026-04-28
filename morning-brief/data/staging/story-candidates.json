@@ -2,7 +2,7 @@
   "edition": {
     "productLabel": "Morning Intelligence Brief",
     "editionLabel": "Tuesday, April 28",
-    "generatedAt": "2026-04-28T15:14:02.648Z",
+    "generatedAt": "2026-04-28T16:55:30.885Z",
     "estimatedReadMinutes": 17,
     "commuteMode": "20-minute subway ride",
     "tone": "Signal first, depth on demand, built for a distracted morning brain."
@@ -188,18 +188,18 @@
         ]
       },
       "sourceMode": {
-        "headline": "Tier 1 reporting is carrying today's edition.",
-        "summary": "The Brew-family emails currently in Gmail are still welcome or onboarding notes, so they are helping with voice and structure but not driving today's story selection."
+        "headline": "Tier 1 reporting plus active newsletter framing.",
+        "summary": "Active editorial issues today: CFO Brew: Shocking."
       }
     },
     "scan": {
-      "intro": "Start here if you only have one minute before the train moves.",
+      "intro": "Start with the pulse, then read the six strongest stories in order.",
       "ignoreNoise": {
         "title": "Do not confuse fresh highs with broad conviction.",
         "summary": "The easiest mistake this morning is to read strong index prints as broad risk appetite. The better read is to check how much weight a narrow set of leaders is still carrying."
       }
     },
-    "essentialIntro": "These cards are built around story clusters, not one-article summaries.",
+    "essentialIntro": "This is one tight daily edition. Read the pulse first, then work the story cards top to bottom for a full 15 to 20 minute briefing.",
     "edge": {
       "peerMiss": {
         "title": "The real bridge story is energy, not the loudest macro headline.",
@@ -381,7 +381,36 @@
         "memorability": 8,
         "confidence": 9,
         "timeSensitivity": 10,
-        "newsletterAlignment": 0
+        "newsletterAlignment": 2
+      },
+      "newsletterSignalMatch": {
+        "source": "CFO Brew",
+        "subject": "Shocking",
+        "matchedHints": []
+      },
+      "coverageTopic": "business",
+      "visual": {
+        "palette": "sky",
+        "eyebrow": "Business",
+        "title": "Macro week and megacap week are now the same story.",
+        "summary": "The market has to process policy, earnings, and valuation pressure at once.",
+        "points": [
+          {
+            "label": "Setup",
+            "value": "Fed + earnings",
+            "tone": "warm"
+          },
+          {
+            "label": "Pressure",
+            "value": "Narrative compression",
+            "tone": "cool"
+          },
+          {
+            "label": "Risk",
+            "value": "Leadership wobble",
+            "tone": "cool"
+          }
+        ]
       }
     },
     {
@@ -460,7 +489,36 @@
         "memorability": 9,
         "confidence": 9,
         "timeSensitivity": 10,
-        "newsletterAlignment": 0
+        "newsletterAlignment": 2
+      },
+      "newsletterSignalMatch": {
+        "source": "CFO Brew",
+        "subject": "Shocking",
+        "matchedHints": []
+      },
+      "coverageTopic": "economy-rates",
+      "visual": {
+        "palette": "amber",
+        "eyebrow": "Economy & Rates",
+        "title": "Energy is driving the inflation conversation again.",
+        "summary": "Oil, shipping risk, and yields are moving together underneath the tape.",
+        "points": [
+          {
+            "label": "Brent",
+            "value": "+2.75%",
+            "tone": "warm"
+          },
+          {
+            "label": "WTI",
+            "value": "+2.09%",
+            "tone": "warm"
+          },
+          {
+            "label": "US 10Y",
+            "value": "+2.5 bp",
+            "tone": "warm"
+          }
+        ]
       }
     },
     {
@@ -516,6 +574,30 @@
         "confidence": 8,
         "timeSensitivity": 9,
         "newsletterAlignment": 0
+      },
+      "coverageTopic": "economy-rates",
+      "visual": {
+        "palette": "mint",
+        "eyebrow": "Economy & Rates",
+        "title": "The hold mattered less than the split behind it.",
+        "summary": "The more useful read is that policy tension is still alive in rates.",
+        "points": [
+          {
+            "label": "BOJ vote",
+            "value": "6-3 split",
+            "tone": "cool"
+          },
+          {
+            "label": "US 10Y",
+            "value": "+2.5 bp",
+            "tone": "warm"
+          },
+          {
+            "label": "Readthrough",
+            "value": "Hawkish subtext",
+            "tone": "warm"
+          }
+        ]
       }
     },
     {
@@ -570,7 +652,36 @@
         "memorability": 9,
         "confidence": 7,
         "timeSensitivity": 8,
-        "newsletterAlignment": 0
+        "newsletterAlignment": 2
+      },
+      "newsletterSignalMatch": {
+        "source": "CFO Brew",
+        "subject": "Shocking",
+        "matchedHints": []
+      },
+      "coverageTopic": "markets",
+      "visual": {
+        "palette": "sky",
+        "eyebrow": "Markets",
+        "title": "Index highs still do not equal broad participation.",
+        "summary": "The tape looks cleaner from far away than it does underneath.",
+        "points": [
+          {
+            "label": "S&P 500",
+            "value": "+0.12%",
+            "tone": "warm"
+          },
+          {
+            "label": "Nasdaq",
+            "value": "+0.20%",
+            "tone": "warm"
+          },
+          {
+            "label": "Breadth",
+            "value": "Still narrow",
+            "tone": "cool"
+          }
+        ]
       }
     },
     {
@@ -626,6 +737,30 @@
         "confidence": 7,
         "timeSensitivity": 9,
         "newsletterAlignment": 0
+      },
+      "coverageTopic": "politics-world",
+      "visual": {
+        "palette": "mint",
+        "eyebrow": "Politics & World",
+        "title": "Regional tension is still leaking into the market story.",
+        "summary": "This is geopolitics with direct oil, shipping, and risk-premium consequences.",
+        "points": [
+          {
+            "label": "Ceasefire",
+            "value": "Still brittle",
+            "tone": "cool"
+          },
+          {
+            "label": "Brent",
+            "value": "+2.75%",
+            "tone": "warm"
+          },
+          {
+            "label": "Risk",
+            "value": "Premium alive",
+            "tone": "warm"
+          }
+        ]
       }
     },
     {
@@ -650,7 +785,9 @@
       "primaryReporting": [
         "Associated Press"
       ],
-      "framingInputs": [],
+      "framingInputs": [
+        "CFO Brew"
+      ],
       "tags": [
         "Mexico",
         "Policy spillover",
@@ -681,6 +818,30 @@
         "confidence": 7,
         "timeSensitivity": 7,
         "newsletterAlignment": 0
+      },
+      "coverageTopic": "politics-world",
+      "visual": {
+        "palette": "mint",
+        "eyebrow": "Politics & World",
+        "title": "Security headlines can turn policy-relevant very quickly.",
+        "summary": "This matters when the political narrative starts outrunning the original event.",
+        "points": [
+          {
+            "label": "Signal",
+            "value": "Border rhetoric",
+            "tone": "cool"
+          },
+          {
+            "label": "Spillover",
+            "value": "Policy risk",
+            "tone": "warm"
+          },
+          {
+            "label": "Watch",
+            "value": "Who amplifies it",
+            "tone": "cool"
+          }
+        ]
       }
     },
     {
@@ -706,7 +867,9 @@
         "Reuters",
         "Bloomberg"
       ],
-      "framingInputs": [],
+      "framingInputs": [
+        "CFO Brew"
+      ],
       "tags": [
         "Private markets",
         "AI capex",
@@ -747,14 +910,45 @@
         "memorability": 8,
         "confidence": 9,
         "timeSensitivity": 8,
-        "newsletterAlignment": 0
+        "newsletterAlignment": 8
+      },
+      "newsletterSignalMatch": {
+        "source": "CFO Brew",
+        "subject": "Shocking",
+        "matchedHints": []
+      },
+      "coverageTopic": "ai-tech",
+      "visual": {
+        "palette": "rose",
+        "eyebrow": "AI & Tech",
+        "title": "Private AI capital is becoming public capex signal.",
+        "summary": "This is a cloud, compute, and business-model story now.",
+        "points": [
+          {
+            "label": "Post-money value",
+            "value": "$380B",
+            "tone": "warm"
+          },
+          {
+            "label": "Run-rate revenue",
+            "value": "$30B",
+            "tone": "cool"
+          },
+          {
+            "label": "Google capital",
+            "value": "$10B now",
+            "tone": "cool"
+          }
+        ]
       }
     }
   ],
   "rawStatus": {
-    "gmailGeneratedAt": "2026-04-28T14:10:00Z",
+    "gmailGeneratedAt": "2026-04-28T20:18:00Z",
     "webGeneratedAt": "2026-04-28T15:45:00Z",
-    "activeFramingInputs": [],
+    "activeFramingInputs": [
+      "CFO Brew"
+    ],
     "availableFramingInputs": [
       "Morning Brew",
       "Brew Markets",
@@ -766,7 +960,6 @@
       "Morning Brew",
       "Brew Markets",
       "Tech Brew",
-      "CFO Brew",
       "The Playbook"
     ]
   }

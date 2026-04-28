@@ -39,6 +39,27 @@ function takeTopByBucket(ranked, bucket, count, selectedIds) {
   return chosen;
 }
 
+function takeTopByField(ranked, field, value, count, selectedIds) {
+  const chosen = [];
+
+  ranked.forEach((candidate) => {
+    if (chosen.length >= count) {
+      return;
+    }
+
+    if (candidate[field] === value && !selectedIds.has(candidate.id)) {
+      chosen.push(candidate);
+      selectedIds.add(candidate.id);
+    }
+  });
+
+  return chosen;
+}
+
+function countSelectedByField(selected, field, value) {
+  return selected.filter((candidate) => candidate[field] === value).length;
+}
+
 function fillRemaining(ranked, desiredCards, selectedIds) {
   const chosen = [];
 
@@ -59,16 +80,27 @@ function fillRemaining(ranked, desiredCards, selectedIds) {
 function selectCandidates(ranked, rankingConfig) {
   const selectedIds = new Set();
   const selected = [];
+  const minimumByTopic = rankingConfig.minimumByTopic || {};
   const minimumByBucket = rankingConfig.minimumByBucket || {};
 
+  Object.entries(minimumByTopic).forEach(([topic, count]) => {
+    const existing = countSelectedByField(selected, "coverageTopic", topic);
+    const needed = Math.max(0, count - existing);
+    selected.push(...takeTopByField(ranked, "coverageTopic", topic, needed, selectedIds));
+  });
+
   Object.entries(minimumByBucket).forEach(([bucket, count]) => {
-    selected.push(...takeTopByBucket(ranked, bucket, count, selectedIds));
+    const existing = countSelectedByField(selected, "bucket", bucket);
+    const needed = Math.max(0, count - existing);
+    selected.push(...takeTopByBucket(ranked, bucket, needed, selectedIds));
   });
 
   const remainingCount = Math.max(0, (rankingConfig.desiredCards || 6) - selected.length);
   selected.push(...fillRemaining(ranked, remainingCount, selectedIds));
 
-  return selected.sort((a, b) => b.engineScore - a.engineScore);
+  return selected
+    .sort((a, b) => b.engineScore - a.engineScore)
+    .slice(0, rankingConfig.desiredCards || 6);
 }
 
 function uniqueValues(items) {
@@ -107,6 +139,7 @@ function buildSourceStack(sourceCatalog, selected) {
 
 function buildEssentialCards(selected) {
   return selected.map((candidate) => ({
+    coverageTopic: candidate.coverageTopic || "",
     focusArea: candidate.focusArea,
     urgency: candidate.urgency,
     readTime: candidate.readTime,
@@ -124,6 +157,8 @@ function buildEssentialCards(selected) {
     },
     newsletterSignalMatch: candidate.newsletterSignalMatch || null,
     links: candidate.links || [],
+    primaryLink: candidate.links?.[0] || null,
+    visual: candidate.visual || null,
     engineScore: candidate.engineScore,
   }));
 }
@@ -135,6 +170,7 @@ function buildCompiledDebug(ranked, selected) {
       id: candidate.id,
       headline: candidate.headline,
       bucket: candidate.bucket,
+      coverageTopic: candidate.coverageTopic || "",
       engineScore: candidate.engineScore,
       newsletterSignalMatch: candidate.newsletterSignalMatch || null,
     })),
@@ -142,6 +178,7 @@ function buildCompiledDebug(ranked, selected) {
       id: candidate.id,
       headline: candidate.headline,
       bucket: candidate.bucket,
+      coverageTopic: candidate.coverageTopic || "",
       engineScore: candidate.engineScore,
       newsletterSignalMatch: candidate.newsletterSignalMatch || null,
     })),

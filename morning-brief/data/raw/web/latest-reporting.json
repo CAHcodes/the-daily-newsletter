@@ -1,0 +1,268 @@
+{
+  "generatedAt": "2026-04-28T15:45:00Z",
+  "notes": "This file stores the raw reporting inputs used to form story clusters before ranking. Links prefer direct publisher URLs whenever possible. Market snapshot numbers are anchored to Reuters market coverage and Reuters/Investing market data surfaced on April 28, 2026.",
+  "marketSnapshot": {
+    "asOf": "2026-04-28T10:18:00-04:00",
+    "sourceLabel": "Reuters market wrap and Investing market board",
+    "tiles": [
+      {
+        "id": "sp500",
+        "label": "S&P 500",
+        "value": "7,173.91",
+        "change": "+0.12%",
+        "changeValue": 0.12,
+        "direction": "up",
+        "note": "Green on the surface, still less convincing underneath."
+      },
+      {
+        "id": "nasdaq",
+        "label": "Nasdaq",
+        "value": "24,887.10",
+        "change": "+0.20%",
+        "changeValue": 0.2,
+        "direction": "up",
+        "note": "Leadership is still doing most of the heavy lifting."
+      },
+      {
+        "id": "brent",
+        "label": "Brent",
+        "value": "$108.23",
+        "change": "+2.75%",
+        "changeValue": 2.75,
+        "direction": "up",
+        "note": "The war premium is still sitting in the tape."
+      },
+      {
+        "id": "wti",
+        "label": "WTI",
+        "value": "$96.37",
+        "change": "+2.09%",
+        "changeValue": 2.09,
+        "direction": "up",
+        "note": "Energy is still the live inflation bridge."
+      },
+      {
+        "id": "us10y",
+        "label": "US 10Y",
+        "value": "4.336%",
+        "change": "+2.5 bp",
+        "changeValue": 2.5,
+        "changeUnit": "bp",
+        "direction": "up",
+        "note": "Yields are leaning higher into the Fed."
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "value": "$4,679",
+        "change": "-0.62%",
+        "changeValue": -0.62,
+        "direction": "down",
+        "note": "The haven bid cooled even with oil firm."
+      }
+    ],
+    "heatmap": [
+      {
+        "label": "Brent",
+        "value": 2.75,
+        "direction": "up",
+        "theme": "Energy"
+      },
+      {
+        "label": "WTI",
+        "value": 2.09,
+        "direction": "up",
+        "theme": "Energy"
+      },
+      {
+        "label": "VIX",
+        "value": 3.39,
+        "direction": "up",
+        "theme": "Volatility"
+      },
+      {
+        "label": "US 10Y",
+        "value": 2.5,
+        "direction": "up",
+        "theme": "Rates",
+        "unit": "bp"
+      },
+      {
+        "label": "Dollar",
+        "value": -0.16,
+        "direction": "down",
+        "theme": "FX"
+      },
+      {
+        "label": "Gold",
+        "value": -0.62,
+        "direction": "down",
+        "theme": "Havens"
+      }
+    ]
+  },
+  "privateMarketRadar": {
+    "title": "Anthropic is no longer a niche startup story. It is becoming a capex and cloud-demand story.",
+    "summary": "Google's $10 billion check now, with another $30 billion contingent, lands days after Amazon's $5 billion commitment. The real edge is that one private-company financing round is now influencing public cloud spend, data-center buildout, and the AI-coding narrative.",
+    "metrics": [
+      {
+        "label": "Post-money value",
+        "value": "$380B",
+        "note": "PitchBook, April 25"
+      },
+      {
+        "label": "Run-rate revenue",
+        "value": "$30B",
+        "note": "PitchBook profile, TTM 4Q2026"
+      },
+      {
+        "label": "Google capital",
+        "value": "$10B now",
+        "note": "Up to $30B more on milestones"
+      },
+      {
+        "label": "Amazon capital",
+        "value": "$5B now",
+        "note": "Up to $20B additional potential"
+      }
+    ],
+    "bullets": [
+      "Claude Code traction is turning model demand into infrastructure demand.",
+      "The financing story matters to public markets because Google, Amazon, Broadcom, and CoreWeave all sit somewhere in the same supply chain.",
+      "The AI race is shifting from model bragging rights to balance-sheet endurance."
+    ],
+    "links": [
+      {
+        "label": "Reuters on Google's Anthropic investment",
+        "url": "https://www.investing.com/news/stock-market-news/google-plans-to-invest-up-to-40-billion-in-anthropic-bloomberg-news-reports-4636417"
+      },
+      {
+        "label": "Bloomberg on the Anthropic deal",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "id": "bloomberg-policy-earnings-week",
+      "source": "Bloomberg",
+      "type": "primary",
+      "publishedDate": "2026-04-27",
+      "url": "https://www.bloomberg.com/news/newsletters/2026-04-27/earnings-central-banks-headline-blockbuster-week-for-markets",
+      "headline": "Earnings, central banks headline blockbuster week for markets",
+      "bucket": "market",
+      "editorialUse": "Policy week and megacap earnings collision",
+      "summary": "Bloomberg framed the week as a collision of central-bank decisions and heavyweight corporate earnings, highlighting how much narrative risk is compressed into a short window."
+    },
+    {
+      "id": "reuters-oil-risk-tone",
+      "source": "Reuters",
+      "type": "syndicated-reuters",
+      "publishedDate": "2026-04-28",
+      "url": "https://www.moneycontrol.com/news/business/markets/oil-advances-with-middle-east-in-focus-equities-rise-slightly-13901256.html",
+      "headline": "Oil advances with Middle East in focus, equities rise slightly",
+      "bucket": "market",
+      "editorialUse": "Oil as macro bridge",
+      "summary": "Reuters reported that oil stayed bid as investors weighed Iran peace proposal talks, restricted Hormuz shipping, the Fed meeting, and major tech earnings."
+    },
+    {
+      "id": "wsj-middle-east-growth",
+      "source": "The Wall Street Journal",
+      "type": "primary",
+      "publishedDate": "2026-04-28",
+      "url": "https://www.wsj.com/finance/commodities-futures/middle-east-conflict-to-weaken-growth-as-commodity-prices-surge-world-bank-says-32219cd8",
+      "headline": "Middle East conflict to weaken growth as commodity prices surge, World Bank says",
+      "bucket": "market",
+      "editorialUse": "Oil is starting to leak into the global growth conversation",
+      "summary": "WSJ highlighted the World Bank's warning that higher commodity prices linked to the Middle East conflict are likely to raise inflation and weaken growth."
+    },
+    {
+      "id": "reuters-boj-split",
+      "source": "Reuters",
+      "type": "syndicated-reuters",
+      "publishedDate": "2026-04-28",
+      "url": "https://ca.investing.com/news/economy-news/investors-react-to-bojs-decision-to-hold-rates-4590367",
+      "headline": "Investors react to BOJ's decision to hold rates",
+      "bucket": "market",
+      "editorialUse": "BOJ split and global inflation signal",
+      "summary": "Reuters noted that the Bank of Japan held rates at 0.75% but saw a 6-3 split, signaling a more hawkish undertone than the hold headline alone suggests."
+    },
+    {
+      "id": "wsj-boj-hawkish-hold",
+      "source": "The Wall Street Journal",
+      "type": "primary",
+      "publishedDate": "2026-04-28",
+      "url": "https://www.wsj.com/economy/central-banking/japans-central-bank-holds-rates-but-raises-inflation-views-f917b799",
+      "headline": "Japan's central bank makes hawkish hold as board split widens",
+      "bucket": "market",
+      "editorialUse": "BOJ hold with a surprisingly hawkish internal split",
+      "summary": "WSJ reported that the BOJ kept rates steady but widened its internal split, raising the odds that the next move could still be higher."
+    },
+    {
+      "id": "wsj-record-highs-breadth",
+      "source": "The Wall Street Journal",
+      "type": "primary",
+      "publishedDate": "2026-04-27",
+      "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-27-2026",
+      "headline": "Stock Market Today: Dow, S&P 500, Nasdaq",
+      "bucket": "market",
+      "editorialUse": "Breadth versus headline index strength",
+      "summary": "WSJ market coverage showed fresh index highs led by a narrow group of large-cap winners, useful for the breadth-fragility theme."
+    },
+    {
+      "id": "ap-hormuz-proposal",
+      "source": "Associated Press",
+      "type": "primary",
+      "publishedDate": "2026-04-27",
+      "url": "https://apnews.com/article/374d81d1aac6d8f19c21e1d1e10ab103",
+      "headline": "Iran offers to reopen Strait of Hormuz if US lifts its blockade and the war ends, officials say",
+      "bucket": "world",
+      "editorialUse": "Hormuz diplomacy is still inseparable from the market story",
+      "summary": "AP reported that Iran offered to reopen the Strait of Hormuz if the US lifts its blockade and the war ends, underlining how fragile the energy and shipping backdrop remains."
+    },
+    {
+      "id": "reuters-lebanon-evacuation",
+      "source": "Reuters",
+      "type": "syndicated-reuters",
+      "publishedDate": "2026-04-26",
+      "url": "https://www.tbsnews.net/worldbiz/middle-east/israel-issues-evacuation-warning-seven-lebanese-towns-beyond-buffer-zone",
+      "headline": "Israel issues evacuation warning for seven Lebanese towns beyond 'buffer zone'",
+      "bucket": "world",
+      "editorialUse": "Lebanon risk premium",
+      "summary": "Reuters reported renewed evacuation orders in southern Lebanon, reinforcing that the ceasefire remains fragile and the region still matters for energy and risk sentiment."
+    },
+    {
+      "id": "ap-mexico-cartel-arrest",
+      "source": "Associated Press",
+      "type": "primary",
+      "publishedDate": "2026-04-28",
+      "url": "https://apnews.com/article/6050d1eb184dc8842f34a180ac77df91",
+      "headline": "Mexico's military captures top cartel leader in another blow to the Jalisco New Generation Cartel",
+      "bucket": "world",
+      "editorialUse": "Cross-border policy spillover",
+      "summary": "AP reported the arrest of Audias Flores Silva, known as El Jardinero, a CJNG leader whose capture could spill from security coverage into border and policy rhetoric."
+    },
+    {
+      "id": "reuters-anthropic-google",
+      "source": "Reuters",
+      "type": "syndicated-reuters",
+      "publishedDate": "2026-04-24",
+      "url": "https://www.investing.com/news/stock-market-news/google-plans-to-invest-up-to-40-billion-in-anthropic-bloomberg-news-reports-4636417",
+      "headline": "Google to invest up to $40 billion in AI rival Anthropic",
+      "bucket": "market",
+      "editorialUse": "Anthropic's funding round is now a public-markets infrastructure story",
+      "summary": "Reuters reported that Google will invest up to $40 billion in Anthropic, deepening the link between AI private-market capital, cloud infrastructure, and public-market capex expectations."
+    },
+    {
+      "id": "bloomberg-anthropic-deal",
+      "source": "Bloomberg",
+      "type": "primary",
+      "publishedDate": "2026-04-24",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic",
+      "headline": "Google plans to invest up to $40 billion in Anthropic",
+      "bucket": "market",
+      "editorialUse": "Anthropic's financing has become a strategic balance-sheet signal",
+      "summary": "Bloomberg reported that Google committed $10 billion to Anthropic immediately and may invest another $30 billion if performance targets are met, at a $350 billion valuation."
+    }
+  ]
+}

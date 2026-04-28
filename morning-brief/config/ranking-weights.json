@@ -1,0 +1,20 @@
+{
+  "desiredCards": 7,
+  "signalCount": 5,
+  "sourceFocusCount": 6,
+  "minimumByBucket": {
+    "market": 4,
+    "world": 2
+  },
+  "weights": {
+    "marketRelevance": 1.35,
+    "worldRelevance": 1.0,
+    "novelty": 0.8,
+    "decisionUsefulness": 1.3,
+    "peerEdge": 1.1,
+    "memorability": 0.7,
+    "confidence": 0.9,
+    "timeSensitivity": 1.1,
+    "newsletterAlignment": 0.8
+  }
+}

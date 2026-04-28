@@ -1,0 +1,38 @@
+{
+  "reader_name": "",
+  "product_intent": "A premium, ADHD-friendly morning intelligence brief that creates a clear edge over peers.",
+  "launch_preferences": {
+    "repo_name": "The Daily Newsletter",
+    "visibility": "private",
+    "domain_mode": "default",
+    "design_lead": "codex",
+    "go_live_mode": "activate_now"
+  },
+  "editorial_priorities": {
+    "always_prioritize": [
+      "markets"
+    ],
+    "market_focus": [
+      "public stocks",
+      "private companies",
+      "macro",
+      "AI",
+      "crypto",
+      "rates",
+      "treasuries"
+    ],
+    "geography_focus": "balanced",
+    "premium_sources": [
+      "WSJ",
+      "Bloomberg",
+      "FT",
+      "CNBC",
+      "Morning Brew",
+      "Tech Brew",
+      "CFO Brew"
+    ],
+    "deprioritize_or_mute": [],
+    "never_miss": [],
+    "notes": ""
+  }
+}

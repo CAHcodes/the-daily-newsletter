@@ -1,0 +1,3 @@
+outputs/email/*.html
+outputs/email/*.txt
+*.log

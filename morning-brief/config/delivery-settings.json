@@ -1,0 +1,9 @@
+{
+  "status": "active_send_mode",
+  "mode": "send",
+  "recipient": "chris.aiza17@gmail.com",
+  "channel": "gmail",
+  "send_one_email_per_run": true,
+  "subject_source": "outputs/email/latest-email-subject.txt",
+  "body_source": "outputs/email/latest-email.md"
+}

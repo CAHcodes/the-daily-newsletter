@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-04-28T15:14:08.888Z",
+  "rankedCandidates": [
+    {
+      "id": "oil-macro-bridge",
+      "headline": "Oil is doing more macro work than the index headline suggests.",
+      "bucket": "market",
+      "engineScore": 75,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "policy-earnings-collision",
+      "headline": "Policy week and megacap earnings are hitting the market at the same time.",
+      "bucket": "market",
+      "engineScore": 70,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "lebanon-risk-premium",
+      "headline": "Lebanon is the reminder that the Middle East risk premium never really left.",
+      "bucket": "world",
+      "engineScore": 66.5,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "anthropic-capex-signal",
+      "headline": "Anthropic's funding round matters because private capital is now steering public capex expectations.",
+      "bucket": "market",
+      "engineScore": 65,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "boj-split",
+      "headline": "The BOJ hold was less dovish than the headline implied.",
+      "bucket": "market",
+      "engineScore": 64.7,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "breadth-fragility",
+      "headline": "Fresh index highs are still masking thinner leadership than the headline implies.",
+      "bucket": "market",
+      "engineScore": 59.5,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "mexico-policy-spillover",
+      "headline": "Cross-border security stories can become macro-political stories faster than people expect.",
+      "bucket": "world",
+      "engineScore": 57.1,
+      "newsletterSignalMatch": null
+    }
+  ],
+  "selectedCandidates": [
+    {
+      "id": "oil-macro-bridge",
+      "headline": "Oil is doing more macro work than the index headline suggests.",
+      "bucket": "market",
+      "engineScore": 75,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "policy-earnings-collision",
+      "headline": "Policy week and megacap earnings are hitting the market at the same time.",
+      "bucket": "market",
+      "engineScore": 70,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "lebanon-risk-premium",
+      "headline": "Lebanon is the reminder that the Middle East risk premium never really left.",
+      "bucket": "world",
+      "engineScore": 66.5,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "anthropic-capex-signal",
+      "headline": "Anthropic's funding round matters because private capital is now steering public capex expectations.",
+      "bucket": "market",
+      "engineScore": 65,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "boj-split",
+      "headline": "The BOJ hold was less dovish than the headline implied.",
+      "bucket": "market",
+      "engineScore": 64.7,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "breadth-fragility",
+      "headline": "Fresh index highs are still masking thinner leadership than the headline implies.",
+      "bucket": "market",
+      "engineScore": 59.5,
+      "newsletterSignalMatch": null
+    },
+    {
+      "id": "mexico-policy-spillover",
+      "headline": "Cross-border security stories can become macro-political stories faster than people expect.",
+      "bucket": "world",
+      "engineScore": 57.1,
+      "newsletterSignalMatch": null
+    }
+  ]
+}

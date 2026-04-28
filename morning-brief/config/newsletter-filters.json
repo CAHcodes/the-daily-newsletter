@@ -1,0 +1,17 @@
+{
+  "skip_subject_contains": [
+    "Welcome to",
+    "Thanks for subscribing",
+    "coming in hot",
+    "straight to your inbox"
+  ],
+  "skip_body_contains": [
+    "Here's what to expect",
+    "Let’s make sure",
+    "Let's make sure",
+    "Start exploring",
+    "Move us to your primary inbox",
+    "You were sent this message because you opted-in"
+  ],
+  "notes": "Use these patterns to avoid treating onboarding and deliverability emails as editorial newsletter issues."
+}

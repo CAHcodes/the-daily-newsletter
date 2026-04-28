@@ -1,0 +1,75 @@
+{
+  "gmail_labels": [
+    {
+      "id": "morning-brew-daily",
+      "label": "Morning Brief/Inputs/Morning Brew",
+      "sender": "crew@morningbrew.com",
+      "tier": 2,
+      "expected_arrival_window": "morning",
+      "role": "broad business framing",
+      "use_for": [
+        "story prioritization",
+        "business narrative framing",
+        "mainstream smart-professional angle detection"
+      ]
+    },
+    {
+      "id": "tech-brew",
+      "label": "Morning Brief/Inputs/Tech Brew",
+      "sender": "techbrew@morningbrew.com",
+      "tier": 2,
+      "expected_arrival_window": "weekday afternoon",
+      "role": "technology framing",
+      "use_for": [
+        "technology trend framing",
+        "AI and policy angle detection",
+        "business impact context"
+      ]
+    },
+    {
+      "id": "brew-markets",
+      "label": "Morning Brief/Inputs/Brew Markets",
+      "sender": "brewmarkets@morningbrew.com",
+      "tier": 2,
+      "expected_arrival_window": "afternoon",
+      "role": "investing and retail-market framing",
+      "use_for": [
+        "market narrative framing",
+        "sentiment detection",
+        "portfolio-impact context"
+      ]
+    },
+    {
+      "id": "cfo-brew",
+      "label": "Morning Brief/Inputs/CFO Brew",
+      "sender": "cfobrew@morningbrew.com",
+      "tier": 3,
+      "expected_arrival_window": "unknown",
+      "role": "optional executive-finance framing",
+      "use_for": [
+        "corporate-finance angle detection",
+        "management and operating context"
+      ]
+    },
+    {
+      "id": "the-playbook",
+      "label": "Morning Brief/Inputs/The Playbook",
+      "sender": "theplaybook@morningbrew.com",
+      "tier": 3,
+      "expected_arrival_window": "unknown",
+      "role": "optional wealth and personal-investing framing",
+      "use_for": [
+        "personal-finance angle detection",
+        "wealth-building framing"
+      ]
+    }
+  ],
+  "primary_reporting_sources": [
+    "Bloomberg",
+    "The Wall Street Journal",
+    "Financial Times",
+    "CNBC",
+    "Reuters",
+    "Associated Press"
+  ]
+}

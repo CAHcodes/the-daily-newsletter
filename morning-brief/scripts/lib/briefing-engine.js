@@ -104,7 +104,7 @@ function selectCandidates(ranked, rankingConfig) {
 }
 
 function uniqueValues(items) {
-  return [...new Set(items.filter(Boolean))];
+  return [...new Set((items || []).filter(Boolean))];
 }
 
 function buildSourceFocus(selected, sourceFocusCount) {
@@ -139,6 +139,7 @@ function buildSourceStack(sourceCatalog, selected) {
 
 function buildEssentialCards(selected) {
   return selected.map((candidate) => ({
+    id: candidate.id,
     coverageTopic: candidate.coverageTopic || "",
     focusArea: candidate.focusArea,
     urgency: candidate.urgency,
@@ -159,6 +160,7 @@ function buildEssentialCards(selected) {
     links: candidate.links || [],
     primaryLink: candidate.links?.[0] || null,
     visual: candidate.visual || null,
+    evidence: candidate.evidence || [],
     engineScore: candidate.engineScore,
   }));
 }
@@ -185,11 +187,157 @@ function buildCompiledDebug(ranked, selected) {
   };
 }
 
+function shortSourceName(source) {
+  const labels = {
+    "The Wall Street Journal": "WSJ",
+    "Associated Press": "AP",
+    "Financial Times": "FT",
+  };
+
+  return labels[source] || source;
+}
+
+function buildLeadStory(selected, thesis) {
+  const card = selected[0];
+
+  if (!card) {
+    return {
+      headline: thesis?.headline || "No lead story loaded.",
+      deck: thesis?.summary || "",
+      whyItLeads: "",
+      marketRead: "",
+      watchToday: "",
+      focusArea: "",
+      coverageTopic: "",
+      sourceLabel: "",
+      sourceTrail: { primary: [], framing: [] },
+      visual: { points: [] },
+      link: "",
+      readTime: "",
+    };
+  }
+
+  return {
+    headline: card.headline,
+    deck: card.takeaway,
+    whyItLeads: card.whatChanged,
+    marketRead: card.whyItMatters,
+    watchToday: card.watchToday,
+    focusArea: card.focusArea,
+    coverageTopic: card.coverageTopic,
+    sourceLabel: shortSourceName(card.primaryReporting?.[0] || ""),
+    sourceTrail: {
+      primary: card.primaryReporting || [],
+      framing: card.framingInputs || [],
+    },
+    visual: card.visual || { points: [] },
+    link: card.links?.[0]?.url || "",
+    readTime: card.readTime,
+  };
+}
+
+function buildMarketDesk(context, selected, thesis) {
+  const oilCard = selected.find((candidate) => candidate.id === "oil-macro-bridge");
+  const ratesCard = selected.find((candidate) => candidate.coverageTopic === "economy-rates");
+  const aiCard = selected.find((candidate) => candidate.coverageTopic === "ai-tech");
+  const privateRadar = context.pulse?.privateRadar || {};
+
+  return {
+    title: "Markets & Rates",
+    intro: "A quick board before the longer read.",
+    summary: thesis?.marketMood?.note || "",
+    asOf: context.pulse?.asOf || "",
+    sourceLabel: context.pulse?.sourceLabel || "",
+    tiles: context.pulse?.marketTiles || [],
+    heatmap: context.pulse?.heatmap || [],
+    keyLines: [
+      oilCard
+        ? {
+            label: "Energy",
+            text: oilCard.takeaway,
+            url: oilCard.links?.[0]?.url || "",
+          }
+        : null,
+      ratesCard
+        ? {
+            label: "Rates",
+            text: ratesCard.takeaway,
+            url: ratesCard.links?.[0]?.url || "",
+          }
+        : null,
+      aiCard
+        ? {
+            label: "AI & Private Markets",
+            text: privateRadar.summary || aiCard.takeaway,
+            url: privateRadar.links?.[0]?.url || aiCard.links?.[0]?.url || "",
+          }
+        : null,
+    ].filter(Boolean),
+  };
+}
+
+function buildSourceDesk(selected) {
+  const preferredSources = [
+    "Bloomberg",
+    "The Wall Street Journal",
+    "Reuters",
+    "Associated Press",
+    "Financial Times",
+    "CNBC",
+  ];
+  const usedCandidateIds = new Set();
+
+  const sections = preferredSources
+    .map((source) => {
+      let candidate = selected.find(
+        (item) => !usedCandidateIds.has(item.id) && (item.primaryReporting || []).includes(source),
+      );
+
+      if (!candidate) {
+        candidate = selected.find((item) => (item.primaryReporting || []).includes(source));
+      }
+
+      if (!candidate) {
+        return null;
+      }
+
+      usedCandidateIds.add(candidate.id);
+      const evidence = (candidate.evidence || []).find((item) => item.source === source);
+      return {
+        source,
+        shortName: shortSourceName(source),
+        headline: evidence?.headline || candidate.headline,
+        summary: candidate.takeaway,
+        note: candidate.whyItMatters,
+        relatedHeadline: candidate.headline,
+        coverageTopic: candidate.coverageTopic,
+        url: evidence?.url || candidate.links?.[0]?.url || "",
+      };
+    })
+    .filter(Boolean);
+
+  return {
+    title: "Top From the Sources",
+    intro: "One useful click from each major desk.",
+    sections,
+  };
+}
+
+function buildNewsletterDesk(context) {
+  return {
+    title: "From Your Inbox",
+    intro: "Short summaries of the newsletters already sitting in Gmail.",
+    note: context.newsletterDeskNote || "",
+    briefs: context.newsletterBriefs || [],
+  };
+}
+
 function buildBriefingData(staging, rankingConfig) {
   const ranked = rankCandidates(staging.candidates || [], rankingConfig);
   const selected = selectCandidates(ranked, rankingConfig);
   const context = staging.briefingContext || {};
   const edition = staging.edition || {};
+  const essentialCards = buildEssentialCards(selected);
 
   const briefing = {
     meta: {
@@ -228,8 +376,17 @@ function buildBriefingData(staging, rankingConfig) {
     },
     essential: {
       intro: context.essentialIntro || "",
-      cards: buildEssentialCards(selected),
+      cards: essentialCards,
     },
+    leadStory: buildLeadStory(selected, context.thesis || {}),
+    marketDesk: buildMarketDesk(context, selected, context.thesis || {}),
+    topStories: {
+      title: "Top Stories",
+      intro: context.essentialIntro || "",
+      cards: essentialCards,
+    },
+    sourceDesk: buildSourceDesk(selected),
+    newsletterDesk: buildNewsletterDesk(context),
     edge: context.edge,
     sourceStack: buildSourceStack(context.sourceCatalog || [], selected),
     commuteRoute: context.commuteRoute || [],

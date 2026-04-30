@@ -1165,6 +1165,20 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
     };
   }
 
+  if ((candidate.headline || "").includes("OpenAI")) {
+    return {
+      palette: "sky",
+      eyebrow: "AI & Tech",
+      title: "The AI trade is no longer giving every leader a free pass.",
+      summary: "Execution misses are starting to matter for sentiment, proxies, and positioning.",
+      points: [
+        { label: "Trigger", value: "OpenAI miss", tone: "warm" },
+        { label: "Readthrough", value: "AI-linked stocks", tone: "cool" },
+        { label: "Watch", value: "Follow-through", tone: "cool" },
+      ],
+    };
+  }
+
   if (candidate.id === "lebanon-risk-premium") {
     return {
       palette: "mint",
@@ -1189,6 +1203,20 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
         { label: "Signal", value: "Border rhetoric", tone: "cool" },
         { label: "Spillover", value: "Policy risk", tone: "warm" },
         { label: "Watch", value: "Who amplifies it", tone: "cool" },
+      ],
+    };
+  }
+
+  if (cluster.bucket === "world") {
+    return {
+      palette: "mint",
+      eyebrow: "Politics & World",
+      title: "Symbolic alignment can still shape the policy mood.",
+      summary: "The direct market move may be small, but the diplomatic frame can matter later.",
+      points: [
+        { label: "Theme", value: "Allied coordination", tone: "warm" },
+        { label: "Readthrough", value: "Policy tone", tone: "cool" },
+        { label: "Watch", value: "Concrete follow-through", tone: "cool" },
       ],
     };
   }
@@ -1303,6 +1331,97 @@ function buildSourceMode(newsletters) {
     headline: "Primary reporting only.",
     summary: "No newsletter framing inputs were available, so the brief is leaning entirely on primary reporting today.",
   };
+}
+
+function formatDateKey(date) {
+  const target = date instanceof Date ? date : new Date(date);
+  if (Number.isNaN(target.getTime())) {
+    return "";
+  }
+
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  const parts = formatter.formatToParts(target);
+  const month = parts.find((part) => part.type === "month")?.value || "01";
+  const day = parts.find((part) => part.type === "day")?.value || "01";
+  const year = parts.find((part) => part.type === "year")?.value || "1970";
+
+  return `${year}-${month}-${day}`;
+}
+
+function sortIssuesByRecency(items) {
+  return [...(items || [])].sort((left, right) => {
+    const leftTs = new Date(left.emailTs || 0).getTime();
+    const rightTs = new Date(right.emailTs || 0).getTime();
+    return rightTs - leftTs;
+  });
+}
+
+function buildNewsletterBriefs(newsletters, now) {
+  const todayKey = formatDateKey(now);
+  const preferredOrder = {
+    "Morning Brew": 1,
+    "Brew Markets": 2,
+    "Tech Brew": 3,
+    "CFO Brew": 4,
+    "The Playbook": 5,
+  };
+
+  return (newsletters.configured || [])
+    .sort((left, right) => (preferredOrder[left.name] || 99) - (preferredOrder[right.name] || 99))
+    .map((configuredSource) => {
+      const issues = sortIssuesByRecency(
+        (newsletters.issues || []).filter((issue) => issue.name === configuredSource.name),
+      );
+      const editorialIssue = issues.find((issue) => !issue.isOnboardingIssue);
+      const chosen = editorialIssue || issues[0];
+
+      if (!chosen || chosen.isOnboardingIssue) {
+        return null;
+      }
+
+      const isToday = chosen.issueDateLabel === todayKey;
+      const signalLines = (chosen.usefulSignals?.length > 0 ? chosen.usefulSignals : chosen.topTopics || []).slice(0, 3);
+
+      return {
+        name: chosen.name,
+        label: configuredSource.label,
+        subject: chosen.subject,
+        summary: chosen.summary,
+        signalLines,
+        topTopics: (chosen.topTopics || []).slice(0, 4),
+        tone: chosen.newsletterTone,
+        displayUrl: chosen.displayUrl,
+        issueDateLabel: chosen.issueDateLabel,
+        freshnessLabel: isToday ? "Today's issue" : "Latest available",
+        arrivalNote: isToday
+          ? "Pulled from today's inbox edition."
+          : "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail.",
+      };
+    })
+    .filter(Boolean);
+}
+
+function buildNewsletterDeskNote(newsletters, newsletterBriefs) {
+  const hiddenOnboardingOnly = uniqueValues(
+    (newsletters.issues || [])
+      .filter((issue) => issue.isOnboardingIssue)
+      .map((issue) => issue.name),
+  ).filter((name) => !newsletterBriefs.some((brief) => brief.name === name));
+
+  if (hiddenOnboardingOnly.length > 0) {
+    return `${hiddenOnboardingOnly.join(", ")} is still onboarding-only, so it stays out of the dashboard until a real issue lands.`;
+  }
+
+  if (newsletterBriefs.some((brief) => brief.freshnessLabel !== "Today's issue")) {
+    return "If a newsletter has not arrived yet by refresh time, this section automatically falls back to the latest editorial issue.";
+  }
+
+  return "These cards are pulled from the latest editorial issues currently in Gmail.";
 }
 
 function buildPrivateRadar(webRaw) {
@@ -1603,7 +1722,9 @@ function buildFooterPerspective(selected) {
     };
 }
 
-function buildBriefingContext(selected, sourceCatalog, newsletters, webRaw) {
+function buildBriefingContext(selected, sourceCatalog, newsletters, webRaw, now) {
+  const newsletterBriefs = buildNewsletterBriefs(newsletters, now);
+
   return {
     thesis: buildThesis(selected),
     pulse: {
@@ -1627,13 +1748,15 @@ function buildBriefingContext(selected, sourceCatalog, newsletters, webRaw) {
     commuteRoute: buildCommuteRoute(),
     footerPerspective: buildFooterPerspective(selected),
     sourceCatalog,
+    newsletterBriefs,
+    newsletterDeskNote: buildNewsletterDeskNote(newsletters, newsletterBriefs),
   };
 }
 
 function buildEdition(now, candidates) {
   const date = now instanceof Date ? now : new Date(now);
   return {
-    productLabel: "Morning Intelligence Brief",
+    productLabel: "The Daily Newsletter",
     editionLabel: formatEditionLabel(date),
     generatedAt: date.toISOString(),
     estimatedReadMinutes: Math.max(15, Math.min(20, 8 + (candidates.length * 1.5))),
@@ -1652,7 +1775,7 @@ function buildStagingFromRaw({ newsletterConfig, gmailRaw, webRaw, rankingConfig
 
   return {
     edition: buildEdition(now, selected),
-    briefingContext: buildBriefingContext(selected, sourceCatalog, newsletters, webRaw),
+    briefingContext: buildBriefingContext(selected, sourceCatalog, newsletters, webRaw, now),
     candidates,
     rawStatus: {
       gmailGeneratedAt: gmailRaw.generatedAt || "",

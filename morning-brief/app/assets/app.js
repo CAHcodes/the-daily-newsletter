@@ -2,18 +2,32 @@ const briefing = window.MORNING_BRIEFING;
 
 const byId = (id) => document.getElementById(id);
 
+function createElement(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) {
+    node.className = className;
+  }
+  if (text !== undefined) {
+    node.textContent = text;
+  }
+  return node;
+}
+
+function createAnchor(className, text, href) {
+  const node = document.createElement("a");
+  node.className = className;
+  node.textContent = text;
+  node.href = href;
+  node.target = "_blank";
+  node.rel = "noreferrer noopener";
+  return node;
+}
+
 function slugifyValue(value) {
   return String(value || "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
-}
-
-function formatCoverageTopic(value) {
-  return String(value || "markets")
-    .split("-")
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" / ");
 }
 
 function formatGeneratedAt(value) {
@@ -27,75 +41,142 @@ function formatGeneratedAt(value) {
   }
 
   return new Intl.DateTimeFormat("en-US", {
-    dateStyle: "full",
-    timeStyle: "short",
-  }).format(date);
-}
-
-function formatAsOf(value) {
-  if (!value) {
-    return "";
-  }
-
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) {
-    return value;
-  }
-
-  return new Intl.DateTimeFormat("en-US", {
-    month: "short",
+    weekday: "long",
+    month: "long",
     day: "numeric",
+    year: "numeric",
     hour: "numeric",
     minute: "2-digit",
   }).format(date);
 }
 
-function createElement(tag, className, text) {
-  const node = document.createElement(tag);
-  if (className) {
-    node.className = className;
-  }
-  if (text !== undefined) {
-    node.textContent = text;
-  }
-  return node;
+function joinOrFallback(items, fallback = "Source mix loading") {
+  return items && items.length > 0 ? items.join(", ") : fallback;
+}
+
+function formatCoverageTopic(value) {
+  return String(value || "markets")
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" / ");
 }
 
 function clampPercent(value, maxValue) {
   const safeMax = maxValue > 0 ? maxValue : 1;
-  return Math.max(8, Math.min(100, (Math.abs(value) / safeMax) * 100));
+  return Math.max(10, Math.min(100, (Math.abs(value) / safeMax) * 100));
 }
 
 function directionClass(value) {
   return value === "down" ? "down" : "up";
 }
 
+function renderStatPoints(points, className = "stat-grid") {
+  const wrap = createElement("div", className);
+
+  (points || []).slice(0, 3).forEach((point) => {
+    const card = createElement("div", `stat-card stat-card-${point.tone || "cool"}`);
+    card.append(
+      createElement("p", "stat-label", point.label),
+      createElement("p", "stat-value", point.value),
+    );
+    wrap.append(card);
+  });
+
+  return wrap;
+}
+
+function renderMasthead(data) {
+  byId("product-label").textContent = data.meta.productLabel || "The Daily Newsletter";
+  byId("edition-label").textContent = data.meta.editionLabel || "Morning edition";
+  byId("brief-title").textContent = data.meta.productLabel || "The Daily Newsletter";
+  byId("brief-summary").textContent = data.thesis?.summary || "";
+  byId("generated-at").textContent = formatGeneratedAt(data.meta.generatedAt);
+  byId("read-time").textContent = `${data.meta.estimatedReadMinutes}-minute read`;
+  byId("commute-mode").textContent = data.meta.commuteMode || "";
+  byId("source-focus").textContent = joinOrFallback(data.meta.sourceFocus || []);
+}
+
+function renderLeadStory(data) {
+  const root = byId("lead-story");
+  root.replaceChildren();
+
+  const visual = data.visual || {};
+  const copy = createElement("div", "lead-copy");
+  const meta = createElement("div", "story-meta-row");
+  meta.append(
+    createElement("span", "meta-pill", formatCoverageTopic(data.coverageTopic || data.focusArea)),
+    createElement("span", "meta-pill", data.focusArea || ""),
+    createElement("span", "meta-pill", data.readTime || ""),
+    createElement("span", "meta-pill", data.sourceLabel || ""),
+  );
+
+  copy.append(
+    meta,
+    createElement("h3", "lead-headline", data.headline || ""),
+    createElement("p", "lead-deck", data.deck || ""),
+  );
+
+  const keyLines = createElement("div", "lead-lines");
+  [
+    ["Why it leads", data.whyItLeads],
+    ["Why it matters", data.marketRead],
+    ["What to watch", data.watchToday],
+  ].forEach(([label, value]) => {
+    if (!value) {
+      return;
+    }
+    const row = createElement("div", "story-line");
+    row.append(
+      createElement("p", "story-line-label", label),
+      createElement("p", "story-line-copy", value),
+    );
+    keyLines.append(row);
+  });
+  copy.append(keyLines);
+
+  const actions = createElement("div", "story-actions");
+  if (data.link) {
+    actions.append(createAnchor("story-action story-action-primary", "Open lead story", data.link));
+  }
+  copy.append(actions);
+
+  const figure = createElement("aside", `lead-figure lead-figure-${visual.palette || "sky"}`);
+  figure.append(
+    createElement("p", "subsection-label", visual.eyebrow || "Morning view"),
+    createElement("h4", "figure-title", visual.title || data.deck || data.headline || ""),
+    createElement("p", "figure-summary", visual.summary || ""),
+    renderStatPoints(visual.points || []),
+  );
+
+  root.append(copy, figure);
+}
+
 function renderMarketTiles(items) {
   const root = byId("market-tiles");
   root.replaceChildren();
 
-  items.forEach((item) => {
-    const card = createElement("article", `market-tile market-tile-${directionClass(item.direction)}`);
+  (items || []).forEach((item) => {
+    const tile = createElement("article", `market-tile market-tile-${directionClass(item.direction)}`);
     const top = createElement("div", "market-tile-top");
     top.append(
       createElement("p", "market-tile-label", item.label),
       createElement("p", "market-tile-change", item.change),
     );
 
-    const value = createElement("p", "market-tile-value", item.value);
-    const note = createElement("p", "market-tile-note", item.note);
-
-    card.append(top, value, note);
-    root.append(card);
+    tile.append(
+      top,
+      createElement("p", "market-tile-value", item.value),
+      createElement("p", "market-tile-note", item.note),
+    );
+    root.append(tile);
   });
 }
 
 function renderHeatmap(items, sourceLabel) {
-  const source = byId("heatmap-source");
-  source.textContent = sourceLabel ? `Anchored to ${sourceLabel}.` : "";
-
+  byId("heatmap-source").textContent = sourceLabel ? `Anchored to ${sourceLabel}.` : "";
   const root = byId("heatmap-chart");
   root.replaceChildren();
+
   const maxValue = Math.max(...(items || []).map((item) => Math.abs(item.value || 0)), 1);
 
   (items || []).forEach((item) => {
@@ -112,373 +193,194 @@ function renderHeatmap(items, sourceLabel) {
     track.append(fill);
 
     const value = createElement("div", `heatmap-value heatmap-value-${directionClass(item.direction)}`);
-    const valueSuffix = item.unit ? ` ${item.unit}` : "%";
-    const valuePrefix = Number(item.value) > 0 ? "+" : "";
-    value.textContent = `${valuePrefix}${item.value}${valueSuffix}`;
+    const prefix = Number(item.value) > 0 ? "+" : "";
+    value.textContent = `${prefix}${item.value}${item.unit ? ` ${item.unit}` : "%"}`;
 
     row.append(label, track, value);
     root.append(row);
   });
 }
 
-function renderRiskRadar(items) {
-  const root = byId("risk-radar");
+function renderMarketDesk(data) {
+  byId("market-intro").textContent = data.intro || "";
+  byId("market-summary").textContent = data.summary || "";
+  renderMarketTiles(data.tiles || []);
+  renderHeatmap(data.heatmap || [], data.sourceLabel || "");
+
+  const root = byId("market-key-lines");
   root.replaceChildren();
 
-  (items || []).forEach((item) => {
-    const row = createElement("article", "risk-row");
-    const head = createElement("div", "risk-row-head");
-    head.append(
-      createElement("p", "risk-label", item.label),
-      createElement("p", "risk-score", `${item.score}/100`),
+  (data.keyLines || []).forEach((line) => {
+    const item = createElement("article", "market-note");
+    item.append(
+      createElement("p", "market-note-label", line.label),
+      createElement("p", "market-note-copy", line.text),
     );
-
-    const track = createElement("div", "risk-track");
-    const fill = createElement("div", `risk-fill risk-fill-${item.tone || "steady"}`);
-    fill.style.width = `${Math.max(10, Math.min(100, item.score || 0))}%`;
-    track.append(fill);
-
-    row.append(head, track, createElement("p", "risk-note", item.note));
-    root.append(row);
+    if (line.url) {
+      item.append(createAnchor("text-link", "Read more", line.url));
+    }
+    root.append(item);
   });
 }
 
-function renderPrivateRadar(data) {
-  byId("private-radar-title").textContent = data.title || "";
-  byId("private-radar-summary").textContent = data.summary || "";
+function renderStoryCard(card, index) {
+  const article = createElement("article", `story-card story-${slugifyValue(card.focusArea)}`);
+  const main = createElement("div", "story-main");
+  const copy = createElement("div", "story-copy");
+  const figure = createElement("aside", `story-figure story-figure-${card.visual?.palette || "sky"}`);
 
-  const metricsRoot = byId("private-radar-metrics");
-  metricsRoot.replaceChildren();
-  (data.metrics || []).forEach((metric) => {
-    const card = createElement("div", "private-metric");
-    card.append(
-      createElement("p", "private-metric-label", metric.label),
-      createElement("p", "private-metric-value", metric.value),
-      createElement("p", "private-metric-note", metric.note),
-    );
-    metricsRoot.append(card);
-  });
-
-  const bulletsRoot = byId("private-radar-bullets");
-  bulletsRoot.replaceChildren();
-  (data.bullets || []).forEach((item) => {
-    const bullet = createElement("p", "visual-bullet", item);
-    bulletsRoot.append(bullet);
-  });
-
-  const linksRoot = byId("private-radar-links");
-  linksRoot.replaceChildren();
-  (data.links || []).forEach((linkData) => {
-    const link = createElement("a", "story-link", linkData.label);
-    link.href = linkData.url;
-    link.target = "_blank";
-    link.rel = "noreferrer noopener";
-    linksRoot.append(link);
-  });
-}
-
-function renderSourceMode(data) {
-  byId("source-mode-headline").textContent = data.headline || "";
-  byId("source-mode-summary").textContent = data.summary || "";
-}
-
-function renderChartGraphic(items) {
-  const root = byId("chart-graphic");
-  if (!root) {
-    return;
-  }
-  root.replaceChildren();
-  const series = (items || []).slice(0, 5);
-  const maxValue = Math.max(...series.map((item) => Math.abs(item.value || 0)), 1);
-
-  series.forEach((item) => {
-    const column = createElement("div", "chart-column");
-    const value = createElement("span", `chart-column-value chart-column-value-${directionClass(item.direction)}`);
-    const valuePrefix = Number(item.value) > 0 ? "+" : "";
-    value.textContent = `${valuePrefix}${item.value}${item.unit ? ` ${item.unit}` : "%"}`;
-
-    const barWrap = createElement("div", "chart-column-bar-wrap");
-    const bar = createElement("div", `chart-column-bar chart-column-bar-${directionClass(item.direction)}`);
-    bar.style.height = `${clampPercent(item.value || 0, maxValue)}%`;
-    barWrap.append(bar);
-
-    const label = createElement("span", "chart-column-label", item.label);
-    column.append(value, barWrap, label);
-    root.append(column);
-  });
-}
-
-function renderPulse(pulse) {
-  byId("pulse-intro").textContent = pulse.intro || "";
-  renderMarketTiles(pulse.marketTiles || []);
-  renderHeatmap(pulse.heatmap || [], pulse.sourceLabel || "");
-  renderRiskRadar(pulse.riskRadar || []);
-  renderPrivateRadar(pulse.privateRadar || {});
-  renderSourceMode(pulse.sourceMode || {});
-}
-
-function renderSignals(items) {
-  const root = byId("signal-board");
-  root.replaceChildren();
-
-  items.forEach((item) => {
-    const card = createElement("article", `signal-card signal-${item.status || "watch"}`);
-    card.append(
-      createElement("p", "signal-label", item.label),
-      createElement("p", "signal-value", item.value),
-      createElement("p", "signal-note", item.note),
-    );
-    root.append(card);
-  });
-}
-
-function renderSourceFocus(items) {
-  const root = byId("source-focus");
-  root.replaceChildren();
-
-  items.forEach((item) => {
-    root.append(createElement("span", "source-pill", item));
-  });
-}
-
-function createAnchor(className, text, href) {
-  const node = document.createElement("a");
-  node.className = className;
-  node.textContent = text;
-  node.href = href;
-  node.target = "_blank";
-  node.rel = "noreferrer noopener";
-  return node;
-}
-
-function renderVisualPoints(points) {
-  const wrap = createElement("div", "story-visual-points");
-
-  (points || []).slice(0, 3).forEach((point) => {
-    const card = createElement("div", `story-visual-point story-visual-point-${point.tone || "cool"}`);
-    card.append(
-      createElement("p", "story-visual-point-label", point.label),
-      createElement("p", "story-visual-point-value", point.value),
-    );
-    wrap.append(card);
-  });
-
-  return wrap;
-}
-
-function renderStoryVisual(card) {
-  const visual = card.visual || {};
-  const primaryLink = card.primaryLink;
-  const node = primaryLink
-    ? createAnchor(`story-visual story-visual-${visual.palette || "sky"}`, "", primaryLink.url)
-    : createElement("div", `story-visual story-visual-${visual.palette || "sky"}`);
-
-  const top = createElement("div", "story-visual-top");
-  top.append(
-    createElement("span", "story-visual-eyebrow", visual.eyebrow || card.coverageTopic || card.focusArea),
-    createElement("span", "story-visual-cta", primaryLink ? "Open article" : "Story visual"),
+  const meta = createElement("div", "story-meta-row");
+  meta.append(
+    createElement("span", "meta-rank", String(index + 1).padStart(2, "0")),
+    createElement("span", "meta-pill", formatCoverageTopic(card.coverageTopic)),
+    createElement("span", "meta-pill", card.urgency),
+    createElement("span", "meta-pill", card.readTime),
   );
 
-  const title = createElement("h3", "story-visual-title", visual.title || card.headline);
-  const summary = createElement("p", "story-visual-summary", visual.summary || card.takeaway);
+  copy.append(
+    meta,
+    createElement("h3", "story-headline", card.headline),
+    createElement("p", "story-deck", card.takeaway),
+  );
 
-  node.append(top, title, summary, renderVisualPoints(visual.points || []));
-  return node;
-}
-
-function renderEssentialCards(items) {
-  const root = byId("essential-cards");
-  root.replaceChildren();
-
-  items.forEach((card, index) => {
-    const article = createElement("article", `story-card-v2 story-${slugifyValue(card.focusArea)}`);
-
-    const meta = createElement("div", "story-meta");
-    meta.append(
-      createElement("span", "story-category", card.focusArea),
-      createElement("span", "story-urgency", card.urgency),
-      createElement("span", "story-readtime", card.readTime),
+  [
+    ["What changed", card.whatChanged],
+    ["Why it matters", card.whyItMatters],
+    ["Watch next", card.watchToday],
+  ].forEach(([label, value]) => {
+    if (!value) {
+      return;
+    }
+    const line = createElement("div", "story-line");
+    line.append(
+      createElement("p", "story-line-label", label),
+      createElement("p", "story-line-copy", value),
     );
-
-    const visual = renderStoryVisual(card);
-
-    const heading = createElement("div", "story-heading");
-    const rank = createElement("div", "story-rank", String(index + 1).padStart(2, "0"));
-    const titleGroup = createElement("div", "story-title-group");
-    const topic = createElement("p", "story-topic", formatCoverageTopic(card.coverageTopic || card.focusArea));
-    const headline = createElement("h3", "story-headline", card.headline);
-    const takeaway = createElement("p", "story-takeaway", card.takeaway);
-    titleGroup.append(topic, headline, takeaway);
-    heading.append(rank, titleGroup);
-
-    const snapshot = createElement("div", "story-snapshot");
-    snapshot.append(
-      createElement("p", "story-snapshot-label", "Why this matters now"),
-      createElement("p", "story-snapshot-copy", card.whatChanged),
-    );
-
-    const factGrid = createElement("div", "fact-grid");
-    [
-      ["Why now", card.whyItMatters],
-      ["Market path", card.marketImpact],
-      ["Watch next", card.watchToday],
-    ].forEach(([label, value]) => {
-      const block = createElement("div", "fact-block");
-      block.append(
-        createElement("p", "fact-label", label),
-        createElement("p", "fact-copy", value),
-      );
-      factGrid.append(block);
-    });
-
-    const tagRow = createElement("div", "tag-row");
-    (card.tags || []).forEach((tag) => {
-      tagRow.append(createElement("span", "tag", tag));
-    });
-
-    const tension = createElement("p", "story-tension");
-    tension.append(
-      createElement("strong", "", "Tension: "),
-      document.createTextNode(card.disagreement || ""),
-    );
-
-    const actions = createElement("div", "story-actions");
-    if (card.primaryLink?.url) {
-      actions.append(createAnchor("story-action story-action-primary", "Open primary article", card.primaryLink.url));
-    }
-
-    (card.links || []).slice(1, 3).forEach((linkData) => {
-      actions.append(createAnchor("story-action story-action-secondary", linkData.label, linkData.url));
-    });
-
-    const details = createElement("details", "story-details");
-    const summary = createElement("summary", "story-details-summary", "More sources and framing");
-    const detailsBody = createElement("div", "story-details-body");
-    const hasPrimary = (card.sourceTrail?.primary || []).length > 0;
-    const hasFraming = (card.sourceTrail?.framing || []).length > 0;
-
-    if (hasPrimary) {
-      const primary = createElement("p", "trail-copy");
-      primary.innerHTML = `<strong>Primary reporting:</strong> ${(card.sourceTrail?.primary || []).join(", ")}`;
-      detailsBody.append(primary);
-    }
-
-    if (hasFraming) {
-      const framing = createElement("p", "trail-copy");
-      framing.innerHTML = `<strong>Framing inputs:</strong> ${(card.sourceTrail?.framing || []).join(", ")}`;
-      detailsBody.append(framing);
-    }
-
-    if (card.newsletterSignalMatch?.source) {
-      const signal = createElement("p", "trail-copy");
-      const hints = (card.newsletterSignalMatch.matchedHints || []).join(", ");
-      signal.innerHTML = `<strong>Newsletter angle:</strong> ${card.newsletterSignalMatch.source}${hints ? ` | ${hints}` : ""}`;
-      detailsBody.append(signal);
-    }
-
-    const links = createElement("div", "story-links");
-    (card.links || []).forEach((linkData) => {
-      const link = createElement("a", "story-link", linkData.label);
-      link.href = linkData.url;
-      link.target = "_blank";
-      link.rel = "noreferrer noopener";
-      links.append(link);
-    });
-
-    if ((card.links || []).length > 0) {
-      detailsBody.append(links);
-    }
-    if (detailsBody.childElementCount > 0) {
-      details.append(summary, detailsBody);
-    }
-
-    article.append(meta, visual, heading, snapshot, factGrid, tagRow, tension, actions);
-    if (detailsBody.childElementCount > 0) {
-      article.append(details);
-    }
-    root.append(article);
+    copy.append(line);
   });
-}
 
-function renderEdge(edge) {
-  byId("peer-miss-title").textContent = edge.peerMiss.title;
-  byId("peer-miss-body").textContent = edge.peerMiss.body;
+  const details = createElement("details", "story-details");
+  const summary = createElement("summary", "story-details-summary", "Why smart people disagree");
+  const disagreement = createElement("p", "story-details-copy", card.disagreement || "");
+  details.append(summary, disagreement);
+  copy.append(details);
 
-  byId("meeting-line-title").textContent = edge.sayInMeeting.title;
-  byId("meeting-line-body").textContent = edge.sayInMeeting.body;
-
-  byId("chart-title").textContent = edge.chartOfDay.title;
-  byId("chart-body").textContent = edge.chartOfDay.body;
-  byId("chart-takeaway").textContent = edge.chartOfDay.takeaway;
-
-  byId("deep-dive-title").textContent = edge.deepDive.title;
-  byId("deep-dive-body").textContent = edge.deepDive.body;
-  byId("deep-dive-why").textContent = edge.deepDive.whyNow;
-  const deepDiveLink = byId("deep-dive-link");
-  if (edge.deepDive.link) {
-    deepDiveLink.href = edge.deepDive.link;
-    deepDiveLink.hidden = false;
-  } else {
-    deepDiveLink.hidden = true;
+  const actions = createElement("div", "story-actions");
+  if (card.primaryLink?.url) {
+    actions.append(createAnchor("story-action story-action-primary", "Open main article", card.primaryLink.url));
   }
-}
-
-function renderCommuteRoute(items) {
-  const root = byId("commute-route");
-  root.replaceChildren();
-
-  items.forEach((item) => {
-    const row = createElement("article", "route-card");
-    row.append(
-      createElement("p", "route-label", item.label),
-      createElement("h3", "route-title", item.title),
-      createElement("p", "route-copy", item.note),
-    );
-    root.append(row);
+  (card.links || []).slice(1, 3).forEach((linkData) => {
+    actions.append(createAnchor("story-action story-action-secondary", linkData.label, linkData.url));
   });
+  copy.append(actions);
+
+  figure.append(
+    createElement("p", "subsection-label", card.visual?.eyebrow || card.focusArea),
+    createElement("h4", "figure-title", card.visual?.title || card.headline),
+    createElement("p", "figure-summary", card.visual?.summary || ""),
+    renderStatPoints(card.visual?.points || []),
+  );
+
+  const sourceRow = createElement("div", "source-chip-row");
+  (card.sourceTrail?.primary || []).forEach((source) => {
+    sourceRow.append(createElement("span", "source-chip source-chip-primary", source));
+  });
+  (card.sourceTrail?.framing || []).forEach((source) => {
+    sourceRow.append(createElement("span", "source-chip", source));
+  });
+
+  main.append(copy, figure);
+  article.append(main);
+  if (sourceRow.childElementCount > 0) {
+    article.append(sourceRow);
+  }
+  return article;
 }
 
-function renderSourceStack(items) {
-  const root = byId("source-stack");
+function renderTopStories(items, intro) {
+  byId("essential-intro").textContent = intro || "";
+  const root = byId("top-stories-list");
+  root.replaceChildren();
+  (items || []).forEach((card, index) => root.append(renderStoryCard(card, index)));
+}
+
+function renderSourceDesk(data) {
+  byId("source-desk-intro").textContent = data.intro || "";
+  const root = byId("source-desk-grid");
   root.replaceChildren();
 
-  items.forEach((item) => {
-    const card = createElement("article", "stack-card");
-    const top = createElement("div", "stack-top");
+  (data.sections || []).forEach((section) => {
+    const card = createElement("article", "source-card");
+    const top = createElement("div", "source-card-top");
     top.append(
-      createElement("h3", "stack-name", item.name),
-      createElement("span", "stack-tier", item.tier),
+      createElement("p", "source-card-name", section.shortName || section.source),
+      createElement("span", "meta-pill", formatCoverageTopic(section.coverageTopic)),
     );
+
     card.append(
       top,
-      createElement("p", "stack-role", item.role),
-      createElement("p", "stack-note", item.note),
+      createElement("h3", "source-card-headline", section.headline),
+      createElement("p", "source-card-summary", section.summary),
+      createElement("p", "source-card-note", section.note),
     );
+
+    if (section.url) {
+      card.append(createAnchor("text-link", `Open at ${section.shortName || section.source}`, section.url));
+    }
     root.append(card);
   });
 }
 
-function renderHero(data) {
-  byId("product-label").textContent = data.meta.productLabel;
-  byId("brief-title").textContent = data.thesis.headline;
-  byId("brief-summary").textContent = data.thesis.summary;
-  byId("edition-label").textContent = data.meta.editionLabel;
-  byId("generated-at").textContent = formatGeneratedAt(data.meta.generatedAt);
-  byId("read-time").textContent = `${data.meta.estimatedReadMinutes}-minute read`;
-  byId("commute-mode").textContent = data.meta.commuteMode;
-  byId("market-mood").textContent = data.thesis.marketMood.label;
-  byId("market-mood-note").textContent = data.thesis.marketMood.note;
-  byId("edge-title").textContent = data.thesis.edgeCallout.title;
-  byId("edge-note").textContent = data.thesis.edgeCallout.note;
+function renderNewsletterBriefs(data) {
+  byId("newsletter-desk-intro").textContent = data.intro || "";
+  byId("newsletter-desk-note").textContent = data.note || "";
+
+  const root = byId("newsletter-briefs");
+  root.replaceChildren();
+
+  (data.briefs || []).forEach((brief) => {
+    const card = createElement("article", "newsletter-card");
+    const top = createElement("div", "newsletter-card-top");
+    top.append(
+      createElement("p", "newsletter-name", brief.name),
+      createElement("span", "meta-pill", brief.freshnessLabel),
+    );
+
+    card.append(
+      top,
+      createElement("h3", "newsletter-subject", brief.subject),
+      createElement("p", "newsletter-summary", brief.summary),
+    );
+
+    if ((brief.signalLines || []).length > 0) {
+      const list = createElement("div", "newsletter-signal-list");
+      brief.signalLines.forEach((line) => {
+        const row = createElement("div", "newsletter-signal");
+        row.append(createElement("span", "newsletter-dot"), createElement("p", "newsletter-signal-copy", line));
+        list.append(row);
+      });
+      card.append(list);
+    }
+
+    const topics = createElement("div", "topic-chip-row");
+    (brief.topTopics || []).forEach((topic) => {
+      topics.append(createElement("span", "topic-chip", topic));
+    });
+    if (topics.childElementCount > 0) {
+      card.append(topics);
+    }
+
+    card.append(createElement("p", "newsletter-arrival-note", brief.arrivalNote || ""));
+
+    if (brief.displayUrl) {
+      card.append(createAnchor("text-link", "Open in Gmail", brief.displayUrl));
+    }
+    root.append(card);
+  });
 }
 
-function renderClosing(footerPerspective) {
-  byId("closing-title").textContent = footerPerspective.title;
-  byId("closing-summary").textContent = footerPerspective.summary;
-}
-
-function setActiveQuickNav() {
-  const links = Array.from(document.querySelectorAll(".quick-nav-link"));
+function setActiveSectionNav() {
+  const links = Array.from(document.querySelectorAll(".section-nav-link"));
   const sections = links
     .map((link) => {
       const target = document.querySelector(link.getAttribute("href"));
@@ -492,9 +394,9 @@ function setActiveQuickNav() {
 
   const markActive = (activeId) => {
     sections.forEach(({ link, target }) => {
-      const isActive = target.id === activeId;
-      link.classList.toggle("quick-nav-link-active", isActive);
-      link.setAttribute("aria-current", isActive ? "true" : "false");
+      const active = target.id === activeId;
+      link.classList.toggle("section-nav-link-active", active);
+      link.setAttribute("aria-current", active ? "true" : "false");
     });
   };
 
@@ -524,23 +426,16 @@ function setActiveQuickNav() {
 }
 
 function renderBriefing(data) {
-  renderHero(data);
-  renderPulse(data.pulse || {});
-  byId("scan-intro").textContent = data.scan.intro;
-  byId("ignore-noise-title").textContent = data.scan.ignoreNoise.title;
-  byId("ignore-noise-summary").textContent = data.scan.ignoreNoise.summary;
-  byId("essential-intro").textContent = data.essential.intro;
-
-  renderSignals(data.scan.signals || []);
-  renderSourceFocus(data.meta.sourceFocus || []);
-  renderEssentialCards(data.essential.cards || []);
-  renderSourceStack(data.sourceStack || []);
-  renderClosing(data.footerPerspective);
-  setActiveQuickNav();
+  renderMasthead(data);
+  renderLeadStory(data.leadStory || {});
+  renderMarketDesk(data.marketDesk || {});
+  renderTopStories(data.topStories?.cards || [], data.topStories?.intro || "");
+  renderSourceDesk(data.sourceDesk || {});
+  renderNewsletterBriefs(data.newsletterDesk || {});
+  setActiveSectionNav();
 }
 
 if (!briefing) {
-  byId("brief-title").textContent = "Briefing data missing";
   byId("brief-summary").textContent = "Run the daily refresh workflow to populate this dashboard.";
 } else {
   renderBriefing(briefing);

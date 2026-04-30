@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Morning Brief</title>
+  <title>The Daily Newsletter</title>
   <meta
     name="description"
-    content="A mobile-first morning intelligence brief for markets, geopolitics, and high-signal decision framing."
+    content="A calm, source-driven morning news dashboard for markets, business, technology, and world affairs."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="./assets/styles.css">
@@ -19,136 +19,123 @@
   <script defer src="./assets/app.js"></script>
 </head>
 <body>
-  <div class="backdrop backdrop-a"></div>
-  <div class="backdrop backdrop-b"></div>
-  <div class="grain"></div>
-
-  <div class="shell">
-    <header class="hero">
-      <div class="hero-main">
-        <p class="eyebrow" id="product-label">Morning Intelligence Brief</p>
-        <h1 id="brief-title">Loading your briefing...</h1>
-        <p id="brief-summary" class="hero-summary"></p>
-
-        <div class="hero-pills">
-          <span class="pill pill-highlight" id="edition-label">Edition</span>
-          <span class="pill" id="generated-at">Generated time</span>
-          <span class="pill" id="read-time">Read time</span>
-          <span class="pill" id="commute-mode">Commute mode</span>
-        </div>
+  <div class="page-shell">
+    <header class="masthead">
+      <div class="masthead-rail">
+        <p class="product-label" id="product-label">The Daily Newsletter</p>
+        <p class="edition-label" id="edition-label">Morning edition</p>
       </div>
 
-      <aside class="hero-rail">
-        <section class="rail-card rail-card-warm">
-          <p class="rail-label">Market Mood</p>
-          <p class="rail-value" id="market-mood">Calibrating...</p>
-          <p class="rail-note" id="market-mood-note"></p>
-        </section>
+      <div class="masthead-main">
+        <div class="masthead-copy">
+          <h1 id="brief-title">The Daily Newsletter</h1>
+          <p class="masthead-summary" id="brief-summary"></p>
+        </div>
 
-        <section class="rail-card rail-card-cool">
-          <p class="rail-label">Edge For Today</p>
-          <h2 class="rail-title" id="edge-title"></h2>
-          <p class="rail-note" id="edge-note"></p>
-        </section>
-      </aside>
+        <aside class="edition-card">
+          <p class="section-label">Edition Snapshot</p>
+          <dl class="edition-meta">
+            <div class="edition-meta-row">
+              <dt>Date</dt>
+              <dd id="generated-at"></dd>
+            </div>
+            <div class="edition-meta-row">
+              <dt>Read</dt>
+              <dd id="read-time"></dd>
+            </div>
+            <div class="edition-meta-row">
+              <dt>Mode</dt>
+              <dd id="commute-mode"></dd>
+            </div>
+            <div class="edition-meta-row">
+              <dt>Sources</dt>
+              <dd id="source-focus"></dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
     </header>
 
-    <nav class="quick-nav" aria-label="Section navigation">
-      <a class="quick-nav-link" href="#pulse-panel">Pulse</a>
-      <a class="quick-nav-link" href="#stories-panel">Stories</a>
-      <a class="quick-nav-link" href="#source-panel">Sources</a>
+    <nav class="section-nav" aria-label="Section navigation">
+      <a class="section-nav-link" href="#top-of-morning">Top</a>
+      <a class="section-nav-link" href="#markets-rates">Markets</a>
+      <a class="section-nav-link" href="#top-stories">Stories</a>
+      <a class="section-nav-link" href="#source-desk">Sources</a>
+      <a class="section-nav-link" href="#inbox-briefs">Inbox</a>
     </nav>
 
-    <main class="content">
-      <section class="panel panel-pulse" id="pulse-panel">
-        <div class="panel-header">
+    <main class="layout">
+      <section class="section lead-section" id="top-of-morning">
+        <div class="section-header">
           <div>
-            <p class="section-kicker">Overnight Pulse</p>
-            <h2>Market Deck</h2>
+            <p class="section-label">Top Of The Morning</p>
+            <h2>The lead story</h2>
           </div>
-          <p id="pulse-intro"></p>
+          <p class="section-intro">The first thing worth knowing before you click anywhere else.</p>
+        </div>
+        <article id="lead-story" class="lead-story"></article>
+      </section>
+
+      <section class="section" id="markets-rates">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Markets & Rates</p>
+            <h2>The tape at a glance</h2>
+          </div>
+          <p class="section-intro" id="market-intro"></p>
         </div>
 
-        <div id="market-tiles" class="market-tiles"></div>
+        <div id="market-tiles" class="market-strip"></div>
 
-        <div class="pulse-grid">
-          <article class="focus-card focus-card-chart">
-            <p class="focus-label">Cross-Asset Heat</p>
-            <p class="visual-intro" id="heatmap-source"></p>
+        <div class="market-grid">
+          <article class="market-card">
+            <p class="subsection-label">Desk Take</p>
+            <h3>What the board is saying</h3>
+            <p class="market-summary" id="market-summary"></p>
+            <div id="market-key-lines" class="market-key-lines"></div>
+          </article>
+
+          <article class="market-card market-card-chart">
+            <p class="subsection-label">Cross-Asset Board</p>
+            <h3>Where the pressure is</h3>
+            <p class="market-source" id="heatmap-source"></p>
             <div id="heatmap-chart" class="heatmap-chart"></div>
           </article>
-
-          <article class="focus-card focus-card-radar">
-            <p class="focus-label">Risk Radar</p>
-            <div id="risk-radar" class="risk-radar"></div>
-          </article>
-
-          <article class="focus-card focus-card-private">
-            <p class="focus-label">Private Market Radar</p>
-            <h3 id="private-radar-title"></h3>
-            <p id="private-radar-summary"></p>
-            <div id="private-radar-metrics" class="private-radar-metrics"></div>
-            <div id="private-radar-bullets" class="private-radar-bullets"></div>
-            <div id="private-radar-links" class="story-links"></div>
-          </article>
-
-          <article class="focus-card focus-card-sources">
-            <p class="focus-label">Source Mode</p>
-            <h3 id="source-mode-headline"></h3>
-            <p id="source-mode-summary"></p>
-          </article>
-          <article class="focus-card focus-card-alert focus-card-signals">
-            <p class="focus-label">What Matters Most</p>
-            <p class="visual-intro" id="scan-intro"></p>
-            <div id="signal-board" class="signal-board signal-board-inline"></div>
-            <div class="inline-noise-card">
-              <p class="story-snapshot-label">Ignore this bad read</p>
-              <h3 id="ignore-noise-title"></h3>
-              <p id="ignore-noise-summary"></p>
-            </div>
-            <div id="source-focus" class="source-row"></div>
-          </article>
         </div>
       </section>
 
-      <section class="panel" id="stories-panel">
-        <div class="panel-header">
+      <section class="section" id="top-stories">
+        <div class="section-header">
           <div>
-            <p class="section-kicker">Today's Edition</p>
-            <h2>The 15-20 Minute Brief</h2>
+            <p class="section-label">Top Stories</p>
+            <h2>The full 15-20 minute read</h2>
           </div>
-          <p id="essential-intro"></p>
+          <p class="section-intro" id="essential-intro"></p>
         </div>
-        <p class="section-note">Tap any visual or source button to open the full article.</p>
-
-        <div id="essential-cards" class="essential-grid"></div>
+        <div id="top-stories-list" class="story-list"></div>
       </section>
 
-      <section class="panel" id="source-panel">
-        <div class="panel-header">
+      <section class="section" id="source-desk">
+        <div class="section-header">
           <div>
-            <p class="section-kicker">Provenance</p>
-            <h2>Source Roles</h2>
+            <p class="section-label">Top From The Sources</p>
+            <h2>Best clicks by newsroom</h2>
           </div>
-          <p>Primary reporting first, curated framing second.</p>
+          <p class="section-intro" id="source-desk-intro"></p>
         </div>
-
-        <div id="source-stack" class="source-stack"></div>
+        <div id="source-desk-grid" class="source-grid"></div>
       </section>
 
-      <section class="panel panel-closing">
-        <div class="panel-header">
+      <section class="section" id="inbox-briefs">
+        <div class="section-header">
           <div>
-            <p class="section-kicker">Last Thing</p>
-            <h2>Durable Frame</h2>
+            <p class="section-label">From Your Inbox</p>
+            <h2>Newsletter summaries</h2>
           </div>
-          <p>The sentence worth carrying into the workday.</p>
+          <p class="section-intro" id="newsletter-desk-intro"></p>
         </div>
-
-        <div class="closing-card">
-          <h3 id="closing-title"></h3>
-          <p id="closing-summary"></p>
-        </div>
+        <p class="section-note" id="newsletter-desk-note"></p>
+        <div id="newsletter-briefs" class="newsletter-grid"></div>
       </section>
     </main>
   </div>

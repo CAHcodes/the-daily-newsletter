@@ -2,7 +2,7 @@ const MORNING_BRIEFING = {
   "meta": {
     "productLabel": "The Daily Newsletter",
     "editionLabel": "Wednesday, April 29",
-    "generatedAt": "2026-04-30T03:41:02.547Z",
+    "generatedAt": "2026-04-30T03:52:48.768Z",
     "estimatedReadMinutes": 17,
     "commuteMode": "20-minute subway ride",
     "tone": "Signal first, depth on demand, built for a distracted morning brain.",
@@ -307,20 +307,47 @@ const MORNING_BRIEFING = {
           "eyebrow": "Economy & Rates",
           "title": "Energy is driving the inflation conversation again.",
           "summary": "Oil, shipping risk, and yields are moving together underneath the tape.",
+          "graphic": {
+            "type": "bar-chart",
+            "sourceCaption": "Recreated from Brew Markets close-board data and same-day Reuters/Bloomberg reporting.",
+            "items": [
+              {
+                "label": "Brent",
+                "value": 6.2,
+                "display": "+6.20%",
+                "tone": "warm"
+              },
+              {
+                "label": "WTI",
+                "value": 6.8,
+                "display": "+6.80%",
+                "tone": "warm"
+              },
+              {
+                "label": "US 10Y",
+                "value": 6,
+                "display": "+6.0 bp",
+                "tone": "warm"
+              }
+            ]
+          },
           "points": [
             {
               "label": "Brent",
               "value": "+6.20%",
+              "rawValue": "$118.11",
               "tone": "warm"
             },
             {
               "label": "WTI",
               "value": "+6.80%",
+              "rawValue": "$106.74",
               "tone": "warm"
             },
             {
               "label": "US 10Y",
               "value": "+6.0 bp",
+              "rawValue": "4.418%",
               "tone": "warm"
             }
           ]
@@ -403,6 +430,24 @@ const MORNING_BRIEFING = {
           "eyebrow": "Economy & Rates",
           "title": "The Fed decision became a handoff story.",
           "summary": "Powell staying on and the wider dissent count both matter for how the next policy chapter will be read.",
+          "graphic": {
+            "type": "fact-board",
+            "sourceCaption": "Recreated from Bloomberg and Reuters reporting.",
+            "items": [
+              {
+                "label": "Rates",
+                "detail": "Held steady"
+              },
+              {
+                "label": "Dissents",
+                "detail": "3 officials"
+              },
+              {
+                "label": "Powell",
+                "detail": "Stays on board"
+              }
+            ]
+          },
           "points": [
             {
               "label": "Decision",
@@ -412,6 +457,7 @@ const MORNING_BRIEFING = {
             {
               "label": "US 10Y",
               "value": "+6.0 bp",
+              "rawValue": "4.418%",
               "tone": "warm"
             },
             {
@@ -487,6 +533,28 @@ const MORNING_BRIEFING = {
           "eyebrow": "Business",
           "title": "Macro week and megacap week are now the same story.",
           "summary": "The market has to process policy, earnings, and valuation pressure at once.",
+          "graphic": {
+            "type": "timeline",
+            "sourceCaption": "Recreated from Bloomberg's policy-week and megacap earnings setup.",
+            "items": [
+              {
+                "label": "Fed",
+                "detail": "Policy decision"
+              },
+              {
+                "label": "Meta",
+                "detail": "Megacap results"
+              },
+              {
+                "label": "Microsoft",
+                "detail": "Megacap results"
+              },
+              {
+                "label": "Amazon",
+                "detail": "Megacap results"
+              }
+            ]
+          },
           "points": [
             {
               "label": "Setup",
@@ -563,15 +631,41 @@ const MORNING_BRIEFING = {
           "eyebrow": "Markets",
           "title": "Index highs still do not equal broad participation.",
           "summary": "The tape looks cleaner from far away than it does underneath.",
+          "graphic": {
+            "type": "bar-chart",
+            "sourceCaption": "Recreated from WSJ market coverage and close-board data.",
+            "items": [
+              {
+                "label": "Dow",
+                "value": 0.57,
+                "display": "-0.57%",
+                "tone": "cool"
+              },
+              {
+                "label": "S&P 500",
+                "value": 0.04,
+                "display": "-0.04%",
+                "tone": "cool"
+              },
+              {
+                "label": "Nasdaq",
+                "value": 0.04,
+                "display": "+0.04%",
+                "tone": "warm"
+              }
+            ]
+          },
           "points": [
             {
               "label": "S&P 500",
               "value": "-0.04%",
+              "rawValue": "7,135.95",
               "tone": "cool"
             },
             {
               "label": "Nasdaq",
               "value": "+0.04%",
+              "rawValue": "24,673.24",
               "tone": "warm"
             },
             {
@@ -640,6 +734,24 @@ const MORNING_BRIEFING = {
           "eyebrow": "AI & Tech",
           "title": "The AI trade is no longer giving every leader a free pass.",
           "summary": "Execution misses are starting to matter for sentiment, proxies, and positioning.",
+          "graphic": {
+            "type": "fact-board",
+            "sourceCaption": "Recreated from WSJ reporting on the OpenAI stumble and AI-linked stocks.",
+            "items": [
+              {
+                "label": "Miss",
+                "detail": "Revenue goals"
+              },
+              {
+                "label": "Miss",
+                "detail": "User goals"
+              },
+              {
+                "label": "Tape",
+                "detail": "AI stocks fell"
+              }
+            ]
+          },
           "points": [
             {
               "label": "Trigger",
@@ -720,6 +832,24 @@ const MORNING_BRIEFING = {
           "eyebrow": "Politics & World",
           "title": "Symbolic alignment can still shape the policy mood.",
           "summary": "The direct market move may be small, but the diplomatic frame can matter later.",
+          "graphic": {
+            "type": "route-map",
+            "sourceCaption": "Recreated from Bloomberg and AP reporting on the UK-US diplomatic push.",
+            "items": [
+              {
+                "label": "UK",
+                "detail": "Alliance signal"
+              },
+              {
+                "label": "Washington",
+                "detail": "Congress and White House"
+              },
+              {
+                "label": "New York",
+                "detail": "CEO investment pitch"
+              }
+            ]
+          },
           "points": [
             {
               "label": "Theme",
@@ -783,20 +913,47 @@ const MORNING_BRIEFING = {
       "eyebrow": "Economy & Rates",
       "title": "Energy is driving the inflation conversation again.",
       "summary": "Oil, shipping risk, and yields are moving together underneath the tape.",
+      "graphic": {
+        "type": "bar-chart",
+        "sourceCaption": "Recreated from Brew Markets close-board data and same-day Reuters/Bloomberg reporting.",
+        "items": [
+          {
+            "label": "Brent",
+            "value": 6.2,
+            "display": "+6.20%",
+            "tone": "warm"
+          },
+          {
+            "label": "WTI",
+            "value": 6.8,
+            "display": "+6.80%",
+            "tone": "warm"
+          },
+          {
+            "label": "US 10Y",
+            "value": 6,
+            "display": "+6.0 bp",
+            "tone": "warm"
+          }
+        ]
+      },
       "points": [
         {
           "label": "Brent",
           "value": "+6.20%",
+          "rawValue": "$118.11",
           "tone": "warm"
         },
         {
           "label": "WTI",
           "value": "+6.80%",
+          "rawValue": "$106.74",
           "tone": "warm"
         },
         {
           "label": "US 10Y",
           "value": "+6.0 bp",
+          "rawValue": "4.418%",
           "tone": "warm"
         }
       ]
@@ -994,20 +1151,47 @@ const MORNING_BRIEFING = {
           "eyebrow": "Economy & Rates",
           "title": "Energy is driving the inflation conversation again.",
           "summary": "Oil, shipping risk, and yields are moving together underneath the tape.",
+          "graphic": {
+            "type": "bar-chart",
+            "sourceCaption": "Recreated from Brew Markets close-board data and same-day Reuters/Bloomberg reporting.",
+            "items": [
+              {
+                "label": "Brent",
+                "value": 6.2,
+                "display": "+6.20%",
+                "tone": "warm"
+              },
+              {
+                "label": "WTI",
+                "value": 6.8,
+                "display": "+6.80%",
+                "tone": "warm"
+              },
+              {
+                "label": "US 10Y",
+                "value": 6,
+                "display": "+6.0 bp",
+                "tone": "warm"
+              }
+            ]
+          },
           "points": [
             {
               "label": "Brent",
               "value": "+6.20%",
+              "rawValue": "$118.11",
               "tone": "warm"
             },
             {
               "label": "WTI",
               "value": "+6.80%",
+              "rawValue": "$106.74",
               "tone": "warm"
             },
             {
               "label": "US 10Y",
               "value": "+6.0 bp",
+              "rawValue": "4.418%",
               "tone": "warm"
             }
           ]
@@ -1090,6 +1274,24 @@ const MORNING_BRIEFING = {
           "eyebrow": "Economy & Rates",
           "title": "The Fed decision became a handoff story.",
           "summary": "Powell staying on and the wider dissent count both matter for how the next policy chapter will be read.",
+          "graphic": {
+            "type": "fact-board",
+            "sourceCaption": "Recreated from Bloomberg and Reuters reporting.",
+            "items": [
+              {
+                "label": "Rates",
+                "detail": "Held steady"
+              },
+              {
+                "label": "Dissents",
+                "detail": "3 officials"
+              },
+              {
+                "label": "Powell",
+                "detail": "Stays on board"
+              }
+            ]
+          },
           "points": [
             {
               "label": "Decision",
@@ -1099,6 +1301,7 @@ const MORNING_BRIEFING = {
             {
               "label": "US 10Y",
               "value": "+6.0 bp",
+              "rawValue": "4.418%",
               "tone": "warm"
             },
             {
@@ -1174,6 +1377,28 @@ const MORNING_BRIEFING = {
           "eyebrow": "Business",
           "title": "Macro week and megacap week are now the same story.",
           "summary": "The market has to process policy, earnings, and valuation pressure at once.",
+          "graphic": {
+            "type": "timeline",
+            "sourceCaption": "Recreated from Bloomberg's policy-week and megacap earnings setup.",
+            "items": [
+              {
+                "label": "Fed",
+                "detail": "Policy decision"
+              },
+              {
+                "label": "Meta",
+                "detail": "Megacap results"
+              },
+              {
+                "label": "Microsoft",
+                "detail": "Megacap results"
+              },
+              {
+                "label": "Amazon",
+                "detail": "Megacap results"
+              }
+            ]
+          },
           "points": [
             {
               "label": "Setup",
@@ -1250,15 +1475,41 @@ const MORNING_BRIEFING = {
           "eyebrow": "Markets",
           "title": "Index highs still do not equal broad participation.",
           "summary": "The tape looks cleaner from far away than it does underneath.",
+          "graphic": {
+            "type": "bar-chart",
+            "sourceCaption": "Recreated from WSJ market coverage and close-board data.",
+            "items": [
+              {
+                "label": "Dow",
+                "value": 0.57,
+                "display": "-0.57%",
+                "tone": "cool"
+              },
+              {
+                "label": "S&P 500",
+                "value": 0.04,
+                "display": "-0.04%",
+                "tone": "cool"
+              },
+              {
+                "label": "Nasdaq",
+                "value": 0.04,
+                "display": "+0.04%",
+                "tone": "warm"
+              }
+            ]
+          },
           "points": [
             {
               "label": "S&P 500",
               "value": "-0.04%",
+              "rawValue": "7,135.95",
               "tone": "cool"
             },
             {
               "label": "Nasdaq",
               "value": "+0.04%",
+              "rawValue": "24,673.24",
               "tone": "warm"
             },
             {
@@ -1327,6 +1578,24 @@ const MORNING_BRIEFING = {
           "eyebrow": "AI & Tech",
           "title": "The AI trade is no longer giving every leader a free pass.",
           "summary": "Execution misses are starting to matter for sentiment, proxies, and positioning.",
+          "graphic": {
+            "type": "fact-board",
+            "sourceCaption": "Recreated from WSJ reporting on the OpenAI stumble and AI-linked stocks.",
+            "items": [
+              {
+                "label": "Miss",
+                "detail": "Revenue goals"
+              },
+              {
+                "label": "Miss",
+                "detail": "User goals"
+              },
+              {
+                "label": "Tape",
+                "detail": "AI stocks fell"
+              }
+            ]
+          },
           "points": [
             {
               "label": "Trigger",
@@ -1407,6 +1676,24 @@ const MORNING_BRIEFING = {
           "eyebrow": "Politics & World",
           "title": "Symbolic alignment can still shape the policy mood.",
           "summary": "The direct market move may be small, but the diplomatic frame can matter later.",
+          "graphic": {
+            "type": "route-map",
+            "sourceCaption": "Recreated from Bloomberg and AP reporting on the UK-US diplomatic push.",
+            "items": [
+              {
+                "label": "UK",
+                "detail": "Alliance signal"
+              },
+              {
+                "label": "Washington",
+                "detail": "Congress and White House"
+              },
+              {
+                "label": "New York",
+                "detail": "CEO investment pitch"
+              }
+            ]
+          },
           "points": [
             {
               "label": "Theme",
@@ -1517,6 +1804,28 @@ const MORNING_BRIEFING = {
         ],
         "tone": "Fast mainstream business framing with markets-first top lines and punchy tech-policy curation.",
         "palette": "gold",
+        "graphic": {
+          "type": "topic-stack",
+          "sourceCaption": "Recreated from the latest Morning Brew issue in Gmail.",
+          "items": [
+            {
+              "label": "01",
+              "detail": "UAE leaves OPEC"
+            },
+            {
+              "label": "02",
+              "detail": "OpenAI misses targets"
+            },
+            {
+              "label": "03",
+              "detail": "oil and gas-price pressure"
+            },
+            {
+              "label": "04",
+              "detail": "AI deepfake IP defense"
+            }
+          ]
+        },
         "visualPoints": [
           {
             "label": "Lead",
@@ -1560,6 +1869,28 @@ const MORNING_BRIEFING = {
         ],
         "tone": "Retail-investor market framing with macro, rates, and single-stock follow-through.",
         "palette": "blue",
+        "graphic": {
+          "type": "topic-stack",
+          "sourceCaption": "Recreated from the latest Brew Markets issue in Gmail.",
+          "items": [
+            {
+              "label": "01",
+              "detail": "Powell stays at the Fed"
+            },
+            {
+              "label": "02",
+              "detail": "oil spike and Hormuz disruption"
+            },
+            {
+              "label": "03",
+              "detail": "Robinhood and SoFi earnings"
+            },
+            {
+              "label": "04",
+              "detail": "Fed dissents and easing bias"
+            }
+          ]
+        },
         "visualPoints": [
           {
             "label": "Lead",
@@ -1603,6 +1934,28 @@ const MORNING_BRIEFING = {
         ],
         "tone": "AI-business framing with legal, policy, and infrastructure emphasis.",
         "palette": "rose",
+        "graphic": {
+          "type": "topic-stack",
+          "sourceCaption": "Recreated from the latest Tech Brew issue in Gmail.",
+          "items": [
+            {
+              "label": "01",
+              "detail": "Musk versus OpenAI trial"
+            },
+            {
+              "label": "02",
+              "detail": "Anthropic shares as currency"
+            },
+            {
+              "label": "03",
+              "detail": "Anthropic supply-chain risk politics"
+            },
+            {
+              "label": "04",
+              "detail": "fusion and grid access"
+            }
+          ]
+        },
         "visualPoints": [
           {
             "label": "Lead",
@@ -1646,6 +1999,28 @@ const MORNING_BRIEFING = {
         ],
         "tone": "Operator-focused finance framing with compensation, opex, and boardroom risk context.",
         "palette": "sage",
+        "graphic": {
+          "type": "topic-stack",
+          "sourceCaption": "Recreated from the latest CFO Brew issue in Gmail.",
+          "items": [
+            {
+              "label": "01",
+              "detail": "cash over equity for CFOs"
+            },
+            {
+              "label": "02",
+              "detail": "healthcare costs as operating risk"
+            },
+            {
+              "label": "03",
+              "detail": "buy-the-dip bank framing"
+            },
+            {
+              "label": "04",
+              "detail": "AI on earnings calls"
+            }
+          ]
+        },
         "visualPoints": [
           {
             "label": "Lead",

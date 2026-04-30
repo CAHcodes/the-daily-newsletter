@@ -1051,6 +1051,7 @@ function pickTile(snapshot, id, fallbackLabel) {
   return {
     label: fallbackLabel || tile.label,
     value: tile.change || tile.value,
+    rawValue: tile.value,
     tone: tile.direction === "down" ? "cool" : "warm",
   };
 }
@@ -1073,11 +1074,20 @@ function formatCoverageTopic(topic) {
 function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
   const pulse = webRaw.marketSnapshot || {};
   const privateRadar = webRaw.privateMarketRadar || {};
+  const sourceLine = cluster.primarySources?.join(" + ") || "source reporting";
   const defaultVisual = {
     palette: cluster.bucket === "world" ? "mint" : "sky",
     eyebrow: formatCoverageTopic(coverageTopic),
     title: candidate.takeaway,
     summary: "Tap through to open the source article.",
+    graphic: {
+      type: "fact-board",
+      sourceCaption: `Recreated from ${sourceLine}.`,
+      items: (candidate.tags || []).slice(0, 3).map((tag) => ({
+        label: "Signal",
+        detail: tag,
+      })),
+    },
     points: (candidate.tags || []).slice(0, 3).map((tag, index) => ({
       label: `Signal ${index + 1}`,
       value: tag,
@@ -1091,6 +1101,15 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
       eyebrow: "Economy & Rates",
       title: "Energy is driving the inflation conversation again.",
       summary: "Oil, shipping risk, and yields are moving together underneath the tape.",
+      graphic: {
+        type: "bar-chart",
+        sourceCaption: "Recreated from Brew Markets close-board data and same-day Reuters/Bloomberg reporting.",
+        items: [
+          { label: "Brent", value: 6.2, display: "+6.20%", tone: "warm" },
+          { label: "WTI", value: 6.8, display: "+6.80%", tone: "warm" },
+          { label: "US 10Y", value: 6.0, display: "+6.0 bp", tone: "warm" },
+        ],
+      },
       points: [
         pickTile(pulse, "brent", "Brent"),
         pickTile(pulse, "wti", "WTI"),
@@ -1105,6 +1124,16 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
       eyebrow: "Business",
       title: "Macro week and megacap week are now the same story.",
       summary: "The market has to process policy, earnings, and valuation pressure at once.",
+      graphic: {
+        type: "timeline",
+        sourceCaption: "Recreated from Bloomberg's policy-week and megacap earnings setup.",
+        items: [
+          { label: "Fed", detail: "Policy decision" },
+          { label: "Meta", detail: "Megacap results" },
+          { label: "Microsoft", detail: "Megacap results" },
+          { label: "Amazon", detail: "Megacap results" },
+        ],
+      },
       points: [
         { label: "Setup", value: "Fed + earnings", tone: "warm" },
         { label: "Pressure", value: "Narrative compression", tone: "cool" },
@@ -1119,6 +1148,15 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
       eyebrow: "AI & Tech",
       title: "Private AI capital is becoming public capex signal.",
       summary: "This is a cloud, compute, and business-model story now.",
+      graphic: {
+        type: "bar-chart",
+        sourceCaption: "Recreated from Bloomberg, Reuters, and Tech Brew reporting.",
+        items: [
+          { label: "Anthropic", value: 350, display: "$350B", tone: "warm" },
+          { label: "Google now", value: 10, display: "$10B", tone: "cool" },
+          { label: "Extra option", value: 30, display: "$30B", tone: "cool" },
+        ],
+      },
       points: buildVisualPointsFromMetrics(privateRadar.metrics, 3),
     };
   }
@@ -1129,6 +1167,15 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
       eyebrow: "Economy & Rates",
       title: "The hold mattered less than the split behind it.",
       summary: "The more useful read is that policy tension is still alive in rates.",
+      graphic: {
+        type: "fact-board",
+        sourceCaption: "Recreated from Reuters BOJ reporting and the U.S. rates backdrop.",
+        items: [
+          { label: "Decision", detail: "Rates held" },
+          { label: "Vote split", detail: "6-3" },
+          { label: "Readthrough", detail: "Less dovish" },
+        ],
+      },
       points: [
         { label: "BOJ vote", value: "6-3 split", tone: "cool" },
         pickTile(pulse, "us10y", "US 10Y"),
@@ -1143,6 +1190,15 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
       eyebrow: "Economy & Rates",
       title: "The Fed decision became a handoff story.",
       summary: "Powell staying on and the wider dissent count both matter for how the next policy chapter will be read.",
+      graphic: {
+        type: "fact-board",
+        sourceCaption: "Recreated from Bloomberg and Reuters reporting.",
+        items: [
+          { label: "Rates", detail: "Held steady" },
+          { label: "Dissents", detail: "3 officials" },
+          { label: "Powell", detail: "Stays on board" },
+        ],
+      },
       points: [
         { label: "Decision", value: "Rates unchanged", tone: "cool" },
         pickTile(pulse, "us10y", "US 10Y"),
@@ -1157,6 +1213,15 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
       eyebrow: "Markets",
       title: "Index highs still do not equal broad participation.",
       summary: "The tape looks cleaner from far away than it does underneath.",
+      graphic: {
+        type: "bar-chart",
+        sourceCaption: "Recreated from WSJ market coverage and close-board data.",
+        items: [
+          { label: "Dow", value: 0.57, display: "-0.57%", tone: "cool" },
+          { label: "S&P 500", value: 0.04, display: "-0.04%", tone: "cool" },
+          { label: "Nasdaq", value: 0.04, display: "+0.04%", tone: "warm" },
+        ],
+      },
       points: [
         pickTile(pulse, "sp500", "S&P 500"),
         pickTile(pulse, "nasdaq", "Nasdaq"),
@@ -1171,6 +1236,15 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
       eyebrow: "AI & Tech",
       title: "The AI trade is no longer giving every leader a free pass.",
       summary: "Execution misses are starting to matter for sentiment, proxies, and positioning.",
+      graphic: {
+        type: "fact-board",
+        sourceCaption: "Recreated from WSJ reporting on the OpenAI stumble and AI-linked stocks.",
+        items: [
+          { label: "Miss", detail: "Revenue goals" },
+          { label: "Miss", detail: "User goals" },
+          { label: "Tape", detail: "AI stocks fell" },
+        ],
+      },
       points: [
         { label: "Trigger", value: "OpenAI miss", tone: "warm" },
         { label: "Readthrough", value: "AI-linked stocks", tone: "cool" },
@@ -1185,6 +1259,15 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
       eyebrow: "Politics & World",
       title: "Regional tension is still leaking into the market story.",
       summary: "This is geopolitics with direct oil, shipping, and risk-premium consequences.",
+      graphic: {
+        type: "route-map",
+        sourceCaption: "Recreated from Reuters regional-risk reporting and oil-market reaction.",
+        items: [
+          { label: "Lebanon", detail: "Ceasefire strain" },
+          { label: "Shipping", detail: "Risk premium" },
+          { label: "Oil", detail: "Market response" },
+        ],
+      },
       points: [
         { label: "Ceasefire", value: "Still brittle", tone: "cool" },
         pickTile(pulse, "brent", "Brent"),
@@ -1199,6 +1282,15 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
       eyebrow: "Politics & World",
       title: "Security headlines can turn policy-relevant very quickly.",
       summary: "This matters when the political narrative starts outrunning the original event.",
+      graphic: {
+        type: "route-map",
+        sourceCaption: "Recreated from AP reporting on the policy spillover.",
+        items: [
+          { label: "Mexico", detail: "Security headline" },
+          { label: "Border", detail: "Political framing" },
+          { label: "Markets", detail: "Spillover risk" },
+        ],
+      },
       points: [
         { label: "Signal", value: "Border rhetoric", tone: "cool" },
         { label: "Spillover", value: "Policy risk", tone: "warm" },
@@ -1213,6 +1305,15 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
       eyebrow: "Politics & World",
       title: "Symbolic alignment can still shape the policy mood.",
       summary: "The direct market move may be small, but the diplomatic frame can matter later.",
+      graphic: {
+        type: "route-map",
+        sourceCaption: "Recreated from Bloomberg and AP reporting on the UK-US diplomatic push.",
+        items: [
+          { label: "UK", detail: "Alliance signal" },
+          { label: "Washington", detail: "Congress and White House" },
+          { label: "New York", detail: "CEO investment pitch" },
+        ],
+      },
       points: [
         { label: "Theme", value: "Allied coordination", tone: "warm" },
         { label: "Readthrough", value: "Policy tone", tone: "cool" },
@@ -1467,6 +1568,14 @@ function buildNewsletterBriefs(newsletters, now) {
         topTopics,
         tone: chosen.newsletterTone,
         palette: buildNewsletterPalette(chosen.name),
+        graphic: {
+          type: "topic-stack",
+          sourceCaption: `Recreated from the latest ${chosen.name} issue in Gmail.`,
+          items: topTopics.map((topic, index) => ({
+            label: `0${index + 1}`.slice(-2),
+            detail: topic,
+          })),
+        },
         visualPoints: buildNewsletterVisualPoints(chosen),
         displayUrl: chosen.displayUrl,
         issueDateLabel: chosen.issueDateLabel,

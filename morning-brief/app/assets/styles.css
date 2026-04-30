@@ -33,6 +33,7 @@ body {
   min-height: 100vh;
   font-family: "Libre Franklin", "Segoe UI", sans-serif;
   color: var(--ink);
+  text-rendering: optimizeLegibility;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)),
     linear-gradient(180deg, #efe8dd 0%, var(--paper) 100%);
@@ -46,6 +47,15 @@ a {
   max-width: 1180px;
   margin: 0 auto;
   padding: 22px 14px 72px;
+}
+
+.masthead-main > *,
+.lead-story > *,
+.market-grid > *,
+.story-main > *,
+.newsletter-body > *,
+.heatmap-row > * {
+  min-width: 0;
 }
 
 .masthead,
@@ -107,6 +117,7 @@ a {
   margin: 0;
   font-family: "Newsreader", Georgia, serif;
   line-height: 1.03;
+  overflow-wrap: anywhere;
 }
 
 .masthead-copy h1 {
@@ -238,6 +249,7 @@ a {
   margin: 0;
   color: var(--muted);
   line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 
 .lead-story,
@@ -279,6 +291,8 @@ a {
   font-size: 0.76rem;
   color: var(--muted);
   background: #fffefb;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .meta-rank {
@@ -367,6 +381,9 @@ a {
   text-decoration: none;
   font-size: 0.84rem;
   font-weight: 700;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .story-action-primary {
@@ -501,6 +518,7 @@ a {
 .graphic-topic-detail {
   font-weight: 700;
   color: var(--ink);
+  overflow-wrap: anywhere;
 }
 
 .graphic-timeline-item {
@@ -613,6 +631,7 @@ a {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--ink);
+  font-variant-numeric: tabular-nums;
 }
 
 .market-strip {
@@ -649,11 +668,19 @@ a {
   color: var(--down);
 }
 
+.market-tile-change,
+.heatmap-value,
+.graphic-bar-value {
+  font-variant-numeric: tabular-nums;
+}
+
 .market-tile-value {
   margin: 12px 0 8px;
   font-size: 1.85rem;
   font-weight: 700;
   color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
 }
 
 .market-grid {

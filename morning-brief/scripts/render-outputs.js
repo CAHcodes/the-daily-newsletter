@@ -50,6 +50,14 @@ function joinOrFallback(items, fallback = "None listed") {
   return items && items.length > 0 ? items.join(", ") : fallback;
 }
 
+function formatDeltaValue(value, unit) {
+  const amount = Number(value || 0);
+  const decimals = unit ? 1 : 2;
+  const prefix = amount > 0 ? "+" : "";
+
+  return `${prefix}${amount.toFixed(decimals)}${unit ? ` ${unit}` : "%"}`;
+}
+
 function paletteTokens(name) {
   const palettes = {
     amber: {
@@ -502,9 +510,9 @@ function buildMarketTileHtml(items) {
         <div style="border:1px solid #d8d0c5;background:#fffdf9;padding:14px;">
           <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;">
             <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8278;font-weight:700;">${escapeHtml(item.label)}</div>
-            <div style="font-size:13px;font-weight:700;color:${item.direction === "down" ? "#9a4a34" : "#23684a"};">${escapeHtml(item.change)}</div>
+            <div style="font-size:13px;font-weight:700;color:${item.direction === "down" ? "#9a4a34" : "#23684a"};font-variant-numeric:tabular-nums;">${escapeHtml(item.change)}</div>
           </div>
-          <div style="margin-top:12px;font-size:28px;font-weight:700;color:#1d1b18;">${escapeHtml(item.value)}</div>
+          <div style="margin-top:12px;font-size:28px;font-weight:700;color:#1d1b18;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;">${escapeHtml(item.value)}</div>
           <div style="margin-top:8px;font-size:14px;line-height:1.55;color:#6a6259;">${escapeHtml(item.note)}</div>
         </div>`,
     )
@@ -521,8 +529,6 @@ function buildHeatmapHtml(items) {
       const color = item.direction === "down"
         ? "linear-gradient(90deg,#f1d7cc,#9a4a34)"
         : "linear-gradient(90deg,#d6eadf,#4d7d63)";
-      const prefix = Number(item.value) > 0 ? "+" : "";
-
       return `
         <div style="display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.5fr) auto;gap:10px;align-items:center;">
           <div>
@@ -532,7 +538,7 @@ function buildHeatmapHtml(items) {
           <div style="height:10px;border-radius:999px;background:#ece5db;overflow:hidden;">
             <div style="width:${width}%;height:100%;background:${color};"></div>
           </div>
-          <div style="font-size:13px;font-weight:700;color:${item.direction === "down" ? "#9a4a34" : "#23684a"};">${escapeHtml(`${prefix}${item.value}${item.unit ? ` ${item.unit}` : "%"}`)}</div>
+          <div style="font-size:13px;font-weight:700;color:${item.direction === "down" ? "#9a4a34" : "#23684a"};font-variant-numeric:tabular-nums;">${escapeHtml(formatDeltaValue(item.value, item.unit))}</div>
         </div>`;
     })
     .join("");
@@ -555,7 +561,7 @@ function buildStoryHtml(cards) {
           <span style="display:inline-flex;align-items:center;padding:7px 10px;border:1px solid #d8d0c5;background:#fffefb;font-size:12px;color:#6a6259;">${escapeHtml(formatCoverageTopic(card.coverageTopic))}</span>
           <span style="display:inline-flex;align-items:center;padding:7px 10px;border:1px solid #d8d0c5;background:#fffefb;font-size:12px;color:#6a6259;">${escapeHtml(card.readTime)}</span>
         </div>
-        <h3 style="margin:0;font-family:Georgia,serif;font-size:28px;line-height:1.08;color:#1d1b18;">${escapeHtml(card.headline)}</h3>
+        <h3 style="margin:0;font-family:Georgia,serif;font-size:28px;line-height:1.08;color:#1d1b18;overflow-wrap:anywhere;">${escapeHtml(card.headline)}</h3>
         <p style="margin:10px 0 0;font-size:16px;line-height:1.65;color:#1d1b18;">${escapeHtml(card.takeaway)}</p>
         ${buildVisualModuleHtml(card.visual)}
         <div style="margin-top:14px;display:grid;gap:10px;">
@@ -594,7 +600,7 @@ function buildSourceDeskHtml(sections) {
           <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#6a6259;font-weight:700;">${escapeHtml(section.shortName || section.source)}</div>
           <div style="font-size:12px;color:#6a6259;border:1px solid #d8d0c5;padding:7px 10px;background:#fffefb;">${escapeHtml(formatCoverageTopic(section.coverageTopic))}</div>
         </div>
-        <h3 style="margin:10px 0 0;font-family:Georgia,serif;font-size:24px;line-height:1.12;color:#1d1b18;">${escapeHtml(section.headline)}</h3>
+        <h3 style="margin:10px 0 0;font-family:Georgia,serif;font-size:24px;line-height:1.12;color:#1d1b18;overflow-wrap:anywhere;">${escapeHtml(section.headline)}</h3>
         <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#1d1b18;">${escapeHtml(section.summary)}</p>
         <p style="margin:10px 0 0;font-size:14px;line-height:1.6;color:#6a6259;">${escapeHtml(section.note)}</p>
         ${
@@ -624,7 +630,7 @@ function buildNewsletterHtml(items) {
           <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#1d1b18;font-weight:700;">${escapeHtml(brief.name)}</div>
           <div style="font-size:12px;color:#6a6259;border:1px solid #d8d0c5;padding:7px 10px;background:#fffefb;">${escapeHtml(brief.freshnessLabel)}</div>
         </div>
-        <h3 style="margin:10px 0 0;font-family:Georgia,serif;font-size:24px;line-height:1.12;color:#1d1b18;">${escapeHtml(brief.subject)}</h3>
+        <h3 style="margin:10px 0 0;font-family:Georgia,serif;font-size:24px;line-height:1.12;color:#1d1b18;overflow-wrap:anywhere;">${escapeHtml(brief.subject)}</h3>
         <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#1d1b18;">${escapeHtml(brief.summary)}</p>
         ${buildNewsletterVisualModule(brief)}
         <div style="margin-top:12px;display:grid;gap:10px;">
@@ -672,7 +678,7 @@ function buildEmailHtml(data) {
           <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;">${escapeHtml(data.meta.productLabel)}</div>
           <div style="font-size:12px;color:#6a6259;">${escapeHtml(data.meta.editionLabel)}</div>
         </div>
-        <h1 style="margin:18px 0 0;font-size:44px;line-height:1.02;font-weight:600;">${escapeHtml(data.meta.productLabel)}</h1>
+        <h1 style="margin:18px 0 0;font-size:44px;line-height:1.02;font-weight:600;overflow-wrap:anywhere;">${escapeHtml(data.meta.productLabel)}</h1>
         <p style="margin:12px 0 0;font-size:17px;line-height:1.7;color:#6a6259;font-family:'Segoe UI',Arial,sans-serif;">${escapeHtml(data.thesis.summary)}</p>
         <div style="margin-top:16px;font-size:14px;color:#6a6259;font-family:'Segoe UI',Arial,sans-serif;">${escapeHtml(dateLabel)} | ${escapeHtml(String(data.meta.estimatedReadMinutes))}-minute read | ${escapeHtml(data.meta.commuteMode)}</div>
         ${dashboardHtml}
@@ -680,7 +686,7 @@ function buildEmailHtml(data) {
 
       <section style="margin-top:14px;border:1px solid #d8d0c5;background:#fffdf9;padding:18px;">
         <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#6a6259;font-weight:700;">Top Of The Morning</div>
-        <h2 style="margin:10px 0 0;font-size:34px;line-height:1.06;">${escapeHtml(data.leadStory.headline)}</h2>
+        <h2 style="margin:10px 0 0;font-size:34px;line-height:1.06;overflow-wrap:anywhere;">${escapeHtml(data.leadStory.headline)}</h2>
         <p style="margin:10px 0 0;font-size:16px;line-height:1.65;color:#1d1b18;font-family:'Segoe UI',Arial,sans-serif;">${escapeHtml(data.leadStory.deck)}</p>
         ${buildVisualModuleHtml(data.leadStory.visual)}
         <div style="margin-top:14px;display:grid;gap:10px;font-family:'Segoe UI',Arial,sans-serif;">

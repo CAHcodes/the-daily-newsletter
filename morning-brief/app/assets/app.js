@@ -70,6 +70,14 @@ function directionClass(value) {
   return value === "down" ? "down" : "up";
 }
 
+function formatDeltaValue(value, unit) {
+  const amount = Number(value || 0);
+  const decimals = unit ? 1 : 2;
+  const prefix = amount > 0 ? "+" : "";
+
+  return `${prefix}${amount.toFixed(decimals)}${unit ? ` ${unit}` : "%"}`;
+}
+
 function renderStatPoints(points, className = "stat-grid") {
   const wrap = createElement("div", className);
 
@@ -302,8 +310,7 @@ function renderHeatmap(items, sourceLabel) {
     track.append(fill);
 
     const value = createElement("div", `heatmap-value heatmap-value-${directionClass(item.direction)}`);
-    const prefix = Number(item.value) > 0 ? "+" : "";
-    value.textContent = `${prefix}${item.value}${item.unit ? ` ${item.unit}` : "%"}`;
+    value.textContent = formatDeltaValue(item.value, item.unit);
 
     row.append(label, track, value);
     root.append(row);

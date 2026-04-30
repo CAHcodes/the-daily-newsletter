@@ -562,7 +562,7 @@ function repairText(value) {
     return value;
   }
 
-  if (!/[Ãâð]/.test(value)) {
+  if (!/(?:\u00c3|\u00e2|\u00f0)/.test(value)) {
     return value;
   }
 
@@ -921,7 +921,7 @@ function buildGenericCandidate(cluster, context) {
     whyItMatters:
       focusArea === "World"
         ? "The edge is spotting how a world story can migrate into policy, energy, or business risk before it becomes consensus."
-        : "The edge is understanding how this changes the day’s risk map instead of just knowing the headline.",
+        : "The edge is understanding how this changes the day's risk map instead of just knowing the headline.",
     marketImpact:
       focusArea === "World"
         ? "The direct market effect may stay muted at first, but the second-order policy and sentiment effects are what matter."
@@ -1468,7 +1468,12 @@ function shortenPhrase(value, maxLength = 28) {
     return text;
   }
 
-  return `${text.slice(0, maxLength - 1).trim()}…`;
+  const sliced = text.slice(0, maxLength - 3).trim();
+  const bounded = sliced.includes(" ")
+    ? sliced.replace(/\s+\S*$/, "").trim() || sliced
+    : sliced;
+
+  return `${bounded}...`;
 }
 
 function lowerFirst(value) {

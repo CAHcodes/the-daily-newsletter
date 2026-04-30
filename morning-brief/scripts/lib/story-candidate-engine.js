@@ -180,6 +180,58 @@ const PLAYBOOKS = [
     },
   },
   {
+    id: "fed-succession-split",
+    keywords: ["powell", "federal reserve", "fed", "governor", "warsh", "easing bias", "dissent"],
+    bucket: "market",
+    focusArea: "Macro",
+    urgency: "Must know",
+    readTime: "70 sec",
+    tags: ["Fed", "Rates", "Succession"],
+    build(cluster, context) {
+      return {
+        id: cluster.id,
+        bucket: cluster.bucket,
+        focusArea: "Macro",
+        urgency: "Must know",
+        readTime: "70 sec",
+        headline: "Powell's final meeting as chair turned into a Fed-handoff story.",
+        takeaway:
+          "The rate decision mattered less than the split around it and Powell's choice to remain on the board, because both now shape how investors will read the handoff to Kevin Warsh.",
+        whatChanged:
+          "Bloomberg and Reuters both emphasized two things at once: a more divided Fed decision and Powell's decision to stay on as a governor after May 15.",
+        whyItMatters:
+          "This is now a succession story as much as a rates story. The market has to price not just the next policy move, but how much independence and continuity the post-Powell Fed will project.",
+        marketImpact:
+          "Treasury yields, rate-cut expectations, and policy-sensitive equities can all stay jumpy because the leadership transition is now part of the macro risk map.",
+        disagreement:
+          "Some investors will read Powell staying on as a stabilizer. Others will read the dissents and the handoff itself as proof that policy uncertainty is getting harder to contain.",
+        watchToday:
+          "How yields behave after the meeting, whether Warsh expectations shift, and whether equity leadership still acts like the Fed backdrop is benign.",
+        signal: {
+          label: "Fed Handoff",
+          value: "Powell stays, dissents widen",
+          note: "The meeting became a leadership and credibility story, not just a rates story.",
+          status: "hot",
+        },
+        primaryReporting: cluster.primarySources,
+        framingInputs: pickFramingSources(context.newsletters, ["Brew Markets", "Morning Brew", "CFO Brew"]),
+        tags: ["Fed", "Rates", "Succession"],
+        links: buildLinks(cluster.articles, "the Fed handoff"),
+        evidence: buildEvidence(cluster),
+        scores: {
+          marketRelevance: 10,
+          worldRelevance: 3,
+          novelty: 8,
+          decisionUsefulness: 10,
+          peerEdge: 9,
+          memorability: 8,
+          confidence: confidenceScore(cluster, 8),
+          timeSensitivity: 10,
+        },
+      };
+    },
+  },
+  {
     id: "oil-macro-bridge",
     keywords: ["oil", "crude", "hormuz", "middle east", "energy", "iran"],
     bucket: "market",
@@ -857,7 +909,7 @@ function buildGenericCandidate(cluster, context) {
     ? pickFramingSources(context.newsletters, ["Morning Brew", "Tech Brew"])
     : pickFramingSources(context.newsletters, ["Brew Markets", "Morning Brew", "Tech Brew"]);
 
-  return {
+  const candidate = {
     id: cluster.id,
     bucket: cluster.bucket,
     focusArea,
@@ -899,12 +951,22 @@ function buildGenericCandidate(cluster, context) {
     evidence: buildEvidence(cluster),
     scores: buildGenericScores(cluster),
   };
+
+  candidate.whyItMatters = focusArea === "World"
+    ? "The edge is spotting how a world story can migrate into policy, energy, or business risk before it becomes consensus."
+    : "The edge is understanding how this changes the day's risk map instead of just knowing the headline.";
+
+  return candidate;
 }
 
 function toLowerLead(value) {
   const cleaned = repairText(value || "").trim();
   if (!cleaned) {
     return "the story remains important.";
+  }
+
+  if (/^[A-Z]{2,}[-\s]/.test(cleaned)) {
+    return cleaned;
   }
 
   return cleaned.charAt(0).toLowerCase() + cleaned.slice(1);
@@ -937,6 +999,7 @@ function classifyCoverageTopic(candidate, cluster) {
   const presetTopics = {
     "oil-macro-bridge": "economy-rates",
     "boj-split": "economy-rates",
+    "fed-succession-split": "economy-rates",
     "policy-earnings-collision": "business",
     "breadth-fragility": "markets",
     "anthropic-capex-signal": "ai-tech",
@@ -1070,6 +1133,20 @@ function buildStoryVisual(candidate, cluster, webRaw, coverageTopic) {
         { label: "BOJ vote", value: "6-3 split", tone: "cool" },
         pickTile(pulse, "us10y", "US 10Y"),
         { label: "Readthrough", value: "Hawkish subtext", tone: "warm" },
+      ].filter(Boolean),
+    };
+  }
+
+  if (candidate.id === "fed-succession-split") {
+    return {
+      palette: "amber",
+      eyebrow: "Economy & Rates",
+      title: "The Fed decision became a handoff story.",
+      summary: "Powell staying on and the wider dissent count both matter for how the next policy chapter will be read.",
+      points: [
+        { label: "Decision", value: "Rates unchanged", tone: "cool" },
+        pickTile(pulse, "us10y", "US 10Y"),
+        { label: "Signal", value: "Leadership handoff", tone: "warm" },
       ].filter(Boolean),
     };
   }
@@ -1290,8 +1367,14 @@ function buildMemoryHook(selected) {
     if (candidate.id === "boj-split") {
       hooks.push("the BOJ split");
     }
+    if (candidate.id === "fed-succession-split") {
+      hooks.push("the Powell handoff");
+    }
     if (candidate.id === "anthropic-capex-signal") {
       hooks.push("Anthropic capital");
+    }
+    if ((candidate.headline || "").includes("OpenAI")) {
+      hooks.push("OpenAI pressure");
     }
   });
 

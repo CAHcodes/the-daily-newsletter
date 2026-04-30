@@ -1,15 +1,27 @@
 {
-  "generatedAt": "2026-04-28T16:55:38.934Z",
+  "generatedAt": "2026-04-30T00:42:47.205Z",
   "rankedCandidates": [
     {
       "id": "oil-macro-bridge",
       "headline": "Oil is doing more macro work than the index headline suggests.",
       "bucket": "market",
       "coverageTopic": "economy-rates",
-      "engineScore": 78.1,
+      "engineScore": 81.3,
       "newsletterSignalMatch": {
-        "source": "CFO Brew",
-        "subject": "Shocking",
+        "source": "Brew Markets",
+        "subject": "Powell ain't going nowhere",
+        "matchedHints": []
+      }
+    },
+    {
+      "id": "fed-succession-split",
+      "headline": "Powell's final meeting as chair turned into a Fed-handoff story.",
+      "bucket": "market",
+      "coverageTopic": "economy-rates",
+      "engineScore": 76.9,
+      "newsletterSignalMatch": {
+        "source": "Brew Markets",
+        "subject": "Powell ain't going nowhere",
         "matchedHints": []
       }
     },
@@ -18,60 +30,48 @@
       "headline": "Policy week and megacap earnings are hitting the market at the same time.",
       "bucket": "market",
       "coverageTopic": "business",
-      "engineScore": 73.1,
+      "engineScore": 74.6,
       "newsletterSignalMatch": {
-        "source": "CFO Brew",
-        "subject": "Shocking",
+        "source": "Morning Brew",
+        "subject": "Sloshing around",
         "matchedHints": []
       }
-    },
-    {
-      "id": "anthropic-capex-signal",
-      "headline": "Anthropic's funding round matters because private capital is now steering public capex expectations.",
-      "bucket": "market",
-      "coverageTopic": "ai-tech",
-      "engineScore": 72.75,
-      "newsletterSignalMatch": {
-        "source": "CFO Brew",
-        "subject": "Shocking",
-        "matchedHints": []
-      }
-    },
-    {
-      "id": "lebanon-risk-premium",
-      "headline": "Lebanon is the reminder that the Middle East risk premium never really left.",
-      "bucket": "world",
-      "coverageTopic": "politics-world",
-      "engineScore": 67.7,
-      "newsletterSignalMatch": null
-    },
-    {
-      "id": "boj-split",
-      "headline": "The BOJ hold was less dovish than the headline implied.",
-      "bucket": "market",
-      "coverageTopic": "economy-rates",
-      "engineScore": 66.05,
-      "newsletterSignalMatch": null
     },
     {
       "id": "breadth-fragility",
       "headline": "Fresh index highs are still masking thinner leadership than the headline implies.",
       "bucket": "market",
       "coverageTopic": "markets",
-      "engineScore": 62.45,
+      "engineScore": 64.05,
       "newsletterSignalMatch": {
-        "source": "CFO Brew",
-        "subject": "Shocking",
+        "source": "Brew Markets",
+        "subject": "Powell ain't going nowhere",
         "matchedHints": []
       }
     },
     {
-      "id": "mexico-policy-spillover",
-      "headline": "Cross-border security stories can become macro-political stories faster than people expect.",
+      "id": "generic-openai-s-missed-targets-are-now-an-ai-confidence-test",
+      "headline": "OpenAI's missed targets are now an AI confidence test",
+      "bucket": "market",
+      "coverageTopic": "ai-tech",
+      "engineScore": 57.4,
+      "newsletterSignalMatch": {
+        "source": "Brew Markets",
+        "subject": "Powell ain't going nowhere",
+        "matchedHints": []
+      }
+    },
+    {
+      "id": "uk-us-diplomatic-theater",
+      "headline": "The UK-US diplomatic theater matters because symbolic alignment can become policy alignment.",
       "bucket": "world",
       "coverageTopic": "politics-world",
-      "engineScore": 57.7,
-      "newsletterSignalMatch": null
+      "engineScore": 50.65,
+      "newsletterSignalMatch": {
+        "source": "Morning Brew",
+        "subject": "Sloshing around",
+        "matchedHints": []
+      }
     }
   ],
   "selectedCandidates": [
@@ -80,10 +80,22 @@
       "headline": "Oil is doing more macro work than the index headline suggests.",
       "bucket": "market",
       "coverageTopic": "economy-rates",
-      "engineScore": 78.1,
+      "engineScore": 81.3,
       "newsletterSignalMatch": {
-        "source": "CFO Brew",
-        "subject": "Shocking",
+        "source": "Brew Markets",
+        "subject": "Powell ain't going nowhere",
+        "matchedHints": []
+      }
+    },
+    {
+      "id": "fed-succession-split",
+      "headline": "Powell's final meeting as chair turned into a Fed-handoff story.",
+      "bucket": "market",
+      "coverageTopic": "economy-rates",
+      "engineScore": 76.9,
+      "newsletterSignalMatch": {
+        "source": "Brew Markets",
+        "subject": "Powell ain't going nowhere",
         "matchedHints": []
       }
     },
@@ -92,50 +104,46 @@
       "headline": "Policy week and megacap earnings are hitting the market at the same time.",
       "bucket": "market",
       "coverageTopic": "business",
-      "engineScore": 73.1,
+      "engineScore": 74.6,
       "newsletterSignalMatch": {
-        "source": "CFO Brew",
-        "subject": "Shocking",
+        "source": "Morning Brew",
+        "subject": "Sloshing around",
         "matchedHints": []
       }
-    },
-    {
-      "id": "anthropic-capex-signal",
-      "headline": "Anthropic's funding round matters because private capital is now steering public capex expectations.",
-      "bucket": "market",
-      "coverageTopic": "ai-tech",
-      "engineScore": 72.75,
-      "newsletterSignalMatch": {
-        "source": "CFO Brew",
-        "subject": "Shocking",
-        "matchedHints": []
-      }
-    },
-    {
-      "id": "lebanon-risk-premium",
-      "headline": "Lebanon is the reminder that the Middle East risk premium never really left.",
-      "bucket": "world",
-      "coverageTopic": "politics-world",
-      "engineScore": 67.7,
-      "newsletterSignalMatch": null
-    },
-    {
-      "id": "boj-split",
-      "headline": "The BOJ hold was less dovish than the headline implied.",
-      "bucket": "market",
-      "coverageTopic": "economy-rates",
-      "engineScore": 66.05,
-      "newsletterSignalMatch": null
     },
     {
       "id": "breadth-fragility",
       "headline": "Fresh index highs are still masking thinner leadership than the headline implies.",
       "bucket": "market",
       "coverageTopic": "markets",
-      "engineScore": 62.45,
+      "engineScore": 64.05,
       "newsletterSignalMatch": {
-        "source": "CFO Brew",
-        "subject": "Shocking",
+        "source": "Brew Markets",
+        "subject": "Powell ain't going nowhere",
+        "matchedHints": []
+      }
+    },
+    {
+      "id": "generic-openai-s-missed-targets-are-now-an-ai-confidence-test",
+      "headline": "OpenAI's missed targets are now an AI confidence test",
+      "bucket": "market",
+      "coverageTopic": "ai-tech",
+      "engineScore": 57.4,
+      "newsletterSignalMatch": {
+        "source": "Brew Markets",
+        "subject": "Powell ain't going nowhere",
+        "matchedHints": []
+      }
+    },
+    {
+      "id": "uk-us-diplomatic-theater",
+      "headline": "The UK-US diplomatic theater matters because symbolic alignment can become policy alignment.",
+      "bucket": "world",
+      "coverageTopic": "politics-world",
+      "engineScore": 50.65,
+      "newsletterSignalMatch": {
+        "source": "Morning Brew",
+        "subject": "Sloshing around",
         "matchedHints": []
       }
     }

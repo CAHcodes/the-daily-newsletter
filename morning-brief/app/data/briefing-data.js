@@ -1,129 +1,139 @@
 const MORNING_BRIEFING = {
   "meta": {
     "productLabel": "Morning Intelligence Brief",
-    "editionLabel": "Tuesday, April 28",
-    "generatedAt": "2026-04-28T16:55:30.885Z",
+    "editionLabel": "Wednesday, April 29",
+    "generatedAt": "2026-04-30T00:42:47.088Z",
     "estimatedReadMinutes": 17,
     "commuteMode": "20-minute subway ride",
     "tone": "Signal first, depth on demand, built for a distracted morning brain.",
     "sourceFocus": [
       "Reuters",
-      "The Wall Street Journal",
-      "Associated Press",
       "Bloomberg",
-      "CFO Brew"
+      "Associated Press",
+      "The Wall Street Journal",
+      "Morning Brew",
+      "Brew Markets"
     ]
   },
   "thesis": {
-    "headline": "This market still looks calm on the surface, but energy risk, central-bank tension, and narrow leadership are doing the real work underneath.",
-    "summary": "The edge is not knowing more headlines. It is seeing how energy, policy, and concentration risk connect before that connection becomes obvious to everyone else.",
+    "headline": "This morning is really about a rally that still depends on calm oil and narrow leadership staying cooperative.",
+    "summary": "The market wants to stay bullish, but it is outsourcing more stress than the headline suggests to energy, concentration, and the hope that nothing broadens from here.",
     "marketMood": {
       "label": "Amber | Calm indexes, stressed undercurrents",
       "note": "Record highs can coexist with hidden fragility for a while. Energy, breadth, and policy tone are the pressure points to watch."
     },
     "edgeCallout": {
-      "title": "Remember oil, Anthropic capital, and the BOJ split.",
+      "title": "Remember oil, the Powell handoff, and breadth.",
       "note": "If you remember the connectors instead of the headlines, the rest of the day gets easier to decode."
     }
   },
   "pulse": {
     "intro": "Start with the numbers before the narratives.",
-    "asOf": "2026-04-28T10:18:00-04:00",
-    "sourceLabel": "Reuters market wrap and Investing market board",
+    "asOf": "2026-04-29T16:00:00-04:00",
+    "sourceLabel": "Brew Markets close board and same-day Tier 1 market coverage",
     "marketTiles": [
       {
         "id": "sp500",
         "label": "S&P 500",
-        "value": "7,173.91",
-        "change": "+0.12%",
-        "changeValue": 0.12,
-        "direction": "up",
-        "note": "Green on the surface, still less convincing underneath."
+        "value": "7,135.95",
+        "change": "-0.04%",
+        "changeValue": -0.04,
+        "direction": "down",
+        "note": "Broad indexes were flat to lower even as oil and rates stayed loud."
       },
       {
         "id": "nasdaq",
         "label": "Nasdaq",
-        "value": "24,887.10",
-        "change": "+0.20%",
-        "changeValue": 0.2,
+        "value": "24,673.24",
+        "change": "+0.04%",
+        "changeValue": 0.04,
         "direction": "up",
-        "note": "Leadership is still doing most of the heavy lifting."
+        "note": "Tech held up better than the rest of the tape, but conviction was thin."
+      },
+      {
+        "id": "dow",
+        "label": "Dow",
+        "value": "48,861.81",
+        "change": "-0.57%",
+        "changeValue": -0.57,
+        "direction": "down",
+        "note": "Old-economy exposure looked weaker than the headline megacap tape."
       },
       {
         "id": "brent",
         "label": "Brent",
-        "value": "$108.23",
-        "change": "+2.75%",
-        "changeValue": 2.75,
+        "value": "$118.11",
+        "change": "+6.20%",
+        "changeValue": 6.2,
         "direction": "up",
-        "note": "The war premium is still sitting in the tape."
+        "note": "Hormuz closure risk kept the war premium fully alive."
       },
       {
         "id": "wti",
         "label": "WTI",
-        "value": "$96.37",
-        "change": "+2.09%",
-        "changeValue": 2.09,
+        "value": "$106.74",
+        "change": "+6.80%",
+        "changeValue": 6.8,
         "direction": "up",
-        "note": "Energy is still the live inflation bridge."
+        "note": "Domestic crude joined the spike as blockade fears deepened."
       },
       {
         "id": "us10y",
         "label": "US 10Y",
-        "value": "4.336%",
-        "change": "+2.5 bp",
-        "changeValue": 2.5,
+        "value": "4.418%",
+        "change": "+6.0 bp",
+        "changeValue": 6,
         "changeUnit": "bp",
         "direction": "up",
-        "note": "Yields are leaning higher into the Fed."
+        "note": "The yield move said inflation and Fed-path risk are back together."
       },
       {
-        "id": "gold",
-        "label": "Gold",
-        "value": "$4,679",
-        "change": "-0.62%",
-        "changeValue": -0.62,
+        "id": "bitcoin",
+        "label": "Bitcoin",
+        "value": "$75,570.56",
+        "change": "-1.17%",
+        "changeValue": -1.17,
         "direction": "down",
-        "note": "The haven bid cooled even with oil firm."
+        "note": "Crypto did not behave like a clean refuge."
       }
     ],
     "heatmap": [
       {
         "label": "Brent",
-        "value": 2.75,
+        "value": 6.2,
         "direction": "up",
         "theme": "Energy"
       },
       {
         "label": "WTI",
-        "value": 2.09,
+        "value": 6.8,
         "direction": "up",
         "theme": "Energy"
       },
       {
-        "label": "VIX",
-        "value": 3.39,
-        "direction": "up",
-        "theme": "Volatility"
-      },
-      {
         "label": "US 10Y",
-        "value": 2.5,
+        "value": 6,
         "direction": "up",
         "theme": "Rates",
         "unit": "bp"
       },
       {
-        "label": "Dollar",
-        "value": -0.16,
-        "direction": "down",
-        "theme": "FX"
+        "label": "Nasdaq",
+        "value": 0.04,
+        "direction": "up",
+        "theme": "Equities"
       },
       {
-        "label": "Gold",
-        "value": -0.62,
+        "label": "S&P 500",
+        "value": -0.04,
         "direction": "down",
-        "theme": "Havens"
+        "theme": "Equities"
+      },
+      {
+        "label": "Bitcoin",
+        "value": -1.17,
+        "direction": "down",
+        "theme": "Crypto"
       }
     ],
     "riskRadar": [
@@ -131,13 +141,13 @@ const MORNING_BRIEFING = {
         "label": "Energy Stress",
         "score": 88,
         "tone": "hot",
-        "note": "$108.23 +2.75% keeps the inflation bridge alive."
+        "note": "$118.11 +6.20% keeps the inflation bridge alive."
       },
       {
         "label": "Policy Squeeze",
         "score": 78,
         "tone": "watch",
-        "note": "4.336% with Fed and BOJ pressure in the background."
+        "note": "4.418% with Fed and BOJ pressure in the background."
       },
       {
         "label": "Leadership Fragility",
@@ -147,55 +157,55 @@ const MORNING_BRIEFING = {
       },
       {
         "label": "AI Capital Race",
-        "score": 82,
+        "score": 57,
         "tone": "steady",
-        "note": "Google's $10 billion check now, with another $30 billion contingent, lands days after Amazon's $5 billion commitment. The real edge is that one private-company financing round is now influencing public cloud spend, data-center buildout, and the AI-coding narrative."
+        "note": "OpenAI's missed targets rattled public AI proxies, while Anthropic equity remained scarce enough to show up in barter-style property deals and continued to carry strategic value for Google. The useful read is that private AI equity is still coveted, but public markets are no longer giving every AI leader the same benefit of the doubt."
       }
     ],
     "privateRadar": {
-      "title": "Anthropic is no longer a niche startup story. It is becoming a capex and cloud-demand story.",
-      "summary": "Google's $10 billion check now, with another $30 billion contingent, lands days after Amazon's $5 billion commitment. The real edge is that one private-company financing round is now influencing public cloud spend, data-center buildout, and the AI-coding narrative.",
+      "title": "Private AI capital is splitting into execution risk and scarcity value.",
+      "summary": "OpenAI's missed targets rattled public AI proxies, while Anthropic equity remained scarce enough to show up in barter-style property deals and continued to carry strategic value for Google. The useful read is that private AI equity is still coveted, but public markets are no longer giving every AI leader the same benefit of the doubt.",
       "metrics": [
         {
-          "label": "Post-money value",
-          "value": "$380B",
-          "note": "PitchBook, April 25"
-        },
-        {
-          "label": "Run-rate revenue",
-          "value": "$30B",
-          "note": "PitchBook profile, TTM 4Q2026"
+          "label": "Anthropic value",
+          "value": "$350B",
+          "note": "Bloomberg, April 24"
         },
         {
           "label": "Google capital",
           "value": "$10B now",
-          "note": "Up to $30B more on milestones"
+          "note": "Bloomberg and Reuters, April 24"
         },
         {
-          "label": "Amazon capital",
-          "value": "$5B now",
-          "note": "Up to $20B additional potential"
+          "label": "Extra Google option",
+          "value": "$30B contingent",
+          "note": "Performance-linked funding"
+        },
+        {
+          "label": "Private-market signal",
+          "value": "Shares as currency",
+          "note": "Tech Brew framing, April 29"
         }
       ],
       "bullets": [
-        "Claude Code traction is turning model demand into infrastructure demand.",
-        "The financing story matters to public markets because Google, Amazon, Broadcom, and CoreWeave all sit somewhere in the same supply chain.",
-        "The AI race is shifting from model bragging rights to balance-sheet endurance."
+        "OpenAI weakness is now a listed-equity problem as much as a private-company one.",
+        "Anthropic remains a scarcity asset tied to cloud capacity, coding demand, and strategic partnerships.",
+        "The AI trade is starting to separate model glamour from execution quality."
       ],
       "links": [
         {
-          "label": "Reuters on Google's Anthropic investment",
-          "url": "https://www.investing.com/news/stock-market-news/google-plans-to-invest-up-to-40-billion-in-anthropic-bloomberg-news-reports-4636417"
+          "label": "Bloomberg on Google's Anthropic investment",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic?srnd=phx-deals"
         },
         {
-          "label": "Bloomberg on the Anthropic deal",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic"
+          "label": "WSJ on OpenAI-linked stock pressure",
+          "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-28-2026/card/ai-stocks-falter-on-openai-stumble-Z87WaQKoY4gpZkMBOjPY"
         }
       ]
     },
     "sourceMode": {
       "headline": "Tier 1 reporting plus active newsletter framing.",
-      "summary": "Active editorial issues today: CFO Brew: Shocking."
+      "summary": "Active editorial issues today: Morning Brew: Sloshing around | Brew Markets: Powell ain't going nowhere | Tech Brew: Musk on a mission."
     }
   },
   "scan": {
@@ -208,27 +218,27 @@ const MORNING_BRIEFING = {
         "status": "hot"
       },
       {
+        "label": "Fed Handoff",
+        "value": "Powell stays, dissents widen",
+        "note": "The meeting became a leadership and credibility story, not just a rates story.",
+        "status": "hot"
+      },
+      {
         "label": "Megacap Pressure",
         "value": "Macro week meets earnings week",
         "note": "Policy decisions and leadership-name results are landing on top of each other.",
         "status": "hot"
       },
       {
-        "label": "Private Radar",
-        "value": "Anthropic is becoming infrastructure",
-        "note": "The private-company story is now leaking directly into public capex narratives.",
-        "status": "steady"
+        "label": "Index Reality",
+        "value": "Records with thinner breadth",
+        "note": "The index story looks cleaner than the market internals do.",
+        "status": "watch"
       },
       {
-        "label": "World Risk",
-        "value": "Lebanon ceasefire still brittle",
-        "note": "The regional risk premium never really left the system.",
-        "status": "steady"
-      },
-      {
-        "label": "Policy Signal",
-        "value": "BOJ split on the hold",
-        "note": "The headline was a pause. The subtext was still hawkish.",
+        "label": "Market Signal",
+        "value": "OpenAI's missed targets are now an AI confide...",
+        "note": "AI-linked equities sold off after OpenAI missed internal revenue and user goals.",
         "status": "watch"
       }
     ],
@@ -260,33 +270,36 @@ const MORNING_BRIEFING = {
         "sourceTrail": {
           "primary": [
             "Reuters",
-            "The Wall Street Journal",
+            "Bloomberg",
             "Associated Press"
           ],
-          "framing": []
+          "framing": [
+            "Morning Brew",
+            "Brew Markets"
+          ]
         },
         "newsletterSignalMatch": {
-          "source": "CFO Brew",
-          "subject": "Shocking",
+          "source": "Brew Markets",
+          "subject": "Powell ain't going nowhere",
           "matchedHints": []
         },
         "links": [
           {
             "label": "Reuters on oil and the macro setup",
-            "url": "https://www.moneycontrol.com/news/business/markets/oil-advances-with-middle-east-in-focus-equities-rise-slightly-13901256.html"
+            "url": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html"
           },
           {
-            "label": "The Wall Street Journal on oil and the macro setup",
-            "url": "https://www.wsj.com/finance/commodities-futures/middle-east-conflict-to-weaken-growth-as-commodity-prices-surge-world-bank-says-32219cd8"
+            "label": "Bloomberg on oil and the macro setup",
+            "url": "https://www.bloomberg.com/news/articles/2026-04-29/latest-oil-market-news-and-analysis-for-april-30"
           },
           {
             "label": "Associated Press on oil and the macro setup",
-            "url": "https://apnews.com/article/374d81d1aac6d8f19c21e1d1e10ab103"
+            "url": "https://apnews.com/article/4b74b9d583433ed609c17df830ce3880"
           }
         ],
         "primaryLink": {
           "label": "Reuters on oil and the macro setup",
-          "url": "https://www.moneycontrol.com/news/business/markets/oil-advances-with-middle-east-in-focus-equities-rise-slightly-13901256.html"
+          "url": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html"
         },
         "visual": {
           "palette": "amber",
@@ -296,22 +309,94 @@ const MORNING_BRIEFING = {
           "points": [
             {
               "label": "Brent",
-              "value": "+2.75%",
+              "value": "+6.20%",
               "tone": "warm"
             },
             {
               "label": "WTI",
-              "value": "+2.09%",
+              "value": "+6.80%",
               "tone": "warm"
             },
             {
               "label": "US 10Y",
-              "value": "+2.5 bp",
+              "value": "+6.0 bp",
               "tone": "warm"
             }
           ]
         },
-        "engineScore": 78.1
+        "engineScore": 81.3
+      },
+      {
+        "coverageTopic": "economy-rates",
+        "focusArea": "Macro",
+        "urgency": "Must know",
+        "readTime": "70 sec",
+        "headline": "Powell's final meeting as chair turned into a Fed-handoff story.",
+        "takeaway": "The rate decision mattered less than the split around it and Powell's choice to remain on the board, because both now shape how investors will read the handoff to Kevin Warsh.",
+        "whatChanged": "Bloomberg and Reuters both emphasized two things at once: a more divided Fed decision and Powell's decision to stay on as a governor after May 15.",
+        "whyItMatters": "This is now a succession story as much as a rates story. The market has to price not just the next policy move, but how much independence and continuity the post-Powell Fed will project.",
+        "marketImpact": "Treasury yields, rate-cut expectations, and policy-sensitive equities can all stay jumpy because the leadership transition is now part of the macro risk map.",
+        "disagreement": "Some investors will read Powell staying on as a stabilizer. Others will read the dissents and the handoff itself as proof that policy uncertainty is getting harder to contain.",
+        "watchToday": "How yields behave after the meeting, whether Warsh expectations shift, and whether equity leadership still acts like the Fed backdrop is benign.",
+        "tags": [
+          "Fed",
+          "Rates",
+          "Succession"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "Bloomberg",
+            "Reuters"
+          ],
+          "framing": [
+            "Brew Markets",
+            "Morning Brew",
+            "CFO Brew"
+          ]
+        },
+        "newsletterSignalMatch": {
+          "source": "Brew Markets",
+          "subject": "Powell ain't going nowhere",
+          "matchedHints": []
+        },
+        "links": [
+          {
+            "label": "Bloomberg on the Fed handoff",
+            "url": "https://www.bloomberg.com/news/articles/2026-04-29/fed-holds-rates-three-officials-dissent-against-easing-bias"
+          },
+          {
+            "label": "Reuters on the Fed handoff",
+            "url": "https://www.investing.com/news/economy-news/feds-powell-says-he-will-stay-on-as-governor-after-chair-term-ends-4646577"
+          }
+        ],
+        "primaryLink": {
+          "label": "Bloomberg on the Fed handoff",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-29/fed-holds-rates-three-officials-dissent-against-easing-bias"
+        },
+        "visual": {
+          "palette": "amber",
+          "eyebrow": "Economy & Rates",
+          "title": "The Fed decision became a handoff story.",
+          "summary": "Powell staying on and the wider dissent count both matter for how the next policy chapter will be read.",
+          "points": [
+            {
+              "label": "Decision",
+              "value": "Rates unchanged",
+              "tone": "cool"
+            },
+            {
+              "label": "US 10Y",
+              "value": "+6.0 bp",
+              "tone": "warm"
+            },
+            {
+              "label": "Signal",
+              "value": "Leadership handoff",
+              "tone": "warm"
+            }
+          ]
+        },
+        "engineScore": 76.9
       },
       {
         "coverageTopic": "business",
@@ -332,24 +417,23 @@ const MORNING_BRIEFING = {
         ],
         "sourceTrail": {
           "primary": [
-            "Bloomberg",
-            "The Wall Street Journal"
+            "Bloomberg"
           ],
-          "framing": []
+          "framing": [
+            "Brew Markets",
+            "Morning Brew",
+            "Tech Brew"
+          ]
         },
         "newsletterSignalMatch": {
-          "source": "CFO Brew",
-          "subject": "Shocking",
+          "source": "Morning Brew",
+          "subject": "Sloshing around",
           "matchedHints": []
         },
         "links": [
           {
             "label": "Bloomberg on the policy-plus-earnings collision",
             "url": "https://www.bloomberg.com/news/newsletters/2026-04-27/earnings-central-banks-headline-blockbuster-week-for-markets"
-          },
-          {
-            "label": "The Wall Street Journal on the policy-plus-earnings collision",
-            "url": "https://www.wsj.com/economy/central-banking/japans-central-bank-holds-rates-but-raises-inflation-views-f917b799"
           }
         ],
         "primaryLink": {
@@ -379,195 +463,7 @@ const MORNING_BRIEFING = {
             }
           ]
         },
-        "engineScore": 73.1
-      },
-      {
-        "coverageTopic": "ai-tech",
-        "focusArea": "Private Markets",
-        "urgency": "High signal",
-        "readTime": "70 sec",
-        "headline": "Anthropic's funding round matters because private capital is now steering public capex expectations.",
-        "takeaway": "This is no longer just a startup valuation headline. It is a read-through into cloud demand, compute scarcity, and how aggressively big platforms are willing to subsidize the AI race.",
-        "whatChanged": "Reuters and Bloomberg both framed Google's latest Anthropic commitment as strategically important, landing just after Amazon's own fresh backing and turning one private-company financing story into a broader infrastructure signal.",
-        "whyItMatters": "When private AI funding reaches this scale, it stops being niche venture gossip and starts shaping how investors think about data centers, cloud spend, chip demand, and competitive endurance.",
-        "marketImpact": "This supports the public-market capex complex around cloud, networking, and compute, but it also keeps pressure on margins and raises the bar for every other AI contender.",
-        "disagreement": "Bulls see this as confirmation that enterprise AI demand is real enough to justify massive balance-sheet support. Skeptics see it as another sign that the leaders may be buying growth at a price the rest of the market cannot sustain.",
-        "watchToday": "Any read-through for cloud and semiconductor names, plus whether investors treat the deal as demand confirmation or as another warning that the AI race is becoming capital-intensive fast.",
-        "tags": [
-          "Private markets",
-          "AI capex",
-          "Cloud demand"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Reuters",
-            "Bloomberg"
-          ],
-          "framing": [
-            "CFO Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "CFO Brew",
-          "subject": "Shocking",
-          "matchedHints": []
-        },
-        "links": [
-          {
-            "label": "Reuters on Anthropic's capital signal",
-            "url": "https://www.investing.com/news/stock-market-news/google-plans-to-invest-up-to-40-billion-in-anthropic-bloomberg-news-reports-4636417"
-          },
-          {
-            "label": "Bloomberg on Anthropic's capital signal",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic"
-          }
-        ],
-        "primaryLink": {
-          "label": "Reuters on Anthropic's capital signal",
-          "url": "https://www.investing.com/news/stock-market-news/google-plans-to-invest-up-to-40-billion-in-anthropic-bloomberg-news-reports-4636417"
-        },
-        "visual": {
-          "palette": "rose",
-          "eyebrow": "AI & Tech",
-          "title": "Private AI capital is becoming public capex signal.",
-          "summary": "This is a cloud, compute, and business-model story now.",
-          "points": [
-            {
-              "label": "Post-money value",
-              "value": "$380B",
-              "tone": "warm"
-            },
-            {
-              "label": "Run-rate revenue",
-              "value": "$30B",
-              "tone": "cool"
-            },
-            {
-              "label": "Google capital",
-              "value": "$10B now",
-              "tone": "cool"
-            }
-          ]
-        },
-        "engineScore": 72.75
-      },
-      {
-        "coverageTopic": "politics-world",
-        "focusArea": "World",
-        "urgency": "High signal",
-        "readTime": "60 sec",
-        "headline": "Lebanon is the reminder that the Middle East risk premium never really left.",
-        "takeaway": "Markets can ignore flare-ups for a while, but the region is still doing real work through oil, shipping, and risk appetite.",
-        "whatChanged": "Reuters reported renewed evacuation orders in southern Lebanon, reinforcing how brittle the ceasefire picture remains and how quickly the region can move back into the foreground.",
-        "whyItMatters": "This is not separate from markets. It sits underneath energy pricing, inflation expectations, and the question of how much geopolitical calm the rally is assuming.",
-        "marketImpact": "The cleaner the escalation risk looks, the more investors keep paying up for energy resilience and geopolitical hedges rather than full risk-on confidence.",
-        "disagreement": "Some traders treat these headlines as background noise unless the conflict broadens. Others think repeated flare-ups make a true normalization story harder to believe.",
-        "watchToday": "Whether the story widens beyond local flare-ups and whether markets price it through oil or ignore it again.",
-        "tags": [
-          "Lebanon",
-          "Geopolitics",
-          "Risk premium"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Reuters"
-          ],
-          "framing": []
-        },
-        "newsletterSignalMatch": null,
-        "links": [
-          {
-            "label": "Reuters on southern Lebanon risk",
-            "url": "https://www.tbsnews.net/worldbiz/middle-east/israel-issues-evacuation-warning-seven-lebanese-towns-beyond-buffer-zone"
-          }
-        ],
-        "primaryLink": {
-          "label": "Reuters on southern Lebanon risk",
-          "url": "https://www.tbsnews.net/worldbiz/middle-east/israel-issues-evacuation-warning-seven-lebanese-towns-beyond-buffer-zone"
-        },
-        "visual": {
-          "palette": "mint",
-          "eyebrow": "Politics & World",
-          "title": "Regional tension is still leaking into the market story.",
-          "summary": "This is geopolitics with direct oil, shipping, and risk-premium consequences.",
-          "points": [
-            {
-              "label": "Ceasefire",
-              "value": "Still brittle",
-              "tone": "cool"
-            },
-            {
-              "label": "Brent",
-              "value": "+2.75%",
-              "tone": "warm"
-            },
-            {
-              "label": "Risk",
-              "value": "Premium alive",
-              "tone": "warm"
-            }
-          ]
-        },
-        "engineScore": 67.7
-      },
-      {
-        "coverageTopic": "economy-rates",
-        "focusArea": "Markets",
-        "urgency": "High signal",
-        "readTime": "65 sec",
-        "headline": "The BOJ hold was less dovish than the headline implied.",
-        "takeaway": "Most people will remember the hold. The better edge is remembering the split vote, because it says the global inflation story still has teeth.",
-        "whatChanged": "Reuters noted that the Bank of Japan held rates, but the split vote showed more internal tension than a simple pause would suggest.",
-        "whyItMatters": "A divided BOJ matters because it can ripple through the yen, global yield expectations, and the broader debate over how finished the tightening cycle really is.",
-        "marketImpact": "A less-dovish BOJ keeps duration-sensitive trades more fragile and makes any clean global disinflation narrative harder to trust blindly.",
-        "disagreement": "Some investors will treat this as a technical footnote because the policy rate did not move. Others will treat the split as a useful reminder that inflation pressure is not fully domesticated.",
-        "watchToday": "Yen reaction, bond-market sensitivity, and whether other central-bank commentary reinforces or softens the same message.",
-        "tags": [
-          "BOJ",
-          "Rates",
-          "Global yields"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Reuters"
-          ],
-          "framing": []
-        },
-        "newsletterSignalMatch": null,
-        "links": [
-          {
-            "label": "Reuters on the BOJ split",
-            "url": "https://ca.investing.com/news/economy-news/investors-react-to-bojs-decision-to-hold-rates-4590367"
-          }
-        ],
-        "primaryLink": {
-          "label": "Reuters on the BOJ split",
-          "url": "https://ca.investing.com/news/economy-news/investors-react-to-bojs-decision-to-hold-rates-4590367"
-        },
-        "visual": {
-          "palette": "mint",
-          "eyebrow": "Economy & Rates",
-          "title": "The hold mattered less than the split behind it.",
-          "summary": "The more useful read is that policy tension is still alive in rates.",
-          "points": [
-            {
-              "label": "BOJ vote",
-              "value": "6-3 split",
-              "tone": "cool"
-            },
-            {
-              "label": "US 10Y",
-              "value": "+2.5 bp",
-              "tone": "warm"
-            },
-            {
-              "label": "Readthrough",
-              "value": "Hawkish subtext",
-              "tone": "warm"
-            }
-          ]
-        },
-        "engineScore": 66.05
+        "engineScore": 74.6
       },
       {
         "coverageTopic": "markets",
@@ -590,11 +486,14 @@ const MORNING_BRIEFING = {
           "primary": [
             "The Wall Street Journal"
           ],
-          "framing": []
+          "framing": [
+            "Brew Markets",
+            "Morning Brew"
+          ]
         },
         "newsletterSignalMatch": {
-          "source": "CFO Brew",
-          "subject": "Shocking",
+          "source": "Brew Markets",
+          "subject": "Powell ain't going nowhere",
           "matchedHints": []
         },
         "links": [
@@ -615,12 +514,12 @@ const MORNING_BRIEFING = {
           "points": [
             {
               "label": "S&P 500",
-              "value": "+0.12%",
-              "tone": "warm"
+              "value": "-0.04%",
+              "tone": "cool"
             },
             {
               "label": "Nasdaq",
-              "value": "+0.20%",
+              "value": "+0.04%",
               "tone": "warm"
             },
             {
@@ -630,7 +529,144 @@ const MORNING_BRIEFING = {
             }
           ]
         },
-        "engineScore": 62.45
+        "engineScore": 64.05
+      },
+      {
+        "coverageTopic": "ai-tech",
+        "focusArea": "Markets",
+        "urgency": "Useful edge",
+        "readTime": "55 sec",
+        "headline": "OpenAI's missed targets are now an AI confidence test",
+        "takeaway": "AI-linked equities sold off after OpenAI missed internal revenue and user goals.",
+        "whatChanged": "The Wall Street Journal reported that AI-linked equities sold off after OpenAI missed internal revenue and user goals.",
+        "whyItMatters": "The edge is understanding how this changes the day's risk map instead of just knowing the headline.",
+        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
+        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
+        "watchToday": "Whether follow-through shows up in rates, commodities, sector leadership, or management commentary.",
+        "tags": [
+          "Markets",
+          "OpenAI's",
+          "missed"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "The Wall Street Journal"
+          ],
+          "framing": [
+            "Brew Markets",
+            "Morning Brew",
+            "Tech Brew"
+          ]
+        },
+        "newsletterSignalMatch": {
+          "source": "Brew Markets",
+          "subject": "Powell ain't going nowhere",
+          "matchedHints": []
+        },
+        "links": [
+          {
+            "label": "The Wall Street Journal on the story",
+            "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-28-2026/card/ai-stocks-falter-on-openai-stumble-Z87WaQKoY4gpZkMBOjPY"
+          }
+        ],
+        "primaryLink": {
+          "label": "The Wall Street Journal on the story",
+          "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-28-2026/card/ai-stocks-falter-on-openai-stumble-Z87WaQKoY4gpZkMBOjPY"
+        },
+        "visual": {
+          "palette": "sky",
+          "eyebrow": "Ai & Tech",
+          "title": "AI-linked equities sold off after OpenAI missed internal revenue and user goals.",
+          "summary": "Tap through to open the source article.",
+          "points": [
+            {
+              "label": "Signal 1",
+              "value": "Markets",
+              "tone": "warm"
+            },
+            {
+              "label": "Signal 2",
+              "value": "OpenAI's",
+              "tone": "cool"
+            },
+            {
+              "label": "Signal 3",
+              "value": "missed",
+              "tone": "cool"
+            }
+          ]
+        },
+        "engineScore": 57.4
+      },
+      {
+        "coverageTopic": "politics-world",
+        "focusArea": "World",
+        "urgency": "Context",
+        "readTime": "50 sec",
+        "headline": "The UK-US diplomatic theater matters because symbolic alignment can become policy alignment.",
+        "takeaway": "A ceremonial visit does not move markets on its own, but it can matter if it stabilizes expectations around allied coordination when the geopolitical backdrop is already tense.",
+        "whatChanged": "Associated Press framed King Charles III's Washington visit and address to Congress as an effort to emphasize continuity in the UK-US relationship.",
+        "whyItMatters": "When geopolitical coordination is in focus, symbolic reassurance can reduce uncertainty around trade, security alignment, and allied posture.",
+        "marketImpact": "The direct market effect is limited, but the broader diplomatic tone can shape how investors think about policy coordination during a risk-heavy week.",
+        "disagreement": "Some people dismiss this as pure symbolism. Others see symbolism as useful when policy relationships need visible reinforcement.",
+        "watchToday": "Any concrete policy or trade messaging that turns the symbolism into something more actionable.",
+        "tags": [
+          "Diplomacy",
+          "UK-US",
+          "Policy tone"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "Bloomberg",
+            "Associated Press"
+          ],
+          "framing": [
+            "Morning Brew"
+          ]
+        },
+        "newsletterSignalMatch": {
+          "source": "Morning Brew",
+          "subject": "Sloshing around",
+          "matchedHints": []
+        },
+        "links": [
+          {
+            "label": "Bloomberg on the UK-US visit",
+            "url": "https://www.bloomberg.com/news/articles/2026-04-29/king-charles-meets-ceos-in-bid-to-promote-us-uk-investment?srnd=phx-economics-v2"
+          },
+          {
+            "label": "Associated Press on the UK-US visit",
+            "url": "https://apnews.com/article/4cd294e6333b4a9ba7ada2af4dd71aa9"
+          }
+        ],
+        "primaryLink": {
+          "label": "Bloomberg on the UK-US visit",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-29/king-charles-meets-ceos-in-bid-to-promote-us-uk-investment?srnd=phx-economics-v2"
+        },
+        "visual": {
+          "palette": "mint",
+          "eyebrow": "Politics & World",
+          "title": "A ceremonial visit does not move markets on its own, but it can matter if it stabilizes expectations around allied coordination when the geopolitical backdrop is already tense.",
+          "summary": "Tap through to open the source article.",
+          "points": [
+            {
+              "label": "Signal 1",
+              "value": "Diplomacy",
+              "tone": "warm"
+            },
+            {
+              "label": "Signal 2",
+              "value": "UK-US",
+              "tone": "cool"
+            },
+            {
+              "label": "Signal 3",
+              "value": "Policy tone",
+              "tone": "cool"
+            }
+          ]
+        },
+        "engineScore": 50.65
       }
     ]
   },
@@ -649,10 +685,10 @@ const MORNING_BRIEFING = {
       "takeaway": "The chart is not about being bearish. It is about knowing whether optimism is broad or rented from a handful of names."
     },
     "deepDive": {
-      "title": "Why the BOJ split matters more than the hold.",
-      "body": "Most people will remember the pause. The more durable takeaway is that a split vote says the global inflation conversation is still unsettled.",
-      "whyNow": "That is exactly the kind of second-order detail that helps you sound informed instead of just updated.",
-      "link": "https://ca.investing.com/news/economy-news/investors-react-to-bojs-decision-to-hold-rates-4590367"
+      "title": "Why oil is the connector theme.",
+      "body": "Energy is what turns a regional headline into an inflation question, a rates question, and then a valuation question for the rest of the tape.",
+      "whyNow": "If you miss that bridge, the day feels random when it is actually much more connected.",
+      "link": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html"
     }
   },
   "sourceStack": [
@@ -679,6 +715,24 @@ const MORNING_BRIEFING = {
       "tier": "Tier 1",
       "role": "Primary reporting",
       "note": "Policy-relevant world and security coverage with clean factual grounding."
+    },
+    {
+      "name": "Morning Brew",
+      "tier": "Tier 2",
+      "role": "Curated framing input",
+      "note": "Broad smart-professional angle detection and business-narrative simplification."
+    },
+    {
+      "name": "Tech Brew",
+      "tier": "Tier 2",
+      "role": "Curated framing input",
+      "note": "Technology business framing and AI-policy angle detection when relevant."
+    },
+    {
+      "name": "Brew Markets",
+      "tier": "Tier 2",
+      "role": "Curated framing input",
+      "note": "Retail-market tone, investing angle detection, and sentiment framing."
     },
     {
       "name": "CFO Brew",

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-28T20:18:00Z",
+  "generatedAt": "2026-04-30T00:27:00Z",
   "account": "chris.aiza17@gmail.com",
-  "notes": "These are the latest accessible Morning Brew-family emails currently in Gmail. As of Tuesday, April 28, 2026, CFO Brew has delivered a real editorial issue, while Morning Brew, Tech Brew, Brew Markets, and The Playbook are still onboarding or welcome emails.",
+  "notes": "These are the latest accessible Morning Brew-family emails currently in Gmail. As of Wednesday, April 29, 2026, Morning Brew, Tech Brew, Brew Markets, and CFO Brew all have live editorial issues available. The Playbook is still onboarding-only.",
   "filtersApplied": {
     "config": "config/newsletter-filters.json",
     "editorialIssuesOnly": false
@@ -10,99 +10,106 @@
     {
       "label": "Morning Brief/Inputs/Morning Brew",
       "sender": "crew@morningbrew.com",
-      "messageId": "19dd439a5f160749",
-      "subject": "Caution: Morning Brew coming in hot",
-      "emailTs": "2026-04-28T13:14:00-04:00",
-      "isOnboardingIssue": true,
-      "issueType": "onboarding",
-      "issueDateLabel": "welcome",
-      "summary": "Welcome email describing Morning Brew coverage areas including investing, economy, work life, business analysis, media, and games.",
+      "messageId": "19dd8a8eab8695ff",
+      "subject": "Sloshing around",
+      "emailTs": "2026-04-29T05:36:43-04:00",
+      "isOnboardingIssue": false,
+      "issueType": "editorial",
+      "issueDateLabel": "2026-04-29",
+      "summary": "Morning Brew led with the UAE leaving OPEC, the market fallout from reports that OpenAI missed internal targets, and a broader market snapshot that tied oil, rates, and AI sentiment together.",
       "usefulSignals": [
-        "Broad business framing",
-        "General audience business-news voice",
-        "High-signal, low-friction editorial tone"
+        "Generalist business framing that links macro, AI, and politics into one morning read",
+        "Oil and OPEC developments are being treated as a direct market and inflation story",
+        "OpenAI execution concerns are spilling into public AI-linked stocks and cloud proxies"
       ],
       "topTopics": [
-        "business news voice",
-        "markets and economy",
-        "smart-professional framing"
+        "UAE leaves OPEC",
+        "OpenAI misses targets",
+        "oil and gas-price pressure",
+        "AI deepfake IP defense",
+        "market weakness and rates"
       ],
-      "newsletterTone": "Fast mainstream business framing with a punchy generalist tone.",
-      "editorialConfidence": 0,
-      "displayUrl": "https://mail.google.com/mail/#all/19dd439a5f160749"
+      "newsletterTone": "Fast mainstream business framing with markets-first top lines and punchy tech-policy curation.",
+      "editorialConfidence": 0.99,
+      "displayUrl": "https://mail.google.com/mail/#all/19dd8a8eab8695ff"
     },
     {
       "label": "Morning Brief/Inputs/Brew Markets",
       "sender": "brewmarkets@morningbrew.com",
-      "messageId": "19dd43c63f7b2cf7",
-      "subject": "From bullish to brilliant: investing insights straight to your inbox",
-      "emailTs": "2026-04-28T13:17:00-04:00",
-      "isOnboardingIssue": true,
-      "issueType": "onboarding",
-      "issueDateLabel": "welcome",
-      "summary": "Welcome email positioning Brew Markets as an afternoon investing newsletter focused on what moved markets, where trends are heading, and what it means for a portfolio.",
+      "messageId": "19ddae4ee940adf1",
+      "subject": "Powell ain't going nowhere",
+      "emailTs": "2026-04-29T16:18:33-04:00",
+      "isOnboardingIssue": false,
+      "issueType": "editorial",
+      "issueDateLabel": "2026-04-29",
+      "summary": "Brew Markets centered the day on Powell's likely final Fed meeting as chair, a sharply higher oil tape, and weak reactions to Robinhood and SoFi earnings despite an otherwise resilient equity backdrop.",
       "usefulSignals": [
-        "Afternoon market framing input",
-        "Retail-investor and sentiment angle",
-        "Useful for explaining moves in plain language"
+        "Rates, oil, and megacap earnings are being treated as one combined market setup",
+        "Retail brokerage weakness is a useful read on where risk appetite is not translating into earnings leverage",
+        "History-based market framing is emphasizing sentiment versus fundamentals"
       ],
       "topTopics": [
-        "retail market framing",
-        "portfolio context",
-        "what moved markets"
+        "Powell stays at the Fed",
+        "oil spike and Hormuz disruption",
+        "Robinhood and SoFi earnings",
+        "Fed dissents and easing bias",
+        "market volatility framing"
       ],
-      "newsletterTone": "Accessible investing recap with a retail-market slant.",
-      "editorialConfidence": 0,
-      "displayUrl": "https://mail.google.com/mail/#all/19dd43c63f7b2cf7"
+      "newsletterTone": "Retail-investor market framing with macro, rates, and single-stock follow-through.",
+      "editorialConfidence": 0.99,
+      "displayUrl": "https://mail.google.com/mail/#all/19ddae4ee940adf1"
     },
     {
       "label": "Morning Brief/Inputs/Tech Brew",
       "sender": "techbrew@morningbrew.com",
-      "messageId": "19dd43d4dae18ad1",
-      "subject": "Welcome to Tech Brew",
-      "emailTs": "2026-04-28T13:18:00-04:00",
-      "isOnboardingIssue": true,
-      "issueType": "onboarding",
-      "issueDateLabel": "welcome",
-      "summary": "Welcome email describing Tech Brew as a weekday afternoon guide to AI, tech policy, culture, emerging tech, and tech business.",
+      "messageId": "19dda8590c160222",
+      "subject": "Musk on a mission",
+      "emailTs": "2026-04-29T14:33:20-04:00",
+      "isOnboardingIssue": false,
+      "issueType": "editorial",
+      "issueDateLabel": "2026-04-29",
+      "summary": "Tech Brew focused on Musk's courtroom case against OpenAI, private demand for Anthropic equity, and second-order AI infrastructure stories like organ-delivery drones and commercial fusion grid access.",
       "usefulSignals": [
-        "Technology business framing",
-        "AI and policy angle detection",
-        "Useful for translating tech themes into business relevance"
+        "OpenAI governance and execution are being framed as an industry-shaping legal and business story",
+        "Anthropic equity scarcity is now showing up in real-world asset trades and supply-chain politics",
+        "AI coverage is connecting capital markets, regulation, and infrastructure buildout"
       ],
       "topTopics": [
-        "AI business",
-        "tech policy",
-        "emerging technology"
+        "Musk versus OpenAI trial",
+        "Anthropic shares as currency",
+        "Anthropic supply-chain risk politics",
+        "fusion and grid access",
+        "drone organ delivery"
       ],
-      "newsletterTone": "Business-facing tech framing with an AI and policy bias.",
-      "editorialConfidence": 0,
-      "displayUrl": "https://mail.google.com/mail/#all/19dd43d4dae18ad1"
+      "newsletterTone": "AI-business framing with legal, policy, and infrastructure emphasis.",
+      "editorialConfidence": 0.99,
+      "displayUrl": "https://mail.google.com/mail/#all/19dda8590c160222"
     },
     {
       "label": "Morning Brief/Inputs/CFO Brew",
       "sender": "cfobrew@morningbrew.com",
-      "messageId": "19dd4cdb64ddaf14",
-      "subject": "Shocking",
-      "emailTs": "2026-04-28T11:55:19-04:00",
+      "messageId": "19ddaefd8af462a0",
+      "subject": "Some CFOs are opting for cash over equity",
+      "emailTs": "2026-04-29T16:30:21-04:00",
       "isOnboardingIssue": false,
       "issueType": "editorial",
-      "issueDateLabel": "2026-04-28",
-      "summary": "CFO Brew's first live issue focused on geopolitical volatility, budgeting strain, investment visibility, tariffs, the Fed chair question, and what operator-level finance teams should watch.",
+      "issueDateLabel": "2026-04-29",
+      "summary": "CFO Brew focused on PE-backed CFO compensation shifting toward cash, healthcare costs rising as a top operating-expense concern, and large banks still telling clients to buy the dip.",
       "usefulSignals": [
-        "Operator-level budgeting stress from geopolitics and tariffs",
-        "Corporate finance lens on volatility, cash control, and investment pacing",
-        "Finance-chief framing around rates, policy uncertainty, and cost visibility"
+        "Operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits",
+        "Healthcare cost pressure is moving higher on the CFO operating-risk list",
+        "Boardroom finance framing is still constructive on large-cap equities despite geopolitical stress"
       ],
       "topTopics": [
-        "corporate finance",
-        "budgeting and investment control",
-        "policy and rates",
-        "geopolitical volatility"
+        "cash over equity for CFOs",
+        "healthcare costs as operating risk",
+        "buy-the-dip bank framing",
+        "AI on earnings calls",
+        "infrastructure capital efficiency"
       ],
-      "newsletterTone": "Operator-focused finance framing for senior management readers, with a practical risk-management bias.",
-      "editorialConfidence": 0.92,
-      "displayUrl": "https://mail.google.com/mail/#all/19dd4cdb64ddaf14"
+      "newsletterTone": "Operator-focused finance framing with compensation, opex, and boardroom risk context.",
+      "editorialConfidence": 0.97,
+      "displayUrl": "https://mail.google.com/mail/#all/19ddaefd8af462a0"
     },
     {
       "label": "Morning Brief/Inputs/The Playbook",

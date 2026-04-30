@@ -125,6 +125,14 @@ Do send only if the result feels like:
 
 Update the canonical content file first, then render outputs from it.
 
+## Delivery behavior
+
+Read `config/delivery-settings.json` carefully.
+
+- If `recipients` is present, send the same finished edition to every address in that list.
+- If only `recipient` is present, send to that one address.
+- Treat that as one edition run, not multiple different emails.
+
 ## Staging file
 
 Use `data/staging/story-candidates.json` as the structured intake layer between raw source reading and final briefing generation.

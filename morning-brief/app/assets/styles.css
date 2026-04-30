@@ -390,6 +390,10 @@ a {
   padding: 16px;
 }
 
+.newsletter-figure {
+  padding: 16px;
+}
+
 .lead-figure-sky,
 .story-figure-sky {
   background: var(--blue-soft);
@@ -421,6 +425,19 @@ a {
 
 .figure-summary {
   margin-top: 8px;
+}
+
+.figure-graphic {
+  margin-top: 14px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.figure-svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .stat-grid {
@@ -641,6 +658,37 @@ a {
   color: var(--ink);
 }
 
+.newsletter-body {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.newsletter-copy {
+  display: grid;
+  gap: 12px;
+}
+
+.newsletter-figure-gold {
+  background: var(--gold-soft);
+}
+
+.newsletter-figure-blue {
+  background: var(--blue-soft);
+}
+
+.newsletter-figure-rose {
+  background: var(--rose-soft);
+}
+
+.newsletter-figure-sage {
+  background: var(--sage-soft);
+}
+
+.newsletter-figure-paper {
+  background: #f6f1e9;
+}
+
 @media (min-width: 900px) {
   .masthead-main {
     grid-template-columns: minmax(0, 1.45fr) 320px;
@@ -667,6 +715,11 @@ a {
 
   .newsletter-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .newsletter-body {
+    grid-template-columns: minmax(0, 1.3fr) 250px;
+    align-items: start;
   }
 }
 

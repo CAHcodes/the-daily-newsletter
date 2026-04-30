@@ -85,6 +85,150 @@ function renderStatPoints(points, className = "stat-grid") {
   return wrap;
 }
 
+function graphicPalette(palette) {
+  const palettes = {
+    gold: {
+      fill: "#f7e5b8",
+      accent: "#b58b34",
+      accentSoft: "#d8c27a",
+      ink: "#6e5619",
+    },
+    blue: {
+      fill: "#dceaf5",
+      accent: "#335c7d",
+      accentSoft: "#7ba3c3",
+      ink: "#28465f",
+    },
+    rose: {
+      fill: "#f3dce4",
+      accent: "#8d4f64",
+      accentSoft: "#c28ea0",
+      ink: "#6f3c4d",
+    },
+    sage: {
+      fill: "#dce9df",
+      accent: "#4f6d5d",
+      accentSoft: "#8bac98",
+      ink: "#40584b",
+    },
+    paper: {
+      fill: "#ece4d8",
+      accent: "#7d7265",
+      accentSoft: "#c9bbac",
+      ink: "#61584f",
+    },
+  };
+
+  return palettes[palette] || palettes.paper;
+}
+
+function graphicTypeFromTopic(topic) {
+  if (topic === "economy-rates") {
+    return "rates";
+  }
+  if (topic === "ai-tech") {
+    return "network";
+  }
+  if (topic === "politics-world") {
+    return "map";
+  }
+  if (topic === "business") {
+    return "ledger";
+  }
+
+  return "market";
+}
+
+function buildGraphicMarkup(type, palette) {
+  const colors = graphicPalette(palette);
+
+  if (type === "rates") {
+    return `
+      <svg class="figure-svg" viewBox="0 0 260 150" aria-hidden="true">
+        <rect x="18" y="16" width="224" height="118" rx="16" fill="${colors.fill}" opacity="0.75"></rect>
+        <path d="M28 106 C60 92, 88 96, 118 74 S172 56, 232 38" fill="none" stroke="${colors.accent}" stroke-width="5" stroke-linecap="round"></path>
+        <path d="M28 116 C58 108, 92 110, 124 92 S176 80, 232 70" fill="none" stroke="${colors.accentSoft}" stroke-width="3" stroke-linecap="round"></path>
+        <circle cx="118" cy="74" r="6" fill="${colors.ink}"></circle>
+        <circle cx="176" cy="56" r="6" fill="${colors.accent}"></circle>
+        <rect x="38" y="84" width="18" height="38" rx="6" fill="${colors.accentSoft}"></rect>
+        <rect x="70" y="70" width="18" height="52" rx="6" fill="${colors.accent}"></rect>
+        <rect x="102" y="58" width="18" height="64" rx="6" fill="${colors.ink}"></rect>
+      </svg>`;
+  }
+
+  if (type === "network") {
+    return `
+      <svg class="figure-svg" viewBox="0 0 260 150" aria-hidden="true">
+        <rect x="18" y="16" width="224" height="118" rx="16" fill="${colors.fill}" opacity="0.75"></rect>
+        <rect x="106" y="48" width="48" height="48" rx="12" fill="${colors.accent}"></rect>
+        <rect x="116" y="58" width="28" height="28" rx="8" fill="${colors.fill}"></rect>
+        <path d="M68 48 L106 72 M154 72 L194 42 M70 110 L106 82 M154 82 L196 108" stroke="${colors.ink}" stroke-width="4" stroke-linecap="round"></path>
+        <circle cx="68" cy="48" r="10" fill="${colors.accentSoft}"></circle>
+        <circle cx="194" cy="42" r="10" fill="${colors.ink}"></circle>
+        <circle cx="70" cy="110" r="10" fill="${colors.accent}"></circle>
+        <circle cx="196" cy="108" r="10" fill="${colors.accentSoft}"></circle>
+      </svg>`;
+  }
+
+  if (type === "map") {
+    return `
+      <svg class="figure-svg" viewBox="0 0 260 150" aria-hidden="true">
+        <rect x="18" y="16" width="224" height="118" rx="16" fill="${colors.fill}" opacity="0.75"></rect>
+        <path d="M44 90 C60 54, 92 40, 122 52 C142 30, 184 34, 206 62 C216 74, 214 98, 194 106 C168 116, 146 102, 124 108 C92 116, 60 112, 44 90 Z" fill="none" stroke="${colors.accent}" stroke-width="4"></path>
+        <path d="M78 90 C112 70, 144 66, 178 74" fill="none" stroke="${colors.accentSoft}" stroke-width="3" stroke-dasharray="7 7"></path>
+        <circle cx="82" cy="88" r="7" fill="${colors.ink}"></circle>
+        <circle cx="178" cy="74" r="7" fill="${colors.accent}"></circle>
+        <path d="M88 84 C112 54, 150 48, 172 68" fill="none" stroke="${colors.ink}" stroke-width="3" stroke-linecap="round"></path>
+      </svg>`;
+  }
+
+  if (type === "ledger") {
+    return `
+      <svg class="figure-svg" viewBox="0 0 260 150" aria-hidden="true">
+        <rect x="18" y="16" width="224" height="118" rx="16" fill="${colors.fill}" opacity="0.75"></rect>
+        <rect x="40" y="36" width="180" height="78" rx="12" fill="#fffdfa" stroke="${colors.accentSoft}" stroke-width="2"></rect>
+        <line x1="56" y1="58" x2="204" y2="58" stroke="${colors.accentSoft}" stroke-width="2"></line>
+        <line x1="56" y1="78" x2="204" y2="78" stroke="${colors.accentSoft}" stroke-width="2"></line>
+        <line x1="56" y1="98" x2="204" y2="98" stroke="${colors.accentSoft}" stroke-width="2"></line>
+        <rect x="56" y="50" width="42" height="12" rx="6" fill="${colors.accent}"></rect>
+        <rect x="56" y="70" width="72" height="12" rx="6" fill="${colors.accentSoft}"></rect>
+        <rect x="56" y="90" width="54" height="12" rx="6" fill="${colors.ink}"></rect>
+        <circle cx="190" cy="76" r="16" fill="${colors.fill}" stroke="${colors.accent}" stroke-width="3"></circle>
+        <path d="M182 76 L188 82 L200 68" fill="none" stroke="${colors.accent}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>`;
+  }
+
+  if (type === "newsletter") {
+    return `
+      <svg class="figure-svg" viewBox="0 0 260 150" aria-hidden="true">
+        <rect x="18" y="16" width="224" height="118" rx="16" fill="${colors.fill}" opacity="0.75"></rect>
+        <rect x="42" y="34" width="164" height="82" rx="12" fill="#fffdfa" stroke="${colors.accentSoft}" stroke-width="2"></rect>
+        <rect x="58" y="50" width="56" height="10" rx="5" fill="${colors.accent}"></rect>
+        <rect x="58" y="70" width="118" height="10" rx="5" fill="${colors.accentSoft}"></rect>
+        <rect x="58" y="90" width="88" height="10" rx="5" fill="${colors.ink}"></rect>
+        <circle cx="198" cy="52" r="10" fill="${colors.accent}"></circle>
+        <circle cx="198" cy="78" r="10" fill="${colors.accentSoft}"></circle>
+        <circle cx="198" cy="104" r="10" fill="${colors.ink}"></circle>
+      </svg>`;
+  }
+
+  return `
+    <svg class="figure-svg" viewBox="0 0 260 150" aria-hidden="true">
+      <rect x="18" y="16" width="224" height="118" rx="16" fill="${colors.fill}" opacity="0.75"></rect>
+      <path d="M30 104 C58 96, 86 66, 118 70 S176 106, 230 48" fill="none" stroke="${colors.accent}" stroke-width="5" stroke-linecap="round"></path>
+      <path d="M30 116 L230 116" stroke="${colors.accentSoft}" stroke-width="2"></path>
+      <circle cx="86" cy="66" r="6" fill="${colors.ink}"></circle>
+      <circle cx="176" cy="106" r="6" fill="${colors.accentSoft}"></circle>
+      <circle cx="230" cy="48" r="6" fill="${colors.accent}"></circle>
+    </svg>`;
+}
+
+function renderGraphicPanel(type, palette) {
+  const node = createElement("div", `figure-graphic figure-graphic-${palette || "paper"}`);
+  node.innerHTML = buildGraphicMarkup(type, palette || "paper");
+  return node;
+}
+
 function renderMasthead(data) {
   byId("product-label").textContent = data.meta.productLabel || "The Daily Newsletter";
   byId("edition-label").textContent = data.meta.editionLabel || "Morning edition";
@@ -145,6 +289,7 @@ function renderLeadStory(data) {
     createElement("p", "subsection-label", visual.eyebrow || "Morning view"),
     createElement("h4", "figure-title", visual.title || data.deck || data.headline || ""),
     createElement("p", "figure-summary", visual.summary || ""),
+    renderGraphicPanel(graphicTypeFromTopic(data.coverageTopic), visual.palette || "paper"),
     renderStatPoints(visual.points || []),
   );
 
@@ -278,6 +423,7 @@ function renderStoryCard(card, index) {
     createElement("p", "subsection-label", card.visual?.eyebrow || card.focusArea),
     createElement("h4", "figure-title", card.visual?.title || card.headline),
     createElement("p", "figure-summary", card.visual?.summary || ""),
+    renderGraphicPanel(graphicTypeFromTopic(card.coverageTopic), card.visual?.palette || "paper"),
     renderStatPoints(card.visual?.points || []),
   );
 
@@ -346,35 +492,52 @@ function renderNewsletterBriefs(data) {
       createElement("span", "meta-pill", brief.freshnessLabel),
     );
 
-    card.append(
-      top,
+    const body = createElement("div", "newsletter-body");
+    const copy = createElement("div", "newsletter-copy");
+    copy.append(
       createElement("h3", "newsletter-subject", brief.subject),
       createElement("p", "newsletter-summary", brief.summary),
     );
 
-    if ((brief.signalLines || []).length > 0) {
-      const list = createElement("div", "newsletter-signal-list");
-      brief.signalLines.forEach((line) => {
-        const row = createElement("div", "newsletter-signal");
-        row.append(createElement("span", "newsletter-dot"), createElement("p", "newsletter-signal-copy", line));
-        list.append(row);
-      });
-      card.append(list);
-    }
+    [
+      ["Why it mattered", brief.whyItMatters],
+      ["Market read", brief.marketRead],
+      ["What to steal", brief.whatToSteal],
+    ].forEach(([label, value]) => {
+      if (!value) {
+        return;
+      }
+      const row = createElement("div", "story-line");
+      row.append(
+        createElement("p", "story-line-label", label),
+        createElement("p", "story-line-copy", value),
+      );
+      copy.append(row);
+    });
 
     const topics = createElement("div", "topic-chip-row");
     (brief.topTopics || []).forEach((topic) => {
       topics.append(createElement("span", "topic-chip", topic));
     });
     if (topics.childElementCount > 0) {
-      card.append(topics);
+      copy.append(topics);
     }
 
-    card.append(createElement("p", "newsletter-arrival-note", brief.arrivalNote || ""));
+    copy.append(createElement("p", "newsletter-arrival-note", brief.arrivalNote || ""));
 
     if (brief.displayUrl) {
-      card.append(createAnchor("text-link", "Open in Gmail", brief.displayUrl));
+      copy.append(createAnchor("text-link", "Open in Gmail", brief.displayUrl));
     }
+
+    const figure = createElement("aside", `newsletter-figure newsletter-figure-${brief.palette || "paper"}`);
+    figure.append(
+      createElement("p", "subsection-label", `${brief.name} visual`),
+      renderGraphicPanel("newsletter", brief.palette || "paper"),
+      renderStatPoints(brief.visualPoints || []),
+    );
+
+    body.append(copy, figure);
+    card.append(top, body);
     root.append(card);
   });
 }

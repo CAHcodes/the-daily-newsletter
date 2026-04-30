@@ -1361,6 +1361,67 @@ function sortIssuesByRecency(items) {
   });
 }
 
+function shortenPhrase(value, maxLength = 28) {
+  const text = repairText(String(value || "")).trim();
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  return `${text.slice(0, maxLength - 1).trim()}…`;
+}
+
+function lowerFirst(value) {
+  const text = repairText(String(value || "")).trim();
+  if (!text) {
+    return "";
+  }
+
+  return text.charAt(0).toLowerCase() + text.slice(1);
+}
+
+function joinList(items) {
+  const filtered = (items || []).filter(Boolean);
+  if (filtered.length === 0) {
+    return "";
+  }
+  if (filtered.length === 1) {
+    return filtered[0];
+  }
+  if (filtered.length === 2) {
+    return `${filtered[0]} and ${filtered[1]}`;
+  }
+
+  return `${filtered.slice(0, -1).join(", ")}, and ${filtered[filtered.length - 1]}`;
+}
+
+function buildNewsletterPalette(name) {
+  if (name === "Morning Brew") {
+    return "gold";
+  }
+  if (name === "Brew Markets") {
+    return "blue";
+  }
+  if (name === "Tech Brew") {
+    return "rose";
+  }
+  if (name === "CFO Brew") {
+    return "sage";
+  }
+
+  return "paper";
+}
+
+function buildNewsletterVisualPoints(issue) {
+  const labels = ["Lead", "Angle", "Watch"];
+  const values = (issue.topTopics || []).slice(0, 3);
+
+  return values.map((value, index) => ({
+    label: labels[index] || `Topic ${index + 1}`,
+    value: shortenPhrase(value, 24),
+    tone: index === 0 ? "warm" : "cool",
+  }));
+}
+
 function buildNewsletterBriefs(newsletters, now) {
   const todayKey = formatDateKey(now);
   const preferredOrder = {
@@ -1386,15 +1447,27 @@ function buildNewsletterBriefs(newsletters, now) {
 
       const isToday = chosen.issueDateLabel === todayKey;
       const signalLines = (chosen.usefulSignals?.length > 0 ? chosen.usefulSignals : chosen.topTopics || []).slice(0, 3);
+      const topTopics = (chosen.topTopics || []).slice(0, 4);
+      const topicSet = joinList(topTopics.slice(0, 3));
+      const primarySignal = signalLines[0] || chosen.summary;
+      const secondarySignal = signalLines[1] || chosen.newsletterTone;
+      const tertiarySignal = signalLines[2] || chosen.summary;
 
       return {
         name: chosen.name,
         label: configuredSource.label,
         subject: chosen.subject,
-        summary: chosen.summary,
+        summary: topicSet
+          ? `${chosen.name} organized its edition around ${topicSet}, with the clearest through-line being that ${lowerFirst(primarySignal)}.`
+          : chosen.summary,
+        whyItMatters: primarySignal,
+        marketRead: secondarySignal,
+        whatToSteal: tertiarySignal,
         signalLines,
-        topTopics: (chosen.topTopics || []).slice(0, 4),
+        topTopics,
         tone: chosen.newsletterTone,
+        palette: buildNewsletterPalette(chosen.name),
+        visualPoints: buildNewsletterVisualPoints(chosen),
         displayUrl: chosen.displayUrl,
         issueDateLabel: chosen.issueDateLabel,
         freshnessLabel: isToday ? "Today's issue" : "Latest available",

@@ -2,7 +2,7 @@
   "edition": {
     "productLabel": "The Daily Newsletter",
     "editionLabel": "Wednesday, April 29",
-    "generatedAt": "2026-04-30T03:06:47.259Z",
+    "generatedAt": "2026-04-30T03:41:02.547Z",
     "estimatedReadMinutes": 17,
     "commuteMode": "20-minute subway ride",
     "tone": "Signal first, depth on demand, built for a distracted morning brain."
@@ -329,7 +329,10 @@
         "name": "Morning Brew",
         "label": "Morning Brief/Inputs/Morning Brew",
         "subject": "Sloshing around",
-        "summary": "Morning Brew led with the UAE leaving OPEC, the market fallout from reports that OpenAI missed internal targets, and a broader market snapshot that tied oil, rates, and AI sentiment together.",
+        "summary": "Morning Brew organized its edition around UAE leaves OPEC, OpenAI misses targets, and oil and gas-price pressure, with the clearest through-line being that generalist business framing that links macro, AI, and politics into one morning read.",
+        "whyItMatters": "Generalist business framing that links macro, AI, and politics into one morning read",
+        "marketRead": "Oil and OPEC developments are being treated as a direct market and inflation story",
+        "whatToSteal": "OpenAI execution concerns are spilling into public AI-linked stocks and cloud proxies",
         "signalLines": [
           "Generalist business framing that links macro, AI, and politics into one morning read",
           "Oil and OPEC developments are being treated as a direct market and inflation story",
@@ -342,6 +345,24 @@
           "AI deepfake IP defense"
         ],
         "tone": "Fast mainstream business framing with markets-first top lines and punchy tech-policy curation.",
+        "palette": "gold",
+        "visualPoints": [
+          {
+            "label": "Lead",
+            "value": "UAE leaves OPEC",
+            "tone": "warm"
+          },
+          {
+            "label": "Angle",
+            "value": "OpenAI misses targets",
+            "tone": "cool"
+          },
+          {
+            "label": "Watch",
+            "value": "oil and gas-price press…",
+            "tone": "cool"
+          }
+        ],
         "displayUrl": "https://mail.google.com/mail/#all/19dd8a8eab8695ff",
         "issueDateLabel": "2026-04-29",
         "freshnessLabel": "Today's issue",
@@ -351,7 +372,10 @@
         "name": "Brew Markets",
         "label": "Morning Brief/Inputs/Brew Markets",
         "subject": "Powell ain't going nowhere",
-        "summary": "Brew Markets centered the day on Powell's likely final Fed meeting as chair, a sharply higher oil tape, and weak reactions to Robinhood and SoFi earnings despite an otherwise resilient equity backdrop.",
+        "summary": "Brew Markets organized its edition around Powell stays at the Fed, oil spike and Hormuz disruption, and Robinhood and SoFi earnings, with the clearest through-line being that rates, oil, and megacap earnings are being treated as one combined market setup.",
+        "whyItMatters": "Rates, oil, and megacap earnings are being treated as one combined market setup",
+        "marketRead": "Retail brokerage weakness is a useful read on where risk appetite is not translating into earnings leverage",
+        "whatToSteal": "History-based market framing is emphasizing sentiment versus fundamentals",
         "signalLines": [
           "Rates, oil, and megacap earnings are being treated as one combined market setup",
           "Retail brokerage weakness is a useful read on where risk appetite is not translating into earnings leverage",
@@ -364,6 +388,24 @@
           "Fed dissents and easing bias"
         ],
         "tone": "Retail-investor market framing with macro, rates, and single-stock follow-through.",
+        "palette": "blue",
+        "visualPoints": [
+          {
+            "label": "Lead",
+            "value": "Powell stays at the Fed",
+            "tone": "warm"
+          },
+          {
+            "label": "Angle",
+            "value": "oil spike and Hormuz di…",
+            "tone": "cool"
+          },
+          {
+            "label": "Watch",
+            "value": "Robinhood and SoFi earn…",
+            "tone": "cool"
+          }
+        ],
         "displayUrl": "https://mail.google.com/mail/#all/19ddae4ee940adf1",
         "issueDateLabel": "2026-04-29",
         "freshnessLabel": "Today's issue",
@@ -373,7 +415,10 @@
         "name": "Tech Brew",
         "label": "Morning Brief/Inputs/Tech Brew",
         "subject": "Musk on a mission",
-        "summary": "Tech Brew focused on Musk's courtroom case against OpenAI, private demand for Anthropic equity, and second-order AI infrastructure stories like organ-delivery drones and commercial fusion grid access.",
+        "summary": "Tech Brew organized its edition around Musk versus OpenAI trial, Anthropic shares as currency, and Anthropic supply-chain risk politics, with the clearest through-line being that openAI governance and execution are being framed as an industry-shaping legal and business story.",
+        "whyItMatters": "OpenAI governance and execution are being framed as an industry-shaping legal and business story",
+        "marketRead": "Anthropic equity scarcity is now showing up in real-world asset trades and supply-chain politics",
+        "whatToSteal": "AI coverage is connecting capital markets, regulation, and infrastructure buildout",
         "signalLines": [
           "OpenAI governance and execution are being framed as an industry-shaping legal and business story",
           "Anthropic equity scarcity is now showing up in real-world asset trades and supply-chain politics",
@@ -386,6 +431,24 @@
           "fusion and grid access"
         ],
         "tone": "AI-business framing with legal, policy, and infrastructure emphasis.",
+        "palette": "rose",
+        "visualPoints": [
+          {
+            "label": "Lead",
+            "value": "Musk versus OpenAI trial",
+            "tone": "warm"
+          },
+          {
+            "label": "Angle",
+            "value": "Anthropic shares as cur…",
+            "tone": "cool"
+          },
+          {
+            "label": "Watch",
+            "value": "Anthropic supply-chain…",
+            "tone": "cool"
+          }
+        ],
         "displayUrl": "https://mail.google.com/mail/#all/19dda8590c160222",
         "issueDateLabel": "2026-04-29",
         "freshnessLabel": "Today's issue",
@@ -395,7 +458,10 @@
         "name": "CFO Brew",
         "label": "Morning Brief/Inputs/CFO Brew",
         "subject": "Some CFOs are opting for cash over equity",
-        "summary": "CFO Brew focused on PE-backed CFO compensation shifting toward cash, healthcare costs rising as a top operating-expense concern, and large banks still telling clients to buy the dip.",
+        "summary": "CFO Brew organized its edition around cash over equity for CFOs, healthcare costs as operating risk, and buy-the-dip bank framing, with the clearest through-line being that operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits.",
+        "whyItMatters": "Operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits",
+        "marketRead": "Healthcare cost pressure is moving higher on the CFO operating-risk list",
+        "whatToSteal": "Boardroom finance framing is still constructive on large-cap equities despite geopolitical stress",
         "signalLines": [
           "Operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits",
           "Healthcare cost pressure is moving higher on the CFO operating-risk list",
@@ -408,6 +474,24 @@
           "AI on earnings calls"
         ],
         "tone": "Operator-focused finance framing with compensation, opex, and boardroom risk context.",
+        "palette": "sage",
+        "visualPoints": [
+          {
+            "label": "Lead",
+            "value": "cash over equity for CF…",
+            "tone": "warm"
+          },
+          {
+            "label": "Angle",
+            "value": "healthcare costs as ope…",
+            "tone": "cool"
+          },
+          {
+            "label": "Watch",
+            "value": "buy-the-dip bank framing",
+            "tone": "cool"
+          }
+        ],
         "displayUrl": "https://mail.google.com/mail/#all/19ddaefd8af462a0",
         "issueDateLabel": "2026-04-29",
         "freshnessLabel": "Today's issue",

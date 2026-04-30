@@ -113,41 +113,41 @@ Record highs can coexist with hidden fragility for a while. Energy, breadth, and
 ### Morning Brew | Today's issue
 
 **Sloshing around**
-Morning Brew led with the UAE leaving OPEC, the market fallout from reports that OpenAI missed internal targets, and a broader market snapshot that tied oil, rates, and AI sentiment together.
+Morning Brew organized its edition around UAE leaves OPEC, OpenAI misses targets, and oil and gas-price pressure, with the clearest through-line being that generalist business framing that links macro, AI, and politics into one morning read.
 
-- Generalist business framing that links macro, AI, and politics into one morning read
-- Oil and OPEC developments are being treated as a direct market and inflation story
-- OpenAI execution concerns are spilling into public AI-linked stocks and cloud proxies
+- **Why it mattered:** Generalist business framing that links macro, AI, and politics into one morning read
+- **Market read:** Oil and OPEC developments are being treated as a direct market and inflation story
+- **What to steal:** OpenAI execution concerns are spilling into public AI-linked stocks and cloud proxies
 - Open in Gmail: https://mail.google.com/mail/#all/19dd8a8eab8695ff
 
 ### Brew Markets | Today's issue
 
 **Powell ain't going nowhere**
-Brew Markets centered the day on Powell's likely final Fed meeting as chair, a sharply higher oil tape, and weak reactions to Robinhood and SoFi earnings despite an otherwise resilient equity backdrop.
+Brew Markets organized its edition around Powell stays at the Fed, oil spike and Hormuz disruption, and Robinhood and SoFi earnings, with the clearest through-line being that rates, oil, and megacap earnings are being treated as one combined market setup.
 
-- Rates, oil, and megacap earnings are being treated as one combined market setup
-- Retail brokerage weakness is a useful read on where risk appetite is not translating into earnings leverage
-- History-based market framing is emphasizing sentiment versus fundamentals
+- **Why it mattered:** Rates, oil, and megacap earnings are being treated as one combined market setup
+- **Market read:** Retail brokerage weakness is a useful read on where risk appetite is not translating into earnings leverage
+- **What to steal:** History-based market framing is emphasizing sentiment versus fundamentals
 - Open in Gmail: https://mail.google.com/mail/#all/19ddae4ee940adf1
 
 ### Tech Brew | Today's issue
 
 **Musk on a mission**
-Tech Brew focused on Musk's courtroom case against OpenAI, private demand for Anthropic equity, and second-order AI infrastructure stories like organ-delivery drones and commercial fusion grid access.
+Tech Brew organized its edition around Musk versus OpenAI trial, Anthropic shares as currency, and Anthropic supply-chain risk politics, with the clearest through-line being that openAI governance and execution are being framed as an industry-shaping legal and business story.
 
-- OpenAI governance and execution are being framed as an industry-shaping legal and business story
-- Anthropic equity scarcity is now showing up in real-world asset trades and supply-chain politics
-- AI coverage is connecting capital markets, regulation, and infrastructure buildout
+- **Why it mattered:** OpenAI governance and execution are being framed as an industry-shaping legal and business story
+- **Market read:** Anthropic equity scarcity is now showing up in real-world asset trades and supply-chain politics
+- **What to steal:** AI coverage is connecting capital markets, regulation, and infrastructure buildout
 - Open in Gmail: https://mail.google.com/mail/#all/19dda8590c160222
 
 ### CFO Brew | Today's issue
 
 **Some CFOs are opting for cash over equity**
-CFO Brew focused on PE-backed CFO compensation shifting toward cash, healthcare costs rising as a top operating-expense concern, and large banks still telling clients to buy the dip.
+CFO Brew organized its edition around cash over equity for CFOs, healthcare costs as operating risk, and buy-the-dip bank framing, with the clearest through-line being that operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits.
 
-- Operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits
-- Healthcare cost pressure is moving higher on the CFO operating-risk list
-- Boardroom finance framing is still constructive on large-cap equities despite geopolitical stress
+- **Why it mattered:** Operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits
+- **Market read:** Healthcare cost pressure is moving higher on the CFO operating-risk list
+- **What to steal:** Boardroom finance framing is still constructive on large-cap equities despite geopolitical stress
 - Open in Gmail: https://mail.google.com/mail/#all/19ddaefd8af462a0
 
 Note: The Playbook is still onboarding-only, so it stays out of the dashboard until a real issue lands.

@@ -123,7 +123,9 @@ function buildMarkdown(data) {
     lines.push(`**${brief.subject}**`);
     lines.push(brief.summary);
     lines.push("");
-    (brief.signalLines || []).forEach((line) => lines.push(`- ${line}`));
+    lines.push(`- **Why it mattered:** ${brief.whyItMatters}`);
+    lines.push(`- **Market read:** ${brief.marketRead}`);
+    lines.push(`- **What to steal:** ${brief.whatToSteal}`);
     if (brief.displayUrl) {
       lines.push(`- Open in Gmail: ${brief.displayUrl}`);
     }
@@ -184,6 +186,9 @@ function buildEmailMarkdown(data) {
   lines.push("", "From your inbox", "");
   (data.newsletterDesk.briefs || []).forEach((brief) => {
     lines.push(`- ${brief.name}: ${brief.subject} (${brief.freshnessLabel})`);
+    lines.push(`  Why it mattered: ${brief.whyItMatters}`);
+    lines.push(`  Market read: ${brief.marketRead}`);
+    lines.push(`  What to steal: ${brief.whatToSteal}`);
   });
 
   if (publishingSettings.public_dashboard_url) {
@@ -314,16 +319,19 @@ function buildNewsletterHtml(items) {
         </div>
         <h3 style="margin:10px 0 0;font-family:Georgia,serif;font-size:24px;line-height:1.12;color:#1d1b18;">${escapeHtml(brief.subject)}</h3>
         <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#1d1b18;">${escapeHtml(brief.summary)}</p>
-        <div style="margin-top:12px;display:grid;gap:8px;">
-          ${(brief.signalLines || [])
-            .map(
-              (line) => `
-                <div style="display:grid;grid-template-columns:6px 1fr;gap:8px;align-items:start;">
-                  <span style="display:block;width:6px;height:6px;margin-top:8px;border-radius:50%;background:#335c7d;"></span>
-                  <p style="margin:0;font-size:14px;line-height:1.6;color:#6a6259;">${escapeHtml(line)}</p>
-                </div>`,
-            )
-            .join("")}
+        <div style="margin-top:12px;display:grid;gap:10px;">
+          <div>
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8278;font-weight:700;margin-bottom:4px;">Why it mattered</div>
+            <p style="margin:0;font-size:14px;line-height:1.6;color:#6a6259;">${escapeHtml(brief.whyItMatters || "")}</p>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8278;font-weight:700;margin-bottom:4px;">Market read</div>
+            <p style="margin:0;font-size:14px;line-height:1.6;color:#6a6259;">${escapeHtml(brief.marketRead || "")}</p>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8278;font-weight:700;margin-bottom:4px;">What to steal</div>
+            <p style="margin:0;font-size:14px;line-height:1.6;color:#6a6259;">${escapeHtml(brief.whatToSteal || "")}</p>
+          </div>
         </div>
         <p style="margin:12px 0 0;font-size:13px;line-height:1.55;color:#8a8278;">${escapeHtml(brief.arrivalNote || "")}</p>
         ${

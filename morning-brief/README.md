@@ -64,8 +64,8 @@ Open `app/index.html` in your browser.
 
 - Dashboard: `app/index.html`
 - Newsletter markdown: `outputs/newsletter/latest-briefing.md`
-- Email markdown: `outputs/email/latest-email.md`
 - Email HTML: `outputs/email/latest-email.html`
+- Email markdown fallback: `outputs/email/latest-email.md`
 
 ## Best next upgrades
 

@@ -10,7 +10,7 @@
 6. Confirm the generated files exist in `outputs/`.
 7. Inspect `data/compiled/briefing-debug.json` if ranking needs a sanity check.
 8. Read the delivery settings in `config/delivery-settings.json`.
-9. Send the Gmail edition using the generated subject and email body files when the run is in send mode.
+9. Send the Gmail edition using the generated subject, HTML body, and text fallback files when the run is in send mode.
 10. If `recipients` is configured, send the same edition to every listed address.
 
 Current state:
@@ -34,6 +34,7 @@ Current state:
 - Use Morning Brew-family inputs as synthesis inputs, not as the final product itself.
 - Capture `topTopics`, `usefulSignals`, and `newsletterTone` when real editorial Brew issues arrive.
 - Make every story card interactive, with a direct path to the primary article and a clear visual treatment.
+- Prefer the HTML email edition for delivery when `html_body_source` is configured, and keep the markdown body as the fallback path.
 
 ## File safety
 

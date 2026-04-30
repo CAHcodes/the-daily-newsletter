@@ -50,6 +50,302 @@ function joinOrFallback(items, fallback = "None listed") {
   return items && items.length > 0 ? items.join(", ") : fallback;
 }
 
+function paletteTokens(name) {
+  const palettes = {
+    amber: {
+      panel: "#fbf4e2",
+      surface: "#fff8ec",
+      border: "#e0c78d",
+      accent: "#9a4a34",
+      warm: "#b8612d",
+      cool: "#557b8a",
+    },
+    blue: {
+      panel: "#eef4fa",
+      surface: "#f7fbff",
+      border: "#bfd0e1",
+      accent: "#3e5f83",
+      warm: "#b8612d",
+      cool: "#3e5f83",
+    },
+    rose: {
+      panel: "#f8ecef",
+      surface: "#fdf7f8",
+      border: "#dfc2ca",
+      accent: "#8e4e61",
+      warm: "#b8612d",
+      cool: "#8e4e61",
+    },
+    sage: {
+      panel: "#edf3ec",
+      surface: "#f8fbf7",
+      border: "#c7d6c5",
+      accent: "#4d6b56",
+      warm: "#b8612d",
+      cool: "#4d6b56",
+    },
+    gold: {
+      panel: "#f8f1dd",
+      surface: "#fffbef",
+      border: "#ddc88b",
+      accent: "#8f6b1b",
+      warm: "#b8612d",
+      cool: "#8f6b1b",
+    },
+  };
+
+  return palettes[name] || {
+    panel: "#f3eee6",
+    surface: "#fffdf9",
+    border: "#d8d0c5",
+    accent: "#1d1b18",
+    warm: "#b8612d",
+    cool: "#4d7d63",
+  };
+}
+
+function numericGraphicValue(item) {
+  const parsed = Number(item?.value || 0);
+  return Number.isFinite(parsed) ? Math.abs(parsed) : 0;
+}
+
+function toneColor(tone, tokens) {
+  return tone === "warm" ? tokens.warm : tokens.cool;
+}
+
+function buildGraphicCaption(caption) {
+  if (!caption) {
+    return "";
+  }
+
+  return `<div style="margin-top:10px;font-size:12px;line-height:1.5;color:#8a8278;font-family:'Segoe UI',Arial,sans-serif;">${escapeHtml(caption)}</div>`;
+}
+
+function buildGraphicSignalStrip(points, paletteName) {
+  const items = points || [];
+  if (items.length === 0) {
+    return "";
+  }
+
+  const tokens = paletteTokens(paletteName);
+  const cells = items
+    .map((item) => {
+      const color = toneColor(item.tone, tokens);
+      const subline = item.rawValue ? ` <span style="color:#8a8278;">${escapeHtml(item.rawValue)}</span>` : "";
+
+      return `
+        <td style="padding:0 8px 8px 0;vertical-align:top;">
+          <div style="display:inline-block;border:1px solid ${tokens.border};background:#fffdf9;padding:8px 10px;">
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8278;font-weight:700;">${escapeHtml(item.label)}</div>
+            <div style="margin-top:6px;font-size:14px;font-weight:700;color:${color};font-family:'Segoe UI',Arial,sans-serif;">${escapeHtml(item.value)}${subline}</div>
+          </div>
+        </td>`;
+    })
+    .join("");
+
+  return `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:12px;border-collapse:collapse;">
+      <tr>${cells}</tr>
+    </table>`;
+}
+
+function buildBarChartGraphicHtml(graphic, paletteName) {
+  const items = graphic.items || [];
+  const tokens = paletteTokens(paletteName);
+  const maxValue = Math.max(...items.map((item) => numericGraphicValue(item)), 1);
+
+  const rows = items
+    .map((item) => {
+      const width = Math.max(16, Math.min(100, (numericGraphicValue(item) / maxValue) * 100));
+      const fill = toneColor(item.tone, tokens);
+
+      return `
+        <tr>
+          <td style="padding:0 10px 10px 0;font-size:13px;font-weight:700;color:#1d1b18;font-family:'Segoe UI',Arial,sans-serif;white-space:nowrap;">${escapeHtml(item.label)}</td>
+          <td style="padding:0 10px 10px 0;width:100%;">
+            <div style="height:10px;background:#eadfce;border-radius:999px;overflow:hidden;">
+              <div style="width:${width}%;height:10px;background:${fill};border-radius:999px;"></div>
+            </div>
+          </td>
+          <td style="padding:0 0 10px;font-size:13px;font-weight:700;color:${fill};font-family:'Segoe UI',Arial,sans-serif;white-space:nowrap;">${escapeHtml(item.display || item.value)}</td>
+        </tr>`;
+    })
+    .join("");
+
+  return `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+      ${rows}
+    </table>`;
+}
+
+function buildFactBoardGraphicHtml(graphic, paletteName) {
+  const items = graphic.items || [];
+  const tokens = paletteTokens(paletteName);
+
+  const cells = items
+    .map((item) => `
+      <td style="padding:0 8px 8px 0;vertical-align:top;">
+        <div style="min-width:110px;border:1px solid ${tokens.border};background:#fffdf9;padding:12px;">
+          <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8278;font-weight:700;">${escapeHtml(item.label)}</div>
+          <div style="margin-top:8px;font-size:15px;line-height:1.45;color:#1d1b18;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;">${escapeHtml(item.detail)}</div>
+        </div>
+      </td>`)
+    .join("");
+
+  return `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+      <tr>${cells}</tr>
+    </table>`;
+}
+
+function buildTimelineGraphicHtml(graphic, paletteName) {
+  const items = graphic.items || [];
+  const tokens = paletteTokens(paletteName);
+
+  const rows = items
+    .map((item, index) => `
+      <tr>
+        <td style="padding:${index === items.length - 1 ? "0" : "0 0 10px 0"};vertical-align:top;">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+            <tr>
+              <td style="width:44px;vertical-align:top;">
+                <div style="width:30px;height:30px;border-radius:999px;background:${tokens.accent};color:#ffffff;text-align:center;line-height:30px;font-size:12px;font-weight:700;font-family:'Segoe UI',Arial,sans-serif;">${escapeHtml(item.label || String(index + 1))}</div>
+              </td>
+              <td style="vertical-align:top;">
+                <div style="border:1px solid ${tokens.border};background:#fffdf9;padding:12px;">
+                  <div style="font-size:14px;line-height:1.55;color:#1d1b18;font-family:'Segoe UI',Arial,sans-serif;font-weight:700;">${escapeHtml(item.detail || item.text || "")}</div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>`)
+    .join("");
+
+  return `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+      ${rows}
+    </table>`;
+}
+
+function buildRouteMapGraphicHtml(graphic, paletteName) {
+  const items = graphic.items || [];
+  const tokens = paletteTokens(paletteName);
+
+  const rows = items
+    .map((item, index) => `
+      <tr>
+        <td style="padding:${index === items.length - 1 ? "0" : "0 0 10px 0"};vertical-align:top;">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+            <tr>
+              <td style="width:26px;vertical-align:top;padding-top:6px;">
+                <div style="width:12px;height:12px;border-radius:999px;background:${tokens.accent};margin:0 auto;"></div>
+              </td>
+              <td style="vertical-align:top;">
+                <div style="border-left:2px solid ${tokens.border};padding-left:12px;">
+                  <div style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8278;font-weight:700;">${escapeHtml(item.label)}</div>
+                  <div style="margin-top:4px;font-size:14px;line-height:1.55;color:#1d1b18;font-family:'Segoe UI',Arial,sans-serif;">${escapeHtml(item.detail || item.text || "")}</div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>`)
+    .join("");
+
+  return `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+      ${rows}
+    </table>`;
+}
+
+function buildTopicStackGraphicHtml(graphic, paletteName) {
+  const items = graphic.items || [];
+  const tokens = paletteTokens(paletteName);
+
+  const rows = items
+    .map((item, index) => `
+      <tr>
+        <td style="padding:${index === items.length - 1 ? "0" : "0 0 8px 0"};">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+            <tr>
+              <td style="width:42px;vertical-align:top;">
+                <div style="display:inline-block;min-width:30px;padding:6px 8px;background:${tokens.accent};color:#ffffff;font-size:12px;font-weight:700;text-align:center;font-family:'Segoe UI',Arial,sans-serif;">${escapeHtml(item.label || String(index + 1).padStart(2, "0"))}</div>
+              </td>
+              <td style="vertical-align:top;">
+                <div style="border:1px solid ${tokens.border};background:#fffdf9;padding:10px 12px;font-size:14px;line-height:1.55;color:#1d1b18;font-family:'Segoe UI',Arial,sans-serif;">${escapeHtml(item.detail || item.text || "")}</div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>`)
+    .join("");
+
+  return `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+      ${rows}
+    </table>`;
+}
+
+function buildGraphicHtml(graphic, paletteName) {
+  if (!graphic) {
+    return "";
+  }
+
+  let body = "";
+
+  switch (graphic.type) {
+    case "bar-chart":
+      body = buildBarChartGraphicHtml(graphic, paletteName);
+      break;
+    case "fact-board":
+      body = buildFactBoardGraphicHtml(graphic, paletteName);
+      break;
+    case "timeline":
+      body = buildTimelineGraphicHtml(graphic, paletteName);
+      break;
+    case "route-map":
+      body = buildRouteMapGraphicHtml(graphic, paletteName);
+      break;
+    case "topic-stack":
+      body = buildTopicStackGraphicHtml(graphic, paletteName);
+      break;
+    default:
+      body = "";
+  }
+
+  if (!body) {
+    return "";
+  }
+
+  const tokens = paletteTokens(paletteName);
+
+  return `
+    <div style="margin-top:14px;border:1px solid ${tokens.border};background:${tokens.surface};padding:14px;">
+      ${body}
+      ${buildGraphicCaption(graphic.sourceCaption)}
+    </div>`;
+}
+
+function buildVisualModuleHtml(visual) {
+  if (!visual) {
+    return "";
+  }
+
+  const paletteName = visual.palette || "amber";
+  const tokens = paletteTokens(paletteName);
+  const title = visual.title ? `<div style="font-size:18px;line-height:1.3;color:#1d1b18;font-family:Georgia,serif;font-weight:700;">${escapeHtml(visual.title)}</div>` : "";
+  const summary = visual.summary ? `<div style="margin-top:6px;font-size:14px;line-height:1.6;color:#6a6259;font-family:'Segoe UI',Arial,sans-serif;">${escapeHtml(visual.summary)}</div>` : "";
+
+  return `
+    <div style="margin-top:16px;border:1px solid ${tokens.border};background:${tokens.panel};padding:14px;">
+      ${title}
+      ${summary}
+      ${buildGraphicHtml(visual.graphic, paletteName)}
+      ${buildGraphicSignalStrip(visual.points, paletteName)}
+    </div>`;
+}
+
 function buildMarkdown(data) {
   const dateLabel = formatDate(data.meta.generatedAt);
   const lines = [
@@ -261,6 +557,7 @@ function buildStoryHtml(cards) {
         </div>
         <h3 style="margin:0;font-family:Georgia,serif;font-size:28px;line-height:1.08;color:#1d1b18;">${escapeHtml(card.headline)}</h3>
         <p style="margin:10px 0 0;font-size:16px;line-height:1.65;color:#1d1b18;">${escapeHtml(card.takeaway)}</p>
+        ${buildVisualModuleHtml(card.visual)}
         <div style="margin-top:14px;display:grid;gap:10px;">
           <div>
             <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8278;font-weight:700;margin-bottom:4px;">What changed</div>
@@ -309,6 +606,16 @@ function buildSourceDeskHtml(sections) {
     .join("");
 }
 
+function buildNewsletterVisualModule(brief) {
+  return buildVisualModuleHtml({
+    palette: brief.palette,
+    title: "What this issue actually centered on",
+    summary: brief.tone,
+    graphic: brief.graphic,
+    points: brief.visualPoints,
+  });
+}
+
 function buildNewsletterHtml(items) {
   return (items || [])
     .map((brief) => `
@@ -319,6 +626,7 @@ function buildNewsletterHtml(items) {
         </div>
         <h3 style="margin:10px 0 0;font-family:Georgia,serif;font-size:24px;line-height:1.12;color:#1d1b18;">${escapeHtml(brief.subject)}</h3>
         <p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#1d1b18;">${escapeHtml(brief.summary)}</p>
+        ${buildNewsletterVisualModule(brief)}
         <div style="margin-top:12px;display:grid;gap:10px;">
           <div>
             <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8278;font-weight:700;margin-bottom:4px;">Why it mattered</div>
@@ -374,6 +682,7 @@ function buildEmailHtml(data) {
         <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#6a6259;font-weight:700;">Top Of The Morning</div>
         <h2 style="margin:10px 0 0;font-size:34px;line-height:1.06;">${escapeHtml(data.leadStory.headline)}</h2>
         <p style="margin:10px 0 0;font-size:16px;line-height:1.65;color:#1d1b18;font-family:'Segoe UI',Arial,sans-serif;">${escapeHtml(data.leadStory.deck)}</p>
+        ${buildVisualModuleHtml(data.leadStory.visual)}
         <div style="margin-top:14px;display:grid;gap:10px;font-family:'Segoe UI',Arial,sans-serif;">
           <div><strong>Why it leads:</strong> ${escapeHtml(data.leadStory.whyItLeads)}</div>
           <div><strong>Why it matters:</strong> ${escapeHtml(data.leadStory.marketRead)}</div>

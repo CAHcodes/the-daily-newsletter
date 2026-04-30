@@ -132,6 +132,11 @@ Read `config/delivery-settings.json` carefully.
 - If `recipients` is present, send the same finished edition to every address in that list.
 - If only `recipient` is present, send to that one address.
 - Treat that as one edition run, not multiple different emails.
+- If `html_body_source` is present, read that file and use it as the preferred Gmail body.
+- If `text_body_source` is present, keep it as the plain-text fallback.
+- If only `body_source` is present, use that file.
+- Prefer the HTML edition only when it is clean, mobile-readable, and keeps direct article links intact.
+- If the HTML body is missing, malformed, or visibly broken, fall back to the text body rather than sending bad markup.
 
 ## Staging file
 

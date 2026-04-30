@@ -1,4 +1,4 @@
-The Daily Newsletter | Wednesday, April 29, 2026
+The Daily Newsletter | Thursday, April 30, 2026
 
 The market wants to stay bullish, but it is outsourcing more stress than the headline suggests to energy, concentration, and the hope that nothing broadens from here.
 
@@ -66,19 +66,19 @@ Best from the sources
 
 From your inbox
 
-- Morning Brew: Sloshing around (Today's issue)
+- Morning Brew: Sloshing around (Latest available)
   Why it mattered: Generalist business framing that links macro, AI, and politics into one morning read
   Market read: Oil and OPEC developments are being treated as a direct market and inflation story
   What to steal: OpenAI execution concerns are spilling into public AI-linked stocks and cloud proxies
-- Brew Markets: Powell ain't going nowhere (Today's issue)
+- Brew Markets: Powell ain't going nowhere (Latest available)
   Why it mattered: Rates, oil, and megacap earnings are being treated as one combined market setup
   Market read: Retail brokerage weakness is a useful read on where risk appetite is not translating into earnings leverage
   What to steal: History-based market framing is emphasizing sentiment versus fundamentals
-- Tech Brew: Musk on a mission (Today's issue)
+- Tech Brew: Musk on a mission (Latest available)
   Why it mattered: OpenAI governance and execution are being framed as an industry-shaping legal and business story
   Market read: Anthropic equity scarcity is now showing up in real-world asset trades and supply-chain politics
   What to steal: AI coverage is connecting capital markets, regulation, and infrastructure buildout
-- CFO Brew: Some CFOs are opting for cash over equity (Today's issue)
+- CFO Brew: Some CFOs are opting for cash over equity (Latest available)
   Why it mattered: Operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits
   Market read: Healthcare cost pressure is moving higher on the CFO operating-risk list
   What to steal: Boardroom finance framing is still constructive on large-cap equities despite geopolitical stress

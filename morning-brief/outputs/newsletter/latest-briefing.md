@@ -1,4 +1,4 @@
-# The Daily Newsletter | Wednesday, April 29, 2026
+# The Daily Newsletter | Thursday, April 30, 2026
 
 The market wants to stay bullish, but it is outsourcing more stress than the headline suggests to energy, concentration, and the hope that nothing broadens from here.
 
@@ -110,7 +110,7 @@ Record highs can coexist with hidden fragility for a while. Energy, breadth, and
 
 ## From Your Inbox
 
-### Morning Brew | Today's issue
+### Morning Brew | Latest available
 
 **Sloshing around**
 Morning Brew organized its edition around UAE leaves OPEC, OpenAI misses targets, and oil and gas-price pressure, with the clearest through-line being that generalist business framing that links macro, AI, and politics into one morning read.
@@ -120,7 +120,7 @@ Morning Brew organized its edition around UAE leaves OPEC, OpenAI misses targets
 - **What to steal:** OpenAI execution concerns are spilling into public AI-linked stocks and cloud proxies
 - Open in Gmail: https://mail.google.com/mail/#all/19dd8a8eab8695ff
 
-### Brew Markets | Today's issue
+### Brew Markets | Latest available
 
 **Powell ain't going nowhere**
 Brew Markets organized its edition around Powell stays at the Fed, oil spike and Hormuz disruption, and Robinhood and SoFi earnings, with the clearest through-line being that rates, oil, and megacap earnings are being treated as one combined market setup.
@@ -130,7 +130,7 @@ Brew Markets organized its edition around Powell stays at the Fed, oil spike and
 - **What to steal:** History-based market framing is emphasizing sentiment versus fundamentals
 - Open in Gmail: https://mail.google.com/mail/#all/19ddae4ee940adf1
 
-### Tech Brew | Today's issue
+### Tech Brew | Latest available
 
 **Musk on a mission**
 Tech Brew organized its edition around Musk versus OpenAI trial, Anthropic shares as currency, and Anthropic supply-chain risk politics, with the clearest through-line being that openAI governance and execution are being framed as an industry-shaping legal and business story.
@@ -140,7 +140,7 @@ Tech Brew organized its edition around Musk versus OpenAI trial, Anthropic share
 - **What to steal:** AI coverage is connecting capital markets, regulation, and infrastructure buildout
 - Open in Gmail: https://mail.google.com/mail/#all/19dda8590c160222
 
-### CFO Brew | Today's issue
+### CFO Brew | Latest available
 
 **Some CFOs are opting for cash over equity**
 CFO Brew organized its edition around cash over equity for CFOs, healthcare costs as operating risk, and buy-the-dip bank framing, with the clearest through-line being that operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits.

@@ -1,8 +1,8 @@
 const MORNING_BRIEFING = {
   "meta": {
     "productLabel": "The Daily Newsletter",
-    "editionLabel": "Wednesday, April 29",
-    "generatedAt": "2026-04-30T03:52:48.768Z",
+    "editionLabel": "Thursday, April 30",
+    "generatedAt": "2026-04-30T04:12:01.479Z",
     "estimatedReadMinutes": 17,
     "commuteMode": "20-minute subway ride",
     "tone": "Signal first, depth on demand, built for a distracted morning brain.",
@@ -1845,8 +1845,8 @@ const MORNING_BRIEFING = {
         ],
         "displayUrl": "https://mail.google.com/mail/#all/19dd8a8eab8695ff",
         "issueDateLabel": "2026-04-29",
-        "freshnessLabel": "Today's issue",
-        "arrivalNote": "Pulled from today's inbox edition."
+        "freshnessLabel": "Latest available",
+        "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
       },
       {
         "name": "Brew Markets",
@@ -1910,8 +1910,8 @@ const MORNING_BRIEFING = {
         ],
         "displayUrl": "https://mail.google.com/mail/#all/19ddae4ee940adf1",
         "issueDateLabel": "2026-04-29",
-        "freshnessLabel": "Today's issue",
-        "arrivalNote": "Pulled from today's inbox edition."
+        "freshnessLabel": "Latest available",
+        "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
       },
       {
         "name": "Tech Brew",
@@ -1975,8 +1975,8 @@ const MORNING_BRIEFING = {
         ],
         "displayUrl": "https://mail.google.com/mail/#all/19dda8590c160222",
         "issueDateLabel": "2026-04-29",
-        "freshnessLabel": "Today's issue",
-        "arrivalNote": "Pulled from today's inbox edition."
+        "freshnessLabel": "Latest available",
+        "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
       },
       {
         "name": "CFO Brew",
@@ -2040,8 +2040,8 @@ const MORNING_BRIEFING = {
         ],
         "displayUrl": "https://mail.google.com/mail/#all/19ddaefd8af462a0",
         "issueDateLabel": "2026-04-29",
-        "freshnessLabel": "Today's issue",
-        "arrivalNote": "Pulled from today's inbox edition."
+        "freshnessLabel": "Latest available",
+        "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
       }
     ]
   },

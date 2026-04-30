@@ -45,6 +45,13 @@ The intended V2 pipeline is:
 
 The dashboard reads the canonical file in the browser. The newsletter and email outputs are generated from the same canonical file by `scripts/render-outputs.js`.
 
+The email renderer now produces:
+
+- a send-preferred HTML edition at `outputs/email/latest-email.html`
+- a markdown fallback at `outputs/email/latest-email.md`
+
+The automation should prefer the HTML edition when delivery settings include `html_body_source`.
+
 Current note:
 
 - the live send automation is paused during the V2 redesign so the product can be rebuilt to a higher standard before resuming delivery

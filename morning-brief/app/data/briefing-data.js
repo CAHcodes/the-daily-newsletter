@@ -1,139 +1,134 @@
 const MORNING_BRIEFING = {
   "meta": {
     "productLabel": "The Daily Newsletter",
-    "editionLabel": "Thursday, April 30",
-    "generatedAt": "2026-04-30T04:12:01.479Z",
-    "estimatedReadMinutes": 17,
+    "editionLabel": "Wednesday, September 9",
+    "generatedAt": "2026-09-09T20:30:00.000Z",
+    "estimatedReadMinutes": 7,
     "commuteMode": "20-minute subway ride",
     "tone": "Signal first, depth on demand, built for a distracted morning brain.",
     "sourceFocus": [
-      "Reuters",
-      "Bloomberg",
       "Associated Press",
-      "The Wall Street Journal",
-      "Morning Brew",
-      "Brew Markets"
+      "Reuters",
+      "Bureau of Labor Statistics",
+      "Freddie Mac",
+      "Morning Brief editorial desk",
+      "Morning Brew"
     ]
   },
   "thesis": {
-    "headline": "This morning is really about a rally that still depends on calm oil and narrow leadership staying cooperative.",
-    "summary": "The market wants to stay bullish, but it is outsourcing more stress than the headline suggests to energy, concentration, and the hope that nothing broadens from here.",
+    "headline": "This morning is about where the calm headline and the real risk map stop matching perfectly.",
+    "summary": "The cleanest way to read the day is to focus on the small number of forces doing the real work underneath the surface, then ignore the decorative noise around them.",
     "marketMood": {
       "label": "Amber | Calm indexes, stressed undercurrents",
-      "note": "Record highs can coexist with hidden fragility for a while. Energy, breadth, and policy tone are the pressure points to watch."
+      "note": "A clean rebound can coexist with hidden fragility for a while. Energy, leadership concentration, and policy tone are the pressure points to watch."
     },
     "edgeCallout": {
-      "title": "Remember oil, the Powell handoff, and breadth.",
+      "title": "Remember oil.",
       "note": "If you remember the connectors instead of the headlines, the rest of the day gets easier to decode."
     }
   },
   "pulse": {
     "intro": "Start with the numbers before the narratives.",
-    "asOf": "2026-04-29T16:00:00-04:00",
-    "sourceLabel": "Brew Markets close board and same-day Tier 1 market coverage",
+    "asOf": "2026-09-09T13:53:00-04:00",
+    "sourceLabel": "AP and Reuters intraday reporting; unsupported fields are explicit coverage gaps.",
     "marketTiles": [
       {
-        "id": "sp500",
+        "id": "spx",
         "label": "S&P 500",
-        "value": "7,135.95",
-        "change": "-0.04%",
-        "changeValue": -0.04,
+        "value": "coverage gap",
+        "change": "lower intraday",
+        "changeValue": -0.1,
         "direction": "down",
-        "note": "Broad indexes were flat to lower even as oil and rates stayed loud."
+        "note": "AP reported stocks lower intraday without an accessible verified index level or percentage."
       },
       {
         "id": "nasdaq",
         "label": "Nasdaq",
-        "value": "24,673.24",
-        "change": "+0.04%",
-        "changeValue": 0.04,
-        "direction": "up",
-        "note": "Tech held up better than the rest of the tape, but conviction was thin."
-      },
-      {
-        "id": "dow",
-        "label": "Dow",
-        "value": "48,861.81",
-        "change": "-0.57%",
-        "changeValue": -0.57,
+        "value": "coverage gap",
+        "change": "lower intraday",
+        "changeValue": -0.1,
         "direction": "down",
-        "note": "Old-economy exposure looked weaker than the headline megacap tape."
+        "note": "AP reported stocks lower intraday without an accessible verified index level or percentage."
       },
       {
-        "id": "brent",
-        "label": "Brent",
-        "value": "$118.11",
-        "change": "+6.20%",
-        "changeValue": 6.2,
-        "direction": "up",
-        "note": "Hormuz closure risk kept the war premium fully alive."
-      },
-      {
-        "id": "wti",
-        "label": "WTI",
-        "value": "$106.74",
-        "change": "+6.80%",
-        "changeValue": 6.8,
-        "direction": "up",
-        "note": "Domestic crude joined the spike as blockade fears deepened."
+        "id": "us2y",
+        "label": "US 2Y",
+        "value": "coverage gap",
+        "change": "—",
+        "changeValue": 0,
+        "direction": "flat",
+        "note": "No current verified 2-year yield in the source set."
       },
       {
         "id": "us10y",
         "label": "US 10Y",
-        "value": "4.418%",
-        "change": "+6.0 bp",
-        "changeValue": 6,
+        "value": "4.837%",
+        "change": "+3.26 bps",
+        "changeValue": 3.26,
         "changeUnit": "bp",
         "direction": "up",
-        "note": "The yield move said inflation and Fed-path risk are back together."
+        "note": "Reuters reported 4.837% at 1:53 PM ET, the highest since November 2023."
+      },
+      {
+        "id": "dxy",
+        "label": "DXY",
+        "value": "coverage gap",
+        "change": "—",
+        "changeValue": 0,
+        "direction": "flat",
+        "note": "No current verified DXY quote in the source set."
+      },
+      {
+        "id": "brent",
+        "label": "Brent",
+        "value": "$100.27",
+        "change": "+2.4%",
+        "changeValue": 2.4,
+        "direction": "up",
+        "note": "Reuters reported $100.27 at 1:53 PM ET."
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "value": "coverage gap",
+        "change": "—",
+        "changeValue": 0,
+        "direction": "flat",
+        "note": "No current verified gold quote."
       },
       {
         "id": "bitcoin",
         "label": "Bitcoin",
-        "value": "$75,570.56",
-        "change": "-1.17%",
-        "changeValue": -1.17,
-        "direction": "down",
-        "note": "Crypto did not behave like a clean refuge."
+        "value": "coverage gap",
+        "change": "—",
+        "changeValue": 0,
+        "direction": "flat",
+        "note": "No current verified Bitcoin quote."
+      },
+      {
+        "id": "vix",
+        "label": "VIX",
+        "value": "coverage gap",
+        "change": "—",
+        "changeValue": 0,
+        "direction": "flat",
+        "note": "No current verified VIX quote."
       }
     ],
     "heatmap": [
       {
-        "label": "Brent",
-        "value": 6.2,
-        "direction": "up",
-        "theme": "Energy"
-      },
-      {
-        "label": "WTI",
-        "value": 6.8,
-        "direction": "up",
-        "theme": "Energy"
-      },
-      {
         "label": "US 10Y",
-        "value": 6,
+        "value": 3.26,
         "direction": "up",
         "theme": "Rates",
         "unit": "bp"
       },
       {
-        "label": "Nasdaq",
-        "value": 0.04,
+        "label": "Brent",
+        "value": 2.4,
         "direction": "up",
-        "theme": "Equities"
-      },
-      {
-        "label": "S&P 500",
-        "value": -0.04,
-        "direction": "down",
-        "theme": "Equities"
-      },
-      {
-        "label": "Bitcoin",
-        "value": -1.17,
-        "direction": "down",
-        "theme": "Crypto"
+        "theme": "Energy",
+        "unit": "%"
       }
     ],
     "riskRadar": [
@@ -141,71 +136,37 @@ const MORNING_BRIEFING = {
         "label": "Energy Stress",
         "score": 88,
         "tone": "hot",
-        "note": "$118.11 +6.20% keeps the inflation bridge alive."
+        "note": "$100.27 +2.4% keeps the inflation bridge alive."
       },
       {
         "label": "Policy Squeeze",
-        "score": 78,
+        "score": 58,
         "tone": "watch",
-        "note": "4.418% with Fed and BOJ pressure in the background."
+        "note": "4.837% keeps rates sensitive to Fed tone even after oil relief."
       },
       {
         "label": "Leadership Fragility",
-        "score": 74,
+        "score": 55,
         "tone": "steady",
-        "note": "Index calm still depends on a smaller group of leaders than the headline implies."
+        "note": "Check whether participation is broad or just loud."
       },
       {
         "label": "AI Capital Race",
         "score": 57,
         "tone": "steady",
-        "note": "OpenAI's missed targets rattled public AI proxies, while Anthropic equity remained scarce enough to show up in barter-style property deals and continued to carry strategic value for Google. The useful read is that private AI equity is still coveted, but public markets are no longer giving every AI leader the same benefit of the doubt."
+        "note": "Private AI financing is starting to shape public-market capex assumptions."
       }
     ],
     "privateRadar": {
-      "title": "Private AI capital is splitting into execution risk and scarcity value.",
-      "summary": "OpenAI's missed targets rattled public AI proxies, while Anthropic equity remained scarce enough to show up in barter-style property deals and continued to carry strategic value for Google. The useful read is that private AI equity is still coveted, but public markets are no longer giving every AI leader the same benefit of the doubt.",
-      "metrics": [
-        {
-          "label": "Anthropic value",
-          "value": "$350B",
-          "note": "Bloomberg, April 24"
-        },
-        {
-          "label": "Google capital",
-          "value": "$10B now",
-          "note": "Bloomberg and Reuters, April 24"
-        },
-        {
-          "label": "Extra Google option",
-          "value": "$30B contingent",
-          "note": "Performance-linked funding"
-        },
-        {
-          "label": "Private-market signal",
-          "value": "Shares as currency",
-          "note": "Tech Brew framing, April 29"
-        }
-      ],
-      "bullets": [
-        "OpenAI weakness is now a listed-equity problem as much as a private-company one.",
-        "Anthropic remains a scarcity asset tied to cloud capacity, coding demand, and strategic partnerships.",
-        "The AI trade is starting to separate model glamour from execution quality."
-      ],
-      "links": [
-        {
-          "label": "Bloomberg on Google's Anthropic investment",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic?srnd=phx-deals"
-        },
-        {
-          "label": "WSJ on OpenAI-linked stock pressure",
-          "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-28-2026/card/ai-stocks-falter-on-openai-stumble-Z87WaQKoY4gpZkMBOjPY"
-        }
-      ]
+      "title": "Private market radar unavailable.",
+      "summary": "No private-company signal was loaded into today's raw reporting file.",
+      "metrics": [],
+      "bullets": [],
+      "links": []
     },
     "sourceMode": {
       "headline": "Tier 1 reporting plus active newsletter framing.",
-      "summary": "Active editorial issues today: Morning Brew: Sloshing around | Brew Markets: Powell ain't going nowhere | Tech Brew: Musk on a mission."
+      "summary": "Active editorial issues today: Morning Brew: Heated survivalry | Brew Markets: Apple wants fold, hard cash | Tech Brew: A search bar for DNA."
     }
   },
   "scan": {
@@ -213,42 +174,42 @@ const MORNING_BRIEFING = {
     "signals": [
       {
         "label": "Oil Variable",
-        "value": "Hormuz risk still in the tape",
+        "value": "Crude still carrying risk",
         "note": "Energy is still the bridge between geopolitics and inflation fear.",
         "status": "hot"
       },
       {
-        "label": "Fed Handoff",
-        "value": "Powell stays, dissents widen",
-        "note": "The meeting became a leadership and credibility story, not just a rates story.",
-        "status": "hot"
-      },
-      {
-        "label": "Megacap Pressure",
-        "value": "Macro week meets earnings week",
-        "note": "Policy decisions and leadership-name results are landing on top of each other.",
-        "status": "hot"
-      },
-      {
-        "label": "Index Reality",
-        "value": "Records with thinner breadth",
-        "note": "The index story looks cleaner than the market internals do.",
+        "label": "Market Signal",
+        "value": "Apple's foldable hardware launch is a technol...",
+        "note": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
         "status": "watch"
       },
       {
         "label": "Market Signal",
-        "value": "OpenAI's missed targets are now an AI confide...",
-        "note": "AI-linked equities sold off after OpenAI missed internal revenue and user goals.",
+        "value": "A dated housing baseline, not a fresh standal...",
+        "note": "Freddie Mac's latest weekly reading put the 30-year fixed mortgage rate at 6.71%; the next update is Thursday.",
+        "status": "watch"
+      },
+      {
+        "label": "World Signal",
+        "value": "A distinct global-policy risk whose next sign...",
+        "note": "AP reported Ukraine's president pressed international partners for a tougher response to escalating Russian attacks on civilian areas.",
+        "status": "steady"
+      },
+      {
+        "label": "Market Signal",
+        "value": "Use a gap block instead of transaction filler",
+        "note": "No material M&A, IPO pricing, funding, or private-credit event was established; PitchBook enrichment was unavailable.",
         "status": "watch"
       }
     ],
     "ignoreNoise": {
-      "title": "Do not confuse fresh highs with broad conviction.",
-      "summary": "The easiest mistake this morning is to read strong index prints as broad risk appetite. The better read is to check how much weight a narrow set of leaders is still carrying."
+      "title": "Do not let a single diplomatic headline erase the energy story.",
+      "summary": "Short-term relief headlines can calm screens for a few minutes. The more durable question is whether the underlying shipping and inflation risk has actually left the system."
     }
   },
   "essential": {
-    "intro": "This is one tight daily edition. Read the pulse first, then work the story cards top to bottom for a full 15 to 20 minute briefing.",
+    "intro": "This is one tight daily edition. Read the pulse first, then work the ranked story cards for a finishable 6 to 8 minute briefing.",
     "cards": [
       {
         "id": "oil-macro-bridge",
@@ -262,7 +223,7 @@ const MORNING_BRIEFING = {
         "whyItMatters": "If oil stays elevated into a central-bank-heavy week, the market has less room to keep pretending disinflation is automatic.",
         "marketImpact": "Energy can stay bid, long-duration assets get more fragile, and any rate-sensitive growth trade becomes harder to defend at rich valuations.",
         "disagreement": "Optimists think each diplomatic headline can cap crude quickly. Skeptics think shipping risk keeps a sticky premium in the system even when the news flow cools temporarily.",
-        "watchToday": "Brent behavior, Hormuz diplomacy, and whether yields react more to crude than to central-bank messaging.",
+        "watchToday": "Brent, Treasury yields, and Thursday's 8:30 AM ET PPI release; a cooler inflation print is the next clean falsifier for the oil-driven rates squeeze.",
         "tags": [
           "Oil",
           "Inflation",
@@ -270,9 +231,9 @@ const MORNING_BRIEFING = {
         ],
         "sourceTrail": {
           "primary": [
+            "Associated Press",
             "Reuters",
-            "Bloomberg",
-            "Associated Press"
+            "Bureau of Labor Statistics"
           ],
           "framing": [
             "Morning Brew",
@@ -281,26 +242,28 @@ const MORNING_BRIEFING = {
         },
         "newsletterSignalMatch": {
           "source": "Brew Markets",
-          "subject": "Powell ain't going nowhere",
-          "matchedHints": []
+          "subject": "Apple wants fold, hard cash",
+          "matchedHints": [
+            "rates"
+          ]
         },
         "links": [
           {
-            "label": "Reuters on oil and the macro setup",
-            "url": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html"
-          },
-          {
-            "label": "Bloomberg on oil and the macro setup",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/latest-oil-market-news-and-analysis-for-april-30"
-          },
-          {
             "label": "Associated Press on oil and the macro setup",
-            "url": "https://apnews.com/article/4b74b9d583433ed609c17df830ce3880"
+            "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
+          },
+          {
+            "label": "Reuters on oil and the macro setup",
+            "url": "https://www.marketscreener.com/news/oil-treasury-yields-turn-higher-as-stocks-falter-ce785bd9d088f321"
+          },
+          {
+            "label": "Bureau of Labor Statistics on oil and the macro setup",
+            "url": "https://www.bls.gov/schedule/2026/09_sched_list.htm"
           }
         ],
         "primaryLink": {
-          "label": "Reuters on oil and the macro setup",
-          "url": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html"
+          "label": "Associated Press on oil and the macro setup",
+          "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
         },
         "visual": {
           "palette": "amber",
@@ -309,24 +272,18 @@ const MORNING_BRIEFING = {
           "summary": "Oil, shipping risk, and yields are moving together underneath the tape.",
           "graphic": {
             "type": "bar-chart",
-            "sourceCaption": "Recreated from Brew Markets close-board data and same-day Reuters/Bloomberg reporting.",
+            "sourceCaption": "Recreated from Associated Press + Reuters + Bureau of Labor Statistics.",
             "items": [
               {
                 "label": "Brent",
-                "value": 6.2,
-                "display": "+6.20%",
-                "tone": "warm"
-              },
-              {
-                "label": "WTI",
-                "value": 6.8,
-                "display": "+6.80%",
+                "value": 2.4,
+                "display": "+2.4%",
                 "tone": "warm"
               },
               {
                 "label": "US 10Y",
-                "value": 6,
-                "display": "+6.0 bp",
+                "value": 3.26,
+                "display": "+3.26 bps",
                 "tone": "warm"
               }
             ]
@@ -334,379 +291,171 @@ const MORNING_BRIEFING = {
           "points": [
             {
               "label": "Brent",
-              "value": "+6.20%",
-              "rawValue": "$118.11",
-              "tone": "warm"
-            },
-            {
-              "label": "WTI",
-              "value": "+6.80%",
-              "rawValue": "$106.74",
+              "value": "+2.4%",
+              "rawValue": "$100.27",
               "tone": "warm"
             },
             {
               "label": "US 10Y",
-              "value": "+6.0 bp",
-              "rawValue": "4.418%",
+              "value": "+3.26 bps",
+              "rawValue": "4.837%",
               "tone": "warm"
             }
           ]
         },
         "evidence": [
           {
-            "source": "Reuters",
-            "headline": "Oil ends up nearly 3% as Hormuz disruption outweighs UAE OPEC exit",
-            "url": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "Oil as macro bridge"
-          },
-          {
-            "source": "Bloomberg",
-            "headline": "Oil extends rally as Hormuz stays shut with blockade to continue",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/latest-oil-market-news-and-analysis-for-april-30",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "Oil as macro bridge"
-          },
-          {
             "source": "Associated Press",
-            "headline": "Trump rejects Iran's latest proposal as Democrats confront Hegseth over war",
-            "url": "https://apnews.com/article/4b74b9d583433ed609c17df830ce3880",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "Oil as macro bridge"
+            "headline": "Stocks fall as oil jumps above $100 after Iran war escalates",
+            "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "Oil is tightening financial conditions, pressuring equities, and complicating the Fed decision."
+          },
+          {
+            "source": "Reuters",
+            "headline": "Oil and Treasury yields turn higher as stocks falter",
+            "url": "https://www.marketscreener.com/news/oil-treasury-yields-turn-higher-as-stocks-falter-ce785bd9d088f321",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "Timestamped cross-asset facts and the divided policy setup."
+          },
+          {
+            "source": "Bureau of Labor Statistics",
+            "headline": "PPI Thursday and CPI Friday define the inflation calendar",
+            "url": "https://www.bls.gov/schedule/2026/09_sched_list.htm",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "The inflation sequence is the next falsifier for the oil-and-rates thesis."
           }
         ],
-        "engineScore": 81.3
+        "engineScore": 81
       },
       {
-        "id": "fed-succession-split",
-        "coverageTopic": "economy-rates",
-        "focusArea": "Macro",
-        "urgency": "Must know",
-        "readTime": "70 sec",
-        "headline": "Powell's final meeting as chair turned into a Fed-handoff story.",
-        "takeaway": "The rate decision mattered less than the split around it and Powell's choice to remain on the board, because both now shape how investors will read the handoff to Kevin Warsh.",
-        "whatChanged": "Bloomberg and Reuters both emphasized two things at once: a more divided Fed decision and Powell's decision to stay on as a governor after May 15.",
-        "whyItMatters": "This is now a succession story as much as a rates story. The market has to price not just the next policy move, but how much independence and continuity the post-Powell Fed will project.",
-        "marketImpact": "Treasury yields, rate-cut expectations, and policy-sensitive equities can all stay jumpy because the leadership transition is now part of the macro risk map.",
-        "disagreement": "Some investors will read Powell staying on as a stabilizer. Others will read the dissents and the handoff itself as proof that policy uncertainty is getting harder to contain.",
-        "watchToday": "How yields behave after the meeting, whether Warsh expectations shift, and whether equity leadership still acts like the Fed backdrop is benign.",
+        "id": "generic-apple-s-foldable-hardware-launch-is-a-technology-premium-demand-and-new-ceo-execution-test",
+        "coverageTopic": "ai-tech",
+        "focusArea": "Markets",
+        "urgency": "Useful edge",
+        "readTime": "55 sec",
+        "headline": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test.",
+        "takeaway": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
+        "whatChanged": "The fresh update was apple unveiled its first foldable iPhone, called Duo, on September 9.",
+        "whyItMatters": "Apple's first foldable is a test of premium-device demand, product mix, and execution under its new CEO; the launch alone does not prove an earnings reset.",
+        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
+        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
+        "watchToday": "Watch Apple shares, supplier read-through, preorder timing, and disclosed pricing; sustained mix and unit demand matter more than launch-day attention.",
         "tags": [
-          "Fed",
-          "Rates",
-          "Succession"
+          "Markets",
+          "Apple's",
+          "foldable"
         ],
         "sourceTrail": {
           "primary": [
-            "Bloomberg",
+            "Associated Press",
             "Reuters"
           ],
           "framing": [
             "Brew Markets",
             "Morning Brew",
-            "CFO Brew"
+            "Tech Brew"
           ]
         },
         "newsletterSignalMatch": {
-          "source": "Brew Markets",
-          "subject": "Powell ain't going nowhere",
+          "source": "Tech Brew",
+          "subject": "A search bar for DNA",
           "matchedHints": []
         },
         "links": [
           {
-            "label": "Bloomberg on the Fed handoff",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/fed-holds-rates-three-officials-dissent-against-easing-bias"
+            "label": "Associated Press on the story",
+            "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
           },
           {
-            "label": "Reuters on the Fed handoff",
-            "url": "https://www.investing.com/news/economy-news/feds-powell-says-he-will-stay-on-as-governor-after-chair-term-ends-4646577"
+            "label": "Reuters on the story",
+            "url": "https://www.investing.com/news/stock-market-news/apple-expected-to-unveil-first-folding-phone-with-new-ceo-ternus-in-command-4893058"
           }
         ],
         "primaryLink": {
-          "label": "Bloomberg on the Fed handoff",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-29/fed-holds-rates-three-officials-dissent-against-easing-bias"
+          "label": "Associated Press on the story",
+          "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
         },
         "visual": {
-          "palette": "amber",
-          "eyebrow": "Economy & Rates",
-          "title": "The Fed decision became a handoff story.",
-          "summary": "Powell staying on and the wider dissent count both matter for how the next policy chapter will be read.",
+          "palette": "sky",
+          "eyebrow": "Ai & Tech",
+          "title": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
+          "summary": "Tap through to open the source article.",
           "graphic": {
             "type": "fact-board",
-            "sourceCaption": "Recreated from Bloomberg and Reuters reporting.",
+            "sourceCaption": "Recreated from Associated Press + Reuters.",
             "items": [
               {
-                "label": "Rates",
-                "detail": "Held steady"
+                "label": "Signal",
+                "detail": "Markets"
               },
               {
-                "label": "Dissents",
-                "detail": "3 officials"
+                "label": "Signal",
+                "detail": "Apple's"
               },
               {
-                "label": "Powell",
-                "detail": "Stays on board"
+                "label": "Signal",
+                "detail": "foldable"
               }
             ]
           },
           "points": [
             {
-              "label": "Decision",
-              "value": "Rates unchanged",
+              "label": "Signal 1",
+              "value": "Markets",
+              "tone": "warm"
+            },
+            {
+              "label": "Signal 2",
+              "value": "Apple's",
               "tone": "cool"
             },
             {
-              "label": "US 10Y",
-              "value": "+6.0 bp",
-              "rawValue": "4.418%",
-              "tone": "warm"
-            },
-            {
-              "label": "Signal",
-              "value": "Leadership handoff",
-              "tone": "warm"
+              "label": "Signal 3",
+              "value": "foldable",
+              "tone": "cool"
             }
           ]
         },
         "evidence": [
           {
-            "source": "Bloomberg",
-            "headline": "Divided Fed officials hold rates; Powell to stay as governor",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/fed-holds-rates-three-officials-dissent-against-easing-bias",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "Powell stays on and the Fed shows a real split"
+            "source": "Associated Press",
+            "headline": "Apple unveils iPhone Duo, its first foldable model",
+            "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test."
           },
           {
             "source": "Reuters",
-            "headline": "Fed's Powell says he will stay on as governor after chair term ends",
-            "url": "https://www.investing.com/news/economy-news/feds-powell-says-he-will-stay-on-as-governor-after-chair-term-ends-4646577",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "Powell stays on and the Fed shows a real split"
+            "headline": "Apple's foldable launch puts new CEO and premium demand in focus",
+            "url": "https://www.investing.com/news/stock-market-news/apple-expected-to-unveil-first-folding-phone-with-new-ceo-ternus-in-command-4893058",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test."
           }
         ],
-        "engineScore": 76.9
+        "engineScore": 55.3
       },
       {
-        "id": "policy-earnings-collision",
-        "coverageTopic": "business",
-        "focusArea": "Markets",
-        "urgency": "Must know",
-        "readTime": "75 sec",
-        "headline": "Policy week and megacap earnings are hitting the market at the same time.",
-        "takeaway": "This is not a normal wait-for-the-Fed tape. Macro and micro risk are arriving together, which means the market has fewer places to hide if confidence slips.",
-        "whatChanged": "Bloomberg framed the week as a collision between central-bank decisions and heavyweight earnings, compressing a lot of narrative risk into a very short window.",
-        "whyItMatters": "The market is not dealing with one driver. It is balancing policy, valuation, leadership concentration, and earnings credibility all at once.",
-        "marketImpact": "If results are merely fine, the rally can stay intact. If one of the major leadership pillars wobbles, downside can travel faster than the calm tape suggests.",
-        "disagreement": "Bulls read the setup as proof that demand for quality and AI leadership can absorb bad news. Bears think the calm mostly reflects concentration and pre-positioning, not broad conviction.",
-        "watchToday": "Any pre-earnings tone shift, futures sensitivity to macro headlines, and whether cyclicals participate instead of just tagging along.",
-        "tags": [
-          "Macro",
-          "Megacaps",
-          "Narrative risk"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Bloomberg"
-          ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Morning Brew",
-          "subject": "Sloshing around",
-          "matchedHints": []
-        },
-        "links": [
-          {
-            "label": "Bloomberg on the policy-plus-earnings collision",
-            "url": "https://www.bloomberg.com/news/newsletters/2026-04-27/earnings-central-banks-headline-blockbuster-week-for-markets"
-          }
-        ],
-        "primaryLink": {
-          "label": "Bloomberg on the policy-plus-earnings collision",
-          "url": "https://www.bloomberg.com/news/newsletters/2026-04-27/earnings-central-banks-headline-blockbuster-week-for-markets"
-        },
-        "visual": {
-          "palette": "sky",
-          "eyebrow": "Business",
-          "title": "Macro week and megacap week are now the same story.",
-          "summary": "The market has to process policy, earnings, and valuation pressure at once.",
-          "graphic": {
-            "type": "timeline",
-            "sourceCaption": "Recreated from Bloomberg's policy-week and megacap earnings setup.",
-            "items": [
-              {
-                "label": "Fed",
-                "detail": "Policy decision"
-              },
-              {
-                "label": "Meta",
-                "detail": "Megacap results"
-              },
-              {
-                "label": "Microsoft",
-                "detail": "Megacap results"
-              },
-              {
-                "label": "Amazon",
-                "detail": "Megacap results"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Setup",
-              "value": "Fed + earnings",
-              "tone": "warm"
-            },
-            {
-              "label": "Pressure",
-              "value": "Narrative compression",
-              "tone": "cool"
-            },
-            {
-              "label": "Risk",
-              "value": "Leadership wobble",
-              "tone": "cool"
-            }
-          ]
-        },
-        "evidence": [
-          {
-            "source": "Bloomberg",
-            "headline": "Earnings, central banks headline blockbuster week for markets",
-            "url": "https://www.bloomberg.com/news/newsletters/2026-04-27/earnings-central-banks-headline-blockbuster-week-for-markets",
-            "publishedDate": "2026-04-27",
-            "editorialUse": "Policy week and megacap earnings collision"
-          }
-        ],
-        "engineScore": 74.6
-      },
-      {
-        "id": "breadth-fragility",
-        "coverageTopic": "markets",
-        "focusArea": "Markets",
-        "urgency": "Useful edge",
-        "readTime": "60 sec",
-        "headline": "Fresh index highs are still masking thinner leadership than the headline implies.",
-        "takeaway": "The market can look healthy at the index level while becoming more fragile underneath. That distinction matters more than the celebratory headline.",
-        "whatChanged": "The Wall Street Journal market coverage pointed to strong index-level performance led by a relatively small set of dominant names.",
-        "whyItMatters": "When headline strength outruns breadth, the market can feel more stable than it really is. That reduces the margin for disappointment.",
-        "marketImpact": "If leadership broadens, bulls gain a sturdier foundation. If it narrows further, any pullback can feel sudden and disproportionately sharp.",
-        "disagreement": "Some investors see concentration as a natural feature of an AI-led cycle. Others see it as a warning that passive index strength is hiding weaker internals.",
-        "watchToday": "Breadth, equal-weight performance, and whether non-megacap sectors confirm the move instead of just watching it happen.",
-        "tags": [
-          "Breadth",
-          "Leadership",
-          "S&P 500"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "The Wall Street Journal"
-          ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Brew Markets",
-          "subject": "Powell ain't going nowhere",
-          "matchedHints": []
-        },
-        "links": [
-          {
-            "label": "The Wall Street Journal on market breadth",
-            "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-27-2026"
-          }
-        ],
-        "primaryLink": {
-          "label": "The Wall Street Journal on market breadth",
-          "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-27-2026"
-        },
-        "visual": {
-          "palette": "sky",
-          "eyebrow": "Markets",
-          "title": "Index highs still do not equal broad participation.",
-          "summary": "The tape looks cleaner from far away than it does underneath.",
-          "graphic": {
-            "type": "bar-chart",
-            "sourceCaption": "Recreated from WSJ market coverage and close-board data.",
-            "items": [
-              {
-                "label": "Dow",
-                "value": 0.57,
-                "display": "-0.57%",
-                "tone": "cool"
-              },
-              {
-                "label": "S&P 500",
-                "value": 0.04,
-                "display": "-0.04%",
-                "tone": "cool"
-              },
-              {
-                "label": "Nasdaq",
-                "value": 0.04,
-                "display": "+0.04%",
-                "tone": "warm"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "S&P 500",
-              "value": "-0.04%",
-              "rawValue": "7,135.95",
-              "tone": "cool"
-            },
-            {
-              "label": "Nasdaq",
-              "value": "+0.04%",
-              "rawValue": "24,673.24",
-              "tone": "warm"
-            },
-            {
-              "label": "Breadth",
-              "value": "Still narrow",
-              "tone": "cool"
-            }
-          ]
-        },
-        "evidence": [
-          {
-            "source": "The Wall Street Journal",
-            "headline": "Stock Market Today: Dow, S&P 500, Nasdaq",
-            "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-27-2026",
-            "publishedDate": "2026-04-27",
-            "editorialUse": "Breadth versus headline index strength"
-          }
-        ],
-        "engineScore": 64.05
-      },
-      {
-        "id": "generic-openai-s-missed-targets-are-now-an-ai-confidence-test",
-        "coverageTopic": "ai-tech",
+        "id": "generic-a-dated-housing-baseline-not-a-fresh-standalone-story",
+        "coverageTopic": "economy-rates",
         "focusArea": "Markets",
         "urgency": "Useful edge",
         "readTime": "55 sec",
-        "headline": "OpenAI's missed targets are now an AI confidence test",
-        "takeaway": "AI-linked equities sold off after OpenAI missed internal revenue and user goals.",
-        "whatChanged": "The Wall Street Journal reported that AI-linked equities sold off after OpenAI missed internal revenue and user goals.",
-        "whyItMatters": "The edge is understanding how this changes the day's risk map instead of just knowing the headline.",
+        "headline": "A dated housing baseline, not a fresh standalone story.",
+        "takeaway": "Freddie Mac's latest weekly reading put the 30-year fixed mortgage rate at 6.71%; the next update is Thursday.",
+        "whatChanged": "The fresh update was the 30-year fixed mortgage rate averaged 6.71% for the week of September 3.",
+        "whyItMatters": "Mortgage rates near 6.7% keep affordability tight, so housing still reads as a higher-for-longer rates story instead of a clean recovery story.",
         "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
         "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
-        "watchToday": "Whether follow-through shows up in rates, commodities, sector leadership, or management commentary.",
+        "watchToday": "Watch mortgage-rate direction, homebuilder sentiment, and whether supply gains start to matter more than financing pressure.",
         "tags": [
           "Markets",
-          "OpenAI's",
-          "missed"
+          "A",
+          "dated"
         ],
         "sourceTrail": {
           "primary": [
-            "The Wall Street Journal"
+            "Freddie Mac"
           ],
           "framing": [
             "Brew Markets",
@@ -716,175 +465,358 @@ const MORNING_BRIEFING = {
         },
         "newsletterSignalMatch": {
           "source": "Brew Markets",
-          "subject": "Powell ain't going nowhere",
-          "matchedHints": []
+          "subject": "Apple wants fold, hard cash",
+          "matchedHints": [
+            "rates"
+          ]
         },
         "links": [
           {
-            "label": "The Wall Street Journal on the story",
-            "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-28-2026/card/ai-stocks-falter-on-openai-stumble-Z87WaQKoY4gpZkMBOjPY"
+            "label": "Freddie Mac on the story",
+            "url": "https://www.freddiemac.com/pmms"
           }
         ],
         "primaryLink": {
-          "label": "The Wall Street Journal on the story",
-          "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-28-2026/card/ai-stocks-falter-on-openai-stumble-Z87WaQKoY4gpZkMBOjPY"
+          "label": "Freddie Mac on the story",
+          "url": "https://www.freddiemac.com/pmms"
         },
         "visual": {
           "palette": "sky",
-          "eyebrow": "AI & Tech",
-          "title": "The AI trade is no longer giving every leader a free pass.",
-          "summary": "Execution misses are starting to matter for sentiment, proxies, and positioning.",
+          "eyebrow": "Economy & Rates",
+          "title": "Freddie Mac's latest weekly reading put the 30-year fixed mortgage rate at 6.71%; the next update is Thursday.",
+          "summary": "Tap through to open the source article.",
           "graphic": {
             "type": "fact-board",
-            "sourceCaption": "Recreated from WSJ reporting on the OpenAI stumble and AI-linked stocks.",
+            "sourceCaption": "Recreated from Freddie Mac.",
             "items": [
               {
-                "label": "Miss",
-                "detail": "Revenue goals"
+                "label": "Signal",
+                "detail": "Markets"
               },
               {
-                "label": "Miss",
-                "detail": "User goals"
+                "label": "Signal",
+                "detail": "A"
               },
               {
-                "label": "Tape",
-                "detail": "AI stocks fell"
+                "label": "Signal",
+                "detail": "dated"
               }
             ]
           },
           "points": [
             {
-              "label": "Trigger",
-              "value": "OpenAI miss",
+              "label": "Signal 1",
+              "value": "Markets",
               "tone": "warm"
             },
             {
-              "label": "Readthrough",
-              "value": "AI-linked stocks",
+              "label": "Signal 2",
+              "value": "A",
               "tone": "cool"
             },
             {
-              "label": "Watch",
-              "value": "Follow-through",
+              "label": "Signal 3",
+              "value": "dated",
               "tone": "cool"
             }
           ]
         },
         "evidence": [
           {
-            "source": "The Wall Street Journal",
-            "headline": "AI stocks falter on OpenAI stumble",
-            "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-28-2026/card/ai-stocks-falter-on-openai-stumble-Z87WaQKoY4gpZkMBOjPY",
-            "publishedDate": "2026-04-28",
-            "editorialUse": "OpenAI's missed targets are now an AI confidence test"
+            "source": "Freddie Mac",
+            "headline": "Mortgage rates remain the verified housing constraint",
+            "url": "https://www.freddiemac.com/pmms",
+            "publishedDate": "2026-09-03",
+            "editorialUse": "A dated housing baseline, not a fresh standalone story."
           }
         ],
-        "engineScore": 57.4
+        "engineScore": 55.3
       },
       {
-        "id": "uk-us-diplomatic-theater",
+        "id": "generic-a-distinct-global-policy-risk-whose-next-signal-is-allied-action-not-market-price-alone",
         "coverageTopic": "politics-world",
         "focusArea": "World",
-        "urgency": "Context",
-        "readTime": "50 sec",
-        "headline": "The UK-US diplomatic theater matters because symbolic alignment can become policy alignment.",
-        "takeaway": "A ceremonial visit does not move markets on its own, but it can matter if it stabilizes expectations around allied coordination when the geopolitical backdrop is already tense.",
-        "whatChanged": "Associated Press framed King Charles III's Washington visit and address to Congress as an effort to emphasize continuity in the UK-US relationship.",
-        "whyItMatters": "When geopolitical coordination is in focus, symbolic reassurance can reduce uncertainty around trade, security alignment, and allied posture.",
-        "marketImpact": "The direct market effect is limited, but the broader diplomatic tone can shape how investors think about policy coordination during a risk-heavy week.",
-        "disagreement": "Some people dismiss this as pure symbolism. Others see symbolism as useful when policy relationships need visible reinforcement.",
-        "watchToday": "Any concrete policy or trade messaging that turns the symbolism into something more actionable.",
+        "urgency": "High signal",
+        "readTime": "55 sec",
+        "headline": "A distinct global-policy risk whose next signal is allied action, not market price alone.",
+        "takeaway": "AP reported Ukraine's president pressed international partners for a tougher response to escalating Russian attacks on civilian areas.",
+        "whatChanged": "The fresh update was president Volodymyr Zelenskyy urged stronger international pressure on Russia on September 9.",
+        "whyItMatters": "World stories matter when they start changing the policy, supply-chain, or risk backdrop that investors have to price.",
+        "marketImpact": "The direct market effect may stay muted at first, but the second-order policy and sentiment effects are what matter.",
+        "disagreement": "Some readers will treat it as isolated news flow. Others will treat it as an early clue about broader policy or geopolitical direction.",
+        "watchToday": "Watch who amplifies the story next and whether it starts changing the wider policy or risk conversation.",
         "tags": [
-          "Diplomacy",
-          "UK-US",
-          "Policy tone"
+          "World",
+          "A",
+          "distinct"
         ],
         "sourceTrail": {
           "primary": [
-            "Bloomberg",
             "Associated Press"
           ],
           "framing": [
-            "Morning Brew"
+            "Morning Brew",
+            "Tech Brew"
           ]
         },
         "newsletterSignalMatch": {
           "source": "Morning Brew",
-          "subject": "Sloshing around",
+          "subject": "Heated survivalry",
           "matchedHints": []
         },
         "links": [
           {
-            "label": "Bloomberg on the UK-US visit",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/king-charles-meets-ceos-in-bid-to-promote-us-uk-investment?srnd=phx-economics-v2"
-          },
-          {
-            "label": "Associated Press on the UK-US visit",
-            "url": "https://apnews.com/article/4cd294e6333b4a9ba7ada2af4dd71aa9"
+            "label": "Associated Press on the story",
+            "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf"
           }
         ],
         "primaryLink": {
-          "label": "Bloomberg on the UK-US visit",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-29/king-charles-meets-ceos-in-bid-to-promote-us-uk-investment?srnd=phx-economics-v2"
+          "label": "Associated Press on the story",
+          "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf"
         },
         "visual": {
           "palette": "mint",
           "eyebrow": "Politics & World",
-          "title": "Symbolic alignment can still shape the policy mood.",
-          "summary": "The direct market move may be small, but the diplomatic frame can matter later.",
+          "title": "World stories matter when they start changing the policy map.",
+          "summary": "The direct move can look small at first. The real question is what gets repriced next.",
           "graphic": {
-            "type": "route-map",
-            "sourceCaption": "Recreated from Bloomberg and AP reporting on the UK-US diplomatic push.",
+            "type": "fact-board",
+            "sourceCaption": "Recreated from Associated Press.",
             "items": [
               {
-                "label": "UK",
-                "detail": "Alliance signal"
+                "label": "Theme",
+                "detail": "A"
               },
               {
-                "label": "Washington",
-                "detail": "Congress and White House"
+                "label": "Market link",
+                "detail": "Policy and risk sentiment"
               },
               {
-                "label": "New York",
-                "detail": "CEO investment pitch"
+                "label": "Watch",
+                "detail": "Who amplifies it next"
               }
             ]
           },
           "points": [
             {
               "label": "Theme",
-              "value": "Allied coordination",
+              "value": "A",
               "tone": "warm"
             },
             {
               "label": "Readthrough",
-              "value": "Policy tone",
+              "value": "Policy spillover",
               "tone": "cool"
             },
             {
               "label": "Watch",
-              "value": "Concrete follow-through",
+              "value": "Narrative shift",
               "tone": "cool"
             }
           ]
         },
         "evidence": [
           {
-            "source": "Bloomberg",
-            "headline": "King Charles meets CEOs in bid to promote US-UK investment",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/king-charles-meets-ceos-in-bid-to-promote-us-uk-investment?srnd=phx-economics-v2",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "King Charles pushes US-UK investment alignment"
-          },
-          {
             "source": "Associated Press",
-            "headline": "King Charles III highlights US-UK bond during busy day of diplomacy with Trump and Congress",
-            "url": "https://apnews.com/article/4cd294e6333b4a9ba7ada2af4dd71aa9",
-            "publishedDate": "2026-04-28",
-            "editorialUse": "King Charles pushes US-UK investment alignment"
+            "headline": "Zelenskyy urges more pressure on Russia after civilian deaths",
+            "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "A distinct global-policy risk whose next signal is allied action, not market price alone."
           }
         ],
-        "engineScore": 50.65
+        "engineScore": 54.8
+      },
+      {
+        "id": "generic-use-a-gap-block-instead-of-transaction-filler",
+        "coverageTopic": "markets",
+        "focusArea": "Markets",
+        "urgency": "Useful edge",
+        "readTime": "55 sec",
+        "headline": "Use a gap block instead of transaction filler.",
+        "takeaway": "No material M&A, IPO pricing, funding, or private-credit event was established; PitchBook enrichment was unavailable.",
+        "whatChanged": "The fresh update was no authenticated PitchBook route was available.",
+        "whyItMatters": "The more useful read is what this changes in the day's setup for investors and operators, not just the headline itself.",
+        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
+        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
+        "watchToday": "Watch for follow-through in prices, sector leadership, and management commentary rather than assuming the first headline got the story right.",
+        "tags": [
+          "Markets",
+          "Use",
+          "a"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "Morning Brief editorial desk"
+          ],
+          "framing": [
+            "Brew Markets",
+            "Morning Brew",
+            "Tech Brew"
+          ]
+        },
+        "newsletterSignalMatch": {
+          "source": "CFO Brew",
+          "subject": "Power moves",
+          "matchedHints": [
+            "pricing"
+          ]
+        },
+        "links": [
+          {
+            "label": "Morning Brief editorial desk on the story",
+            "url": "https://www.sec.gov/edgar/search/"
+          }
+        ],
+        "primaryLink": {
+          "label": "Morning Brief editorial desk on the story",
+          "url": "https://www.sec.gov/edgar/search/"
+        },
+        "visual": {
+          "palette": "sky",
+          "eyebrow": "Markets",
+          "title": "No material M&A, IPO pricing, funding, or private-credit event was established; PitchBook enrichment was unavailable.",
+          "summary": "Tap through to open the source article.",
+          "graphic": {
+            "type": "fact-board",
+            "sourceCaption": "Recreated from Morning Brief editorial desk.",
+            "items": [
+              {
+                "label": "Signal",
+                "detail": "Markets"
+              },
+              {
+                "label": "Signal",
+                "detail": "Use"
+              },
+              {
+                "label": "Signal",
+                "detail": "a"
+              }
+            ]
+          },
+          "points": [
+            {
+              "label": "Signal 1",
+              "value": "Markets",
+              "tone": "warm"
+            },
+            {
+              "label": "Signal 2",
+              "value": "Use",
+              "tone": "cool"
+            },
+            {
+              "label": "Signal 3",
+              "value": "a",
+              "tone": "cool"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "source": "Morning Brief editorial desk",
+            "headline": "Private markets and deals remain a transparent coverage gap",
+            "url": "https://www.sec.gov/edgar/search/",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "Use a gap block instead of transaction filler."
+          }
+        ],
+        "engineScore": 54.4
+      },
+      {
+        "id": "generic-a-real-estate-capital-signal-linking-industrial-parks-and-infrastructure-to-north-american-supply-chains",
+        "coverageTopic": "ai-tech",
+        "focusArea": "Markets",
+        "urgency": "Useful edge",
+        "readTime": "55 sec",
+        "headline": "A real-estate-capital signal linking industrial parks and infrastructure to North American supply chains.",
+        "takeaway": "Reuters reported BIVA's chief said Mexican FIBRAs could finance industrial parks, logistics assets, and AI-related infrastructure.",
+        "whatChanged": "The fresh update was BIVA CEO Maria Ariza said Mexican FIBRAs can finance industrial parks, logistics assets, and infrastructure.",
+        "whyItMatters": "The capital-markets question is whether manufacturing and AI-infrastructure demand can translate into durable occupancy, rents, and investable project pipelines for Mexican FIBRAs.",
+        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
+        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
+        "watchToday": "Watch for named projects, financing commitments, tenant demand, and follow-through from Mexico Investment Week rather than treating an exchange executive's thesis as completed investment.",
+        "tags": [
+          "Markets",
+          "A",
+          "real"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "Reuters"
+          ],
+          "framing": [
+            "Brew Markets",
+            "Morning Brew",
+            "Tech Brew"
+          ]
+        },
+        "newsletterSignalMatch": {
+          "source": "Morning Brew",
+          "subject": "Heated survivalry",
+          "matchedHints": []
+        },
+        "links": [
+          {
+            "label": "Reuters on the story",
+            "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722"
+          }
+        ],
+        "primaryLink": {
+          "label": "Reuters on the story",
+          "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722"
+        },
+        "visual": {
+          "palette": "sky",
+          "eyebrow": "Ai & Tech",
+          "title": "Reuters reported BIVA's chief said Mexican FIBRAs could finance industrial parks, logistics assets, and AI-related infrastructure.",
+          "summary": "Tap through to open the source article.",
+          "graphic": {
+            "type": "fact-board",
+            "sourceCaption": "Recreated from Reuters.",
+            "items": [
+              {
+                "label": "Signal",
+                "detail": "Markets"
+              },
+              {
+                "label": "Signal",
+                "detail": "A"
+              },
+              {
+                "label": "Signal",
+                "detail": "real"
+              }
+            ]
+          },
+          "points": [
+            {
+              "label": "Signal 1",
+              "value": "Markets",
+              "tone": "warm"
+            },
+            {
+              "label": "Signal 2",
+              "value": "A",
+              "tone": "cool"
+            },
+            {
+              "label": "Signal 3",
+              "value": "real",
+              "tone": "cool"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "source": "Reuters",
+            "headline": "Mexico REITs pitch manufacturing and AI-infrastructure growth",
+            "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "A real-estate-capital signal linking industrial parks and infrastructure to North American supply chains."
+          }
+        ],
+        "engineScore": 53.5
       }
     ]
   },
@@ -893,15 +825,15 @@ const MORNING_BRIEFING = {
     "deck": "Right now energy is not a side story. It is the hinge that connects world news, inflation nerves, and what central banks may or may not feel comfortable saying next.",
     "whyItLeads": "Multiple reports kept crude and regional shipping risk near the center of the macro setup while equities tried to stay composed.",
     "marketRead": "If oil stays elevated into a central-bank-heavy week, the market has less room to keep pretending disinflation is automatic.",
-    "watchToday": "Brent behavior, Hormuz diplomacy, and whether yields react more to crude than to central-bank messaging.",
+    "watchToday": "Brent, Treasury yields, and Thursday's 8:30 AM ET PPI release; a cooler inflation print is the next clean falsifier for the oil-driven rates squeeze.",
     "focusArea": "Macro",
     "coverageTopic": "economy-rates",
-    "sourceLabel": "Reuters",
+    "sourceLabel": "AP",
     "sourceTrail": {
       "primary": [
+        "Associated Press",
         "Reuters",
-        "Bloomberg",
-        "Associated Press"
+        "Bureau of Labor Statistics"
       ],
       "framing": [
         "Morning Brew",
@@ -915,24 +847,18 @@ const MORNING_BRIEFING = {
       "summary": "Oil, shipping risk, and yields are moving together underneath the tape.",
       "graphic": {
         "type": "bar-chart",
-        "sourceCaption": "Recreated from Brew Markets close-board data and same-day Reuters/Bloomberg reporting.",
+        "sourceCaption": "Recreated from Associated Press + Reuters + Bureau of Labor Statistics.",
         "items": [
           {
             "label": "Brent",
-            "value": 6.2,
-            "display": "+6.20%",
-            "tone": "warm"
-          },
-          {
-            "label": "WTI",
-            "value": 6.8,
-            "display": "+6.80%",
+            "value": 2.4,
+            "display": "+2.4%",
             "tone": "warm"
           },
           {
             "label": "US 10Y",
-            "value": 6,
-            "display": "+6.0 bp",
+            "value": 3.26,
+            "display": "+3.26 bps",
             "tone": "warm"
           }
         ]
@@ -940,159 +866,148 @@ const MORNING_BRIEFING = {
       "points": [
         {
           "label": "Brent",
-          "value": "+6.20%",
-          "rawValue": "$118.11",
-          "tone": "warm"
-        },
-        {
-          "label": "WTI",
-          "value": "+6.80%",
-          "rawValue": "$106.74",
+          "value": "+2.4%",
+          "rawValue": "$100.27",
           "tone": "warm"
         },
         {
           "label": "US 10Y",
-          "value": "+6.0 bp",
-          "rawValue": "4.418%",
+          "value": "+3.26 bps",
+          "rawValue": "4.837%",
           "tone": "warm"
         }
       ]
     },
-    "link": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html",
+    "link": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd",
     "readTime": "70 sec"
   },
   "marketDesk": {
     "title": "Markets & Rates",
     "intro": "A quick board before the longer read.",
-    "summary": "Record highs can coexist with hidden fragility for a while. Energy, breadth, and policy tone are the pressure points to watch.",
-    "asOf": "2026-04-29T16:00:00-04:00",
-    "sourceLabel": "Brew Markets close board and same-day Tier 1 market coverage",
+    "summary": "A clean rebound can coexist with hidden fragility for a while. Energy, leadership concentration, and policy tone are the pressure points to watch.",
+    "asOf": "2026-09-09T13:53:00-04:00",
+    "sourceLabel": "AP and Reuters intraday reporting; unsupported fields are explicit coverage gaps.",
     "tiles": [
       {
-        "id": "sp500",
+        "id": "spx",
         "label": "S&P 500",
-        "value": "7,135.95",
-        "change": "-0.04%",
-        "changeValue": -0.04,
+        "value": "coverage gap",
+        "change": "lower intraday",
+        "changeValue": -0.1,
         "direction": "down",
-        "note": "Broad indexes were flat to lower even as oil and rates stayed loud."
+        "note": "AP reported stocks lower intraday without an accessible verified index level or percentage."
       },
       {
         "id": "nasdaq",
         "label": "Nasdaq",
-        "value": "24,673.24",
-        "change": "+0.04%",
-        "changeValue": 0.04,
-        "direction": "up",
-        "note": "Tech held up better than the rest of the tape, but conviction was thin."
-      },
-      {
-        "id": "dow",
-        "label": "Dow",
-        "value": "48,861.81",
-        "change": "-0.57%",
-        "changeValue": -0.57,
+        "value": "coverage gap",
+        "change": "lower intraday",
+        "changeValue": -0.1,
         "direction": "down",
-        "note": "Old-economy exposure looked weaker than the headline megacap tape."
+        "note": "AP reported stocks lower intraday without an accessible verified index level or percentage."
       },
       {
-        "id": "brent",
-        "label": "Brent",
-        "value": "$118.11",
-        "change": "+6.20%",
-        "changeValue": 6.2,
-        "direction": "up",
-        "note": "Hormuz closure risk kept the war premium fully alive."
-      },
-      {
-        "id": "wti",
-        "label": "WTI",
-        "value": "$106.74",
-        "change": "+6.80%",
-        "changeValue": 6.8,
-        "direction": "up",
-        "note": "Domestic crude joined the spike as blockade fears deepened."
+        "id": "us2y",
+        "label": "US 2Y",
+        "value": "coverage gap",
+        "change": "—",
+        "changeValue": 0,
+        "direction": "flat",
+        "note": "No current verified 2-year yield in the source set."
       },
       {
         "id": "us10y",
         "label": "US 10Y",
-        "value": "4.418%",
-        "change": "+6.0 bp",
-        "changeValue": 6,
+        "value": "4.837%",
+        "change": "+3.26 bps",
+        "changeValue": 3.26,
         "changeUnit": "bp",
         "direction": "up",
-        "note": "The yield move said inflation and Fed-path risk are back together."
+        "note": "Reuters reported 4.837% at 1:53 PM ET, the highest since November 2023."
+      },
+      {
+        "id": "dxy",
+        "label": "DXY",
+        "value": "coverage gap",
+        "change": "—",
+        "changeValue": 0,
+        "direction": "flat",
+        "note": "No current verified DXY quote in the source set."
+      },
+      {
+        "id": "brent",
+        "label": "Brent",
+        "value": "$100.27",
+        "change": "+2.4%",
+        "changeValue": 2.4,
+        "direction": "up",
+        "note": "Reuters reported $100.27 at 1:53 PM ET."
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "value": "coverage gap",
+        "change": "—",
+        "changeValue": 0,
+        "direction": "flat",
+        "note": "No current verified gold quote."
       },
       {
         "id": "bitcoin",
         "label": "Bitcoin",
-        "value": "$75,570.56",
-        "change": "-1.17%",
-        "changeValue": -1.17,
-        "direction": "down",
-        "note": "Crypto did not behave like a clean refuge."
+        "value": "coverage gap",
+        "change": "—",
+        "changeValue": 0,
+        "direction": "flat",
+        "note": "No current verified Bitcoin quote."
+      },
+      {
+        "id": "vix",
+        "label": "VIX",
+        "value": "coverage gap",
+        "change": "—",
+        "changeValue": 0,
+        "direction": "flat",
+        "note": "No current verified VIX quote."
       }
     ],
     "heatmap": [
       {
-        "label": "Brent",
-        "value": 6.2,
-        "direction": "up",
-        "theme": "Energy"
-      },
-      {
-        "label": "WTI",
-        "value": 6.8,
-        "direction": "up",
-        "theme": "Energy"
-      },
-      {
         "label": "US 10Y",
-        "value": 6,
+        "value": 3.26,
         "direction": "up",
         "theme": "Rates",
         "unit": "bp"
       },
       {
-        "label": "Nasdaq",
-        "value": 0.04,
+        "label": "Brent",
+        "value": 2.4,
         "direction": "up",
-        "theme": "Equities"
-      },
-      {
-        "label": "S&P 500",
-        "value": -0.04,
-        "direction": "down",
-        "theme": "Equities"
-      },
-      {
-        "label": "Bitcoin",
-        "value": -1.17,
-        "direction": "down",
-        "theme": "Crypto"
+        "theme": "Energy",
+        "unit": "%"
       }
     ],
     "keyLines": [
       {
         "label": "Energy",
         "text": "Right now energy is not a side story. It is the hinge that connects world news, inflation nerves, and what central banks may or may not feel comfortable saying next.",
-        "url": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html"
+        "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
       },
       {
         "label": "Rates",
         "text": "Right now energy is not a side story. It is the hinge that connects world news, inflation nerves, and what central banks may or may not feel comfortable saying next.",
-        "url": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html"
+        "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
       },
       {
         "label": "AI & Private Markets",
-        "text": "OpenAI's missed targets rattled public AI proxies, while Anthropic equity remained scarce enough to show up in barter-style property deals and continued to carry strategic value for Google. The useful read is that private AI equity is still coveted, but public markets are no longer giving every AI leader the same benefit of the doubt.",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic?srnd=phx-deals"
+        "text": "No private-company signal was loaded into today's raw reporting file.",
+        "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
       }
     ]
   },
   "topStories": {
     "title": "Top Stories",
-    "intro": "This is one tight daily edition. Read the pulse first, then work the story cards top to bottom for a full 15 to 20 minute briefing.",
+    "intro": "This is one tight daily edition. Read the pulse first, then work the ranked story cards for a finishable 6 to 8 minute briefing.",
     "cards": [
       {
         "id": "oil-macro-bridge",
@@ -1106,7 +1021,7 @@ const MORNING_BRIEFING = {
         "whyItMatters": "If oil stays elevated into a central-bank-heavy week, the market has less room to keep pretending disinflation is automatic.",
         "marketImpact": "Energy can stay bid, long-duration assets get more fragile, and any rate-sensitive growth trade becomes harder to defend at rich valuations.",
         "disagreement": "Optimists think each diplomatic headline can cap crude quickly. Skeptics think shipping risk keeps a sticky premium in the system even when the news flow cools temporarily.",
-        "watchToday": "Brent behavior, Hormuz diplomacy, and whether yields react more to crude than to central-bank messaging.",
+        "watchToday": "Brent, Treasury yields, and Thursday's 8:30 AM ET PPI release; a cooler inflation print is the next clean falsifier for the oil-driven rates squeeze.",
         "tags": [
           "Oil",
           "Inflation",
@@ -1114,9 +1029,9 @@ const MORNING_BRIEFING = {
         ],
         "sourceTrail": {
           "primary": [
+            "Associated Press",
             "Reuters",
-            "Bloomberg",
-            "Associated Press"
+            "Bureau of Labor Statistics"
           ],
           "framing": [
             "Morning Brew",
@@ -1125,26 +1040,28 @@ const MORNING_BRIEFING = {
         },
         "newsletterSignalMatch": {
           "source": "Brew Markets",
-          "subject": "Powell ain't going nowhere",
-          "matchedHints": []
+          "subject": "Apple wants fold, hard cash",
+          "matchedHints": [
+            "rates"
+          ]
         },
         "links": [
           {
-            "label": "Reuters on oil and the macro setup",
-            "url": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html"
-          },
-          {
-            "label": "Bloomberg on oil and the macro setup",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/latest-oil-market-news-and-analysis-for-april-30"
-          },
-          {
             "label": "Associated Press on oil and the macro setup",
-            "url": "https://apnews.com/article/4b74b9d583433ed609c17df830ce3880"
+            "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
+          },
+          {
+            "label": "Reuters on oil and the macro setup",
+            "url": "https://www.marketscreener.com/news/oil-treasury-yields-turn-higher-as-stocks-falter-ce785bd9d088f321"
+          },
+          {
+            "label": "Bureau of Labor Statistics on oil and the macro setup",
+            "url": "https://www.bls.gov/schedule/2026/09_sched_list.htm"
           }
         ],
         "primaryLink": {
-          "label": "Reuters on oil and the macro setup",
-          "url": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html"
+          "label": "Associated Press on oil and the macro setup",
+          "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
         },
         "visual": {
           "palette": "amber",
@@ -1153,24 +1070,18 @@ const MORNING_BRIEFING = {
           "summary": "Oil, shipping risk, and yields are moving together underneath the tape.",
           "graphic": {
             "type": "bar-chart",
-            "sourceCaption": "Recreated from Brew Markets close-board data and same-day Reuters/Bloomberg reporting.",
+            "sourceCaption": "Recreated from Associated Press + Reuters + Bureau of Labor Statistics.",
             "items": [
               {
                 "label": "Brent",
-                "value": 6.2,
-                "display": "+6.20%",
-                "tone": "warm"
-              },
-              {
-                "label": "WTI",
-                "value": 6.8,
-                "display": "+6.80%",
+                "value": 2.4,
+                "display": "+2.4%",
                 "tone": "warm"
               },
               {
                 "label": "US 10Y",
-                "value": 6,
-                "display": "+6.0 bp",
+                "value": 3.26,
+                "display": "+3.26 bps",
                 "tone": "warm"
               }
             ]
@@ -1178,379 +1089,171 @@ const MORNING_BRIEFING = {
           "points": [
             {
               "label": "Brent",
-              "value": "+6.20%",
-              "rawValue": "$118.11",
-              "tone": "warm"
-            },
-            {
-              "label": "WTI",
-              "value": "+6.80%",
-              "rawValue": "$106.74",
+              "value": "+2.4%",
+              "rawValue": "$100.27",
               "tone": "warm"
             },
             {
               "label": "US 10Y",
-              "value": "+6.0 bp",
-              "rawValue": "4.418%",
+              "value": "+3.26 bps",
+              "rawValue": "4.837%",
               "tone": "warm"
             }
           ]
         },
         "evidence": [
           {
-            "source": "Reuters",
-            "headline": "Oil ends up nearly 3% as Hormuz disruption outweighs UAE OPEC exit",
-            "url": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "Oil as macro bridge"
-          },
-          {
-            "source": "Bloomberg",
-            "headline": "Oil extends rally as Hormuz stays shut with blockade to continue",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/latest-oil-market-news-and-analysis-for-april-30",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "Oil as macro bridge"
-          },
-          {
             "source": "Associated Press",
-            "headline": "Trump rejects Iran's latest proposal as Democrats confront Hegseth over war",
-            "url": "https://apnews.com/article/4b74b9d583433ed609c17df830ce3880",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "Oil as macro bridge"
+            "headline": "Stocks fall as oil jumps above $100 after Iran war escalates",
+            "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "Oil is tightening financial conditions, pressuring equities, and complicating the Fed decision."
+          },
+          {
+            "source": "Reuters",
+            "headline": "Oil and Treasury yields turn higher as stocks falter",
+            "url": "https://www.marketscreener.com/news/oil-treasury-yields-turn-higher-as-stocks-falter-ce785bd9d088f321",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "Timestamped cross-asset facts and the divided policy setup."
+          },
+          {
+            "source": "Bureau of Labor Statistics",
+            "headline": "PPI Thursday and CPI Friday define the inflation calendar",
+            "url": "https://www.bls.gov/schedule/2026/09_sched_list.htm",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "The inflation sequence is the next falsifier for the oil-and-rates thesis."
           }
         ],
-        "engineScore": 81.3
+        "engineScore": 81
       },
       {
-        "id": "fed-succession-split",
-        "coverageTopic": "economy-rates",
-        "focusArea": "Macro",
-        "urgency": "Must know",
-        "readTime": "70 sec",
-        "headline": "Powell's final meeting as chair turned into a Fed-handoff story.",
-        "takeaway": "The rate decision mattered less than the split around it and Powell's choice to remain on the board, because both now shape how investors will read the handoff to Kevin Warsh.",
-        "whatChanged": "Bloomberg and Reuters both emphasized two things at once: a more divided Fed decision and Powell's decision to stay on as a governor after May 15.",
-        "whyItMatters": "This is now a succession story as much as a rates story. The market has to price not just the next policy move, but how much independence and continuity the post-Powell Fed will project.",
-        "marketImpact": "Treasury yields, rate-cut expectations, and policy-sensitive equities can all stay jumpy because the leadership transition is now part of the macro risk map.",
-        "disagreement": "Some investors will read Powell staying on as a stabilizer. Others will read the dissents and the handoff itself as proof that policy uncertainty is getting harder to contain.",
-        "watchToday": "How yields behave after the meeting, whether Warsh expectations shift, and whether equity leadership still acts like the Fed backdrop is benign.",
+        "id": "generic-apple-s-foldable-hardware-launch-is-a-technology-premium-demand-and-new-ceo-execution-test",
+        "coverageTopic": "ai-tech",
+        "focusArea": "Markets",
+        "urgency": "Useful edge",
+        "readTime": "55 sec",
+        "headline": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test.",
+        "takeaway": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
+        "whatChanged": "The fresh update was apple unveiled its first foldable iPhone, called Duo, on September 9.",
+        "whyItMatters": "Apple's first foldable is a test of premium-device demand, product mix, and execution under its new CEO; the launch alone does not prove an earnings reset.",
+        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
+        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
+        "watchToday": "Watch Apple shares, supplier read-through, preorder timing, and disclosed pricing; sustained mix and unit demand matter more than launch-day attention.",
         "tags": [
-          "Fed",
-          "Rates",
-          "Succession"
+          "Markets",
+          "Apple's",
+          "foldable"
         ],
         "sourceTrail": {
           "primary": [
-            "Bloomberg",
+            "Associated Press",
             "Reuters"
           ],
           "framing": [
             "Brew Markets",
             "Morning Brew",
-            "CFO Brew"
+            "Tech Brew"
           ]
         },
         "newsletterSignalMatch": {
-          "source": "Brew Markets",
-          "subject": "Powell ain't going nowhere",
+          "source": "Tech Brew",
+          "subject": "A search bar for DNA",
           "matchedHints": []
         },
         "links": [
           {
-            "label": "Bloomberg on the Fed handoff",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/fed-holds-rates-three-officials-dissent-against-easing-bias"
+            "label": "Associated Press on the story",
+            "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
           },
           {
-            "label": "Reuters on the Fed handoff",
-            "url": "https://www.investing.com/news/economy-news/feds-powell-says-he-will-stay-on-as-governor-after-chair-term-ends-4646577"
+            "label": "Reuters on the story",
+            "url": "https://www.investing.com/news/stock-market-news/apple-expected-to-unveil-first-folding-phone-with-new-ceo-ternus-in-command-4893058"
           }
         ],
         "primaryLink": {
-          "label": "Bloomberg on the Fed handoff",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-29/fed-holds-rates-three-officials-dissent-against-easing-bias"
+          "label": "Associated Press on the story",
+          "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
         },
         "visual": {
-          "palette": "amber",
-          "eyebrow": "Economy & Rates",
-          "title": "The Fed decision became a handoff story.",
-          "summary": "Powell staying on and the wider dissent count both matter for how the next policy chapter will be read.",
+          "palette": "sky",
+          "eyebrow": "Ai & Tech",
+          "title": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
+          "summary": "Tap through to open the source article.",
           "graphic": {
             "type": "fact-board",
-            "sourceCaption": "Recreated from Bloomberg and Reuters reporting.",
+            "sourceCaption": "Recreated from Associated Press + Reuters.",
             "items": [
               {
-                "label": "Rates",
-                "detail": "Held steady"
+                "label": "Signal",
+                "detail": "Markets"
               },
               {
-                "label": "Dissents",
-                "detail": "3 officials"
+                "label": "Signal",
+                "detail": "Apple's"
               },
               {
-                "label": "Powell",
-                "detail": "Stays on board"
+                "label": "Signal",
+                "detail": "foldable"
               }
             ]
           },
           "points": [
             {
-              "label": "Decision",
-              "value": "Rates unchanged",
+              "label": "Signal 1",
+              "value": "Markets",
+              "tone": "warm"
+            },
+            {
+              "label": "Signal 2",
+              "value": "Apple's",
               "tone": "cool"
             },
             {
-              "label": "US 10Y",
-              "value": "+6.0 bp",
-              "rawValue": "4.418%",
-              "tone": "warm"
-            },
-            {
-              "label": "Signal",
-              "value": "Leadership handoff",
-              "tone": "warm"
+              "label": "Signal 3",
+              "value": "foldable",
+              "tone": "cool"
             }
           ]
         },
         "evidence": [
           {
-            "source": "Bloomberg",
-            "headline": "Divided Fed officials hold rates; Powell to stay as governor",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/fed-holds-rates-three-officials-dissent-against-easing-bias",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "Powell stays on and the Fed shows a real split"
+            "source": "Associated Press",
+            "headline": "Apple unveils iPhone Duo, its first foldable model",
+            "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test."
           },
           {
             "source": "Reuters",
-            "headline": "Fed's Powell says he will stay on as governor after chair term ends",
-            "url": "https://www.investing.com/news/economy-news/feds-powell-says-he-will-stay-on-as-governor-after-chair-term-ends-4646577",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "Powell stays on and the Fed shows a real split"
+            "headline": "Apple's foldable launch puts new CEO and premium demand in focus",
+            "url": "https://www.investing.com/news/stock-market-news/apple-expected-to-unveil-first-folding-phone-with-new-ceo-ternus-in-command-4893058",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test."
           }
         ],
-        "engineScore": 76.9
+        "engineScore": 55.3
       },
       {
-        "id": "policy-earnings-collision",
-        "coverageTopic": "business",
-        "focusArea": "Markets",
-        "urgency": "Must know",
-        "readTime": "75 sec",
-        "headline": "Policy week and megacap earnings are hitting the market at the same time.",
-        "takeaway": "This is not a normal wait-for-the-Fed tape. Macro and micro risk are arriving together, which means the market has fewer places to hide if confidence slips.",
-        "whatChanged": "Bloomberg framed the week as a collision between central-bank decisions and heavyweight earnings, compressing a lot of narrative risk into a very short window.",
-        "whyItMatters": "The market is not dealing with one driver. It is balancing policy, valuation, leadership concentration, and earnings credibility all at once.",
-        "marketImpact": "If results are merely fine, the rally can stay intact. If one of the major leadership pillars wobbles, downside can travel faster than the calm tape suggests.",
-        "disagreement": "Bulls read the setup as proof that demand for quality and AI leadership can absorb bad news. Bears think the calm mostly reflects concentration and pre-positioning, not broad conviction.",
-        "watchToday": "Any pre-earnings tone shift, futures sensitivity to macro headlines, and whether cyclicals participate instead of just tagging along.",
-        "tags": [
-          "Macro",
-          "Megacaps",
-          "Narrative risk"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Bloomberg"
-          ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Morning Brew",
-          "subject": "Sloshing around",
-          "matchedHints": []
-        },
-        "links": [
-          {
-            "label": "Bloomberg on the policy-plus-earnings collision",
-            "url": "https://www.bloomberg.com/news/newsletters/2026-04-27/earnings-central-banks-headline-blockbuster-week-for-markets"
-          }
-        ],
-        "primaryLink": {
-          "label": "Bloomberg on the policy-plus-earnings collision",
-          "url": "https://www.bloomberg.com/news/newsletters/2026-04-27/earnings-central-banks-headline-blockbuster-week-for-markets"
-        },
-        "visual": {
-          "palette": "sky",
-          "eyebrow": "Business",
-          "title": "Macro week and megacap week are now the same story.",
-          "summary": "The market has to process policy, earnings, and valuation pressure at once.",
-          "graphic": {
-            "type": "timeline",
-            "sourceCaption": "Recreated from Bloomberg's policy-week and megacap earnings setup.",
-            "items": [
-              {
-                "label": "Fed",
-                "detail": "Policy decision"
-              },
-              {
-                "label": "Meta",
-                "detail": "Megacap results"
-              },
-              {
-                "label": "Microsoft",
-                "detail": "Megacap results"
-              },
-              {
-                "label": "Amazon",
-                "detail": "Megacap results"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Setup",
-              "value": "Fed + earnings",
-              "tone": "warm"
-            },
-            {
-              "label": "Pressure",
-              "value": "Narrative compression",
-              "tone": "cool"
-            },
-            {
-              "label": "Risk",
-              "value": "Leadership wobble",
-              "tone": "cool"
-            }
-          ]
-        },
-        "evidence": [
-          {
-            "source": "Bloomberg",
-            "headline": "Earnings, central banks headline blockbuster week for markets",
-            "url": "https://www.bloomberg.com/news/newsletters/2026-04-27/earnings-central-banks-headline-blockbuster-week-for-markets",
-            "publishedDate": "2026-04-27",
-            "editorialUse": "Policy week and megacap earnings collision"
-          }
-        ],
-        "engineScore": 74.6
-      },
-      {
-        "id": "breadth-fragility",
-        "coverageTopic": "markets",
-        "focusArea": "Markets",
-        "urgency": "Useful edge",
-        "readTime": "60 sec",
-        "headline": "Fresh index highs are still masking thinner leadership than the headline implies.",
-        "takeaway": "The market can look healthy at the index level while becoming more fragile underneath. That distinction matters more than the celebratory headline.",
-        "whatChanged": "The Wall Street Journal market coverage pointed to strong index-level performance led by a relatively small set of dominant names.",
-        "whyItMatters": "When headline strength outruns breadth, the market can feel more stable than it really is. That reduces the margin for disappointment.",
-        "marketImpact": "If leadership broadens, bulls gain a sturdier foundation. If it narrows further, any pullback can feel sudden and disproportionately sharp.",
-        "disagreement": "Some investors see concentration as a natural feature of an AI-led cycle. Others see it as a warning that passive index strength is hiding weaker internals.",
-        "watchToday": "Breadth, equal-weight performance, and whether non-megacap sectors confirm the move instead of just watching it happen.",
-        "tags": [
-          "Breadth",
-          "Leadership",
-          "S&P 500"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "The Wall Street Journal"
-          ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Brew Markets",
-          "subject": "Powell ain't going nowhere",
-          "matchedHints": []
-        },
-        "links": [
-          {
-            "label": "The Wall Street Journal on market breadth",
-            "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-27-2026"
-          }
-        ],
-        "primaryLink": {
-          "label": "The Wall Street Journal on market breadth",
-          "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-27-2026"
-        },
-        "visual": {
-          "palette": "sky",
-          "eyebrow": "Markets",
-          "title": "Index highs still do not equal broad participation.",
-          "summary": "The tape looks cleaner from far away than it does underneath.",
-          "graphic": {
-            "type": "bar-chart",
-            "sourceCaption": "Recreated from WSJ market coverage and close-board data.",
-            "items": [
-              {
-                "label": "Dow",
-                "value": 0.57,
-                "display": "-0.57%",
-                "tone": "cool"
-              },
-              {
-                "label": "S&P 500",
-                "value": 0.04,
-                "display": "-0.04%",
-                "tone": "cool"
-              },
-              {
-                "label": "Nasdaq",
-                "value": 0.04,
-                "display": "+0.04%",
-                "tone": "warm"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "S&P 500",
-              "value": "-0.04%",
-              "rawValue": "7,135.95",
-              "tone": "cool"
-            },
-            {
-              "label": "Nasdaq",
-              "value": "+0.04%",
-              "rawValue": "24,673.24",
-              "tone": "warm"
-            },
-            {
-              "label": "Breadth",
-              "value": "Still narrow",
-              "tone": "cool"
-            }
-          ]
-        },
-        "evidence": [
-          {
-            "source": "The Wall Street Journal",
-            "headline": "Stock Market Today: Dow, S&P 500, Nasdaq",
-            "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-27-2026",
-            "publishedDate": "2026-04-27",
-            "editorialUse": "Breadth versus headline index strength"
-          }
-        ],
-        "engineScore": 64.05
-      },
-      {
-        "id": "generic-openai-s-missed-targets-are-now-an-ai-confidence-test",
-        "coverageTopic": "ai-tech",
+        "id": "generic-a-dated-housing-baseline-not-a-fresh-standalone-story",
+        "coverageTopic": "economy-rates",
         "focusArea": "Markets",
         "urgency": "Useful edge",
         "readTime": "55 sec",
-        "headline": "OpenAI's missed targets are now an AI confidence test",
-        "takeaway": "AI-linked equities sold off after OpenAI missed internal revenue and user goals.",
-        "whatChanged": "The Wall Street Journal reported that AI-linked equities sold off after OpenAI missed internal revenue and user goals.",
-        "whyItMatters": "The edge is understanding how this changes the day's risk map instead of just knowing the headline.",
+        "headline": "A dated housing baseline, not a fresh standalone story.",
+        "takeaway": "Freddie Mac's latest weekly reading put the 30-year fixed mortgage rate at 6.71%; the next update is Thursday.",
+        "whatChanged": "The fresh update was the 30-year fixed mortgage rate averaged 6.71% for the week of September 3.",
+        "whyItMatters": "Mortgage rates near 6.7% keep affordability tight, so housing still reads as a higher-for-longer rates story instead of a clean recovery story.",
         "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
         "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
-        "watchToday": "Whether follow-through shows up in rates, commodities, sector leadership, or management commentary.",
+        "watchToday": "Watch mortgage-rate direction, homebuilder sentiment, and whether supply gains start to matter more than financing pressure.",
         "tags": [
           "Markets",
-          "OpenAI's",
-          "missed"
+          "A",
+          "dated"
         ],
         "sourceTrail": {
           "primary": [
-            "The Wall Street Journal"
+            "Freddie Mac"
           ],
           "framing": [
             "Brew Markets",
@@ -1560,175 +1263,358 @@ const MORNING_BRIEFING = {
         },
         "newsletterSignalMatch": {
           "source": "Brew Markets",
-          "subject": "Powell ain't going nowhere",
-          "matchedHints": []
+          "subject": "Apple wants fold, hard cash",
+          "matchedHints": [
+            "rates"
+          ]
         },
         "links": [
           {
-            "label": "The Wall Street Journal on the story",
-            "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-28-2026/card/ai-stocks-falter-on-openai-stumble-Z87WaQKoY4gpZkMBOjPY"
+            "label": "Freddie Mac on the story",
+            "url": "https://www.freddiemac.com/pmms"
           }
         ],
         "primaryLink": {
-          "label": "The Wall Street Journal on the story",
-          "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-28-2026/card/ai-stocks-falter-on-openai-stumble-Z87WaQKoY4gpZkMBOjPY"
+          "label": "Freddie Mac on the story",
+          "url": "https://www.freddiemac.com/pmms"
         },
         "visual": {
           "palette": "sky",
-          "eyebrow": "AI & Tech",
-          "title": "The AI trade is no longer giving every leader a free pass.",
-          "summary": "Execution misses are starting to matter for sentiment, proxies, and positioning.",
+          "eyebrow": "Economy & Rates",
+          "title": "Freddie Mac's latest weekly reading put the 30-year fixed mortgage rate at 6.71%; the next update is Thursday.",
+          "summary": "Tap through to open the source article.",
           "graphic": {
             "type": "fact-board",
-            "sourceCaption": "Recreated from WSJ reporting on the OpenAI stumble and AI-linked stocks.",
+            "sourceCaption": "Recreated from Freddie Mac.",
             "items": [
               {
-                "label": "Miss",
-                "detail": "Revenue goals"
+                "label": "Signal",
+                "detail": "Markets"
               },
               {
-                "label": "Miss",
-                "detail": "User goals"
+                "label": "Signal",
+                "detail": "A"
               },
               {
-                "label": "Tape",
-                "detail": "AI stocks fell"
+                "label": "Signal",
+                "detail": "dated"
               }
             ]
           },
           "points": [
             {
-              "label": "Trigger",
-              "value": "OpenAI miss",
+              "label": "Signal 1",
+              "value": "Markets",
               "tone": "warm"
             },
             {
-              "label": "Readthrough",
-              "value": "AI-linked stocks",
+              "label": "Signal 2",
+              "value": "A",
               "tone": "cool"
             },
             {
-              "label": "Watch",
-              "value": "Follow-through",
+              "label": "Signal 3",
+              "value": "dated",
               "tone": "cool"
             }
           ]
         },
         "evidence": [
           {
-            "source": "The Wall Street Journal",
-            "headline": "AI stocks falter on OpenAI stumble",
-            "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-28-2026/card/ai-stocks-falter-on-openai-stumble-Z87WaQKoY4gpZkMBOjPY",
-            "publishedDate": "2026-04-28",
-            "editorialUse": "OpenAI's missed targets are now an AI confidence test"
+            "source": "Freddie Mac",
+            "headline": "Mortgage rates remain the verified housing constraint",
+            "url": "https://www.freddiemac.com/pmms",
+            "publishedDate": "2026-09-03",
+            "editorialUse": "A dated housing baseline, not a fresh standalone story."
           }
         ],
-        "engineScore": 57.4
+        "engineScore": 55.3
       },
       {
-        "id": "uk-us-diplomatic-theater",
+        "id": "generic-a-distinct-global-policy-risk-whose-next-signal-is-allied-action-not-market-price-alone",
         "coverageTopic": "politics-world",
         "focusArea": "World",
-        "urgency": "Context",
-        "readTime": "50 sec",
-        "headline": "The UK-US diplomatic theater matters because symbolic alignment can become policy alignment.",
-        "takeaway": "A ceremonial visit does not move markets on its own, but it can matter if it stabilizes expectations around allied coordination when the geopolitical backdrop is already tense.",
-        "whatChanged": "Associated Press framed King Charles III's Washington visit and address to Congress as an effort to emphasize continuity in the UK-US relationship.",
-        "whyItMatters": "When geopolitical coordination is in focus, symbolic reassurance can reduce uncertainty around trade, security alignment, and allied posture.",
-        "marketImpact": "The direct market effect is limited, but the broader diplomatic tone can shape how investors think about policy coordination during a risk-heavy week.",
-        "disagreement": "Some people dismiss this as pure symbolism. Others see symbolism as useful when policy relationships need visible reinforcement.",
-        "watchToday": "Any concrete policy or trade messaging that turns the symbolism into something more actionable.",
+        "urgency": "High signal",
+        "readTime": "55 sec",
+        "headline": "A distinct global-policy risk whose next signal is allied action, not market price alone.",
+        "takeaway": "AP reported Ukraine's president pressed international partners for a tougher response to escalating Russian attacks on civilian areas.",
+        "whatChanged": "The fresh update was president Volodymyr Zelenskyy urged stronger international pressure on Russia on September 9.",
+        "whyItMatters": "World stories matter when they start changing the policy, supply-chain, or risk backdrop that investors have to price.",
+        "marketImpact": "The direct market effect may stay muted at first, but the second-order policy and sentiment effects are what matter.",
+        "disagreement": "Some readers will treat it as isolated news flow. Others will treat it as an early clue about broader policy or geopolitical direction.",
+        "watchToday": "Watch who amplifies the story next and whether it starts changing the wider policy or risk conversation.",
         "tags": [
-          "Diplomacy",
-          "UK-US",
-          "Policy tone"
+          "World",
+          "A",
+          "distinct"
         ],
         "sourceTrail": {
           "primary": [
-            "Bloomberg",
             "Associated Press"
           ],
           "framing": [
-            "Morning Brew"
+            "Morning Brew",
+            "Tech Brew"
           ]
         },
         "newsletterSignalMatch": {
           "source": "Morning Brew",
-          "subject": "Sloshing around",
+          "subject": "Heated survivalry",
           "matchedHints": []
         },
         "links": [
           {
-            "label": "Bloomberg on the UK-US visit",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/king-charles-meets-ceos-in-bid-to-promote-us-uk-investment?srnd=phx-economics-v2"
-          },
-          {
-            "label": "Associated Press on the UK-US visit",
-            "url": "https://apnews.com/article/4cd294e6333b4a9ba7ada2af4dd71aa9"
+            "label": "Associated Press on the story",
+            "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf"
           }
         ],
         "primaryLink": {
-          "label": "Bloomberg on the UK-US visit",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-29/king-charles-meets-ceos-in-bid-to-promote-us-uk-investment?srnd=phx-economics-v2"
+          "label": "Associated Press on the story",
+          "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf"
         },
         "visual": {
           "palette": "mint",
           "eyebrow": "Politics & World",
-          "title": "Symbolic alignment can still shape the policy mood.",
-          "summary": "The direct market move may be small, but the diplomatic frame can matter later.",
+          "title": "World stories matter when they start changing the policy map.",
+          "summary": "The direct move can look small at first. The real question is what gets repriced next.",
           "graphic": {
-            "type": "route-map",
-            "sourceCaption": "Recreated from Bloomberg and AP reporting on the UK-US diplomatic push.",
+            "type": "fact-board",
+            "sourceCaption": "Recreated from Associated Press.",
             "items": [
               {
-                "label": "UK",
-                "detail": "Alliance signal"
+                "label": "Theme",
+                "detail": "A"
               },
               {
-                "label": "Washington",
-                "detail": "Congress and White House"
+                "label": "Market link",
+                "detail": "Policy and risk sentiment"
               },
               {
-                "label": "New York",
-                "detail": "CEO investment pitch"
+                "label": "Watch",
+                "detail": "Who amplifies it next"
               }
             ]
           },
           "points": [
             {
               "label": "Theme",
-              "value": "Allied coordination",
+              "value": "A",
               "tone": "warm"
             },
             {
               "label": "Readthrough",
-              "value": "Policy tone",
+              "value": "Policy spillover",
               "tone": "cool"
             },
             {
               "label": "Watch",
-              "value": "Concrete follow-through",
+              "value": "Narrative shift",
               "tone": "cool"
             }
           ]
         },
         "evidence": [
           {
-            "source": "Bloomberg",
-            "headline": "King Charles meets CEOs in bid to promote US-UK investment",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-29/king-charles-meets-ceos-in-bid-to-promote-us-uk-investment?srnd=phx-economics-v2",
-            "publishedDate": "2026-04-29",
-            "editorialUse": "King Charles pushes US-UK investment alignment"
-          },
-          {
             "source": "Associated Press",
-            "headline": "King Charles III highlights US-UK bond during busy day of diplomacy with Trump and Congress",
-            "url": "https://apnews.com/article/4cd294e6333b4a9ba7ada2af4dd71aa9",
-            "publishedDate": "2026-04-28",
-            "editorialUse": "King Charles pushes US-UK investment alignment"
+            "headline": "Zelenskyy urges more pressure on Russia after civilian deaths",
+            "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "A distinct global-policy risk whose next signal is allied action, not market price alone."
           }
         ],
-        "engineScore": 50.65
+        "engineScore": 54.8
+      },
+      {
+        "id": "generic-use-a-gap-block-instead-of-transaction-filler",
+        "coverageTopic": "markets",
+        "focusArea": "Markets",
+        "urgency": "Useful edge",
+        "readTime": "55 sec",
+        "headline": "Use a gap block instead of transaction filler.",
+        "takeaway": "No material M&A, IPO pricing, funding, or private-credit event was established; PitchBook enrichment was unavailable.",
+        "whatChanged": "The fresh update was no authenticated PitchBook route was available.",
+        "whyItMatters": "The more useful read is what this changes in the day's setup for investors and operators, not just the headline itself.",
+        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
+        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
+        "watchToday": "Watch for follow-through in prices, sector leadership, and management commentary rather than assuming the first headline got the story right.",
+        "tags": [
+          "Markets",
+          "Use",
+          "a"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "Morning Brief editorial desk"
+          ],
+          "framing": [
+            "Brew Markets",
+            "Morning Brew",
+            "Tech Brew"
+          ]
+        },
+        "newsletterSignalMatch": {
+          "source": "CFO Brew",
+          "subject": "Power moves",
+          "matchedHints": [
+            "pricing"
+          ]
+        },
+        "links": [
+          {
+            "label": "Morning Brief editorial desk on the story",
+            "url": "https://www.sec.gov/edgar/search/"
+          }
+        ],
+        "primaryLink": {
+          "label": "Morning Brief editorial desk on the story",
+          "url": "https://www.sec.gov/edgar/search/"
+        },
+        "visual": {
+          "palette": "sky",
+          "eyebrow": "Markets",
+          "title": "No material M&A, IPO pricing, funding, or private-credit event was established; PitchBook enrichment was unavailable.",
+          "summary": "Tap through to open the source article.",
+          "graphic": {
+            "type": "fact-board",
+            "sourceCaption": "Recreated from Morning Brief editorial desk.",
+            "items": [
+              {
+                "label": "Signal",
+                "detail": "Markets"
+              },
+              {
+                "label": "Signal",
+                "detail": "Use"
+              },
+              {
+                "label": "Signal",
+                "detail": "a"
+              }
+            ]
+          },
+          "points": [
+            {
+              "label": "Signal 1",
+              "value": "Markets",
+              "tone": "warm"
+            },
+            {
+              "label": "Signal 2",
+              "value": "Use",
+              "tone": "cool"
+            },
+            {
+              "label": "Signal 3",
+              "value": "a",
+              "tone": "cool"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "source": "Morning Brief editorial desk",
+            "headline": "Private markets and deals remain a transparent coverage gap",
+            "url": "https://www.sec.gov/edgar/search/",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "Use a gap block instead of transaction filler."
+          }
+        ],
+        "engineScore": 54.4
+      },
+      {
+        "id": "generic-a-real-estate-capital-signal-linking-industrial-parks-and-infrastructure-to-north-american-supply-chains",
+        "coverageTopic": "ai-tech",
+        "focusArea": "Markets",
+        "urgency": "Useful edge",
+        "readTime": "55 sec",
+        "headline": "A real-estate-capital signal linking industrial parks and infrastructure to North American supply chains.",
+        "takeaway": "Reuters reported BIVA's chief said Mexican FIBRAs could finance industrial parks, logistics assets, and AI-related infrastructure.",
+        "whatChanged": "The fresh update was BIVA CEO Maria Ariza said Mexican FIBRAs can finance industrial parks, logistics assets, and infrastructure.",
+        "whyItMatters": "The capital-markets question is whether manufacturing and AI-infrastructure demand can translate into durable occupancy, rents, and investable project pipelines for Mexican FIBRAs.",
+        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
+        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
+        "watchToday": "Watch for named projects, financing commitments, tenant demand, and follow-through from Mexico Investment Week rather than treating an exchange executive's thesis as completed investment.",
+        "tags": [
+          "Markets",
+          "A",
+          "real"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "Reuters"
+          ],
+          "framing": [
+            "Brew Markets",
+            "Morning Brew",
+            "Tech Brew"
+          ]
+        },
+        "newsletterSignalMatch": {
+          "source": "Morning Brew",
+          "subject": "Heated survivalry",
+          "matchedHints": []
+        },
+        "links": [
+          {
+            "label": "Reuters on the story",
+            "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722"
+          }
+        ],
+        "primaryLink": {
+          "label": "Reuters on the story",
+          "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722"
+        },
+        "visual": {
+          "palette": "sky",
+          "eyebrow": "Ai & Tech",
+          "title": "Reuters reported BIVA's chief said Mexican FIBRAs could finance industrial parks, logistics assets, and AI-related infrastructure.",
+          "summary": "Tap through to open the source article.",
+          "graphic": {
+            "type": "fact-board",
+            "sourceCaption": "Recreated from Reuters.",
+            "items": [
+              {
+                "label": "Signal",
+                "detail": "Markets"
+              },
+              {
+                "label": "Signal",
+                "detail": "A"
+              },
+              {
+                "label": "Signal",
+                "detail": "real"
+              }
+            ]
+          },
+          "points": [
+            {
+              "label": "Signal 1",
+              "value": "Markets",
+              "tone": "warm"
+            },
+            {
+              "label": "Signal 2",
+              "value": "A",
+              "tone": "cool"
+            },
+            {
+              "label": "Signal 3",
+              "value": "real",
+              "tone": "cool"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "source": "Reuters",
+            "headline": "Mexico REITs pitch manufacturing and AI-infrastructure growth",
+            "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722",
+            "publishedDate": "2026-09-09",
+            "editorialUse": "A real-estate-capital signal linking industrial parks and infrastructure to North American supply chains."
+          }
+        ],
+        "engineScore": 53.5
       }
     ]
   },
@@ -1737,72 +1623,47 @@ const MORNING_BRIEFING = {
     "intro": "One useful click from each major desk.",
     "sections": [
       {
-        "source": "Bloomberg",
-        "shortName": "Bloomberg",
-        "headline": "Oil extends rally as Hormuz stays shut with blockade to continue",
+        "source": "Reuters",
+        "shortName": "Reuters",
+        "headline": "Oil and Treasury yields turn higher as stocks falter",
         "summary": "Right now energy is not a side story. It is the hinge that connects world news, inflation nerves, and what central banks may or may not feel comfortable saying next.",
         "note": "If oil stays elevated into a central-bank-heavy week, the market has less room to keep pretending disinflation is automatic.",
         "relatedHeadline": "Oil is doing more macro work than the index headline suggests.",
         "coverageTopic": "economy-rates",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-29/latest-oil-market-news-and-analysis-for-april-30"
-      },
-      {
-        "source": "The Wall Street Journal",
-        "shortName": "WSJ",
-        "headline": "Stock Market Today: Dow, S&P 500, Nasdaq",
-        "summary": "The market can look healthy at the index level while becoming more fragile underneath. That distinction matters more than the celebratory headline.",
-        "note": "When headline strength outruns breadth, the market can feel more stable than it really is. That reduces the margin for disappointment.",
-        "relatedHeadline": "Fresh index highs are still masking thinner leadership than the headline implies.",
-        "coverageTopic": "markets",
-        "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-27-2026"
-      },
-      {
-        "source": "Reuters",
-        "shortName": "Reuters",
-        "headline": "Fed's Powell says he will stay on as governor after chair term ends",
-        "summary": "The rate decision mattered less than the split around it and Powell's choice to remain on the board, because both now shape how investors will read the handoff to Kevin Warsh.",
-        "note": "This is now a succession story as much as a rates story. The market has to price not just the next policy move, but how much independence and continuity the post-Powell Fed will project.",
-        "relatedHeadline": "Powell's final meeting as chair turned into a Fed-handoff story.",
-        "coverageTopic": "economy-rates",
-        "url": "https://www.investing.com/news/economy-news/feds-powell-says-he-will-stay-on-as-governor-after-chair-term-ends-4646577"
+        "url": "https://www.marketscreener.com/news/oil-treasury-yields-turn-higher-as-stocks-falter-ce785bd9d088f321"
       },
       {
         "source": "Associated Press",
         "shortName": "AP",
-        "headline": "King Charles III highlights US-UK bond during busy day of diplomacy with Trump and Congress",
-        "summary": "A ceremonial visit does not move markets on its own, but it can matter if it stabilizes expectations around allied coordination when the geopolitical backdrop is already tense.",
-        "note": "When geopolitical coordination is in focus, symbolic reassurance can reduce uncertainty around trade, security alignment, and allied posture.",
-        "relatedHeadline": "The UK-US diplomatic theater matters because symbolic alignment can become policy alignment.",
-        "coverageTopic": "politics-world",
-        "url": "https://apnews.com/article/4cd294e6333b4a9ba7ada2af4dd71aa9"
+        "headline": "Apple unveils iPhone Duo, its first foldable model",
+        "summary": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
+        "note": "Apple's first foldable is a test of premium-device demand, product mix, and execution under its new CEO; the launch alone does not prove an earnings reset.",
+        "relatedHeadline": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test.",
+        "coverageTopic": "ai-tech",
+        "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
       }
     ]
   },
   "newsletterDesk": {
     "title": "From Your Inbox",
     "intro": "Short summaries of the newsletters already sitting in Gmail.",
-    "note": "The Playbook is still onboarding-only, so it stays out of the dashboard until a real issue lands.",
+    "note": "If a newsletter has not arrived yet by refresh time, this section automatically falls back to the latest editorial issue.",
     "briefs": [
       {
         "name": "Morning Brew",
         "label": "Morning Brief/Inputs/Morning Brew",
-        "subject": "Sloshing around",
-        "summary": "Morning Brew organized its edition around UAE leaves OPEC, OpenAI misses targets, and oil and gas-price pressure, with the clearest through-line being that generalist business framing that links macro, AI, and politics into one morning read.",
-        "whyItMatters": "Generalist business framing that links macro, AI, and politics into one morning read",
-        "marketRead": "Oil and OPEC developments are being treated as a direct market and inflation story",
-        "whatToSteal": "OpenAI execution concerns are spilling into public AI-linked stocks and cloud proxies",
+        "subject": "Heated survivalry",
+        "summary": "Morning Brew organized its edition around stale business framing, with the clearest through-line being that do not use this stale issue to drive ranking..",
+        "whyItMatters": "Do not use this stale issue to drive ranking.",
+        "marketRead": "Broad business framing",
+        "whatToSteal": "Latest true editorial issue remains stale; the later break notice was rejected.",
         "signalLines": [
-          "Generalist business framing that links macro, AI, and politics into one morning read",
-          "Oil and OPEC developments are being treated as a direct market and inflation story",
-          "OpenAI execution concerns are spilling into public AI-linked stocks and cloud proxies"
+          "Do not use this stale issue to drive ranking."
         ],
         "topTopics": [
-          "UAE leaves OPEC",
-          "OpenAI misses targets",
-          "oil and gas-price pressure",
-          "AI deepfake IP defense"
+          "stale business framing"
         ],
-        "tone": "Fast mainstream business framing with markets-first top lines and punchy tech-policy curation.",
+        "tone": "Broad business framing",
         "palette": "gold",
         "graphic": {
           "type": "topic-stack",
@@ -1810,64 +1671,40 @@ const MORNING_BRIEFING = {
           "items": [
             {
               "label": "01",
-              "detail": "UAE leaves OPEC"
-            },
-            {
-              "label": "02",
-              "detail": "OpenAI misses targets"
-            },
-            {
-              "label": "03",
-              "detail": "oil and gas-price pressure"
-            },
-            {
-              "label": "04",
-              "detail": "AI deepfake IP defense"
+              "detail": "stale business framing"
             }
           ]
         },
         "visualPoints": [
           {
             "label": "Lead",
-            "value": "UAE leaves OPEC",
+            "value": "stale business framing",
             "tone": "warm"
-          },
-          {
-            "label": "Angle",
-            "value": "OpenAI misses targets",
-            "tone": "cool"
-          },
-          {
-            "label": "Watch",
-            "value": "oil and gas-price press…",
-            "tone": "cool"
           }
         ],
-        "displayUrl": "https://mail.google.com/mail/#all/19dd8a8eab8695ff",
-        "issueDateLabel": "2026-04-29",
+        "displayUrl": "https://mail.google.com/mail/#all/19e731241d6f5c2c",
+        "issueDateLabel": "Friday, May 29, 2026",
         "freshnessLabel": "Latest available",
         "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
       },
       {
         "name": "Brew Markets",
         "label": "Morning Brief/Inputs/Brew Markets",
-        "subject": "Powell ain't going nowhere",
-        "summary": "Brew Markets organized its edition around Powell stays at the Fed, oil spike and Hormuz disruption, and Robinhood and SoFi earnings, with the clearest through-line being that rates, oil, and megacap earnings are being treated as one combined market setup.",
-        "whyItMatters": "Rates, oil, and megacap earnings are being treated as one combined market setup",
-        "marketRead": "Retail brokerage weakness is a useful read on where risk appetite is not translating into earnings leverage",
-        "whatToSteal": "History-based market framing is emphasizing sentiment versus fundamentals",
+        "subject": "Apple wants fold, hard cash",
+        "summary": "Brew Markets organized its edition around Apple foldable iPhone, Treasury market, and rates, with the clearest through-line being that apple's foldable launch is the verified company catalyst..",
+        "whyItMatters": "Apple's foldable launch is the verified company catalyst.",
+        "marketRead": "Higher long yields and Treasury operations remain part of the macro setup.",
+        "whatToSteal": "Framed Apple's foldable launch and the Treasury market as the day's investor conversation.",
         "signalLines": [
-          "Rates, oil, and megacap earnings are being treated as one combined market setup",
-          "Retail brokerage weakness is a useful read on where risk appetite is not translating into earnings leverage",
-          "History-based market framing is emphasizing sentiment versus fundamentals"
+          "Apple's foldable launch is the verified company catalyst.",
+          "Higher long yields and Treasury operations remain part of the macro setup."
         ],
         "topTopics": [
-          "Powell stays at the Fed",
-          "oil spike and Hormuz disruption",
-          "Robinhood and SoFi earnings",
-          "Fed dissents and easing bias"
+          "Apple foldable iPhone",
+          "Treasury market",
+          "rates"
         ],
-        "tone": "Retail-investor market framing with macro, rates, and single-stock follow-through.",
+        "tone": "Retail-market framing",
         "palette": "blue",
         "graphic": {
           "type": "topic-stack",
@@ -1875,64 +1712,58 @@ const MORNING_BRIEFING = {
           "items": [
             {
               "label": "01",
-              "detail": "Powell stays at the Fed"
+              "detail": "Apple foldable iPhone"
             },
             {
               "label": "02",
-              "detail": "oil spike and Hormuz disruption"
+              "detail": "Treasury market"
             },
             {
               "label": "03",
-              "detail": "Robinhood and SoFi earnings"
-            },
-            {
-              "label": "04",
-              "detail": "Fed dissents and easing bias"
+              "detail": "rates"
             }
           ]
         },
         "visualPoints": [
           {
             "label": "Lead",
-            "value": "Powell stays at the Fed",
+            "value": "Apple foldable iPhone",
             "tone": "warm"
           },
           {
             "label": "Angle",
-            "value": "oil spike and Hormuz di…",
+            "value": "Treasury market",
             "tone": "cool"
           },
           {
             "label": "Watch",
-            "value": "Robinhood and SoFi earn…",
+            "value": "rates",
             "tone": "cool"
           }
         ],
-        "displayUrl": "https://mail.google.com/mail/#all/19ddae4ee940adf1",
-        "issueDateLabel": "2026-04-29",
+        "displayUrl": "https://mail.google.com/mail/#all/1a087cf6be8da696",
+        "issueDateLabel": "Wednesday, September 9, 2026",
         "freshnessLabel": "Latest available",
         "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
       },
       {
         "name": "Tech Brew",
         "label": "Morning Brief/Inputs/Tech Brew",
-        "subject": "Musk on a mission",
-        "summary": "Tech Brew organized its edition around Musk versus OpenAI trial, Anthropic shares as currency, and Anthropic supply-chain risk politics, with the clearest through-line being that openAI governance and execution are being framed as an industry-shaping legal and business story.",
-        "whyItMatters": "OpenAI governance and execution are being framed as an industry-shaping legal and business story",
-        "marketRead": "Anthropic equity scarcity is now showing up in real-world asset trades and supply-chain politics",
-        "whatToSteal": "AI coverage is connecting capital markets, regulation, and infrastructure buildout",
+        "subject": "A search bar for DNA",
+        "summary": "Tech Brew organized its edition around genomics search, Apple foldable iPhone, and consumer hardware, with the clearest through-line being that use Apple as the primary verified technology event..",
+        "whyItMatters": "Use Apple as the primary verified technology event.",
+        "marketRead": "Genomics tooling did not clear the primary-source and materiality bar for this edition.",
+        "whatToSteal": "Focused on genomics search tools and Apple's first foldable phone.",
         "signalLines": [
-          "OpenAI governance and execution are being framed as an industry-shaping legal and business story",
-          "Anthropic equity scarcity is now showing up in real-world asset trades and supply-chain politics",
-          "AI coverage is connecting capital markets, regulation, and infrastructure buildout"
+          "Use Apple as the primary verified technology event.",
+          "Genomics tooling did not clear the primary-source and materiality bar for this edition."
         ],
         "topTopics": [
-          "Musk versus OpenAI trial",
-          "Anthropic shares as currency",
-          "Anthropic supply-chain risk politics",
-          "fusion and grid access"
+          "genomics search",
+          "Apple foldable iPhone",
+          "consumer hardware"
         ],
-        "tone": "AI-business framing with legal, policy, and infrastructure emphasis.",
+        "tone": "Technology-product framing",
         "palette": "rose",
         "graphic": {
           "type": "topic-stack",
@@ -1940,64 +1771,58 @@ const MORNING_BRIEFING = {
           "items": [
             {
               "label": "01",
-              "detail": "Musk versus OpenAI trial"
+              "detail": "genomics search"
             },
             {
               "label": "02",
-              "detail": "Anthropic shares as currency"
+              "detail": "Apple foldable iPhone"
             },
             {
               "label": "03",
-              "detail": "Anthropic supply-chain risk politics"
-            },
-            {
-              "label": "04",
-              "detail": "fusion and grid access"
+              "detail": "consumer hardware"
             }
           ]
         },
         "visualPoints": [
           {
             "label": "Lead",
-            "value": "Musk versus OpenAI trial",
+            "value": "genomics search",
             "tone": "warm"
           },
           {
             "label": "Angle",
-            "value": "Anthropic shares as cur…",
+            "value": "Apple foldable iPhone",
             "tone": "cool"
           },
           {
             "label": "Watch",
-            "value": "Anthropic supply-chain…",
+            "value": "consumer hardware",
             "tone": "cool"
           }
         ],
-        "displayUrl": "https://mail.google.com/mail/#all/19dda8590c160222",
-        "issueDateLabel": "2026-04-29",
+        "displayUrl": "https://mail.google.com/mail/#all/1a0875e0599bde09",
+        "issueDateLabel": "Wednesday, September 9, 2026",
         "freshnessLabel": "Latest available",
         "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
       },
       {
         "name": "CFO Brew",
         "label": "Morning Brief/Inputs/CFO Brew",
-        "subject": "Some CFOs are opting for cash over equity",
-        "summary": "CFO Brew organized its edition around cash over equity for CFOs, healthcare costs as operating risk, and buy-the-dip bank framing, with the clearest through-line being that operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits.",
-        "whyItMatters": "Operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits",
-        "marketRead": "Healthcare cost pressure is moving higher on the CFO operating-risk list",
-        "whatToSteal": "Boardroom finance framing is still constructive on large-cap equities despite geopolitical stress",
+        "subject": "Power moves",
+        "summary": "CFO Brew organized its edition around energy costs, corporate margins, and pricing, with the clearest through-line being that oil above $100 matters through margins, pricing, and working capital..",
+        "whyItMatters": "Oil above $100 matters through margins, pricing, and working capital.",
+        "marketRead": "Energy is a cross-sector earnings risk, not only a commodity story.",
+        "whatToSteal": "Framed escalating energy costs as an operating and margin issue for finance leaders.",
         "signalLines": [
-          "Operator-level finance readers are prioritizing liquidity, cash compensation, and delayed exits",
-          "Healthcare cost pressure is moving higher on the CFO operating-risk list",
-          "Boardroom finance framing is still constructive on large-cap equities despite geopolitical stress"
+          "Oil above $100 matters through margins, pricing, and working capital.",
+          "Energy is a cross-sector earnings risk, not only a commodity story."
         ],
         "topTopics": [
-          "cash over equity for CFOs",
-          "healthcare costs as operating risk",
-          "buy-the-dip bank framing",
-          "AI on earnings calls"
+          "energy costs",
+          "corporate margins",
+          "pricing"
         ],
-        "tone": "Operator-focused finance framing with compensation, opex, and boardroom risk context.",
+        "tone": "Operator-finance framing",
         "palette": "sage",
         "graphic": {
           "type": "topic-stack",
@@ -2005,41 +1830,96 @@ const MORNING_BRIEFING = {
           "items": [
             {
               "label": "01",
-              "detail": "cash over equity for CFOs"
+              "detail": "energy costs"
             },
             {
               "label": "02",
-              "detail": "healthcare costs as operating risk"
+              "detail": "corporate margins"
             },
             {
               "label": "03",
-              "detail": "buy-the-dip bank framing"
-            },
-            {
-              "label": "04",
-              "detail": "AI on earnings calls"
+              "detail": "pricing"
             }
           ]
         },
         "visualPoints": [
           {
             "label": "Lead",
-            "value": "cash over equity for CF…",
+            "value": "energy costs",
             "tone": "warm"
           },
           {
             "label": "Angle",
-            "value": "healthcare costs as ope…",
+            "value": "corporate margins",
             "tone": "cool"
           },
           {
             "label": "Watch",
-            "value": "buy-the-dip bank framing",
+            "value": "pricing",
             "tone": "cool"
           }
         ],
-        "displayUrl": "https://mail.google.com/mail/#all/19ddaefd8af462a0",
-        "issueDateLabel": "2026-04-29",
+        "displayUrl": "https://mail.google.com/mail/#all/1a086e1c583383a4",
+        "issueDateLabel": "Wednesday, September 9, 2026",
+        "freshnessLabel": "Latest available",
+        "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
+      },
+      {
+        "name": "The Playbook",
+        "label": "Morning Brief/Inputs/The Playbook",
+        "subject": "Old school, new digs",
+        "summary": "The Playbook organized its edition around adaptive reuse, renters, and housing, with the clearest through-line being that adaptive reuse is a niche supply story..",
+        "whyItMatters": "Adaptive reuse is a niche supply story.",
+        "marketRead": "Use Freddie Mac and verified capital-markets reporting for current housing facts.",
+        "whatToSteal": "Covered adaptive reuse and renter demand; useful only as real-estate framing.",
+        "signalLines": [
+          "Adaptive reuse is a niche supply story.",
+          "Use Freddie Mac and verified capital-markets reporting for current housing facts."
+        ],
+        "topTopics": [
+          "adaptive reuse",
+          "renters",
+          "housing"
+        ],
+        "tone": "Practical real-estate framing",
+        "palette": "paper",
+        "graphic": {
+          "type": "topic-stack",
+          "sourceCaption": "Recreated from the latest The Playbook issue in Gmail.",
+          "items": [
+            {
+              "label": "01",
+              "detail": "adaptive reuse"
+            },
+            {
+              "label": "02",
+              "detail": "renters"
+            },
+            {
+              "label": "03",
+              "detail": "housing"
+            }
+          ]
+        },
+        "visualPoints": [
+          {
+            "label": "Lead",
+            "value": "adaptive reuse",
+            "tone": "warm"
+          },
+          {
+            "label": "Angle",
+            "value": "renters",
+            "tone": "cool"
+          },
+          {
+            "label": "Watch",
+            "value": "housing",
+            "tone": "cool"
+          }
+        ],
+        "displayUrl": "https://mail.google.com/mail/#all/1a06c819e5ed6f97",
+        "issueDateLabel": "Friday, September 4, 2026",
         "freshnessLabel": "Latest available",
         "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
       }
@@ -2052,33 +1932,21 @@ const MORNING_BRIEFING = {
     },
     "sayInMeeting": {
       "title": "Use this line.",
-      "body": "The market is not ignoring risk; it is temporarily outsourcing that risk to oil, yields, and a narrow group of index leaders."
+      "body": "The useful edge this morning is not the headline itself. It is how quickly that headline can spill into the broader risk conversation."
     },
     "chartOfDay": {
-      "title": "Index highs versus breadth health.",
-      "body": "Compare fresh cap-weighted highs with equal-weight participation. If the index keeps climbing while breadth stalls, the rally is stronger on paper than underneath.",
-      "takeaway": "The chart is not about being bearish. It is about knowing whether optimism is broad or rented from a handful of names."
+      "title": "Crude versus rates sensitivity.",
+      "body": "Track whether oil or central-bank commentary is doing more work in yields and growth-heavy leadership. That tells you which narrative the market actually trusts.",
+      "takeaway": "The point is to see which variable is really setting the tone instead of assuming the loudest headline is in charge."
     },
     "deepDive": {
       "title": "Why oil is the connector theme.",
       "body": "Energy is what turns a regional headline into an inflation question, a rates question, and then a valuation question for the rest of the tape.",
       "whyNow": "If you miss that bridge, the day feels random when it is actually much more connected.",
-      "link": "https://www.moneycontrol.com/news/business/markets/oil-ends-up-nearly-3-as-hormuz-disruption-outweighs-uae-opec-exit-13902541.html"
+      "link": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
     }
   },
   "sourceStack": [
-    {
-      "name": "Bloomberg",
-      "tier": "Tier 1",
-      "role": "Primary reporting",
-      "note": "Macro framing, policy-week setup, and geopolitical-energy linkage."
-    },
-    {
-      "name": "The Wall Street Journal",
-      "tier": "Tier 1",
-      "role": "Primary reporting",
-      "note": "Index behavior, leadership concentration, and market-texture context."
-    },
     {
       "name": "Reuters",
       "tier": "Tier 1",
@@ -2108,12 +1976,6 @@ const MORNING_BRIEFING = {
       "tier": "Tier 2",
       "role": "Curated framing input",
       "note": "Retail-market tone, investing angle detection, and sentiment framing."
-    },
-    {
-      "name": "CFO Brew",
-      "tier": "Tier 3",
-      "role": "Specialty framing input",
-      "note": "Corporate-finance and operator-level context when capital or margins matter."
     }
   ],
   "commuteRoute": [
@@ -2139,8 +2001,8 @@ const MORNING_BRIEFING = {
     }
   ],
   "footerPerspective": {
-    "title": "The durable frame is that the market still wants to be bullish, but it is paying more hidden rent than the headline makes obvious.",
-    "summary": "That rent is being paid through energy, narrow leadership, and a world backdrop that keeps threatening to become more expensive. If you carry that frame into the day, most of the noise gets easier to sort."
+    "title": "The durable frame is that this morning is less about headline volume and more about which few forces are truly setting the terms of risk.",
+    "summary": "If you keep coming back to the core drivers instead of every update around them, you will sound clearer and think faster than people who only skimmed the surface."
   }
 };
 

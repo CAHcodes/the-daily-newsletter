@@ -1,2015 +1,1230 @@
 const MORNING_BRIEFING = {
   "meta": {
     "productLabel": "The Daily Newsletter",
-    "editionLabel": "Wednesday, September 9",
-    "generatedAt": "2026-09-09T20:30:00.000Z",
+    "editionLabel": "Thursday, September 17",
+    "generatedAt": "2026-09-17T22:56:32.442Z",
     "estimatedReadMinutes": 7,
-    "commuteMode": "20-minute subway ride",
+    "commuteMode": "7-minute briefing",
     "tone": "Signal first, depth on demand, built for a distracted morning brain.",
     "sourceFocus": [
       "Associated Press",
-      "Reuters",
-      "Bureau of Labor Statistics",
+      "Federal Reserve",
+      "Lennar",
       "Freddie Mac",
-      "Morning Brief editorial desk",
-      "Morning Brew"
+      "Bank of England",
+      "SEC",
+      "Reuters"
     ]
   },
   "thesis": {
-    "headline": "This morning is about where the calm headline and the real risk map stop matching perfectly.",
-    "summary": "The cleanest way to read the day is to focus on the small number of forces doing the real work underneath the surface, then ignore the decorative noise around them.",
+    "headline": "Market relief meets a higher financing hurdle.",
+    "summary": "The post-Fed rebound coexists with higher policy rates and a weaker housing outlook. Watch whether relief in markets translates into better operating conditions.",
     "marketMood": {
-      "label": "Amber | Calm indexes, stressed undercurrents",
-      "note": "A clean rebound can coexist with hidden fragility for a while. Energy, leadership concentration, and policy tone are the pressure points to watch."
+      "label": "Relief with unresolved financing pressure",
+      "note": "Closing direction improved; this is not evidence of a uniform improvement in earnings."
     },
     "edgeCallout": {
-      "title": "Remember oil.",
-      "note": "If you remember the connectors instead of the headlines, the rest of the day gets easier to decode."
+      "title": "Keep discount rates and earnings separate.",
+      "note": "One can improve while the other remains under pressure."
     }
   },
   "pulse": {
     "intro": "Start with the numbers before the narratives.",
-    "asOf": "2026-09-09T13:53:00-04:00",
-    "sourceLabel": "AP and Reuters intraday reporting; unsupported fields are explicit coverage gaps.",
+    "asOf": "2026-09-17T22:56:32.442Z",
+    "sourceLabel": "AP September 17 closing direction. Exact levels remain unverified.",
     "marketTiles": [
       {
         "id": "spx",
         "label": "S&P 500",
         "value": "coverage gap",
-        "change": "lower intraday",
-        "changeValue": -0.1,
-        "direction": "down",
-        "note": "AP reported stocks lower intraday without an accessible verified index level or percentage."
+        "change": "+1.1% (close)",
+        "changeValue": 1.1,
+        "direction": "up",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "nasdaq",
         "label": "Nasdaq",
         "value": "coverage gap",
-        "change": "lower intraday",
-        "changeValue": -0.1,
-        "direction": "down",
-        "note": "AP reported stocks lower intraday without an accessible verified index level or percentage."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "us2y",
         "label": "US 2Y",
         "value": "coverage gap",
-        "change": "—",
-        "changeValue": 0,
-        "direction": "flat",
-        "note": "No current verified 2-year yield in the source set."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "us10y",
         "label": "US 10Y",
-        "value": "4.837%",
-        "change": "+3.26 bps",
-        "changeValue": 3.26,
-        "changeUnit": "bp",
-        "direction": "up",
-        "note": "Reuters reported 4.837% at 1:53 PM ET, the highest since November 2023."
+        "value": "coverage gap",
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "dxy",
         "label": "DXY",
         "value": "coverage gap",
-        "change": "—",
-        "changeValue": 0,
-        "direction": "flat",
-        "note": "No current verified DXY quote in the source set."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "brent",
         "label": "Brent",
-        "value": "$100.27",
-        "change": "+2.4%",
-        "changeValue": 2.4,
-        "direction": "up",
-        "note": "Reuters reported $100.27 at 1:53 PM ET."
+        "value": "coverage gap",
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "gold",
         "label": "Gold",
         "value": "coverage gap",
-        "change": "—",
-        "changeValue": 0,
-        "direction": "flat",
-        "note": "No current verified gold quote."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "bitcoin",
         "label": "Bitcoin",
         "value": "coverage gap",
-        "change": "—",
-        "changeValue": 0,
-        "direction": "flat",
-        "note": "No current verified Bitcoin quote."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "vix",
         "label": "VIX",
         "value": "coverage gap",
-        "change": "—",
-        "changeValue": 0,
-        "direction": "flat",
-        "note": "No current verified VIX quote."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       }
     ],
-    "heatmap": [
-      {
-        "label": "US 10Y",
-        "value": 3.26,
-        "direction": "up",
-        "theme": "Rates",
-        "unit": "bp"
-      },
-      {
-        "label": "Brent",
-        "value": 2.4,
-        "direction": "up",
-        "theme": "Energy",
-        "unit": "%"
-      }
-    ],
-    "riskRadar": [
-      {
-        "label": "Energy Stress",
-        "score": 88,
-        "tone": "hot",
-        "note": "$100.27 +2.4% keeps the inflation bridge alive."
-      },
-      {
-        "label": "Policy Squeeze",
-        "score": 58,
-        "tone": "watch",
-        "note": "4.837% keeps rates sensitive to Fed tone even after oil relief."
-      },
-      {
-        "label": "Leadership Fragility",
-        "score": 55,
-        "tone": "steady",
-        "note": "Check whether participation is broad or just loud."
-      },
-      {
-        "label": "AI Capital Race",
-        "score": 57,
-        "tone": "steady",
-        "note": "Private AI financing is starting to shape public-market capex assumptions."
-      }
-    ],
+    "heatmap": [],
+    "riskRadar": [],
     "privateRadar": {
-      "title": "Private market radar unavailable.",
-      "summary": "No private-company signal was loaded into today's raw reporting file.",
+      "title": "Private markets: coverage gap",
+      "summary": "M&A, IPO, funding and private-credit searches yielded no sufficiently verified transaction for promotion; PitchBook route unavailable.",
       "metrics": [],
       "bullets": [],
       "links": []
     },
     "sourceMode": {
-      "headline": "Tier 1 reporting plus active newsletter framing.",
-      "summary": "Active editorial issues today: Morning Brew: Heated survivalry | Brew Markets: Apple wants fold, hard cash | Tech Brew: A search bar for DNA."
+      "headline": "Primary documents and original reporting.",
+      "summary": "Brew-family issues inform framing only. Morning Brew is stale."
     }
   },
   "scan": {
-    "intro": "Start with the pulse, then read the six strongest stories in order.",
+    "intro": "Five signals from the delayed evening edition.",
     "signals": [
       {
-        "label": "Oil Variable",
-        "value": "Crude still carrying risk",
-        "note": "Energy is still the bridge between geopolitics and inflation fear.",
-        "status": "hot"
-      },
-      {
-        "label": "Market Signal",
-        "value": "Apple's foldable hardware launch is a technol...",
-        "note": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
+        "label": "Markets & companies",
+        "value": "A rebound is relief, not proof that the squeeze is over",
+        "note": "The closing direction improved; the policy and earnings outlook still need separate tests.",
         "status": "watch"
       },
       {
-        "label": "Market Signal",
-        "value": "A dated housing baseline, not a fresh standal...",
-        "note": "Freddie Mac's latest weekly reading put the 30-year fixed mortgage rate at 6.71%; the next update is Thursday.",
+        "label": "Rates & macro",
+        "value": "The Fed has tightened; the terminal rate remains unresolved",
+        "note": "The important change is the policy action, not a recycled leadership narrative.",
         "status": "watch"
       },
       {
-        "label": "World Signal",
-        "value": "A distinct global-policy risk whose next sign...",
-        "note": "AP reported Ukraine's president pressed international partners for a tougher response to escalating Russian attacks on civilian areas.",
-        "status": "steady"
+        "label": "Housing & earnings",
+        "value": "Lennar cuts volume goals as mortgage costs climb",
+        "note": "The housing test is profitable affordability, not just the number of homes built.",
+        "status": "watch"
       },
       {
-        "label": "Market Signal",
-        "value": "Use a gap block instead of transaction filler",
-        "note": "No material M&A, IPO pricing, funding, or private-credit event was established; PitchBook enrichment was unavailable.",
+        "label": "Global policy",
+        "value": "Britain holds today but retains an inflation problem",
+        "note": "A hold and an easy policy outlook are different propositions.",
+        "status": "watch"
+      },
+      {
+        "label": "Markets & companies",
+        "value": "Tokenized shares get a route to market, with conditions",
+        "note": "Permission creates an opportunity; adoption will decide the economics.",
         "status": "watch"
       }
     ],
     "ignoreNoise": {
-      "title": "Do not let a single diplomatic headline erase the energy story.",
-      "summary": "Short-term relief headlines can calm screens for a few minutes. The more durable question is whether the underlying shipping and inflation risk has actually left the system."
+      "title": "Ignore unverified deal rumors and irrelevant trends.",
+      "summary": "Newsify leads did not clear relevance checks. Newsletter prices and deal rumors were not promoted as facts."
     }
   },
   "essential": {
-    "intro": "This is one tight daily edition. Read the pulse first, then work the ranked story cards for a finishable 6 to 8 minute briefing.",
+    "intro": "September 17 delayed evening edition. Facts, interpretation, uncertainty and next checks are separated below.",
     "cards": [
       {
-        "id": "oil-macro-bridge",
-        "coverageTopic": "economy-rates",
-        "focusArea": "Macro",
-        "urgency": "Must know",
-        "readTime": "70 sec",
-        "headline": "Oil is doing more macro work than the index headline suggests.",
-        "takeaway": "Right now energy is not a side story. It is the hinge that connects world news, inflation nerves, and what central banks may or may not feel comfortable saying next.",
-        "whatChanged": "Multiple reports kept crude and regional shipping risk near the center of the macro setup while equities tried to stay composed.",
-        "whyItMatters": "If oil stays elevated into a central-bank-heavy week, the market has less room to keep pretending disinflation is automatic.",
-        "marketImpact": "Energy can stay bid, long-duration assets get more fragile, and any rate-sensitive growth trade becomes harder to defend at rich valuations.",
-        "disagreement": "Optimists think each diplomatic headline can cap crude quickly. Skeptics think shipping risk keeps a sticky premium in the system even when the news flow cools temporarily.",
-        "watchToday": "Brent, Treasury yields, and Thursday's 8:30 AM ET PPI release; a cooler inflation print is the next clean falsifier for the oil-driven rates squeeze.",
+        "id": "sep17-story-1",
+        "coverageTopic": "markets",
+        "focusArea": "Markets & companies",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "A rebound is relief, not proof that the squeeze is over",
+        "takeaway": "The closing direction improved; the policy and earnings outlook still need separate tests.",
+        "whatChanged": "Fact: S&P 500 rose 1.1% Thursday, its second gain in nine sessions. Oil prices and bond yields eased.",
+        "whyItMatters": "Interpretation: lower oil and bond pressure can ease input-cost and valuation concerns. That does not establish how much of the rebound reflects better expected profits rather than a change in discount rates. Keep the earnings question separate from the market move.",
+        "marketImpact": "Public-equity read-through: businesses exposed to financing and energy costs could benefit if relief persists. No sector return attribution or revised profit estimate is established here.",
+        "disagreement": "Falsifier: renewed oil or yield pressure would weaken this relief narrative. Breadth and exact closing levels were not independently verified, so a broad participation claim would be premature.",
+        "watchToday": "September 18: monitor the next US session for persistence in the rebound. This is an editorial monitoring window, not a scheduled economic release.",
         "tags": [
-          "Oil",
-          "Inflation",
-          "Hormuz"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Associated Press",
-            "Reuters",
-            "Bureau of Labor Statistics"
-          ],
-          "framing": [
-            "Morning Brew",
-            "Brew Markets"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Brew Markets",
-          "subject": "Apple wants fold, hard cash",
-          "matchedHints": [
-            "rates"
-          ]
-        },
-        "links": [
-          {
-            "label": "Associated Press on oil and the macro setup",
-            "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
-          },
-          {
-            "label": "Reuters on oil and the macro setup",
-            "url": "https://www.marketscreener.com/news/oil-treasury-yields-turn-higher-as-stocks-falter-ce785bd9d088f321"
-          },
-          {
-            "label": "Bureau of Labor Statistics on oil and the macro setup",
-            "url": "https://www.bls.gov/schedule/2026/09_sched_list.htm"
-          }
-        ],
-        "primaryLink": {
-          "label": "Associated Press on oil and the macro setup",
-          "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
-        },
-        "visual": {
-          "palette": "amber",
-          "eyebrow": "Economy & Rates",
-          "title": "Energy is driving the inflation conversation again.",
-          "summary": "Oil, shipping risk, and yields are moving together underneath the tape.",
-          "graphic": {
-            "type": "bar-chart",
-            "sourceCaption": "Recreated from Associated Press + Reuters + Bureau of Labor Statistics.",
-            "items": [
-              {
-                "label": "Brent",
-                "value": 2.4,
-                "display": "+2.4%",
-                "tone": "warm"
-              },
-              {
-                "label": "US 10Y",
-                "value": 3.26,
-                "display": "+3.26 bps",
-                "tone": "warm"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Brent",
-              "value": "+2.4%",
-              "rawValue": "$100.27",
-              "tone": "warm"
-            },
-            {
-              "label": "US 10Y",
-              "value": "+3.26 bps",
-              "rawValue": "4.837%",
-              "tone": "warm"
-            }
-          ]
-        },
-        "evidence": [
-          {
-            "source": "Associated Press",
-            "headline": "Stocks fall as oil jumps above $100 after Iran war escalates",
-            "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "Oil is tightening financial conditions, pressuring equities, and complicating the Fed decision."
-          },
-          {
-            "source": "Reuters",
-            "headline": "Oil and Treasury yields turn higher as stocks falter",
-            "url": "https://www.marketscreener.com/news/oil-treasury-yields-turn-higher-as-stocks-falter-ce785bd9d088f321",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "Timestamped cross-asset facts and the divided policy setup."
-          },
-          {
-            "source": "Bureau of Labor Statistics",
-            "headline": "PPI Thursday and CPI Friday define the inflation calendar",
-            "url": "https://www.bls.gov/schedule/2026/09_sched_list.htm",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "The inflation sequence is the next falsifier for the oil-and-rates thesis."
-          }
-        ],
-        "engineScore": 81
-      },
-      {
-        "id": "generic-apple-s-foldable-hardware-launch-is-a-technology-premium-demand-and-new-ceo-execution-test",
-        "coverageTopic": "ai-tech",
-        "focusArea": "Markets",
-        "urgency": "Useful edge",
-        "readTime": "55 sec",
-        "headline": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test.",
-        "takeaway": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
-        "whatChanged": "The fresh update was apple unveiled its first foldable iPhone, called Duo, on September 9.",
-        "whyItMatters": "Apple's first foldable is a test of premium-device demand, product mix, and execution under its new CEO; the launch alone does not prove an earnings reset.",
-        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
-        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
-        "watchToday": "Watch Apple shares, supplier read-through, preorder timing, and disclosed pricing; sustained mix and unit demand matter more than launch-day attention.",
-        "tags": [
-          "Markets",
-          "Apple's",
-          "foldable"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Associated Press",
-            "Reuters"
-          ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Tech Brew",
-          "subject": "A search bar for DNA",
-          "matchedHints": []
-        },
-        "links": [
-          {
-            "label": "Associated Press on the story",
-            "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
-          },
-          {
-            "label": "Reuters on the story",
-            "url": "https://www.investing.com/news/stock-market-news/apple-expected-to-unveil-first-folding-phone-with-new-ceo-ternus-in-command-4893058"
-          }
-        ],
-        "primaryLink": {
-          "label": "Associated Press on the story",
-          "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
-        },
-        "visual": {
-          "palette": "sky",
-          "eyebrow": "Ai & Tech",
-          "title": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
-          "summary": "Tap through to open the source article.",
-          "graphic": {
-            "type": "fact-board",
-            "sourceCaption": "Recreated from Associated Press + Reuters.",
-            "items": [
-              {
-                "label": "Signal",
-                "detail": "Markets"
-              },
-              {
-                "label": "Signal",
-                "detail": "Apple's"
-              },
-              {
-                "label": "Signal",
-                "detail": "foldable"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Signal 1",
-              "value": "Markets",
-              "tone": "warm"
-            },
-            {
-              "label": "Signal 2",
-              "value": "Apple's",
-              "tone": "cool"
-            },
-            {
-              "label": "Signal 3",
-              "value": "foldable",
-              "tone": "cool"
-            }
-          ]
-        },
-        "evidence": [
-          {
-            "source": "Associated Press",
-            "headline": "Apple unveils iPhone Duo, its first foldable model",
-            "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test."
-          },
-          {
-            "source": "Reuters",
-            "headline": "Apple's foldable launch puts new CEO and premium demand in focus",
-            "url": "https://www.investing.com/news/stock-market-news/apple-expected-to-unveil-first-folding-phone-with-new-ceo-ternus-in-command-4893058",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test."
-          }
-        ],
-        "engineScore": 55.3
-      },
-      {
-        "id": "generic-a-dated-housing-baseline-not-a-fresh-standalone-story",
-        "coverageTopic": "economy-rates",
-        "focusArea": "Markets",
-        "urgency": "Useful edge",
-        "readTime": "55 sec",
-        "headline": "A dated housing baseline, not a fresh standalone story.",
-        "takeaway": "Freddie Mac's latest weekly reading put the 30-year fixed mortgage rate at 6.71%; the next update is Thursday.",
-        "whatChanged": "The fresh update was the 30-year fixed mortgage rate averaged 6.71% for the week of September 3.",
-        "whyItMatters": "Mortgage rates near 6.7% keep affordability tight, so housing still reads as a higher-for-longer rates story instead of a clean recovery story.",
-        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
-        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
-        "watchToday": "Watch mortgage-rate direction, homebuilder sentiment, and whether supply gains start to matter more than financing pressure.",
-        "tags": [
-          "Markets",
-          "A",
-          "dated"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Freddie Mac"
-          ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Brew Markets",
-          "subject": "Apple wants fold, hard cash",
-          "matchedHints": [
-            "rates"
-          ]
-        },
-        "links": [
-          {
-            "label": "Freddie Mac on the story",
-            "url": "https://www.freddiemac.com/pmms"
-          }
-        ],
-        "primaryLink": {
-          "label": "Freddie Mac on the story",
-          "url": "https://www.freddiemac.com/pmms"
-        },
-        "visual": {
-          "palette": "sky",
-          "eyebrow": "Economy & Rates",
-          "title": "Freddie Mac's latest weekly reading put the 30-year fixed mortgage rate at 6.71%; the next update is Thursday.",
-          "summary": "Tap through to open the source article.",
-          "graphic": {
-            "type": "fact-board",
-            "sourceCaption": "Recreated from Freddie Mac.",
-            "items": [
-              {
-                "label": "Signal",
-                "detail": "Markets"
-              },
-              {
-                "label": "Signal",
-                "detail": "A"
-              },
-              {
-                "label": "Signal",
-                "detail": "dated"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Signal 1",
-              "value": "Markets",
-              "tone": "warm"
-            },
-            {
-              "label": "Signal 2",
-              "value": "A",
-              "tone": "cool"
-            },
-            {
-              "label": "Signal 3",
-              "value": "dated",
-              "tone": "cool"
-            }
-          ]
-        },
-        "evidence": [
-          {
-            "source": "Freddie Mac",
-            "headline": "Mortgage rates remain the verified housing constraint",
-            "url": "https://www.freddiemac.com/pmms",
-            "publishedDate": "2026-09-03",
-            "editorialUse": "A dated housing baseline, not a fresh standalone story."
-          }
-        ],
-        "engineScore": 55.3
-      },
-      {
-        "id": "generic-a-distinct-global-policy-risk-whose-next-signal-is-allied-action-not-market-price-alone",
-        "coverageTopic": "politics-world",
-        "focusArea": "World",
-        "urgency": "High signal",
-        "readTime": "55 sec",
-        "headline": "A distinct global-policy risk whose next signal is allied action, not market price alone.",
-        "takeaway": "AP reported Ukraine's president pressed international partners for a tougher response to escalating Russian attacks on civilian areas.",
-        "whatChanged": "The fresh update was president Volodymyr Zelenskyy urged stronger international pressure on Russia on September 9.",
-        "whyItMatters": "World stories matter when they start changing the policy, supply-chain, or risk backdrop that investors have to price.",
-        "marketImpact": "The direct market effect may stay muted at first, but the second-order policy and sentiment effects are what matter.",
-        "disagreement": "Some readers will treat it as isolated news flow. Others will treat it as an early clue about broader policy or geopolitical direction.",
-        "watchToday": "Watch who amplifies the story next and whether it starts changing the wider policy or risk conversation.",
-        "tags": [
-          "World",
-          "A",
-          "distinct"
+          "Associated Press",
+          "markets"
         ],
         "sourceTrail": {
           "primary": [
             "Associated Press"
           ],
-          "framing": [
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Morning Brew",
-          "subject": "Heated survivalry",
-          "matchedHints": []
+          "framing": []
         },
         "links": [
           {
-            "label": "Associated Press on the story",
-            "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf"
+            "label": "Associated Press original source",
+            "url": "https://apnews.com/article/26a4da336d561d213a3f28f260f25d2c"
           }
         ],
         "primaryLink": {
-          "label": "Associated Press on the story",
-          "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf"
+          "label": "Associated Press",
+          "url": "https://apnews.com/article/26a4da336d561d213a3f28f260f25d2c"
         },
         "visual": {
-          "palette": "mint",
-          "eyebrow": "Politics & World",
-          "title": "World stories matter when they start changing the policy map.",
-          "summary": "The direct move can look small at first. The real question is what gets repriced next.",
-          "graphic": {
-            "type": "fact-board",
-            "sourceCaption": "Recreated from Associated Press.",
-            "items": [
-              {
-                "label": "Theme",
-                "detail": "A"
-              },
-              {
-                "label": "Market link",
-                "detail": "Policy and risk sentiment"
-              },
-              {
-                "label": "Watch",
-                "detail": "Who amplifies it next"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Theme",
-              "value": "A",
-              "tone": "warm"
-            },
-            {
-              "label": "Readthrough",
-              "value": "Policy spillover",
-              "tone": "cool"
-            },
-            {
-              "label": "Watch",
-              "value": "Narrative shift",
-              "tone": "cool"
-            }
-          ]
+          "palette": "blue",
+          "eyebrow": "Source verified",
+          "title": "Associated Press",
+          "summary": "Open the original source for the factual record.",
+          "points": []
         },
         "evidence": [
           {
+            "id": "sep17-0",
             "source": "Associated Press",
-            "headline": "Zelenskyy urges more pressure on Russia after civilian deaths",
-            "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "A distinct global-policy risk whose next signal is allied action, not market price alone."
+            "url": "https://apnews.com/article/26a4da336d561d213a3f28f260f25d2c",
+            "headline": "Stocks rebound as oil and bond pressure ease",
+            "bucket": "market",
+            "editorialUse": "Closing equity rebound",
+            "summary": "S&P 500 rose 1.1% Thursday, its second gain in nine sessions. Oil prices and bond yields eased.",
+            "facts": [
+              "S&P 500 rose 1.1% Thursday, its second gain in nine sessions. Oil prices and bond yields eased."
+            ],
+            "dailyModules": [
+              "markets-overnight"
+            ],
+            "publishedDate": "2026-09-17",
+            "type": "primary"
           }
-        ],
-        "engineScore": 54.8
+        ]
       },
       {
-        "id": "generic-use-a-gap-block-instead-of-transaction-filler",
-        "coverageTopic": "markets",
-        "focusArea": "Markets",
-        "urgency": "Useful edge",
-        "readTime": "55 sec",
-        "headline": "Use a gap block instead of transaction filler.",
-        "takeaway": "No material M&A, IPO pricing, funding, or private-credit event was established; PitchBook enrichment was unavailable.",
-        "whatChanged": "The fresh update was no authenticated PitchBook route was available.",
-        "whyItMatters": "The more useful read is what this changes in the day's setup for investors and operators, not just the headline itself.",
-        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
-        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
-        "watchToday": "Watch for follow-through in prices, sector leadership, and management commentary rather than assuming the first headline got the story right.",
+        "id": "sep17-story-2",
+        "coverageTopic": "economy-rates",
+        "focusArea": "Rates & macro",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "The Fed has tightened; the terminal rate remains unresolved",
+        "takeaway": "The policy range moved higher while the eventual peak remains unconfirmed.",
+        "whatChanged": "Fact: On September 16 the committee voted 12-0 to increase its target range by 25 basis points to 3.75%-4.00%. Inflation remains elevated.",
+        "whyItMatters": "Interpretation: a higher overnight policy rate raises the hurdle for debt-funded activity and equity valuations supported by distant cash flows. A credible inflation response could help longer-term expectations, but that mechanism is a scenario rather than evidence that financial conditions have uniformly eased.",
+        "marketImpact": "Public-equity read-through: reassess refinancing exposure and valuation sensitivity separately. A higher policy rate can pressure borrowers even when a stock index rises; neither move alone proves a change in underlying earnings.",
+        "disagreement": "Uncertainty: this statement does not establish the eventual peak policy rate. A verified yield curve and current expectations are missing, so the edition makes no probability claim about another hike.",
+        "watchToday": "September 18 monitoring: check whether company financing commentary changes after implementation. Next FOMC timing and consensus were not verified in this run.",
         "tags": [
-          "Markets",
-          "Use",
-          "a"
+          "Federal Reserve",
+          "economy-rates"
         ],
         "sourceTrail": {
           "primary": [
-            "Morning Brief editorial desk"
+            "Federal Reserve"
           ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "CFO Brew",
-          "subject": "Power moves",
-          "matchedHints": [
-            "pricing"
-          ]
+          "framing": []
         },
         "links": [
           {
-            "label": "Morning Brief editorial desk on the story",
-            "url": "https://www.sec.gov/edgar/search/"
+            "label": "Federal Reserve original source",
+            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
           }
         ],
         "primaryLink": {
-          "label": "Morning Brief editorial desk on the story",
-          "url": "https://www.sec.gov/edgar/search/"
+          "label": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
         },
         "visual": {
-          "palette": "sky",
-          "eyebrow": "Markets",
-          "title": "No material M&A, IPO pricing, funding, or private-credit event was established; PitchBook enrichment was unavailable.",
-          "summary": "Tap through to open the source article.",
-          "graphic": {
-            "type": "fact-board",
-            "sourceCaption": "Recreated from Morning Brief editorial desk.",
-            "items": [
-              {
-                "label": "Signal",
-                "detail": "Markets"
-              },
-              {
-                "label": "Signal",
-                "detail": "Use"
-              },
-              {
-                "label": "Signal",
-                "detail": "a"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Signal 1",
-              "value": "Markets",
-              "tone": "warm"
-            },
-            {
-              "label": "Signal 2",
-              "value": "Use",
-              "tone": "cool"
-            },
-            {
-              "label": "Signal 3",
-              "value": "a",
-              "tone": "cool"
-            }
-          ]
+          "palette": "blue",
+          "eyebrow": "Source verified",
+          "title": "Federal Reserve",
+          "summary": "Open the original source for the factual record.",
+          "points": []
         },
         "evidence": [
           {
-            "source": "Morning Brief editorial desk",
-            "headline": "Private markets and deals remain a transparent coverage gap",
-            "url": "https://www.sec.gov/edgar/search/",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "Use a gap block instead of transaction filler."
+            "id": "sep17-1",
+            "source": "Federal Reserve",
+            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+            "headline": "Federal Reserve raises policy range to 3.75%-4.00%",
+            "bucket": "market",
+            "editorialUse": "US monetary policy decision",
+            "summary": "On September 16 the committee voted 12-0 to increase its target range by 25 basis points to 3.75%-4.00%. Inflation remains elevated.",
+            "facts": [
+              "On September 16 the committee voted 12-0 to increase its target range by 25 basis points to 3.75%-4.00%. Inflation remains elevated."
+            ],
+            "dailyModules": [
+              "rates-macro"
+            ],
+            "publishedDate": "2026-09-16",
+            "type": "primary"
           }
-        ],
-        "engineScore": 54.4
+        ]
       },
       {
-        "id": "generic-a-real-estate-capital-signal-linking-industrial-parks-and-infrastructure-to-north-american-supply-chains",
-        "coverageTopic": "ai-tech",
-        "focusArea": "Markets",
-        "urgency": "Useful edge",
-        "readTime": "55 sec",
-        "headline": "A real-estate-capital signal linking industrial parks and infrastructure to North American supply chains.",
-        "takeaway": "Reuters reported BIVA's chief said Mexican FIBRAs could finance industrial parks, logistics assets, and AI-related infrastructure.",
-        "whatChanged": "The fresh update was BIVA CEO Maria Ariza said Mexican FIBRAs can finance industrial parks, logistics assets, and infrastructure.",
-        "whyItMatters": "The capital-markets question is whether manufacturing and AI-infrastructure demand can translate into durable occupancy, rents, and investable project pipelines for Mexican FIBRAs.",
-        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
-        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
-        "watchToday": "Watch for named projects, financing commitments, tenant demand, and follow-through from Mexico Investment Week rather than treating an exchange executive's thesis as completed investment.",
+        "id": "sep17-story-3",
+        "coverageTopic": "business",
+        "focusArea": "Business",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "Lennar cuts volume goals as mortgage costs climb",
+        "takeaway": "The housing test is profitable affordability, not just the number of homes built.",
+        "whatChanged": "Fact: Lennar lowered full-year deliveries to 80,000-81,000 from 82,000-83,000 homes. Q3 gross margin was 15.8%; Q4 outlook 15.5%-16.0%. September 17 earnings call at 11:00 AM ET is elapsed; transcript not checked. Freddie Mac's September 17 weekly mortgage survey put the 30-year average at 6.95%, versus 6.76% a week earlier.",
+        "whyItMatters": "Interpretation: reducing delivery expectations while protecting volume through affordability measures puts the trade-off between sales and margins in focus. The key question is whether lower construction costs can offset pricing and financing pressure without a further reduction in returns.",
+        "marketImpact": "Public-equity read-through: treat Lennar as a company-specific warning for homebuilder assumptions, not proof every peer faces the same outcome. Recheck expected deliveries, incentives and margins together before extrapolating demand.",
+        "disagreement": "Uncertainty: consensus estimates were unavailable, so no quantified earnings surprise is presented. The earnings-call transcript was not reviewed. A sustained improvement in orders without weaker margins would challenge the cautious reading.",
+        "watchToday": "September 17, 11:00 AM ET: the scheduled Lennar call has elapsed. Review its transcript for incentives and cancellations before changing the interpretation. The next earnings date is not verified.",
         "tags": [
-          "Markets",
-          "A",
-          "real"
+          "Lennar",
+          "business"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "Lennar",
+            "Freddie Mac"
+          ],
+          "framing": []
+        },
+        "links": [
+          {
+            "label": "Lennar original source",
+            "url": "https://newsroom.lennar.com/2026-09-16-Lennar-Reports-Third-Quarter-2026-Results"
+          },
+          {
+            "label": "Freddie Mac weekly survey",
+            "url": "https://www.freddiemac.com/pmms?sf231758401=1"
+          }
+        ],
+        "primaryLink": {
+          "label": "Lennar",
+          "url": "https://newsroom.lennar.com/2026-09-16-Lennar-Reports-Third-Quarter-2026-Results"
+        },
+        "visual": {
+          "palette": "blue",
+          "eyebrow": "Chart of the day",
+          "title": "30-year mortgage average (%)",
+          "summary": "Weekly averages; the axis uses percent throughout.",
+          "graphic": {
+            "type": "bar-chart",
+            "sourceCaption": "Source: Freddie Mac PMMS, September 17, 2026; previous-week comparison.",
+            "items": [
+              {
+                "label": "Previous week",
+                "value": 6.76,
+                "display": "6.76%",
+                "tone": "cool"
+              },
+              {
+                "label": "September 17",
+                "value": 6.95,
+                "display": "6.95%",
+                "tone": "warm"
+              }
+            ]
+          },
+          "points": []
+        },
+        "evidence": [
+          {
+            "id": "sep17-2",
+            "source": "Lennar",
+            "url": "https://newsroom.lennar.com/2026-09-16-Lennar-Reports-Third-Quarter-2026-Results",
+            "headline": "Lennar lowers deliveries as affordability strains demand",
+            "bucket": "business",
+            "editorialUse": "Homebuilder earnings and guidance",
+            "summary": "Lennar lowered full-year deliveries to 80,000-81,000 from 82,000-83,000 homes. Q3 gross margin was 15.8%; Q4 outlook 15.5%-16.0%. September 17 earnings call at 11:00 AM ET is elapsed; transcript not checked.",
+            "facts": [
+              "Lennar lowered full-year deliveries to 80,000-81,000 from 82,000-83,000 homes. Q3 gross margin was 15.8%; Q4 outlook 15.5%-16.0%. September 17 earnings call at 11:00 AM ET is elapsed; transcript not checked."
+            ],
+            "dailyModules": [
+              "companies-earnings",
+              "real-estate",
+              "today-catalysts"
+            ],
+            "publishedDate": "2026-09-16",
+            "type": "primary"
+          }
+        ]
+      },
+      {
+        "id": "sep17-story-4",
+        "coverageTopic": "politics-world",
+        "focusArea": "Global policy",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "Britain holds today but retains an inflation problem",
+        "takeaway": "A hold and an easy policy outlook are different propositions.",
+        "whatChanged": "Fact: Bank Rate held at 3.75%. September minutes project CPI around 3.75% in Q4 and slightly above 4% in Q1 2027, conditional on September 14 energy prices.",
+        "whyItMatters": "Interpretation: the energy-conditioned inflation forecast makes the next policy decision sensitive to the persistence of price pressure. Comparing the UK hold with the US hike is useful, but different domestic conditions mean the decisions are not interchangeable signals.",
+        "marketImpact": "Public-equity read-through: UK consumer-facing firms and interest-sensitive businesses remain exposed to the balance between spending power and financing costs. No currency move, sector performance or company-level earnings impact is asserted without supporting data.",
+        "disagreement": "Uncertainty: the inflation projection depends on an energy-price assumption. A durable reduction in energy costs or weaker demand could change the path. It is a conditional forecast, not a measured future outcome.",
+        "watchToday": "September 18 monitoring: reassess the energy assumption and subsequent official communication. No next UK decision date or speaker time was verified.",
+        "tags": [
+          "Bank of England",
+          "politics-world"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "Bank of England"
+          ],
+          "framing": []
+        },
+        "links": [
+          {
+            "label": "Bank of England original source",
+            "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/september-2026"
+          }
+        ],
+        "primaryLink": {
+          "label": "Bank of England",
+          "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/september-2026"
+        },
+        "visual": {
+          "palette": "blue",
+          "eyebrow": "Source verified",
+          "title": "Bank of England",
+          "summary": "Open the original source for the factual record.",
+          "points": []
+        },
+        "evidence": [
+          {
+            "id": "sep17-4",
+            "source": "Bank of England",
+            "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/september-2026",
+            "headline": "Bank of England holds with inflation risks still elevated",
+            "bucket": "world",
+            "editorialUse": "UK policy divergence",
+            "summary": "Bank Rate held at 3.75%. September minutes project CPI around 3.75% in Q4 and slightly above 4% in Q1 2027, conditional on September 14 energy prices.",
+            "facts": [
+              "Bank Rate held at 3.75%. September minutes project CPI around 3.75% in Q4 and slightly above 4% in Q1 2027, conditional on September 14 energy prices."
+            ],
+            "dailyModules": [
+              "global-geopolitics",
+              "rates-macro"
+            ],
+            "publishedDate": "2026-09-17",
+            "type": "primary"
+          }
+        ]
+      },
+      {
+        "id": "sep17-story-5",
+        "coverageTopic": "business",
+        "focusArea": "Markets & companies",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "Tokenized shares get a route to market, with conditions",
+        "takeaway": "Permission creates an opportunity; adoption will decide the economics.",
+        "whatChanged": "Fact: September 17 temporary conditional relief permits tokenized securities venues. Eligible shares preserve dividend and voting rights. Issuers can object.",
+        "whyItMatters": "Interpretation: conditional access could expand the ways investors trade and settle shares. The commercial question is whether venues attract durable liquidity and provide a useful service after compliance and operating costs. Regulatory permission alone does not establish a profitable new business.",
+        "marketImpact": "Public-equity read-through: exchange, custody and brokerage business models warrant monitoring for fee competition and new demand. The evidence here supports a market-structure watchlist, not a revenue forecast for any named platform.",
+        "disagreement": "Uncertainty: issuer objections, implementation costs and user adoption could limit scale. The underlying securities must retain shareholder rights; synthetic exposure should not be treated as equivalent ownership.",
+        "watchToday": "September 17: the announcement is published. Monitor subsequent issuer and venue implementation notices. No verified launch date or public-comment deadline is supplied.",
+        "tags": [
+          "SEC",
+          "business"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "SEC"
+          ],
+          "framing": []
+        },
+        "links": [
+          {
+            "label": "SEC original source",
+            "url": "https://www.sec.gov/newsroom/speeches-statements/atkins-innovation-exemption-bridge-toward-durable-rulemaking-091726"
+          }
+        ],
+        "primaryLink": {
+          "label": "SEC",
+          "url": "https://www.sec.gov/newsroom/speeches-statements/atkins-innovation-exemption-bridge-toward-durable-rulemaking-091726"
+        },
+        "visual": {
+          "palette": "blue",
+          "eyebrow": "Source verified",
+          "title": "SEC",
+          "summary": "Open the original source for the factual record.",
+          "points": []
+        },
+        "evidence": [
+          {
+            "id": "sep17-5",
+            "source": "SEC",
+            "url": "https://www.sec.gov/newsroom/speeches-statements/atkins-innovation-exemption-bridge-toward-durable-rulemaking-091726",
+            "headline": "SEC permits conditional tokenized stock trading",
+            "bucket": "business",
+            "editorialUse": "Market infrastructure regulation",
+            "summary": "September 17 temporary conditional relief permits tokenized securities venues. Eligible shares preserve dividend and voting rights. Issuers can object.",
+            "facts": [
+              "September 17 temporary conditional relief permits tokenized securities venues. Eligible shares preserve dividend and voting rights. Issuers can object."
+            ],
+            "dailyModules": [
+              "companies-earnings"
+            ],
+            "publishedDate": "2026-09-17",
+            "type": "primary"
+          }
+        ]
+      },
+      {
+        "id": "sep17-story-6",
+        "coverageTopic": "politics-world",
+        "focusArea": "Global policy",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "Russia sanctions move to the presidential decision",
+        "takeaway": "A legislative step is confirmed; the effect on negotiations is disputed.",
+        "whatChanged": "Fact: September 17 Reuters report: the US House passed a sanctions package targeting Russia and sent it to President Trump. The Kremlin said further sanctions would complicate a Ukraine peace agreement; this is an attributed claim.",
+        "whyItMatters": "Interpretation: an additional sanctions package could change compliance demands and commercial exposure if enacted and implemented. The Kremlin's warning describes its position, not a demonstrated outcome for peace talks. Keep the political response separate from the legal status.",
+        "marketImpact": "Public-equity read-through: firms with relevant counterparties would need to examine the eventual scope, effective dates and exemptions. No specific company exposure or effect on commodity supply is established from this report alone.",
+        "disagreement": "Uncertainty: presidential action and implementation details were not independently confirmed after the Reuters report. Do not treat passage by the House as proof that restrictions are already in force.",
+        "watchToday": "September 18 monitoring: check official presidential and sanctions notices. Timing is unconfirmed; this is a follow-up window, not a promised deadline.",
+        "tags": [
+          "Reuters",
+          "politics-world"
         ],
         "sourceTrail": {
           "primary": [
             "Reuters"
           ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Morning Brew",
-          "subject": "Heated survivalry",
-          "matchedHints": []
+          "framing": []
         },
         "links": [
           {
-            "label": "Reuters on the story",
-            "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722"
+            "label": "Reuters original source",
+            "url": "https://currently.att.yahoo.com/att/russia-says-us-sanctions-signed-100845263.html"
           }
         ],
         "primaryLink": {
-          "label": "Reuters on the story",
-          "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722"
+          "label": "Reuters",
+          "url": "https://currently.att.yahoo.com/att/russia-says-us-sanctions-signed-100845263.html"
         },
         "visual": {
-          "palette": "sky",
-          "eyebrow": "Ai & Tech",
-          "title": "Reuters reported BIVA's chief said Mexican FIBRAs could finance industrial parks, logistics assets, and AI-related infrastructure.",
-          "summary": "Tap through to open the source article.",
-          "graphic": {
-            "type": "fact-board",
-            "sourceCaption": "Recreated from Reuters.",
-            "items": [
-              {
-                "label": "Signal",
-                "detail": "Markets"
-              },
-              {
-                "label": "Signal",
-                "detail": "A"
-              },
-              {
-                "label": "Signal",
-                "detail": "real"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Signal 1",
-              "value": "Markets",
-              "tone": "warm"
-            },
-            {
-              "label": "Signal 2",
-              "value": "A",
-              "tone": "cool"
-            },
-            {
-              "label": "Signal 3",
-              "value": "real",
-              "tone": "cool"
-            }
-          ]
+          "palette": "blue",
+          "eyebrow": "Source verified",
+          "title": "Reuters",
+          "summary": "Open the original source for the factual record.",
+          "points": []
         },
         "evidence": [
           {
+            "id": "sep17-6",
             "source": "Reuters",
-            "headline": "Mexico REITs pitch manufacturing and AI-infrastructure growth",
-            "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "A real-estate-capital signal linking industrial parks and infrastructure to North American supply chains."
+            "url": "https://currently.att.yahoo.com/att/russia-says-us-sanctions-signed-100845263.html",
+            "headline": "Russia warns US sanctions would impede peace talks",
+            "bucket": "world",
+            "editorialUse": "Ukraine sanctions decision",
+            "summary": "September 17 Reuters report: the US House passed a sanctions package targeting Russia and sent it to President Trump. The Kremlin said further sanctions would complicate a Ukraine peace agreement; this is an attributed claim.",
+            "facts": [
+              "September 17 Reuters report: the US House passed a sanctions package targeting Russia and sent it to President Trump. The Kremlin said further sanctions would complicate a Ukraine peace agreement; this is an attributed claim."
+            ],
+            "dailyModules": [
+              "global-geopolitics"
+            ],
+            "publishedDate": "2026-09-17",
+            "type": "trusted-syndicated"
           }
-        ],
-        "engineScore": 53.5
+        ]
       }
     ]
   },
   "leadStory": {
-    "headline": "Oil is doing more macro work than the index headline suggests.",
-    "deck": "Right now energy is not a side story. It is the hinge that connects world news, inflation nerves, and what central banks may or may not feel comfortable saying next.",
-    "whyItLeads": "Multiple reports kept crude and regional shipping risk near the center of the macro setup while equities tried to stay composed.",
-    "marketRead": "If oil stays elevated into a central-bank-heavy week, the market has less room to keep pretending disinflation is automatic.",
-    "watchToday": "Brent, Treasury yields, and Thursday's 8:30 AM ET PPI release; a cooler inflation print is the next clean falsifier for the oil-driven rates squeeze.",
-    "focusArea": "Macro",
-    "coverageTopic": "economy-rates",
-    "sourceLabel": "AP",
+    "headline": "Market relief meets a higher financing hurdle.",
+    "deck": "Read the six stories for the policy, housing and regulatory implications.",
+    "whyItLeads": "The market rebound and financing constraints need to be assessed together.",
+    "marketRead": "Interpretation: an easier trading day does not settle the earnings outlook.",
+    "watchToday": "Next editorial review: September 18. See each story for confirmed versus unverified timing.",
+    "focusArea": "Markets",
+    "coverageTopic": "markets",
+    "sourceLabel": "Associated Press / Federal Reserve",
     "sourceTrail": {
       "primary": [
-        "Associated Press",
-        "Reuters",
-        "Bureau of Labor Statistics"
+        "Associated Press"
       ],
-      "framing": [
-        "Morning Brew",
-        "Brew Markets"
-      ]
+      "framing": []
     },
-    "visual": {
-      "palette": "amber",
-      "eyebrow": "Economy & Rates",
-      "title": "Energy is driving the inflation conversation again.",
-      "summary": "Oil, shipping risk, and yields are moving together underneath the tape.",
-      "graphic": {
-        "type": "bar-chart",
-        "sourceCaption": "Recreated from Associated Press + Reuters + Bureau of Labor Statistics.",
-        "items": [
-          {
-            "label": "Brent",
-            "value": 2.4,
-            "display": "+2.4%",
-            "tone": "warm"
-          },
-          {
-            "label": "US 10Y",
-            "value": 3.26,
-            "display": "+3.26 bps",
-            "tone": "warm"
-          }
-        ]
-      },
-      "points": [
-        {
-          "label": "Brent",
-          "value": "+2.4%",
-          "rawValue": "$100.27",
-          "tone": "warm"
-        },
-        {
-          "label": "US 10Y",
-          "value": "+3.26 bps",
-          "rawValue": "4.837%",
-          "tone": "warm"
-        }
-      ]
-    },
-    "link": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd",
-    "readTime": "70 sec"
+    "link": "https://apnews.com/article/26a4da336d561d213a3f28f260f25d2c",
+    "readTime": "20 sec",
+    "visual": null
   },
   "marketDesk": {
     "title": "Markets & Rates",
     "intro": "A quick board before the longer read.",
-    "summary": "A clean rebound can coexist with hidden fragility for a while. Energy, leadership concentration, and policy tone are the pressure points to watch.",
-    "asOf": "2026-09-09T13:53:00-04:00",
-    "sourceLabel": "AP and Reuters intraday reporting; unsupported fields are explicit coverage gaps.",
+    "summary": "Delayed evening run. AP reported a 1.1% S&P 500 closing gain; exact market levels and other changes remain gaps. Missing fields are not flat moves.",
+    "asOf": "2026-09-17T22:56:32.442Z",
+    "sourceLabel": "AP September 17 closing direction. Exact levels remain unverified.",
     "tiles": [
       {
         "id": "spx",
         "label": "S&P 500",
         "value": "coverage gap",
-        "change": "lower intraday",
-        "changeValue": -0.1,
-        "direction": "down",
-        "note": "AP reported stocks lower intraday without an accessible verified index level or percentage."
+        "change": "+1.1% (close)",
+        "changeValue": 1.1,
+        "direction": "up",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "nasdaq",
         "label": "Nasdaq",
         "value": "coverage gap",
-        "change": "lower intraday",
-        "changeValue": -0.1,
-        "direction": "down",
-        "note": "AP reported stocks lower intraday without an accessible verified index level or percentage."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "us2y",
         "label": "US 2Y",
         "value": "coverage gap",
-        "change": "—",
-        "changeValue": 0,
-        "direction": "flat",
-        "note": "No current verified 2-year yield in the source set."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "us10y",
         "label": "US 10Y",
-        "value": "4.837%",
-        "change": "+3.26 bps",
-        "changeValue": 3.26,
-        "changeUnit": "bp",
-        "direction": "up",
-        "note": "Reuters reported 4.837% at 1:53 PM ET, the highest since November 2023."
+        "value": "coverage gap",
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "dxy",
         "label": "DXY",
         "value": "coverage gap",
-        "change": "—",
-        "changeValue": 0,
-        "direction": "flat",
-        "note": "No current verified DXY quote in the source set."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "brent",
         "label": "Brent",
-        "value": "$100.27",
-        "change": "+2.4%",
-        "changeValue": 2.4,
-        "direction": "up",
-        "note": "Reuters reported $100.27 at 1:53 PM ET."
+        "value": "coverage gap",
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "gold",
         "label": "Gold",
         "value": "coverage gap",
-        "change": "—",
-        "changeValue": 0,
-        "direction": "flat",
-        "note": "No current verified gold quote."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "bitcoin",
         "label": "Bitcoin",
         "value": "coverage gap",
-        "change": "—",
-        "changeValue": 0,
-        "direction": "flat",
-        "note": "No current verified Bitcoin quote."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       },
       {
         "id": "vix",
         "label": "VIX",
         "value": "coverage gap",
-        "change": "—",
-        "changeValue": 0,
-        "direction": "flat",
-        "note": "No current verified VIX quote."
+        "change": "not verified",
+        "changeValue": null,
+        "direction": "unknown",
+        "note": "Exact level not independently verified. Missing changes are not zero."
       }
     ],
-    "heatmap": [
-      {
-        "label": "US 10Y",
-        "value": 3.26,
-        "direction": "up",
-        "theme": "Rates",
-        "unit": "bp"
-      },
-      {
-        "label": "Brent",
-        "value": 2.4,
-        "direction": "up",
-        "theme": "Energy",
-        "unit": "%"
-      }
-    ],
+    "heatmap": [],
     "keyLines": [
       {
-        "label": "Energy",
-        "text": "Right now energy is not a side story. It is the hinge that connects world news, inflation nerves, and what central banks may or may not feel comfortable saying next.",
-        "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
+        "label": "Timed catalysts",
+        "text": "September 17: Lennar 11:00 AM ET call elapsed; transcript unchecked. Freddie Mac noon ET release verified. Complete economic/speaker calendar unavailable.",
+        "url": "https://newsroom.lennar.com/2026-09-16-Lennar-Reports-Third-Quarter-2026-Results"
       },
       {
-        "label": "Rates",
-        "text": "Right now energy is not a side story. It is the hinge that connects world news, inflation nerves, and what central banks may or may not feel comfortable saying next.",
-        "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
+        "label": "Rates / macro",
+        "text": "Fed decision verified. Current curve, consensus and next central-bank dates not verified.",
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
       },
       {
-        "label": "AI & Private Markets",
-        "text": "No private-company signal was loaded into today's raw reporting file.",
-        "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
+        "label": "Real estate",
+        "text": "Residential coverage: Lennar and Freddie Mac. Commercial-property and REIT update remain gaps.",
+        "url": "https://www.freddiemac.com/pmms?sf231758401=1"
+      },
+      {
+        "label": "Private markets / deals",
+        "text": "M&A, IPO, funding and private-credit searches yielded no sufficiently verified transaction for promotion; PitchBook route unavailable.",
+        "url": ""
       }
     ]
   },
   "topStories": {
     "title": "Top Stories",
-    "intro": "This is one tight daily edition. Read the pulse first, then work the ranked story cards for a finishable 6 to 8 minute briefing.",
+    "intro": "September 17 delayed evening edition. Facts, interpretation, uncertainty and next checks are separated below.",
     "cards": [
       {
-        "id": "oil-macro-bridge",
-        "coverageTopic": "economy-rates",
-        "focusArea": "Macro",
-        "urgency": "Must know",
-        "readTime": "70 sec",
-        "headline": "Oil is doing more macro work than the index headline suggests.",
-        "takeaway": "Right now energy is not a side story. It is the hinge that connects world news, inflation nerves, and what central banks may or may not feel comfortable saying next.",
-        "whatChanged": "Multiple reports kept crude and regional shipping risk near the center of the macro setup while equities tried to stay composed.",
-        "whyItMatters": "If oil stays elevated into a central-bank-heavy week, the market has less room to keep pretending disinflation is automatic.",
-        "marketImpact": "Energy can stay bid, long-duration assets get more fragile, and any rate-sensitive growth trade becomes harder to defend at rich valuations.",
-        "disagreement": "Optimists think each diplomatic headline can cap crude quickly. Skeptics think shipping risk keeps a sticky premium in the system even when the news flow cools temporarily.",
-        "watchToday": "Brent, Treasury yields, and Thursday's 8:30 AM ET PPI release; a cooler inflation print is the next clean falsifier for the oil-driven rates squeeze.",
+        "id": "sep17-story-1",
+        "coverageTopic": "markets",
+        "focusArea": "Markets & companies",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "A rebound is relief, not proof that the squeeze is over",
+        "takeaway": "The closing direction improved; the policy and earnings outlook still need separate tests.",
+        "whatChanged": "Fact: S&P 500 rose 1.1% Thursday, its second gain in nine sessions. Oil prices and bond yields eased.",
+        "whyItMatters": "Interpretation: lower oil and bond pressure can ease input-cost and valuation concerns. That does not establish how much of the rebound reflects better expected profits rather than a change in discount rates. Keep the earnings question separate from the market move.",
+        "marketImpact": "Public-equity read-through: businesses exposed to financing and energy costs could benefit if relief persists. No sector return attribution or revised profit estimate is established here.",
+        "disagreement": "Falsifier: renewed oil or yield pressure would weaken this relief narrative. Breadth and exact closing levels were not independently verified, so a broad participation claim would be premature.",
+        "watchToday": "September 18: monitor the next US session for persistence in the rebound. This is an editorial monitoring window, not a scheduled economic release.",
         "tags": [
-          "Oil",
-          "Inflation",
-          "Hormuz"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Associated Press",
-            "Reuters",
-            "Bureau of Labor Statistics"
-          ],
-          "framing": [
-            "Morning Brew",
-            "Brew Markets"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Brew Markets",
-          "subject": "Apple wants fold, hard cash",
-          "matchedHints": [
-            "rates"
-          ]
-        },
-        "links": [
-          {
-            "label": "Associated Press on oil and the macro setup",
-            "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
-          },
-          {
-            "label": "Reuters on oil and the macro setup",
-            "url": "https://www.marketscreener.com/news/oil-treasury-yields-turn-higher-as-stocks-falter-ce785bd9d088f321"
-          },
-          {
-            "label": "Bureau of Labor Statistics on oil and the macro setup",
-            "url": "https://www.bls.gov/schedule/2026/09_sched_list.htm"
-          }
-        ],
-        "primaryLink": {
-          "label": "Associated Press on oil and the macro setup",
-          "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
-        },
-        "visual": {
-          "palette": "amber",
-          "eyebrow": "Economy & Rates",
-          "title": "Energy is driving the inflation conversation again.",
-          "summary": "Oil, shipping risk, and yields are moving together underneath the tape.",
-          "graphic": {
-            "type": "bar-chart",
-            "sourceCaption": "Recreated from Associated Press + Reuters + Bureau of Labor Statistics.",
-            "items": [
-              {
-                "label": "Brent",
-                "value": 2.4,
-                "display": "+2.4%",
-                "tone": "warm"
-              },
-              {
-                "label": "US 10Y",
-                "value": 3.26,
-                "display": "+3.26 bps",
-                "tone": "warm"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Brent",
-              "value": "+2.4%",
-              "rawValue": "$100.27",
-              "tone": "warm"
-            },
-            {
-              "label": "US 10Y",
-              "value": "+3.26 bps",
-              "rawValue": "4.837%",
-              "tone": "warm"
-            }
-          ]
-        },
-        "evidence": [
-          {
-            "source": "Associated Press",
-            "headline": "Stocks fall as oil jumps above $100 after Iran war escalates",
-            "url": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "Oil is tightening financial conditions, pressuring equities, and complicating the Fed decision."
-          },
-          {
-            "source": "Reuters",
-            "headline": "Oil and Treasury yields turn higher as stocks falter",
-            "url": "https://www.marketscreener.com/news/oil-treasury-yields-turn-higher-as-stocks-falter-ce785bd9d088f321",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "Timestamped cross-asset facts and the divided policy setup."
-          },
-          {
-            "source": "Bureau of Labor Statistics",
-            "headline": "PPI Thursday and CPI Friday define the inflation calendar",
-            "url": "https://www.bls.gov/schedule/2026/09_sched_list.htm",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "The inflation sequence is the next falsifier for the oil-and-rates thesis."
-          }
-        ],
-        "engineScore": 81
-      },
-      {
-        "id": "generic-apple-s-foldable-hardware-launch-is-a-technology-premium-demand-and-new-ceo-execution-test",
-        "coverageTopic": "ai-tech",
-        "focusArea": "Markets",
-        "urgency": "Useful edge",
-        "readTime": "55 sec",
-        "headline": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test.",
-        "takeaway": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
-        "whatChanged": "The fresh update was apple unveiled its first foldable iPhone, called Duo, on September 9.",
-        "whyItMatters": "Apple's first foldable is a test of premium-device demand, product mix, and execution under its new CEO; the launch alone does not prove an earnings reset.",
-        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
-        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
-        "watchToday": "Watch Apple shares, supplier read-through, preorder timing, and disclosed pricing; sustained mix and unit demand matter more than launch-day attention.",
-        "tags": [
-          "Markets",
-          "Apple's",
-          "foldable"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Associated Press",
-            "Reuters"
-          ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Tech Brew",
-          "subject": "A search bar for DNA",
-          "matchedHints": []
-        },
-        "links": [
-          {
-            "label": "Associated Press on the story",
-            "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
-          },
-          {
-            "label": "Reuters on the story",
-            "url": "https://www.investing.com/news/stock-market-news/apple-expected-to-unveil-first-folding-phone-with-new-ceo-ternus-in-command-4893058"
-          }
-        ],
-        "primaryLink": {
-          "label": "Associated Press on the story",
-          "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
-        },
-        "visual": {
-          "palette": "sky",
-          "eyebrow": "Ai & Tech",
-          "title": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
-          "summary": "Tap through to open the source article.",
-          "graphic": {
-            "type": "fact-board",
-            "sourceCaption": "Recreated from Associated Press + Reuters.",
-            "items": [
-              {
-                "label": "Signal",
-                "detail": "Markets"
-              },
-              {
-                "label": "Signal",
-                "detail": "Apple's"
-              },
-              {
-                "label": "Signal",
-                "detail": "foldable"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Signal 1",
-              "value": "Markets",
-              "tone": "warm"
-            },
-            {
-              "label": "Signal 2",
-              "value": "Apple's",
-              "tone": "cool"
-            },
-            {
-              "label": "Signal 3",
-              "value": "foldable",
-              "tone": "cool"
-            }
-          ]
-        },
-        "evidence": [
-          {
-            "source": "Associated Press",
-            "headline": "Apple unveils iPhone Duo, its first foldable model",
-            "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test."
-          },
-          {
-            "source": "Reuters",
-            "headline": "Apple's foldable launch puts new CEO and premium demand in focus",
-            "url": "https://www.investing.com/news/stock-market-news/apple-expected-to-unveil-first-folding-phone-with-new-ceo-ternus-in-command-4893058",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test."
-          }
-        ],
-        "engineScore": 55.3
-      },
-      {
-        "id": "generic-a-dated-housing-baseline-not-a-fresh-standalone-story",
-        "coverageTopic": "economy-rates",
-        "focusArea": "Markets",
-        "urgency": "Useful edge",
-        "readTime": "55 sec",
-        "headline": "A dated housing baseline, not a fresh standalone story.",
-        "takeaway": "Freddie Mac's latest weekly reading put the 30-year fixed mortgage rate at 6.71%; the next update is Thursday.",
-        "whatChanged": "The fresh update was the 30-year fixed mortgage rate averaged 6.71% for the week of September 3.",
-        "whyItMatters": "Mortgage rates near 6.7% keep affordability tight, so housing still reads as a higher-for-longer rates story instead of a clean recovery story.",
-        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
-        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
-        "watchToday": "Watch mortgage-rate direction, homebuilder sentiment, and whether supply gains start to matter more than financing pressure.",
-        "tags": [
-          "Markets",
-          "A",
-          "dated"
-        ],
-        "sourceTrail": {
-          "primary": [
-            "Freddie Mac"
-          ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Brew Markets",
-          "subject": "Apple wants fold, hard cash",
-          "matchedHints": [
-            "rates"
-          ]
-        },
-        "links": [
-          {
-            "label": "Freddie Mac on the story",
-            "url": "https://www.freddiemac.com/pmms"
-          }
-        ],
-        "primaryLink": {
-          "label": "Freddie Mac on the story",
-          "url": "https://www.freddiemac.com/pmms"
-        },
-        "visual": {
-          "palette": "sky",
-          "eyebrow": "Economy & Rates",
-          "title": "Freddie Mac's latest weekly reading put the 30-year fixed mortgage rate at 6.71%; the next update is Thursday.",
-          "summary": "Tap through to open the source article.",
-          "graphic": {
-            "type": "fact-board",
-            "sourceCaption": "Recreated from Freddie Mac.",
-            "items": [
-              {
-                "label": "Signal",
-                "detail": "Markets"
-              },
-              {
-                "label": "Signal",
-                "detail": "A"
-              },
-              {
-                "label": "Signal",
-                "detail": "dated"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Signal 1",
-              "value": "Markets",
-              "tone": "warm"
-            },
-            {
-              "label": "Signal 2",
-              "value": "A",
-              "tone": "cool"
-            },
-            {
-              "label": "Signal 3",
-              "value": "dated",
-              "tone": "cool"
-            }
-          ]
-        },
-        "evidence": [
-          {
-            "source": "Freddie Mac",
-            "headline": "Mortgage rates remain the verified housing constraint",
-            "url": "https://www.freddiemac.com/pmms",
-            "publishedDate": "2026-09-03",
-            "editorialUse": "A dated housing baseline, not a fresh standalone story."
-          }
-        ],
-        "engineScore": 55.3
-      },
-      {
-        "id": "generic-a-distinct-global-policy-risk-whose-next-signal-is-allied-action-not-market-price-alone",
-        "coverageTopic": "politics-world",
-        "focusArea": "World",
-        "urgency": "High signal",
-        "readTime": "55 sec",
-        "headline": "A distinct global-policy risk whose next signal is allied action, not market price alone.",
-        "takeaway": "AP reported Ukraine's president pressed international partners for a tougher response to escalating Russian attacks on civilian areas.",
-        "whatChanged": "The fresh update was president Volodymyr Zelenskyy urged stronger international pressure on Russia on September 9.",
-        "whyItMatters": "World stories matter when they start changing the policy, supply-chain, or risk backdrop that investors have to price.",
-        "marketImpact": "The direct market effect may stay muted at first, but the second-order policy and sentiment effects are what matter.",
-        "disagreement": "Some readers will treat it as isolated news flow. Others will treat it as an early clue about broader policy or geopolitical direction.",
-        "watchToday": "Watch who amplifies the story next and whether it starts changing the wider policy or risk conversation.",
-        "tags": [
-          "World",
-          "A",
-          "distinct"
+          "Associated Press",
+          "markets"
         ],
         "sourceTrail": {
           "primary": [
             "Associated Press"
           ],
-          "framing": [
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Morning Brew",
-          "subject": "Heated survivalry",
-          "matchedHints": []
+          "framing": []
         },
         "links": [
           {
-            "label": "Associated Press on the story",
-            "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf"
+            "label": "Associated Press original source",
+            "url": "https://apnews.com/article/26a4da336d561d213a3f28f260f25d2c"
           }
         ],
         "primaryLink": {
-          "label": "Associated Press on the story",
-          "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf"
+          "label": "Associated Press",
+          "url": "https://apnews.com/article/26a4da336d561d213a3f28f260f25d2c"
         },
         "visual": {
-          "palette": "mint",
-          "eyebrow": "Politics & World",
-          "title": "World stories matter when they start changing the policy map.",
-          "summary": "The direct move can look small at first. The real question is what gets repriced next.",
-          "graphic": {
-            "type": "fact-board",
-            "sourceCaption": "Recreated from Associated Press.",
-            "items": [
-              {
-                "label": "Theme",
-                "detail": "A"
-              },
-              {
-                "label": "Market link",
-                "detail": "Policy and risk sentiment"
-              },
-              {
-                "label": "Watch",
-                "detail": "Who amplifies it next"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Theme",
-              "value": "A",
-              "tone": "warm"
-            },
-            {
-              "label": "Readthrough",
-              "value": "Policy spillover",
-              "tone": "cool"
-            },
-            {
-              "label": "Watch",
-              "value": "Narrative shift",
-              "tone": "cool"
-            }
-          ]
+          "palette": "blue",
+          "eyebrow": "Source verified",
+          "title": "Associated Press",
+          "summary": "Open the original source for the factual record.",
+          "points": []
         },
         "evidence": [
           {
+            "id": "sep17-0",
             "source": "Associated Press",
-            "headline": "Zelenskyy urges more pressure on Russia after civilian deaths",
-            "url": "https://apnews.com/article/6670c99dcc9ed149a2bd9c0deac455cf",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "A distinct global-policy risk whose next signal is allied action, not market price alone."
+            "url": "https://apnews.com/article/26a4da336d561d213a3f28f260f25d2c",
+            "headline": "Stocks rebound as oil and bond pressure ease",
+            "bucket": "market",
+            "editorialUse": "Closing equity rebound",
+            "summary": "S&P 500 rose 1.1% Thursday, its second gain in nine sessions. Oil prices and bond yields eased.",
+            "facts": [
+              "S&P 500 rose 1.1% Thursday, its second gain in nine sessions. Oil prices and bond yields eased."
+            ],
+            "dailyModules": [
+              "markets-overnight"
+            ],
+            "publishedDate": "2026-09-17",
+            "type": "primary"
           }
-        ],
-        "engineScore": 54.8
+        ]
       },
       {
-        "id": "generic-use-a-gap-block-instead-of-transaction-filler",
-        "coverageTopic": "markets",
-        "focusArea": "Markets",
-        "urgency": "Useful edge",
-        "readTime": "55 sec",
-        "headline": "Use a gap block instead of transaction filler.",
-        "takeaway": "No material M&A, IPO pricing, funding, or private-credit event was established; PitchBook enrichment was unavailable.",
-        "whatChanged": "The fresh update was no authenticated PitchBook route was available.",
-        "whyItMatters": "The more useful read is what this changes in the day's setup for investors and operators, not just the headline itself.",
-        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
-        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
-        "watchToday": "Watch for follow-through in prices, sector leadership, and management commentary rather than assuming the first headline got the story right.",
+        "id": "sep17-story-2",
+        "coverageTopic": "economy-rates",
+        "focusArea": "Rates & macro",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "The Fed has tightened; the terminal rate remains unresolved",
+        "takeaway": "The policy range moved higher while the eventual peak remains unconfirmed.",
+        "whatChanged": "Fact: On September 16 the committee voted 12-0 to increase its target range by 25 basis points to 3.75%-4.00%. Inflation remains elevated.",
+        "whyItMatters": "Interpretation: a higher overnight policy rate raises the hurdle for debt-funded activity and equity valuations supported by distant cash flows. A credible inflation response could help longer-term expectations, but that mechanism is a scenario rather than evidence that financial conditions have uniformly eased.",
+        "marketImpact": "Public-equity read-through: reassess refinancing exposure and valuation sensitivity separately. A higher policy rate can pressure borrowers even when a stock index rises; neither move alone proves a change in underlying earnings.",
+        "disagreement": "Uncertainty: this statement does not establish the eventual peak policy rate. A verified yield curve and current expectations are missing, so the edition makes no probability claim about another hike.",
+        "watchToday": "September 18 monitoring: check whether company financing commentary changes after implementation. Next FOMC timing and consensus were not verified in this run.",
         "tags": [
-          "Markets",
-          "Use",
-          "a"
+          "Federal Reserve",
+          "economy-rates"
         ],
         "sourceTrail": {
           "primary": [
-            "Morning Brief editorial desk"
+            "Federal Reserve"
           ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "CFO Brew",
-          "subject": "Power moves",
-          "matchedHints": [
-            "pricing"
-          ]
+          "framing": []
         },
         "links": [
           {
-            "label": "Morning Brief editorial desk on the story",
-            "url": "https://www.sec.gov/edgar/search/"
+            "label": "Federal Reserve original source",
+            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
           }
         ],
         "primaryLink": {
-          "label": "Morning Brief editorial desk on the story",
-          "url": "https://www.sec.gov/edgar/search/"
+          "label": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
         },
         "visual": {
-          "palette": "sky",
-          "eyebrow": "Markets",
-          "title": "No material M&A, IPO pricing, funding, or private-credit event was established; PitchBook enrichment was unavailable.",
-          "summary": "Tap through to open the source article.",
-          "graphic": {
-            "type": "fact-board",
-            "sourceCaption": "Recreated from Morning Brief editorial desk.",
-            "items": [
-              {
-                "label": "Signal",
-                "detail": "Markets"
-              },
-              {
-                "label": "Signal",
-                "detail": "Use"
-              },
-              {
-                "label": "Signal",
-                "detail": "a"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Signal 1",
-              "value": "Markets",
-              "tone": "warm"
-            },
-            {
-              "label": "Signal 2",
-              "value": "Use",
-              "tone": "cool"
-            },
-            {
-              "label": "Signal 3",
-              "value": "a",
-              "tone": "cool"
-            }
-          ]
+          "palette": "blue",
+          "eyebrow": "Source verified",
+          "title": "Federal Reserve",
+          "summary": "Open the original source for the factual record.",
+          "points": []
         },
         "evidence": [
           {
-            "source": "Morning Brief editorial desk",
-            "headline": "Private markets and deals remain a transparent coverage gap",
-            "url": "https://www.sec.gov/edgar/search/",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "Use a gap block instead of transaction filler."
+            "id": "sep17-1",
+            "source": "Federal Reserve",
+            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+            "headline": "Federal Reserve raises policy range to 3.75%-4.00%",
+            "bucket": "market",
+            "editorialUse": "US monetary policy decision",
+            "summary": "On September 16 the committee voted 12-0 to increase its target range by 25 basis points to 3.75%-4.00%. Inflation remains elevated.",
+            "facts": [
+              "On September 16 the committee voted 12-0 to increase its target range by 25 basis points to 3.75%-4.00%. Inflation remains elevated."
+            ],
+            "dailyModules": [
+              "rates-macro"
+            ],
+            "publishedDate": "2026-09-16",
+            "type": "primary"
           }
-        ],
-        "engineScore": 54.4
+        ]
       },
       {
-        "id": "generic-a-real-estate-capital-signal-linking-industrial-parks-and-infrastructure-to-north-american-supply-chains",
-        "coverageTopic": "ai-tech",
-        "focusArea": "Markets",
-        "urgency": "Useful edge",
-        "readTime": "55 sec",
-        "headline": "A real-estate-capital signal linking industrial parks and infrastructure to North American supply chains.",
-        "takeaway": "Reuters reported BIVA's chief said Mexican FIBRAs could finance industrial parks, logistics assets, and AI-related infrastructure.",
-        "whatChanged": "The fresh update was BIVA CEO Maria Ariza said Mexican FIBRAs can finance industrial parks, logistics assets, and infrastructure.",
-        "whyItMatters": "The capital-markets question is whether manufacturing and AI-infrastructure demand can translate into durable occupancy, rents, and investable project pipelines for Mexican FIBRAs.",
-        "marketImpact": "If this theme strengthens, it can move positioning faster than a calm headline tape would suggest.",
-        "disagreement": "Some investors will treat this as noise. Others will treat it as a useful clue about what the market is underpricing.",
-        "watchToday": "Watch for named projects, financing commitments, tenant demand, and follow-through from Mexico Investment Week rather than treating an exchange executive's thesis as completed investment.",
+        "id": "sep17-story-3",
+        "coverageTopic": "business",
+        "focusArea": "Business",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "Lennar cuts volume goals as mortgage costs climb",
+        "takeaway": "The housing test is profitable affordability, not just the number of homes built.",
+        "whatChanged": "Fact: Lennar lowered full-year deliveries to 80,000-81,000 from 82,000-83,000 homes. Q3 gross margin was 15.8%; Q4 outlook 15.5%-16.0%. September 17 earnings call at 11:00 AM ET is elapsed; transcript not checked. Freddie Mac's September 17 weekly mortgage survey put the 30-year average at 6.95%, versus 6.76% a week earlier.",
+        "whyItMatters": "Interpretation: reducing delivery expectations while protecting volume through affordability measures puts the trade-off between sales and margins in focus. The key question is whether lower construction costs can offset pricing and financing pressure without a further reduction in returns.",
+        "marketImpact": "Public-equity read-through: treat Lennar as a company-specific warning for homebuilder assumptions, not proof every peer faces the same outcome. Recheck expected deliveries, incentives and margins together before extrapolating demand.",
+        "disagreement": "Uncertainty: consensus estimates were unavailable, so no quantified earnings surprise is presented. The earnings-call transcript was not reviewed. A sustained improvement in orders without weaker margins would challenge the cautious reading.",
+        "watchToday": "September 17, 11:00 AM ET: the scheduled Lennar call has elapsed. Review its transcript for incentives and cancellations before changing the interpretation. The next earnings date is not verified.",
         "tags": [
-          "Markets",
-          "A",
-          "real"
+          "Lennar",
+          "business"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "Lennar",
+            "Freddie Mac"
+          ],
+          "framing": []
+        },
+        "links": [
+          {
+            "label": "Lennar original source",
+            "url": "https://newsroom.lennar.com/2026-09-16-Lennar-Reports-Third-Quarter-2026-Results"
+          },
+          {
+            "label": "Freddie Mac weekly survey",
+            "url": "https://www.freddiemac.com/pmms?sf231758401=1"
+          }
+        ],
+        "primaryLink": {
+          "label": "Lennar",
+          "url": "https://newsroom.lennar.com/2026-09-16-Lennar-Reports-Third-Quarter-2026-Results"
+        },
+        "visual": {
+          "palette": "blue",
+          "eyebrow": "Chart of the day",
+          "title": "30-year mortgage average (%)",
+          "summary": "Weekly averages; the axis uses percent throughout.",
+          "graphic": {
+            "type": "bar-chart",
+            "sourceCaption": "Source: Freddie Mac PMMS, September 17, 2026; previous-week comparison.",
+            "items": [
+              {
+                "label": "Previous week",
+                "value": 6.76,
+                "display": "6.76%",
+                "tone": "cool"
+              },
+              {
+                "label": "September 17",
+                "value": 6.95,
+                "display": "6.95%",
+                "tone": "warm"
+              }
+            ]
+          },
+          "points": []
+        },
+        "evidence": [
+          {
+            "id": "sep17-2",
+            "source": "Lennar",
+            "url": "https://newsroom.lennar.com/2026-09-16-Lennar-Reports-Third-Quarter-2026-Results",
+            "headline": "Lennar lowers deliveries as affordability strains demand",
+            "bucket": "business",
+            "editorialUse": "Homebuilder earnings and guidance",
+            "summary": "Lennar lowered full-year deliveries to 80,000-81,000 from 82,000-83,000 homes. Q3 gross margin was 15.8%; Q4 outlook 15.5%-16.0%. September 17 earnings call at 11:00 AM ET is elapsed; transcript not checked.",
+            "facts": [
+              "Lennar lowered full-year deliveries to 80,000-81,000 from 82,000-83,000 homes. Q3 gross margin was 15.8%; Q4 outlook 15.5%-16.0%. September 17 earnings call at 11:00 AM ET is elapsed; transcript not checked."
+            ],
+            "dailyModules": [
+              "companies-earnings",
+              "real-estate",
+              "today-catalysts"
+            ],
+            "publishedDate": "2026-09-16",
+            "type": "primary"
+          }
+        ]
+      },
+      {
+        "id": "sep17-story-4",
+        "coverageTopic": "politics-world",
+        "focusArea": "Global policy",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "Britain holds today but retains an inflation problem",
+        "takeaway": "A hold and an easy policy outlook are different propositions.",
+        "whatChanged": "Fact: Bank Rate held at 3.75%. September minutes project CPI around 3.75% in Q4 and slightly above 4% in Q1 2027, conditional on September 14 energy prices.",
+        "whyItMatters": "Interpretation: the energy-conditioned inflation forecast makes the next policy decision sensitive to the persistence of price pressure. Comparing the UK hold with the US hike is useful, but different domestic conditions mean the decisions are not interchangeable signals.",
+        "marketImpact": "Public-equity read-through: UK consumer-facing firms and interest-sensitive businesses remain exposed to the balance between spending power and financing costs. No currency move, sector performance or company-level earnings impact is asserted without supporting data.",
+        "disagreement": "Uncertainty: the inflation projection depends on an energy-price assumption. A durable reduction in energy costs or weaker demand could change the path. It is a conditional forecast, not a measured future outcome.",
+        "watchToday": "September 18 monitoring: reassess the energy assumption and subsequent official communication. No next UK decision date or speaker time was verified.",
+        "tags": [
+          "Bank of England",
+          "politics-world"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "Bank of England"
+          ],
+          "framing": []
+        },
+        "links": [
+          {
+            "label": "Bank of England original source",
+            "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/september-2026"
+          }
+        ],
+        "primaryLink": {
+          "label": "Bank of England",
+          "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/september-2026"
+        },
+        "visual": {
+          "palette": "blue",
+          "eyebrow": "Source verified",
+          "title": "Bank of England",
+          "summary": "Open the original source for the factual record.",
+          "points": []
+        },
+        "evidence": [
+          {
+            "id": "sep17-4",
+            "source": "Bank of England",
+            "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/september-2026",
+            "headline": "Bank of England holds with inflation risks still elevated",
+            "bucket": "world",
+            "editorialUse": "UK policy divergence",
+            "summary": "Bank Rate held at 3.75%. September minutes project CPI around 3.75% in Q4 and slightly above 4% in Q1 2027, conditional on September 14 energy prices.",
+            "facts": [
+              "Bank Rate held at 3.75%. September minutes project CPI around 3.75% in Q4 and slightly above 4% in Q1 2027, conditional on September 14 energy prices."
+            ],
+            "dailyModules": [
+              "global-geopolitics",
+              "rates-macro"
+            ],
+            "publishedDate": "2026-09-17",
+            "type": "primary"
+          }
+        ]
+      },
+      {
+        "id": "sep17-story-5",
+        "coverageTopic": "business",
+        "focusArea": "Markets & companies",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "Tokenized shares get a route to market, with conditions",
+        "takeaway": "Permission creates an opportunity; adoption will decide the economics.",
+        "whatChanged": "Fact: September 17 temporary conditional relief permits tokenized securities venues. Eligible shares preserve dividend and voting rights. Issuers can object.",
+        "whyItMatters": "Interpretation: conditional access could expand the ways investors trade and settle shares. The commercial question is whether venues attract durable liquidity and provide a useful service after compliance and operating costs. Regulatory permission alone does not establish a profitable new business.",
+        "marketImpact": "Public-equity read-through: exchange, custody and brokerage business models warrant monitoring for fee competition and new demand. The evidence here supports a market-structure watchlist, not a revenue forecast for any named platform.",
+        "disagreement": "Uncertainty: issuer objections, implementation costs and user adoption could limit scale. The underlying securities must retain shareholder rights; synthetic exposure should not be treated as equivalent ownership.",
+        "watchToday": "September 17: the announcement is published. Monitor subsequent issuer and venue implementation notices. No verified launch date or public-comment deadline is supplied.",
+        "tags": [
+          "SEC",
+          "business"
+        ],
+        "sourceTrail": {
+          "primary": [
+            "SEC"
+          ],
+          "framing": []
+        },
+        "links": [
+          {
+            "label": "SEC original source",
+            "url": "https://www.sec.gov/newsroom/speeches-statements/atkins-innovation-exemption-bridge-toward-durable-rulemaking-091726"
+          }
+        ],
+        "primaryLink": {
+          "label": "SEC",
+          "url": "https://www.sec.gov/newsroom/speeches-statements/atkins-innovation-exemption-bridge-toward-durable-rulemaking-091726"
+        },
+        "visual": {
+          "palette": "blue",
+          "eyebrow": "Source verified",
+          "title": "SEC",
+          "summary": "Open the original source for the factual record.",
+          "points": []
+        },
+        "evidence": [
+          {
+            "id": "sep17-5",
+            "source": "SEC",
+            "url": "https://www.sec.gov/newsroom/speeches-statements/atkins-innovation-exemption-bridge-toward-durable-rulemaking-091726",
+            "headline": "SEC permits conditional tokenized stock trading",
+            "bucket": "business",
+            "editorialUse": "Market infrastructure regulation",
+            "summary": "September 17 temporary conditional relief permits tokenized securities venues. Eligible shares preserve dividend and voting rights. Issuers can object.",
+            "facts": [
+              "September 17 temporary conditional relief permits tokenized securities venues. Eligible shares preserve dividend and voting rights. Issuers can object."
+            ],
+            "dailyModules": [
+              "companies-earnings"
+            ],
+            "publishedDate": "2026-09-17",
+            "type": "primary"
+          }
+        ]
+      },
+      {
+        "id": "sep17-story-6",
+        "coverageTopic": "politics-world",
+        "focusArea": "Global policy",
+        "urgency": "Essential",
+        "readTime": "60 sec",
+        "headline": "Russia sanctions move to the presidential decision",
+        "takeaway": "A legislative step is confirmed; the effect on negotiations is disputed.",
+        "whatChanged": "Fact: September 17 Reuters report: the US House passed a sanctions package targeting Russia and sent it to President Trump. The Kremlin said further sanctions would complicate a Ukraine peace agreement; this is an attributed claim.",
+        "whyItMatters": "Interpretation: an additional sanctions package could change compliance demands and commercial exposure if enacted and implemented. The Kremlin's warning describes its position, not a demonstrated outcome for peace talks. Keep the political response separate from the legal status.",
+        "marketImpact": "Public-equity read-through: firms with relevant counterparties would need to examine the eventual scope, effective dates and exemptions. No specific company exposure or effect on commodity supply is established from this report alone.",
+        "disagreement": "Uncertainty: presidential action and implementation details were not independently confirmed after the Reuters report. Do not treat passage by the House as proof that restrictions are already in force.",
+        "watchToday": "September 18 monitoring: check official presidential and sanctions notices. Timing is unconfirmed; this is a follow-up window, not a promised deadline.",
+        "tags": [
+          "Reuters",
+          "politics-world"
         ],
         "sourceTrail": {
           "primary": [
             "Reuters"
           ],
-          "framing": [
-            "Brew Markets",
-            "Morning Brew",
-            "Tech Brew"
-          ]
-        },
-        "newsletterSignalMatch": {
-          "source": "Morning Brew",
-          "subject": "Heated survivalry",
-          "matchedHints": []
+          "framing": []
         },
         "links": [
           {
-            "label": "Reuters on the story",
-            "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722"
+            "label": "Reuters original source",
+            "url": "https://currently.att.yahoo.com/att/russia-says-us-sanctions-signed-100845263.html"
           }
         ],
         "primaryLink": {
-          "label": "Reuters on the story",
-          "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722"
+          "label": "Reuters",
+          "url": "https://currently.att.yahoo.com/att/russia-says-us-sanctions-signed-100845263.html"
         },
         "visual": {
-          "palette": "sky",
-          "eyebrow": "Ai & Tech",
-          "title": "Reuters reported BIVA's chief said Mexican FIBRAs could finance industrial parks, logistics assets, and AI-related infrastructure.",
-          "summary": "Tap through to open the source article.",
-          "graphic": {
-            "type": "fact-board",
-            "sourceCaption": "Recreated from Reuters.",
-            "items": [
-              {
-                "label": "Signal",
-                "detail": "Markets"
-              },
-              {
-                "label": "Signal",
-                "detail": "A"
-              },
-              {
-                "label": "Signal",
-                "detail": "real"
-              }
-            ]
-          },
-          "points": [
-            {
-              "label": "Signal 1",
-              "value": "Markets",
-              "tone": "warm"
-            },
-            {
-              "label": "Signal 2",
-              "value": "A",
-              "tone": "cool"
-            },
-            {
-              "label": "Signal 3",
-              "value": "real",
-              "tone": "cool"
-            }
-          ]
+          "palette": "blue",
+          "eyebrow": "Source verified",
+          "title": "Reuters",
+          "summary": "Open the original source for the factual record.",
+          "points": []
         },
         "evidence": [
           {
+            "id": "sep17-6",
             "source": "Reuters",
-            "headline": "Mexico REITs pitch manufacturing and AI-infrastructure growth",
-            "url": "https://www.marketscreener.com/news/mexico-s-reits-poised-to-benefit-from-manufacturing-ai-boom-exchange-chief-says-ce785bd9df88f722",
-            "publishedDate": "2026-09-09",
-            "editorialUse": "A real-estate-capital signal linking industrial parks and infrastructure to North American supply chains."
+            "url": "https://currently.att.yahoo.com/att/russia-says-us-sanctions-signed-100845263.html",
+            "headline": "Russia warns US sanctions would impede peace talks",
+            "bucket": "world",
+            "editorialUse": "Ukraine sanctions decision",
+            "summary": "September 17 Reuters report: the US House passed a sanctions package targeting Russia and sent it to President Trump. The Kremlin said further sanctions would complicate a Ukraine peace agreement; this is an attributed claim.",
+            "facts": [
+              "September 17 Reuters report: the US House passed a sanctions package targeting Russia and sent it to President Trump. The Kremlin said further sanctions would complicate a Ukraine peace agreement; this is an attributed claim."
+            ],
+            "dailyModules": [
+              "global-geopolitics"
+            ],
+            "publishedDate": "2026-09-17",
+            "type": "trusted-syndicated"
           }
-        ],
-        "engineScore": 53.5
+        ]
       }
     ]
   },
   "sourceDesk": {
-    "title": "Top From the Sources",
-    "intro": "One useful click from each major desk.",
-    "sections": [
-      {
-        "source": "Reuters",
-        "shortName": "Reuters",
-        "headline": "Oil and Treasury yields turn higher as stocks falter",
-        "summary": "Right now energy is not a side story. It is the hinge that connects world news, inflation nerves, and what central banks may or may not feel comfortable saying next.",
-        "note": "If oil stays elevated into a central-bank-heavy week, the market has less room to keep pretending disinflation is automatic.",
-        "relatedHeadline": "Oil is doing more macro work than the index headline suggests.",
-        "coverageTopic": "economy-rates",
-        "url": "https://www.marketscreener.com/news/oil-treasury-yields-turn-higher-as-stocks-falter-ce785bd9d088f321"
-      },
-      {
-        "source": "Associated Press",
-        "shortName": "AP",
-        "headline": "Apple unveils iPhone Duo, its first foldable model",
-        "summary": "AP reported Apple unveiled a foldable iPhone called Duo alongside updates to iPhone, Apple Watch, and AirPods under new CEO John Ternus.",
-        "note": "Apple's first foldable is a test of premium-device demand, product mix, and execution under its new CEO; the launch alone does not prove an earnings reset.",
-        "relatedHeadline": "Apple's foldable hardware launch is a technology, premium-demand, and new-CEO execution test.",
-        "coverageTopic": "ai-tech",
-        "url": "https://apnews.com/article/fd35312e6d894d5f3b055b3d62f22cd2"
-      }
-    ]
+    "title": "Original sources",
+    "intro": "Direct links are attached to each story.",
+    "sections": []
   },
   "newsletterDesk": {
-    "title": "From Your Inbox",
-    "intro": "Short summaries of the newsletters already sitting in Gmail.",
-    "note": "If a newsletter has not arrived yet by refresh time, this section automatically falls back to the latest editorial issue.",
-    "briefs": [
-      {
-        "name": "Morning Brew",
-        "label": "Morning Brief/Inputs/Morning Brew",
-        "subject": "Heated survivalry",
-        "summary": "Morning Brew organized its edition around stale business framing, with the clearest through-line being that do not use this stale issue to drive ranking..",
-        "whyItMatters": "Do not use this stale issue to drive ranking.",
-        "marketRead": "Broad business framing",
-        "whatToSteal": "Latest true editorial issue remains stale; the later break notice was rejected.",
-        "signalLines": [
-          "Do not use this stale issue to drive ranking."
-        ],
-        "topTopics": [
-          "stale business framing"
-        ],
-        "tone": "Broad business framing",
-        "palette": "gold",
-        "graphic": {
-          "type": "topic-stack",
-          "sourceCaption": "Recreated from the latest Morning Brew issue in Gmail.",
-          "items": [
-            {
-              "label": "01",
-              "detail": "stale business framing"
-            }
-          ]
-        },
-        "visualPoints": [
-          {
-            "label": "Lead",
-            "value": "stale business framing",
-            "tone": "warm"
-          }
-        ],
-        "displayUrl": "https://mail.google.com/mail/#all/19e731241d6f5c2c",
-        "issueDateLabel": "Friday, May 29, 2026",
-        "freshnessLabel": "Latest available",
-        "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
-      },
-      {
-        "name": "Brew Markets",
-        "label": "Morning Brief/Inputs/Brew Markets",
-        "subject": "Apple wants fold, hard cash",
-        "summary": "Brew Markets organized its edition around Apple foldable iPhone, Treasury market, and rates, with the clearest through-line being that apple's foldable launch is the verified company catalyst..",
-        "whyItMatters": "Apple's foldable launch is the verified company catalyst.",
-        "marketRead": "Higher long yields and Treasury operations remain part of the macro setup.",
-        "whatToSteal": "Framed Apple's foldable launch and the Treasury market as the day's investor conversation.",
-        "signalLines": [
-          "Apple's foldable launch is the verified company catalyst.",
-          "Higher long yields and Treasury operations remain part of the macro setup."
-        ],
-        "topTopics": [
-          "Apple foldable iPhone",
-          "Treasury market",
-          "rates"
-        ],
-        "tone": "Retail-market framing",
-        "palette": "blue",
-        "graphic": {
-          "type": "topic-stack",
-          "sourceCaption": "Recreated from the latest Brew Markets issue in Gmail.",
-          "items": [
-            {
-              "label": "01",
-              "detail": "Apple foldable iPhone"
-            },
-            {
-              "label": "02",
-              "detail": "Treasury market"
-            },
-            {
-              "label": "03",
-              "detail": "rates"
-            }
-          ]
-        },
-        "visualPoints": [
-          {
-            "label": "Lead",
-            "value": "Apple foldable iPhone",
-            "tone": "warm"
-          },
-          {
-            "label": "Angle",
-            "value": "Treasury market",
-            "tone": "cool"
-          },
-          {
-            "label": "Watch",
-            "value": "rates",
-            "tone": "cool"
-          }
-        ],
-        "displayUrl": "https://mail.google.com/mail/#all/1a087cf6be8da696",
-        "issueDateLabel": "Wednesday, September 9, 2026",
-        "freshnessLabel": "Latest available",
-        "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
-      },
-      {
-        "name": "Tech Brew",
-        "label": "Morning Brief/Inputs/Tech Brew",
-        "subject": "A search bar for DNA",
-        "summary": "Tech Brew organized its edition around genomics search, Apple foldable iPhone, and consumer hardware, with the clearest through-line being that use Apple as the primary verified technology event..",
-        "whyItMatters": "Use Apple as the primary verified technology event.",
-        "marketRead": "Genomics tooling did not clear the primary-source and materiality bar for this edition.",
-        "whatToSteal": "Focused on genomics search tools and Apple's first foldable phone.",
-        "signalLines": [
-          "Use Apple as the primary verified technology event.",
-          "Genomics tooling did not clear the primary-source and materiality bar for this edition."
-        ],
-        "topTopics": [
-          "genomics search",
-          "Apple foldable iPhone",
-          "consumer hardware"
-        ],
-        "tone": "Technology-product framing",
-        "palette": "rose",
-        "graphic": {
-          "type": "topic-stack",
-          "sourceCaption": "Recreated from the latest Tech Brew issue in Gmail.",
-          "items": [
-            {
-              "label": "01",
-              "detail": "genomics search"
-            },
-            {
-              "label": "02",
-              "detail": "Apple foldable iPhone"
-            },
-            {
-              "label": "03",
-              "detail": "consumer hardware"
-            }
-          ]
-        },
-        "visualPoints": [
-          {
-            "label": "Lead",
-            "value": "genomics search",
-            "tone": "warm"
-          },
-          {
-            "label": "Angle",
-            "value": "Apple foldable iPhone",
-            "tone": "cool"
-          },
-          {
-            "label": "Watch",
-            "value": "consumer hardware",
-            "tone": "cool"
-          }
-        ],
-        "displayUrl": "https://mail.google.com/mail/#all/1a0875e0599bde09",
-        "issueDateLabel": "Wednesday, September 9, 2026",
-        "freshnessLabel": "Latest available",
-        "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
-      },
-      {
-        "name": "CFO Brew",
-        "label": "Morning Brief/Inputs/CFO Brew",
-        "subject": "Power moves",
-        "summary": "CFO Brew organized its edition around energy costs, corporate margins, and pricing, with the clearest through-line being that oil above $100 matters through margins, pricing, and working capital..",
-        "whyItMatters": "Oil above $100 matters through margins, pricing, and working capital.",
-        "marketRead": "Energy is a cross-sector earnings risk, not only a commodity story.",
-        "whatToSteal": "Framed escalating energy costs as an operating and margin issue for finance leaders.",
-        "signalLines": [
-          "Oil above $100 matters through margins, pricing, and working capital.",
-          "Energy is a cross-sector earnings risk, not only a commodity story."
-        ],
-        "topTopics": [
-          "energy costs",
-          "corporate margins",
-          "pricing"
-        ],
-        "tone": "Operator-finance framing",
-        "palette": "sage",
-        "graphic": {
-          "type": "topic-stack",
-          "sourceCaption": "Recreated from the latest CFO Brew issue in Gmail.",
-          "items": [
-            {
-              "label": "01",
-              "detail": "energy costs"
-            },
-            {
-              "label": "02",
-              "detail": "corporate margins"
-            },
-            {
-              "label": "03",
-              "detail": "pricing"
-            }
-          ]
-        },
-        "visualPoints": [
-          {
-            "label": "Lead",
-            "value": "energy costs",
-            "tone": "warm"
-          },
-          {
-            "label": "Angle",
-            "value": "corporate margins",
-            "tone": "cool"
-          },
-          {
-            "label": "Watch",
-            "value": "pricing",
-            "tone": "cool"
-          }
-        ],
-        "displayUrl": "https://mail.google.com/mail/#all/1a086e1c583383a4",
-        "issueDateLabel": "Wednesday, September 9, 2026",
-        "freshnessLabel": "Latest available",
-        "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
-      },
-      {
-        "name": "The Playbook",
-        "label": "Morning Brief/Inputs/The Playbook",
-        "subject": "Old school, new digs",
-        "summary": "The Playbook organized its edition around adaptive reuse, renters, and housing, with the clearest through-line being that adaptive reuse is a niche supply story..",
-        "whyItMatters": "Adaptive reuse is a niche supply story.",
-        "marketRead": "Use Freddie Mac and verified capital-markets reporting for current housing facts.",
-        "whatToSteal": "Covered adaptive reuse and renter demand; useful only as real-estate framing.",
-        "signalLines": [
-          "Adaptive reuse is a niche supply story.",
-          "Use Freddie Mac and verified capital-markets reporting for current housing facts."
-        ],
-        "topTopics": [
-          "adaptive reuse",
-          "renters",
-          "housing"
-        ],
-        "tone": "Practical real-estate framing",
-        "palette": "paper",
-        "graphic": {
-          "type": "topic-stack",
-          "sourceCaption": "Recreated from the latest The Playbook issue in Gmail.",
-          "items": [
-            {
-              "label": "01",
-              "detail": "adaptive reuse"
-            },
-            {
-              "label": "02",
-              "detail": "renters"
-            },
-            {
-              "label": "03",
-              "detail": "housing"
-            }
-          ]
-        },
-        "visualPoints": [
-          {
-            "label": "Lead",
-            "value": "adaptive reuse",
-            "tone": "warm"
-          },
-          {
-            "label": "Angle",
-            "value": "renters",
-            "tone": "cool"
-          },
-          {
-            "label": "Watch",
-            "value": "housing",
-            "tone": "cool"
-          }
-        ],
-        "displayUrl": "https://mail.google.com/mail/#all/1a06c819e5ed6f97",
-        "issueDateLabel": "Friday, September 4, 2026",
-        "freshnessLabel": "Latest available",
-        "arrivalNote": "Today's edition had not landed at refresh time, so this falls back to the latest editorial issue in Gmail."
-      }
-    ]
+    "title": "Editorial source note",
+    "intro": "Newsletters are framing inputs only.",
+    "note": "Gmail inputs were checked. Current Brew-family editorial issues informed topic discovery; factual claims in this edition come from the public sources linked above. Stale issues were excluded from current ranking. Newsify trends were rejected as irrelevant.",
+    "briefs": []
   },
   "edge": {
     "peerMiss": {
-      "title": "The real bridge story is energy, not the loudest macro headline.",
-      "body": "A lot of people will narrate the day around central banks or a single earnings print. The more useful frame is that energy is connecting geopolitics, inflation risk, and equity fragility underneath almost everything else."
+      "title": "The same market can send two signals.",
+      "body": "A rebound can reflect relief in discount rates while company guidance still weakens. Housing is the practical cross-check."
     },
     "sayInMeeting": {
-      "title": "Use this line.",
-      "body": "The useful edge this morning is not the headline itself. It is how quickly that headline can spill into the broader risk conversation."
+      "title": "Meeting line",
+      "body": "I am watching whether market relief reaches operating margins, rather than assuming a rebound resolves the financing squeeze."
     },
     "chartOfDay": {
-      "title": "Crude versus rates sensitivity.",
-      "body": "Track whether oil or central-bank commentary is doing more work in yields and growth-heavy leadership. That tells you which narrative the market actually trusts.",
-      "takeaway": "The point is to see which variable is really setting the tone instead of assuming the loudest headline is in charge."
+      "title": "Mortgage rates remain restrictive for affordability.",
+      "body": "See the Freddie Mac weekly comparison in the housing story.",
+      "takeaway": "A weekly financing measure is not a daily Treasury quote."
     },
     "deepDive": {
-      "title": "Why oil is the connector theme.",
-      "body": "Energy is what turns a regional headline into an inflation question, a rates question, and then a valuation question for the rest of the tape.",
-      "whyNow": "If you miss that bridge, the day feels random when it is actually much more connected.",
-      "link": "https://apnews.com/article/d1284eb72934a3b076c14449bc087fbd"
+      "title": "Read the company outlook beside the mortgage survey.",
+      "body": "The combination tests whether affordability efforts support profitable volume.",
+      "whyNow": "Lennar reduced its delivery outlook.",
+      "link": "https://newsroom.lennar.com/2026-09-16-Lennar-Reports-Third-Quarter-2026-Results"
     }
   },
   "sourceStack": [
     {
-      "name": "Reuters",
-      "tier": "Tier 1",
-      "role": "Primary reporting",
-      "note": "Fast factual updates on rates, oil, and world-risk developments."
-    },
-    {
       "name": "Associated Press",
-      "tier": "Tier 1",
-      "role": "Primary reporting",
-      "note": "Policy-relevant world and security coverage with clean factual grounding."
+      "tier": "Original source",
+      "role": "Factual grounding",
+      "note": "See linked story for scope and timing."
     },
     {
-      "name": "Morning Brew",
-      "tier": "Tier 2",
-      "role": "Curated framing input",
-      "note": "Broad smart-professional angle detection and business-narrative simplification."
+      "name": "Federal Reserve",
+      "tier": "Original source",
+      "role": "Factual grounding",
+      "note": "See linked story for scope and timing."
     },
     {
-      "name": "Tech Brew",
-      "tier": "Tier 2",
-      "role": "Curated framing input",
-      "note": "Technology business framing and AI-policy angle detection when relevant."
+      "name": "Lennar",
+      "tier": "Original source",
+      "role": "Factual grounding",
+      "note": "See linked story for scope and timing."
     },
     {
-      "name": "Brew Markets",
-      "tier": "Tier 2",
-      "role": "Curated framing input",
-      "note": "Retail-market tone, investing angle detection, and sentiment framing."
+      "name": "Freddie Mac",
+      "tier": "Original source",
+      "role": "Factual grounding",
+      "note": "See linked story for scope and timing."
+    },
+    {
+      "name": "Bank of England",
+      "tier": "Original source",
+      "role": "Factual grounding",
+      "note": "See linked story for scope and timing."
+    },
+    {
+      "name": "SEC",
+      "tier": "Original source",
+      "role": "Factual grounding",
+      "note": "See linked story for scope and timing."
+    },
+    {
+      "name": "Reuters",
+      "tier": "Original source",
+      "role": "Factual grounding",
+      "note": "See linked story for scope and timing."
     }
   ],
   "commuteRoute": [
     {
       "label": "0-1 min",
-      "title": "Lock the thesis.",
-      "note": "Read the hero and the signal board first. If you remember only one thing, remember the connectors instead of the isolated headlines."
+      "title": "Read the thesis and market gaps.",
+      "note": "Establish what is known."
     },
     {
       "label": "1-7 min",
-      "title": "Work the essential cards.",
-      "note": "Move through the cards in order. They are ranked to give you the best return on attention while your brain is freshest."
-    },
-    {
-      "label": "7-12 min",
-      "title": "Steal the edge layer.",
-      "note": "Read the peers-miss card and the meeting line so you leave with language, not just information."
-    },
-    {
-      "label": "12-16 min",
-      "title": "Choose one deeper angle.",
-      "note": "If you still have time, use the chart and deep-dive prompts to decide what deserves follow-up after you get to work."
+      "title": "Read the six essentials.",
+      "note": "Separate facts from interpretation and follow-up checks."
     }
   ],
   "footerPerspective": {
-    "title": "The durable frame is that this morning is less about headline volume and more about which few forces are truly setting the terms of risk.",
-    "summary": "If you keep coming back to the core drivers instead of every update around them, you will sound clearer and think faster than people who only skimmed the surface."
+    "title": "What would change the view?",
+    "summary": "Sustained relief in financing costs plus stronger operating evidence would improve the outlook. Coverage gaps remain explicit."
+  },
+  "dailyDesk": {
+    "markets": "AP closing direction; exact quotes unavailable",
+    "ratesMacro": "Fed and BoE verified",
+    "todayCatalysts": "Lennar 11 AM ET and Freddie Mac noon ET elapsed; full calendar gap",
+    "companies": "Lennar and SEC verified; consensus gap",
+    "global": "UK and Russia/Ukraine",
+    "realEstate": "Freddie Mac and Lennar; commercial gap",
+    "privateMarkets": "Search checked; no authenticated PitchBook; no verified material transaction promoted"
+  },
+  "todayAhead": [
+    {
+      "time": "September 17, 11:00 AM ET",
+      "event": "Lennar earnings call",
+      "status": "Elapsed; transcript not verified",
+      "why": "Incentives and cancellation commentary could change the housing interpretation."
+    },
+    {
+      "time": "September 17, 12:00 PM ET",
+      "event": "Freddie Mac weekly survey",
+      "status": "Released",
+      "why": "Mortgage costs inform affordability."
+    }
+  ],
+  "visuals": {
+    "chartOfDay": {
+      "palette": "blue",
+      "eyebrow": "Chart of the day",
+      "title": "30-year mortgage average (%)",
+      "summary": "Weekly averages; the axis uses percent throughout.",
+      "graphic": {
+        "type": "bar-chart",
+        "sourceCaption": "Source: Freddie Mac PMMS, September 17, 2026; previous-week comparison.",
+        "items": [
+          {
+            "label": "Previous week",
+            "value": 6.76,
+            "display": "6.76%",
+            "tone": "cool"
+          },
+          {
+            "label": "September 17",
+            "value": 6.95,
+            "display": "6.95%",
+            "tone": "warm"
+          }
+        ]
+      },
+      "points": []
+    }
   }
 };
-
-if (typeof window !== "undefined") {
-  window.MORNING_BRIEFING = MORNING_BRIEFING;
-}
-
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = MORNING_BRIEFING;
-}
+if(typeof window!=="undefined")window.MORNING_BRIEFING=MORNING_BRIEFING;
+if(typeof module!=="undefined")module.exports=MORNING_BRIEFING;
